@@ -20,13 +20,13 @@ const Home = () => {
 
            </div>
 
-                 <div className='mt-[13px] lg:mt-4'>
+                 <div className='mt-[19px] lg:mt-12'>
   
-                 <h1 className='text-[35px] lg:text-[50px] font-bold'>Holla,
+                 <h1 className='text-[35px] lg:text-[30px] font-bold'>Holla,
                  </h1>
-                 <h1 className='text-[35px] lg:text-[50px] font-bold mt-[-10px]'>Welcome Back
+                 <h1 className='text-[35px] lg:text-[30px] font-bold mt-[-10px]'>Welcome Back
                  </h1>
-                 <h1 className='text-[14px] lg:text-[20px]  text-gray-400'>Hey, welcome back to your special place</h1>
+                 <h1 className='text-[14px] lg:text-[15px]  text-gray-400'>Hey, welcome back to your special place</h1>
                 </div>
 
 
@@ -38,7 +38,7 @@ const Home = () => {
         </div>
 
         <div className='hidden lg:block' >
-            <img src="src/assets/Images/patient.jpeg" alt="" className='w-[470vw] h-[100vh] rounded-lg' />
+            <img src="src/assets/Images/patient.jpeg" alt="" className='lg:w-[45vw] h-[100vh] rounded-lg' />
         </div>
     </form>
     

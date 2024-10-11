@@ -14,9 +14,9 @@ const Tickbox = () => {
              className='form-checkbox h-4 w-4 bg-indigo-600'
              checked={checked}
              onChange={()=>setChecked (!checked)}/>
-             <label htmlFor='tickbox' className='lg:mt-[-15px] p-1 lg:text-[22px] text-[16px]'>Remember me</label>
+             <label htmlFor='tickbox' className='lg:mt-[-15px] p-1 lg:text-[16px] text-[16px]'>Remember me</label>
         </div>
-        <div className=' text-[16px] text-[#0073cf] lg:text-[22px]'>
+        <div className=' text-[16px] text-[#0073cf] lg:text-[16px]'>
             <Link to={`/`}>Forgot password?</Link>
         </div>
    </div>

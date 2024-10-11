@@ -12,10 +12,10 @@ const Form = () => {
   const [password,setPassword]=useState("")
   return (
     <>
-     <form className='mt-[25px] flex flex-col gap-3 text-[18px] lg:text-[25px] '>
-       <input type="text"  className='w-[87vw] p-3  lg:w-[40vw] rounded-lg' placeholder='Username' /> 
+     <form className='mt-[25px] flex flex-col gap-3 text-[18px] lg:text-[18px] '>
+       <input type="text"  className='w-[87vw] p-3 lg:w-[30vw] rounded-lg' placeholder='Username' /> 
 
-       <input type="text" className='w-[87vw] p-3  lg:w-[40vw] rounded-lg' placeholder='Password'/> <br /> 
+       <input type="text" className='w-[87vw] p-3  lg:w-[30vw] rounded-lg' placeholder='Password'/> <br /> 
       
        <Tickbox/>
        <SignIn password={password} username={username}/>
