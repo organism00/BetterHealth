@@ -5,6 +5,7 @@ import SignUp from './Components/SignUp'
 import SignIn from './Components/SignIn'
 import Form from './Components/Form'
 import Tickbox from './Pages/Tickbox'
+import DashboardForm from './components/DashboardForm'
 
 const App = () => {
   return (
@@ -21,8 +22,12 @@ const App = () => {
            </Routes>
             </BrowserRouter>
     
+      <DashboardForm/>
     </>
   )
 }
 
 export default App
+
+
+
