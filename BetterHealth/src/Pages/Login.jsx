@@ -36,7 +36,7 @@ const Login = () => {
   return (
     <div className="min-h-screen flex overflow-hidden bg-[whitesmoke]">
       {/* Left Information */}
-      <div className="w-full lg:w-[50vw] bg-[#fefbfb] p-4 md:py-10 md:px-24 overflow-auto">
+      <div className="w-full lg:w-[60vw] bg-[#fefbfb] p-4 md:py-10 md:px-24 overflow-auto">
         <div className="flex flex-col">
           <div>
             <div className="w-36 h-36 rounded-full bg-[#483d8b]">
@@ -61,50 +61,50 @@ const Login = () => {
                 Welcome back! Please Login according to 👇.
               </p>
             </div>
-            <div className="w-full h-auto space-y-4">
+            <div className="w-full  h-auto space-y-4">
               <div className="flex items-center">
-                <div className="w-24 h-auto rounded-lg bg-[#483d8b]">
+                <div className="w-24 h-auto bg-[#483d8b]">
                   <MdAdminPanelSettings className="w-20 h-20 p-4 text-white mx-auto" />
                 </div>
                 <NavLink
                   to={"/adminstaff"}
-                  className="hover:bg-[rgba(72,61,139,0.1)] flex items-center justify-center w-full h-16 border-[3px] rounded-r-lg cursor-pointer font-[inter] font-medium text-xl transition-all duration-300 border-[#483d8b]"
+                  className="hover:bg-[rgba(72,61,139,0.1)] flex items-center justify-center w-full h-16 border-[3px] -ml-2 cursor-pointer font-[inter] font-medium text-xl transition-all duration-300 border-[#483d8b]"
                 >
                   Admin staff
                 </NavLink>
               </div>
 
               <div className="flex items-center">
-                <div className="w-24 h-auto rounded-lg bg-[#483d8b]">
+                <div className="w-24 h-auto bg-[#483d8b]">
                   <FaUserDoctor className="w-20 h-20 p-4 text-white mx-auto" />
                 </div>
                 <NavLink
                   to={"/doctor"}
-                  className="hover:bg-[rgba(72,61,139,0.1)] flex items-center justify-center w-full h-16 border-[3px] rounded-r-lg cursor-pointer font-[inter] font-medium text-xl transition-all duration-300 border-[#483d8b]"
+                  className="hover:bg-[rgba(72,61,139,0.1)] flex items-center justify-center w-full h-16 border-[3px] -ml-2 cursor-pointer font-[inter] font-medium text-xl transition-all duration-300 border-[#483d8b]"
                 >
                   Doctor
                 </NavLink>
               </div>
 
               <div className="flex items-center">
-                <div className="w-24 h-auto rounded-lg bg-[#483d8b]">
+                <div className="w-24 h-auto bg-[#483d8b]">
                   <LiaUserNurseSolid className="w-20 h-20 p-4 text-white mx-auto" />
                 </div>
                 <NavLink
                   to={"/nurse"}
-                  className="hover:bg-[rgba(72,61,139,0.1)] flex items-center justify-center w-full h-16 border-[3px] rounded-r-lg cursor-pointer font-[inter] font-medium text-xl transition-all duration-300 border-[#483d8b]"
+                  className="hover:bg-[rgba(72,61,139,0.1)] flex items-center justify-center w-full h-16 border-[3px] -ml-2 cursor-pointer font-[inter] font-medium text-xl transition-all duration-300 border-[#483d8b]"
                 >
                   Nurse
                 </NavLink>
               </div>
 
               <div className="flex items-center">
-                <div className="w-24 h-auto rounded-lg bg-[#483d8b]">
+                <div className="w-24 h-auto bg-[#483d8b]">
                   <FaUsersLine className="w-20 h-20 p-4 text-white mx-auto" />
                 </div>
                 <NavLink
                   to={"/staff"}
-                  className="hover:bg-[rgba(72,61,139,0.1)] flex items-center justify-center w-full h-16 border-[3px] rounded-r-lg cursor-pointer font-[inter] font-medium text-xl transition-all duration-300 border-[#483d8b]"
+                  className="hover:bg-[rgba(72,61,139,0.1)] flex items-center justify-center w-full h-16 border-[3px] -ml-2 cursor-pointer font-[inter] font-medium text-xl transition-all duration-300 border-[#483d8b]"
                 >
                   Other Staff
                 </NavLink>
@@ -118,7 +118,7 @@ const Login = () => {
       </div>
 
       {/* Right Information */}
-      <div className="hidden lg:block h-screen w-[50vw]">
+      <div className="hidden lg:block h-screen w-[40vw]">
         <Slider {...sliderSettings}>
           <div>
             <img
