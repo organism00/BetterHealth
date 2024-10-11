@@ -12,12 +12,10 @@ const Form = () => {
   const [password,setPassword]=useState("")
   return (
     <>
-     <form className='mt-[20px] flex flex-col gap-3 text-[12px]'>
-       <input type="text" style={{borderWidth: "none", borderColor:"white", width:"300px", height:"35px", padding:"6px", borderColor:"black", borderRadius:"5px"}}placeholder='Username' value={username} onChange={(e)=>{setUsername(e.target.value)
-       }}/> 
+     <form className='mt-[25px] flex flex-col gap-3 text-[18px] lg:text-[25px] '>
+       <input type="text"  className='w-[87vw] p-3  lg:w-[40vw] rounded-lg' placeholder='Username' /> 
 
-       <input type="text" style={{borderWidth: 2, borderColor:"white",width:"300px", height:"35px",padding:"6px" }}placeholder='Password' value={password} onChange={(e)=>{setPassword(e.target.value)  
-       }}/> <br /> 
+       <input type="text" className='w-[87vw] p-3  lg:w-[40vw] rounded-lg' placeholder='Password'/> <br /> 
       
        <Tickbox/>
        <SignIn password={password} username={username}/>
