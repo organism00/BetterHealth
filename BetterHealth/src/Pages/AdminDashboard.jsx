@@ -14,11 +14,14 @@ import Reports from '../Components/adminDashboard/Reports';
 import DoctorList from '../Components/adminDashboard/DoctorList';
 import AdmittedPatients from '../Components/adminDashboard/AdmittedPatients';
 import RecentQuestions from '../Components/adminDashboard/RecentQuestions';
+import SideBar from '../Components/adminDashboard/SideBar';
 
 function AdminDashboard() {
   return (
     <div className="flex flex-col gap-4 md:flex-row px-8 py-4 md:px-0 ">
-      <div className='hidden md:block w-[250px] h-[100vh] bg-[green] sticky top-0 ' ></div>
+      <div >
+        <SideBar/>
+      </div>
 
       <div>
         <div className='bg-white border-lg text-[#172b4c] shadow flex flex-col md:flex-row p-4 items-center justify-center gap-2 rounded-lg border '>

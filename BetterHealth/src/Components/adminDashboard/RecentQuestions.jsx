@@ -19,8 +19,8 @@ function RecentQuestions() {
 
   return (
     <div className='rounded-lg bg-[white] shaadow-md border overflow-hidden '>
-      <div className='flex justify-between gap-3 items-center bg-[white] px-4 py-6 border-b '>
-        <p className='text-[18px] font-medium '>Recent Question</p>
+      <div className='flex justify-between gap-2 items-center bg-[white] px-4 py-6 border-b '>
+        <p className='text-[14px] font-medium '>Recent Question</p>
         <div className='flex gap-1'>
           <Chip label="All" onClick={() => setFilter('all')} clickable
             sx={{
@@ -47,7 +47,7 @@ function RecentQuestions() {
         </div>
       </div>
 
-      <div className='scrollable-div px-4 py-2 h-[200px]  '>
+      <div className='scrollable-div px-3 py-2 h-[200px]  '>
         {filteredQuestions.map((q) => (
           <Paper key={q.id} style={{ padding: '10px', marginTop: '10px' }}>
             <p>{q.question}</p>
