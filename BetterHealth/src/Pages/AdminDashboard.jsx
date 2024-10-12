@@ -20,13 +20,13 @@ import Navbar from "../Components/adminDashboard/Navbar";
 function AdminDashboard() {
   return (
     <div className="flex flex-col gap-4 lg:flex-row py-4 md:px-0 ">
-      <div className="-ml-8 lg:ml-0">
+      <div className="mr-10">
         <SideBar />
       </div>
 
       <Navbar />
 
-      <div className="mt-16 md:mt-20">
+      <div className="mt-16 md:mt-20 md:px-6 lg:px-0">
         <div className="bg-white border-lg text-[#172b4c] shadow flex flex-col md:flex-row p-4 items-center justify-center gap-2 rounded-lg border ">
           <img src={heart} alt="img" className="max-w-[135px] w-auto" />
           <div>
@@ -85,7 +85,7 @@ function AdminDashboard() {
         </div>
 
         {/* Charts */}
-        <div className="flex flex-col mt-6 md:mt-0 md:flex-row space-y-5 md:space-y-0 md:space-x-4 justify-between">
+        <div className="flex flex-col mt-6 md:mt-4 md:flex-row space-y-5 md:space-y-0 justify-between">
           <PatientStat />
           <RecoveryStat />
         </div>
@@ -97,7 +97,7 @@ function AdminDashboard() {
           <RecentQuestions />
         </div>
       </div>
-      <div className="lg:flex lg:flex-col lg:gap-4 space-y-10 lg:space-y-4 mt-4 lg:mt-20">
+      <div className="lg:flex lg:flex-col lg:gap-4 md:px-6 lg:px-0 space-y-10 lg:space-y-4 mt-4 lg:mt-20">
         <TotalPatientsStat/>
         <Reports />
         <DoctorList />

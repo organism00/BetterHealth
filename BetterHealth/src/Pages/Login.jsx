@@ -36,9 +36,9 @@ const Login = () => {
   return (
     <div className="min-h-screen w-[100vw] flex overflow-hidden bg-[whitesmoke]">
       {/* Left Information */}
-      <div className="w-full lg:w-[60%] bg-[#fefbfb] p-4 md:py-1 md:px-24 overflow-auto">
-        <div className="flex flex-col">
-          <div>
+      <div className="w-full lg:w-[60%] bg-[#fefbfb] p-4 md:py-1 md:px-24">
+        <div className="flex flex-col items-start">
+          <div className="flex flex-col items-center ml-6">
             <div className="w-36 h-36 rounded-full bg-[#483d8b]">
               <img
                 src={doctorImage2}
@@ -48,7 +48,7 @@ const Login = () => {
               />
             </div>
 
-            <h1 className="font-[inter] text-2xl font-semibold pt-2">
+            <h1 className="font-[inter]  text-2xl font-semibold pt-2">
               Better Health
             </h1>
           </div>
@@ -121,14 +121,14 @@ const Login = () => {
             <img
               src={sideRightImage1}
               alt="hospital1"
-              className="w-full h-screen"
+              className="w-full h-screen object-cover"
             />
           </div>
           <div>
             <img
               src={sideRightImage2}
               alt="hospital2"
-              className="w- h-screen"
+              className="w-full h-screen object-cover"
             />
           </div>
         </Slider>

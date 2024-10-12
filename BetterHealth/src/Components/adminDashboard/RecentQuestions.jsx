@@ -126,7 +126,7 @@ function RecentQuestions() {
             style={{ padding: "20px", marginTop: "5px", boxShadow: "none" }}
             className="flex items-center border-b border-dashed"
           >
-            <div className="w-[200px] grid justify-left ">
+            <div className="w-[200px] md:w-[30vw] lg:w-[16vw]">
               <p className="text-left text-[12px] mb-2 ">{q.time}</p>
               <p className="text-left mb-4">{q.question}</p>
               <div className="flex gap-1 ">

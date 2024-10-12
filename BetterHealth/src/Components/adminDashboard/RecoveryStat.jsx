@@ -31,7 +31,7 @@ function RecoveryStat() {
   return (
     <div>
       <div className='shadow-lg pb-12 pt-2 rounded-lg border'>
-        <p className='mb-4 py-4 px-8 border-b w-[100% text-[18px] text-[#172b4c] font-medium '>Recovery Statistic</p>
+        <p className='mb-4 py-4 px-8 border-b w-[100%] md:w-[50vw] lg:w-[24vw] text-[18px] text-[#172b4c] font-medium '>Recovery Statistic</p>
         <LineChart width={318} height={250} data={recoveryStat} className='mr-4 -ml-4 pr-4 md:pr-0 '>
           <CartesianGrid horizontal={true} vertical={false} opacity={'50%'} />
           <XAxis dataKey="month" axisLine={false} opacity={'60%'} />

@@ -65,7 +65,7 @@ const SideBar = () => {
     <div className="lg:grid lg:grid-cols-[15rem_1fr]">
       <aside className="w-screen h-20 top-0 bg-violet-50 lg:hidden fixed z-50">
         <div className="flex items-center justify-between px-6 md:px-20">
-          <div className="flex gap-4 items-center justify-center">
+          <div className="flex gap-4 items-center justify-center py-2">
             <div className="w-14 h-14 rounded-full bg-[#483d8b]">
               <img
                 src={anime}
@@ -88,7 +88,7 @@ const SideBar = () => {
 
           {/* Sidebar content for mobile start Here */}
           <div
-            className={`fixed top-16 left-0 w-[70vw] h-screen bg-violet-50 transition-transform duration-300 ease-in-out ${
+            className={`fixed top-16 left-0 w-[70vw] md:w-[36vw] h-screen bg-violet-50 transition-transform duration-300 ease-in-out ${
               isSidebarOpen ? "translate-x-0" : "-translate-x-full"
             }`}
           >
@@ -260,7 +260,7 @@ const SideBar = () => {
       </aside>
 
       {/* Sidebar content for Large view start  */}
-      <aside className="w-[20vw] h-[120vh] lg:block bg-violet-50 fixed top-0 left-0 hidden">
+      <aside className="w-[17vw] h-[120vh] lg:block bg-stone-50 fixed top-0 left-0 hidden">
         <div className="w-[270px] h-20 fixed gap-2 flex items-center justify-center ">
           <div className="flex gap-4">
             <div className="w-14 h-14 rounded-full bg-[#483d8b]">
