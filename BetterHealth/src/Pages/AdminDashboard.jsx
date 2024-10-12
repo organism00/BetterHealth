@@ -5,14 +5,14 @@ import patient from "../adminDashboardAssets/patients.svg";
 import staff from "../adminDashboardAssets/Staffs.svg";
 import surgery from "../adminDashboardAssets/sugery.svg";
 // Components
-import PatientStat from "../Components/adminDashboard/PatientStat";
+import PatientStat from "../components/adminDashboard/PatientStat";
 import RecoveryStat from "../Components/adminDashboard/RecoveryStat";
 import TotalPatientsStat from "../Components/adminDashboard/TotalPatientsStat";
 import Reports from "../Components/adminDashboard/Reports";
 import DoctorList from "../Components/adminDashboard/DoctorList";
 import AdmittedPatients from "../Components/adminDashboard/AdmittedPatients";
 import RecentQuestions from "../Components/adminDashboard/RecentQuestions";
-import SideBar from "../Components/adminDashboard/SideBar";
+import SideBar from "../components/adminDashboard/SideBar";
 
 
 
