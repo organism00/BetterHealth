@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import anime from "../../adminDashboardAssets/anime.gif";
+import anime from "../../assets/Images/Animation-2.gif";
 import custom from "../../adminDashboardAssets/custom-17.svg";
 import "../../App.css";
 import { TbLayoutDashboardFilled } from "react-icons/tb";
@@ -69,7 +69,6 @@ const SideBar = () => {
             <div className="w-14 h-14 rounded-full bg-[#483d8b]">
               <img
                 src={anime}
-                data-aos="fade-up"
                 alt="Doctor Illustration"
                 className="rounded-[360px] w-12 h-12 mx-auto "
               />
@@ -99,7 +98,10 @@ const SideBar = () => {
                 <div className="flex flex-col gap-y-7 mt-8">
                   <div className="flex justify-between w-28 items-center">
                     <TbLayoutDashboardFilled className="text-xl" />
-                    <Link to={"/"} className="hover:text-blue-400">
+                    <Link
+                      to={"/admindashboard"}
+                      className="hover:text-blue-400"
+                    >
                       Dashboard
                     </Link>
                   </div>
@@ -128,10 +130,10 @@ const SideBar = () => {
                       <div className="flex flex-col items-center justify-center my-4 text-start">
                         <ul className="space-y-4">
                           <li className="list-disc hover:text-blue-400">
-                            <a href="#">Patient</a>
+                            <a href="#">New Patient</a>
                           </li>
                           <li className="list-disc hover:text-blue-400">
-                            <a href="#">Patient Details</a>
+                            <a href="#">Patient List</a>
                           </li>
                         </ul>
                       </div>
@@ -258,13 +260,12 @@ const SideBar = () => {
       </aside>
 
       {/* Sidebar content for Large view start  */}
-      <aside className="w-[270px] h-[120vh] lg:block bg-violet-50 fixed top-0 left-0 hidden">
+      <aside className="w-[20vw] h-[120vh] lg:block bg-violet-50 fixed top-0 left-0 hidden">
         <div className="w-[270px] h-20 fixed gap-2 flex items-center justify-center ">
           <div className="flex gap-4">
             <div className="w-14 h-14 rounded-full bg-[#483d8b]">
               <img
                 src={anime}
-                data-aos="fade-up"
                 alt="Doctor Illustration"
                 className="rounded-[360px] w-12 h-12 mx-auto "
               />
@@ -281,7 +282,7 @@ const SideBar = () => {
             <div className="flex flex-col gap-y-7 mt-8">
               <div className="flex justify-between w-28 items-center ">
                 <TbLayoutDashboardFilled className="text-xl" />
-                <Link to={"/"} className="hover:text-blue-400">
+                <Link to={"/admindashboard"} className="hover:text-blue-400">
                   Dashboard
                 </Link>
               </div>
@@ -294,10 +295,10 @@ const SideBar = () => {
 
               <div>
                 <div
-                  className="flex justify-between w-60 items-center flex-row"
+                  className="flex justify-between w-[13vw] items-center flex-row"
                   onClick={togglePatientsDropdown}
                 >
-                  <div className="flex justify-between w-20 items-center">
+                  <div className="flex justify-between items-center">
                     <PiDiamondsFourFill className="text-xl" />
                     <a href="#" className="hover:text-blue-400">
                       Patients
@@ -311,11 +312,11 @@ const SideBar = () => {
                     <ul className="space-y-4">
                       <li className="list-disc hover:text-blue-400">
                         {" "}
-                        <a href="#">Patient</a>
+                        <a href="#">New Patient</a>
                       </li>
                       <li className="list-disc hover:text-blue-400">
                         {" "}
-                        <a href="#">Patient Details</a>
+                        <a href="#">Patient List</a>
                       </li>
                     </ul>
                   </div>
@@ -324,10 +325,10 @@ const SideBar = () => {
 
               <div>
                 <div
-                  className="flex justify-between w-60 items-center flex-row"
+                  className="flex justify-between w-[13vw] items-center flex-row"
                   onClick={toggleDoctorsDropdown}
                 >
-                  <div className="flex justify-between w-20 items-center">
+                  <div className="flex justify-between items-center">
                     <TbDeviceAnalytics className="text-xl" />
                     <a href="#" className="hover:text-blue-400">
                       {" "}

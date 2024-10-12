@@ -1,14 +1,14 @@
 import React from "react";
 import { IoMenu } from "react-icons/io5";
 import { BsSearch } from "react-icons/bs";
-import user from "../assets/images/avatar-1.png";
+import user from "../../assets/Images/user.svg";
 import { IoMdQrScanner } from "react-icons/io";
 import { BiSolidNotification } from "react-icons/bi";
 import { PiGearFill } from "react-icons/pi";
 const Navbar = () => {
   return (
     <div>
-      <nav className="bg-white  w-full h-20 fixed top-20 md:top-0  md:w-[68%] lg:w-full md:ml-72 lg:top-0 z-50 px-5 lg:px-10 flex items-center md:justify-between justify-between lg:items-center lg:justify-between border-b-[1px] lg:ml-4 border-stone-200 ">
+      <nav className="hidden bg-[whitesmoke] w-[80vw] h-20 fixed top-20 md:top-0 2xl:-ml-[7.6vw] xl:-ml-[2vw] lg:top-0 z-50 px-5 lg:px-10 lg:flex items-center justify-between lg:items-center lg:justify-between">
         <div className="flex justify-between w-72">
           <button className="w-11 h-11 bg-violet-50 rounded-lg">
             <IoMenu className="text-2xl mx-auto text-violet-600" />

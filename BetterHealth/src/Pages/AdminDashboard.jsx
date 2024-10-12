@@ -13,6 +13,7 @@ import DoctorList from "../Components/adminDashboard/DoctorList";
 import AdmittedPatients from "../Components/adminDashboard/AdmittedPatients";
 import RecentQuestions from "../Components/adminDashboard/RecentQuestions";
 import SideBar from "../components/adminDashboard/SideBar";
+import Navbar from "../Components/adminDashboard/Navbar";
 
 
 
@@ -23,7 +24,9 @@ function AdminDashboard() {
         <SideBar />
       </div>
 
-      <div className="mt-16 md:mt-20 lg:mt-0">
+      <Navbar />
+
+      <div className="mt-16 md:mt-20">
         <div className="bg-white border-lg text-[#172b4c] shadow flex flex-col md:flex-row p-4 items-center justify-center gap-2 rounded-lg border ">
           <img src={heart} alt="img" className="max-w-[135px] w-auto" />
           <div>
@@ -94,7 +97,7 @@ function AdminDashboard() {
           <RecentQuestions />
         </div>
       </div>
-      <div className="lg:flex lg:flex-col lg:gap-4 space-y-10 lg:space-y-4 mt-4 lg:mt-0">
+      <div className="lg:flex lg:flex-col lg:gap-4 space-y-10 lg:space-y-4 mt-4 lg:mt-20">
         <TotalPatientsStat/>
         <Reports />
         <DoctorList />
