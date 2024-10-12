@@ -16,6 +16,9 @@ import { MdAccessibilityNew } from "react-icons/md";
 import { FaBed } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import menuImage from "../../assets/Images/menu (2).png"
+import "../../Style/customScrollbar.css";
+
+
 
 const SideBar = () => {
   const [showPatientsDropdown, setShowPatientsDropdown] = useState(false);
@@ -91,7 +94,7 @@ const SideBar = () => {
             }`}
           >
             <div className="mt-4">
-              <div className="max-h-[100%] overflow-x-auto no-scrollbar flex flex-col w-[270px] h-screen px-7">
+              <div className="max-h-[100%] scrollable-div flex flex-col w-[270px] h-screen px-7">
                 {/* Sidebar content */}
                 <div className="flex flex-col gap-y-7 mt-8">
                   <div className="flex justify-between w-28 items-center">
@@ -274,7 +277,7 @@ const SideBar = () => {
         </div>
 
         <div className="mt-20">
-          <div className="max-h-[100%] overflow-x-auto  no-scrollbar flex flex-col w-[270px] h-screen px-7">
+          <div className="max-h-[100%] scrollable-div flex flex-col w-[270px] h-screen px-7">
             <div className="flex flex-col gap-y-7 mt-8">
               <div className="flex justify-between w-28 items-center ">
                 <TbLayoutDashboardFilled className="text-xl" />

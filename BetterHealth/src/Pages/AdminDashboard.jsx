@@ -1,11 +1,9 @@
 import React from "react";
-
 // Images
 import heart from "../adminDashboardAssets/heart.svg";
 import patient from "../adminDashboardAssets/patients.svg";
 import staff from "../adminDashboardAssets/Staffs.svg";
 import surgery from "../adminDashboardAssets/sugery.svg";
-
 // Components
 import PatientStat from "../Components/adminDashboard/PatientStat";
 import RecoveryStat from "../Components/adminDashboard/RecoveryStat";
@@ -15,6 +13,8 @@ import DoctorList from "../Components/adminDashboard/DoctorList";
 import AdmittedPatients from "../Components/adminDashboard/AdmittedPatients";
 import RecentQuestions from "../Components/adminDashboard/RecentQuestions";
 import SideBar from "../Components/adminDashboard/SideBar";
+
+
 
 function AdminDashboard() {
   return (
@@ -47,7 +47,7 @@ function AdminDashboard() {
           <div className="flex justify-center p-6 rounded-lg bg-white shadow gap-4 border">
             <img
               src={patient}
-              alt=""
+              alt="patient-image"
               className="max-w-[110px] h-auto w-auto md:w-[80px] "
             />
             <div>
@@ -59,7 +59,7 @@ function AdminDashboard() {
           <div className="flex justify-center p-6 rounded-lg bg-white shadow gap-4 border">
             <img
               src={staff}
-              alt=""
+              alt="staff-image"
               className="max-w-[110px] h-auto w-auto md:w-[80px] "
             />
             <div>
@@ -71,7 +71,7 @@ function AdminDashboard() {
           <div className="flex justify-center p-6 rounded-lg bg-white shadow gap-4 border">
             <img
               src={surgery}
-              alt=""
+              alt="surgery-image"
               className="max-w-[110px] h-auto w-auto md:w-[80px] "
             />
             <div>
@@ -94,7 +94,7 @@ function AdminDashboard() {
           <RecentQuestions />
         </div>
       </div>
-      <div className="lg:grid lg:gap-4 space-y-10 lg:space-y-4 mt-4 lg:mt-0">
+      <div className="lg:flex lg:flex-col lg:gap-4 space-y-10 lg:space-y-4 mt-4 lg:mt-0">
         <TotalPatientsStat/>
         <Reports />
         <DoctorList />
