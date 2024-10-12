@@ -36,8 +36,8 @@ function TotalPatientsStat() {
   return (
     <div>
       <div className='shadow-lg pb-12 pt-2 rounded-lg border'>
-        <p className='mb-4 py-4 px-8 border-b w-[100% text-[18px] text-[#172b4c] font-medium '>Total Patient</p>
-        <ComposedChart width={272} height={250} data={totalPatient} className='mr-4 -ml-4'>
+        <p className='mb-4 py-4 px-8 border-b w-[100%] text-[18px] text-[#172b4c] font-medium '>Total Patient</p>
+        <ComposedChart width={272} height={250} data={totalPatient} className='lg:mr-4 lg:-ml-4'>
           <CartesianGrid horizontal={true} vertical={false} opacity={'50%'} />
           <XAxis dataKey="month" axisLine={false} opacity={'60%'} fontSize='10px' />
           <YAxis axisLine={false} tickLine={false} opacity={'60%'} />

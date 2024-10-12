@@ -47,7 +47,7 @@ function RecentQuestions() {
         </div>
       </div>
 
-      <div className='scrollable-div px-3 py-2 h-[200px]  '>
+      <div className='scrollable-div px-3 py-6 md:py-2 h-auto md:h-[200px]  '>
         {filteredQuestions.map((q) => (
           <Paper key={q.id} style={{ padding: '10px', marginTop: '10px' }}>
             <p>{q.question}</p>
