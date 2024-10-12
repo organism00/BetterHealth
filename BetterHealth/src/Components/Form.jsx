@@ -13,7 +13,7 @@ const Form = () => {
   return (
     <>
      <form className='mt-[20px] flex flex-col gap-3 text-[12px]'>
-       <input type="text" style={{borderWidth: "none", borderColor:"white", width:"300px", height:"35px", padding:"6px", borderColor:"black", borderRadius:"5px"}}placeholder='Username' value={username} onChange={(e)=>{setUsername(e.target.value)
+       <input type="text" style={{borderWidth: "none", width:"300px", height:"35px", padding:"6px", borderColor:"black", borderRadius:"5px"}}placeholder='Username' value={username} onChange={(e)=>{setUsername(e.target.value)
        }}/> 
 
        <input type="text" style={{borderWidth: 2, borderColor:"white",width:"300px", height:"35px",padding:"6px" }}placeholder='Password' value={password} onChange={(e)=>{setPassword(e.target.value)  

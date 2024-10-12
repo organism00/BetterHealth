@@ -1,7 +1,9 @@
 import React, {useState} from 'react';
 import anime from '../../adminDashboardAssets/anime.gif';
 import custom from '../../adminDashboardAssets/custom-17.svg';
-import '../../App.css'
+// import '../../App.css'
+// Css
+
 import { TbLayoutDashboardFilled } from "react-icons/tb";
 import { TbScan } from "react-icons/tb";
 import { PiDiamondsFourFill } from "react-icons/pi";
@@ -52,7 +54,7 @@ const SideBar = () => {
     setShowDoctorsDropdown((prev) => !prev);
   };
   return (
-    <div className="lg:grid lg:grid-cols-[15rem_1fr]" >
+    <div className="lg:grid lg:grid-cols-[16rem_1fr]" >
         <aside className='w-screen h-20 top-0 bg-violet-50 md:hidden lg:hidden fixed z-50'>
         <div className='flex gap-4 items-center justify-center'>
                         <div className="w-14 h-14 rounded-full bg-[#483d8b]">
@@ -67,7 +69,7 @@ const SideBar = () => {
                         <h1 className="self-center  text-2xl font-semibold pt-2">Better Health</h1>
                     </div>
         </aside>
-        <aside className="w-[270px] h-[120vh] md:block bg-violet-50 fixed top-0 left-0 hidden lg:block">
+        <aside className="w-[260px] h-[120vh] md:block bg-violet-50 fixed top-0 left-0 hidden lg:block">
                 <div className="w-[270px] h-20 fixed gap-2 flex items-center justify-center ">
                     <div className='flex gap-4'>
                         <div className="w-14 h-14 rounded-full bg-[#483d8b]">
@@ -85,7 +87,7 @@ const SideBar = () => {
                     <h1 className='text-3xl text-indigo-900'>BETTERLIFE</h1> */}
                 </div>
                 <div className="mt-20">
-                    <div className="max-h-[100%] overflow-x-auto  no-scrollbar flex flex-col w-[270px] h-screen px-7">
+                    <div className="max-h-[100%] scrollable-div flex flex-col w-[260px] h-screen px-7">
                         <div className="flex flex-col gap-y-7 mt-8">
                             <div className="flex justify-between w-28 items-center ">
                                 <TbLayoutDashboardFilled  className="text-xl"/> 

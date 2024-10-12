@@ -1,7 +1,7 @@
 import React from 'react'
 import { IoMenu } from "react-icons/io5";
 import { BsSearch } from "react-icons/bs";
-import user from '../assets/images/avatar-1.png'
+// import user from '../assets/images/avatar-1.png'
 import { IoMdQrScanner } from "react-icons/io";
 import { BiSolidNotification } from "react-icons/bi";
 import { PiGearFill } from "react-icons/pi";
@@ -27,7 +27,7 @@ const Navbar = () => {
                     <p className='text-end font-thin text-[10px]'>ADMIN</p>
                 </div>
                 <div className='w-8 h-8 lg:w-10 lg:h-10  bg-indigo-300 rounded-md'>
-                    <img src={user} alt="" className='rounded-md'/>
+                    {/* <img src={user} alt="" className='rounded-md'/> */}
                 </div>
                 <div className='w-8 h-8 lg:w-10 lg:h-10 bg-indigo-50 rounded-md flex items-center justify-center'>
                     <IoMdQrScanner className='text-2xl text-orange-400'/>
