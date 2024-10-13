@@ -29,27 +29,27 @@ const AdminStaff = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[whitesmoke] flex overflow-hidden">
+    <div className="lg:h-[100vh] bg-[whitesmoke] flex items-center overflow-hidden">
       {/* Left - Image Slider */}
-      <div className="hidden lg:block h-screen w-[50vw]">
+      <div className="hidden lg:block xl:h-[100%] w-[50vw]">
         <Slider {...sliderSettings}>
           <div>
-            <img src={hospital1} alt="hospital1" className="h-screen w-full" />
+            <img src={hospital1} alt="hospital1" className="h-screen w-full object-cover " />
           </div>
           <div>
-            <img src={hospital3} alt="hospital3" className="h-screen w-full" />
+            <img src={hospital3} alt="hospital3" className="h-screen w-full object-cover " />
           </div>
         </Slider>
       </div>
 
       {/* Right - Form */}
-      <div className="w-full lg:w-[50vw] bg-[whitesmoke] md:py-36 md:px-24 flex flex-col py-6 px-4 overflow-auto mt-12">
+      <div className="w-full lg:w-[50vw] bg-[whitesmoke] md:py-2 md:h-[100vh] md:px-24 flex flex-col justify-center py-2 px-4 ">
         <div className="max-w-md w-full mx-auto">
-          <div className=" space-y-6 mb-8">
+          <div className=" space-y-6 mb-8 ">
             <h2 className="text-3xl leading-4 font-[inter] font-semibold">
               Holla,
             </h2>
-            <p className=" text-3xl leading-4 font-[inter] font-semibold">
+            <p className=" text-3xl leading-10 font-[inter] font-semibold">
               Welcome Back Admin!
             </p>
             <p className="text-gray-600 leading-4 font-[inter] mt-2">

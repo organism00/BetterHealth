@@ -92,8 +92,8 @@ const SideBar = () => {
               isSidebarOpen ? "translate-x-0" : "-translate-x-full"
             }`}
           >
-            <div className="mt-4">
-              <div className="max-h-[100%] scrollable-div flex flex-col w-[270px] h-screen px-7">
+            <div className="mt-4 ">
+              <div className="max-h-[100%] scrollable-div flex flex-col w-[70vw] h-screen px-7">
                 {/* Sidebar content */}
                 <div className="flex flex-col gap-y-7 mt-8">
                   <div className="flex justify-between w-28 items-center">
@@ -243,7 +243,7 @@ const SideBar = () => {
 
                 {/* Sidebar Footer */}
                 <div className="pb-10 flex flex-col items-center">
-                  <img src={custom} className="relative top-12" />
+                  <img src={custom} className="relative top-12 md:w-[150px] " />
                   <div className="w-52 h-36 bg-indigo-300 rounded-2xl pt-16">
                     <h1 className="text-lg text-center">Make an Appointment</h1>
                     <p className="text-center">Best Health Care here</p>
@@ -260,9 +260,9 @@ const SideBar = () => {
       </aside>
 
       {/* Sidebar content for Large view start  */}
-      <aside className="w-[17vw] h-[120vh] lg:block bg-stone-50 fixed top-0 left-0 hidden">
+      <aside className="w-[20vw] h-[120vh] lg:block bg-stone-50 fixed top-0 left-0 hidden">
         <div className="w-[270px] h-20 fixed gap-2 flex items-center justify-center ">
-          <div className="flex gap-4">
+          <div className="flex gap-4 ">
             <div className="w-14 h-14 rounded-full bg-[#483d8b]">
               <img
                 src={anime}
@@ -278,7 +278,7 @@ const SideBar = () => {
         </div>
 
         <div className="mt-20">
-          <div className="max-h-[100%] scrollable-div flex flex-col w-[270px] h-screen px-7">
+          <div className="max-h-[100%] scrollable-div flex flex-col w-[270px] h-screen px-7  ">
             <div className="flex flex-col gap-y-7 mt-8">
               <div className="flex justify-between w-28 items-center ">
                 <TbLayoutDashboardFilled className="text-xl" />
