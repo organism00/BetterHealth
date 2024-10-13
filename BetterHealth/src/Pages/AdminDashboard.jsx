@@ -12,8 +12,8 @@ import Reports from "../Components/adminDashboard/Reports";
 import DoctorList from "../Components/adminDashboard/DoctorList";
 import AdmittedPatients from "../Components/adminDashboard/AdmittedPatients";
 import RecentQuestions from "../Components/adminDashboard/RecentQuestions";
-import SideBar from "../components/adminDashboard/SideBar";
-import Navbar from "../Components/adminDashboard/Navbar";
+import SideBar from "../Components/SideBar";
+import Navbar from "../Components/Navbar";
 
 
 

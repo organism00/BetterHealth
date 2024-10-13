@@ -1,7 +1,7 @@
 import React from "react";
 import { IoMenu } from "react-icons/io5";
 import { BsSearch } from "react-icons/bs";
-import user from "../../assets/Images/user.svg";
+import user from "../assets/Images/user.svg";
 import { IoMdQrScanner } from "react-icons/io";
 import { BiSolidNotification } from "react-icons/bi";
 import { PiGearFill } from "react-icons/pi";

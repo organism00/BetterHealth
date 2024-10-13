@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import anime from "../../assets/Images/Animation-2.gif";
-import custom from "../../adminDashboardAssets/custom-17.svg";
-import "../../App.css";
+import anime from "../assets/Images/Animation-2.gif";
+import custom from "../adminDashboardAssets/custom-17.svg";
+import "../App.css";
 import { TbLayoutDashboardFilled } from "react-icons/tb";
 import { TbScan } from "react-icons/tb";
 import { PiDiamondsFourFill } from "react-icons/pi";
@@ -15,8 +15,8 @@ import { BsCalendarDate } from "react-icons/bs";
 import { MdAccessibilityNew } from "react-icons/md";
 import { FaBed } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import menuImage from "../../assets/Images/menu (2).png"
-import "../../Style/customScrollbar.css";
+import menuImage from "../assets/Images/menu (2).png"
+import "../Style/customScrollbar.css";
 
 
 
