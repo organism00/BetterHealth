@@ -19,8 +19,8 @@ import Navbar from "../Components/Navbar";
 
 function AdminDashboard() {
   return (
-    <div className="flex flex-col gap-4 lg:flex-row py-4 md:px-0 ">
-      <div className="mr-10">
+    <div className="flex flex-col gap-2 lg:flex-row py-4 md:px-0 ">
+      <div className="">
         <SideBar />
       </div>
 

@@ -8,7 +8,7 @@ import { PiGearFill } from "react-icons/pi";
 const Navbar = () => {
   return (
     <div>
-      <nav className="hidden bg-[whitesmoke] w-[80vw] h-20 fixed top-20 md:top-0  lg:top-0 z-50 px-5 lg:px-10 lg:flex items-center justify-between lg:items-center lg:justify-between">
+      <nav className="hidden bg-[whitesmoke] w-[81vw] h-20 fixed top-20 md:top-0  lg:top-0 z-50 px-5 lg:px-10 lg:flex items-center justify-between lg:items-center lg:justify-between">
         <div className="flex justify-between w-72">
           <button className="w-11 h-11 bg-violet-50 rounded-lg">
             <IoMenu className="text-2xl mx-auto text-violet-600" />
@@ -25,7 +25,7 @@ const Navbar = () => {
           </div>
         </div>
 
-        <div className="flex w-72 lg:mr-64 items-center gap-3">
+        <div className="flex w-72 items-center gap-3">
           <div className="flex justify-center flex-col">
             <h1 className="text-indigo-500 font-bold text-sm lg:text-base w-[70px] lg:w-auto">
               Johen Doe

@@ -8,7 +8,7 @@
 
 .scrollable-div::-webkit-scrollbar-thumb{
   border-radius: 2px;
-  background-color: #5156be;
+  background-color: rgba(81, 86, 190, 0.2);
 }
 .scrollable-div::-webkit-scrollbar-track{
   border-radius: 2px;

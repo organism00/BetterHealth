@@ -23,6 +23,7 @@ import "../Style/customScrollbar.css";
 const SideBar = () => {
   const [showPatientsDropdown, setShowPatientsDropdown] = useState(false);
   const [showDoctorsDropdown, setShowDoctorsDropdown] = useState(false);
+  const [showNurseDropdown, setShowNurseDropdown] = useState(false);
   const [featuresdropdown, setfeaturesdropdown] = useState(false);
   const [appsdropdown, setappsdropdown] = useState(false);
   const [formsdropdown, setformsdropdown] = useState(false);
@@ -61,6 +62,11 @@ const SideBar = () => {
   const toggleDoctorsDropdown = () => {
     setShowDoctorsDropdown((prev) => !prev);
   };
+
+  const toggleNurseDropdown = () => {
+    setShowNurseDropdown((prev) => !prev);
+  };
+
   return (
     <div className="lg:grid lg:grid-cols-[15rem_1fr]">
       <aside className="w-screen h-20 top-0 bg-violet-50 lg:hidden fixed z-50">
@@ -95,7 +101,7 @@ const SideBar = () => {
             <div className="mt-4 ">
               <div className="max-h-[100%] scrollable-div flex flex-col w-[70vw] h-screen px-7">
                 {/* Sidebar content */}
-                <div className="flex flex-col gap-y-7 mt-8">
+                <div className="flex flex-col gap-y-7 mt-8 ">
                   <div className="flex justify-between w-28 items-center">
                     <TbLayoutDashboardFilled className="text-xl" />
                     <Link
@@ -133,7 +139,7 @@ const SideBar = () => {
                             <a href="#">New Patient</a>
                           </li>
                           <li className="list-disc hover:text-blue-400">
-                            <a href="#">Patient List</a>
+                            <Link to={'/patientlist'}>Patient List</Link>
                           </li>
                         </ul>
                       </div>
@@ -158,10 +164,10 @@ const SideBar = () => {
                       <div className="flex flex-col items-center justify-center my-4 text-start">
                         <ul className="space-y-4">
                           <li className="list-disc hover:text-blue-400">
-                            <a href="#">Doctor Item 1</a>
+                            <a href="#">New Doctor</a>
                           </li>
                           <li className="list-disc hover:text-blue-400">
-                            <a href="#">Doctor Item 2</a>
+                            <a href="#">Doctor List</a>
                           </li>
                         </ul>
                       </div>
@@ -260,9 +266,9 @@ const SideBar = () => {
       </aside>
 
       {/* Sidebar content for Large view start  */}
-      <aside className="w-[20vw] h-[120vh] lg:block bg-stone-50 fixed top-0 left-0 hidden">
-        <div className="w-[270px] h-20 fixed gap-2 flex items-center justify-center ">
-          <div className="flex gap-4 ">
+      <aside className="w-[238px] h-[120vh] lg:block bg-stone-50 fixed top-0 left-0 hidden">
+        <div className="w-[200px] h-20 fixed gap-2 flex items-center justify-center ">
+          <div className="flex gap-1 ">
             <div className="w-14 h-14 rounded-full bg-[#483d8b]">
               <img
                 src={anime}
@@ -271,22 +277,22 @@ const SideBar = () => {
               />
             </div>
 
-            <h1 className="self-center  text-2xl font-semibold pt-2">
+            <h1 className="self-center text-xl font-semibold pt-2">
               Better Health
             </h1>
           </div>
         </div>
 
-        <div className="mt-20">
-          <div className="max-h-[100%] scrollable-div flex flex-col w-[270px] h-screen px-7  ">
+        <div className="mt-20 ">
+          <div className="max-h-[100%] scrollable-div flex flex-col w-[238px] h-screen px-7  ">
             <div className="flex flex-col gap-y-7 mt-8">
-              <div className="flex justify-between w-28 items-center ">
+              <div className="flex gap-4 items-center ">
                 <TbLayoutDashboardFilled className="text-xl" />
                 <Link to={"/admindashboard"} className="hover:text-blue-400">
                   Dashboard
                 </Link>
               </div>
-              <div className="flex justify-between w-32 items-center">
+              <div className="flex gap-4 items-center">
                 <TbScan className="text-xl" />
                 <a href="#" className="hover:text-blue-400">
                   Appointments
@@ -298,7 +304,7 @@ const SideBar = () => {
                   className="flex justify-between w-[13vw] items-center flex-row"
                   onClick={togglePatientsDropdown}
                 >
-                  <div className="flex justify-between items-center">
+                  <div className="flex justify-between gap-4 items-center">
                     <PiDiamondsFourFill className="text-xl" />
                     <a href="#" className="hover:text-blue-400">
                       Patients
@@ -316,7 +322,7 @@ const SideBar = () => {
                       </li>
                       <li className="list-disc hover:text-blue-400">
                         {" "}
-                        <a href="#">Patient List</a>
+                        <Link to={'/patientlist'}>Patient List</Link>
                       </li>
                     </ul>
                   </div>
@@ -328,7 +334,7 @@ const SideBar = () => {
                   className="flex justify-between w-[13vw] items-center flex-row"
                   onClick={toggleDoctorsDropdown}
                 >
-                  <div className="flex justify-between items-center">
+                  <div className="flex justify-between gap-4 items-center">
                     <TbDeviceAnalytics className="text-xl" />
                     <a href="#" className="hover:text-blue-400">
                       {" "}
@@ -342,25 +348,48 @@ const SideBar = () => {
                     <ul className="space-y-4">
                       <li className="list-disc hover:text-blue-400">
                         {" "}
-                        <a href="#">Doctor Item 1</a>
+                        <a href="#">New Doctor</a>
                       </li>
                       <li className="list-disc hover:text-blue-400">
                         {" "}
-                        <a href="#">Doctor Item 2</a>
+                        <a href="#">Doctor List</a>
+                      </li>
+                    </ul>
+                  </div>
+                )}
+              </div>
+              
+              <div>
+                <div
+                  className="flex justify-between gap-4 w-[13vw] items-center"
+                  onClick={toggleNurseDropdown}
+                >
+                  <div className="flex justify-between gap-4 items-center">
+                    <IoIosSwitch className="text-xl" />
+                    <a href="#" className="hover:text-blue-400">
+                      Nurse
+                    </a>
+                  </div>
+                  <RiArrowDropDownLine className="text-xl" />
+                </div>
+
+                {showNurseDropdown && (
+                  <div className="flex flex-col items-center justify-center my-4 text-start">
+                    <ul className="space-y-4">
+                      <li className="list-disc hover:text-blue-400">
+                        {" "}
+                        <a href="#">New Nurse</a>
+                      </li>
+                      <li className="list-disc hover:text-blue-400">
+                        {" "}
+                        <Link to={'/patientlist'}>Nurse List</Link>
                       </li>
                     </ul>
                   </div>
                 )}
               </div>
 
-              <div className="flex justify-between w-20 items-center">
-                <IoIosSwitch className="text-xl" />
-                <a href="#" className="hover:text-blue-400">
-                  Nurse
-                </a>
-              </div>
-
-              <div className="flex justify-between w-28 items-center">
+              <div className="flex gap-4 items-center">
                 <FaUsers className="text-xl" />
                 <a href="#" className="hover:text-blue-400">
                   Other staffs
@@ -370,12 +399,12 @@ const SideBar = () => {
 
             <div className="flex flex-col gap-y-7 mt-8 ">
               <div className="flex flex-col gap-y-7 mt-2">
-                <div className="flex w-20 justify-between">
+                <div className="flex gap-4">
                   <CgMenuLeft className="text-xl" />
                   <a href="#">Billing</a>
                 </div>
 
-                <div className="flex w-24 justify-between ">
+                <div className="flex gap-4 ">
                   <FaHospital className="text-xl" />
                   <a href="#" onClick={forms} className="hover:text-blue-400">
                     Facilities
@@ -383,7 +412,7 @@ const SideBar = () => {
                 </div>
 
                 <div>
-                  <div className="flex w-32 justify-between ">
+                  <div className="flex gap-4 ">
                     <BsCalendarDate className="text-xl" />
                     <a href="#" onClick={apps} className="hover:text-blue-400">
                       Appointments
@@ -392,7 +421,7 @@ const SideBar = () => {
                 </div>
 
                 <div>
-                  <div className="flex w-28 justify-between ">
+                  <div className="flex gap-4 ">
                     <MdAccessibilityNew className="text-2xl" />
                     <a href="#" onClick={auth} className="hover:text-blue-400">
                       Outpatients
@@ -401,7 +430,7 @@ const SideBar = () => {
                 </div>
 
                 <div>
-                  <div className="flex w-28 justify-between ">
+                  <div className="flex gap-4 ">
                     <FaBed className="text-2xl" />
                     <a href="#" onClick={misc} className="hover:text-blue-400">
                       Inpatients
@@ -411,9 +440,9 @@ const SideBar = () => {
               </div>
             </div>
             <div className="pb-10 flex flex-col items-center ">
-              <img src={custom} className="relative top-12" />
-              <div className="w-52 h-36 bg-indigo-300 rounded-2xl pt-16">
-                <h1 className="text-lg text-center">Make an Appointments</h1>
+              <img src={custom} className="relative top-12 w-[120px] " />
+              <div className="p-2 h-36 bg-indigo-300 rounded-2xl pt-16">
+                <h1 className="text-[2vmin] text-center">Make an Appointments</h1>
                 <p className="text-center">Best Health Care here</p>
               </div>
             </div>
