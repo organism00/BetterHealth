@@ -5,8 +5,7 @@ import Sidebar from '../Components/SideBar'
 import Navbar from '../Components/Navbar';
 
 // Icons
-import { RiEdit2Fill } from "react-icons/ri";
-import { RiDeleteBin6Line } from "react-icons/ri";
+import { GoHome } from "react-icons/go";
 import { TbArrowsSort } from "react-icons/tb";
 import { HiOutlineDotsHorizontal } from "react-icons/hi";
 
@@ -44,7 +43,10 @@ function PatientsList() {
 
       <Navbar />
       <div className='mt-20 ml-4 '>
-        <h1 className='text-[1.5vmax] my-4 '>Patients</h1>
+        <div className='flex items-center gap-4'>
+          <h1 className='text-[1.5vmax] my-4 '>Patients</h1>
+          <GoHome/>
+        </div>
 
         <div>
           <TableContainer component={Paper} style={{width: '100%'}}>
