@@ -58,7 +58,7 @@ const NewPatients = () => {
     <>
         <main className="lg:grid lg:grid-cols-[16rem_1fr] z-0">
             <SideBar/>
-                <Navbar/>
+            <Navbar/>
             <main className="col-start-2 h-full w-full md:w-screen lg:w-full px-7 lg:mt-0 md:mt-0">
             <form className='flex flex-col my-24 '>
                 <div className='w-[100%] mb-10 mt-5 h-auto lg:w-full pt-6  pb-14 md:overflow-x-auto overflow-x-auto  shadow-lg border border-stone-200 rounded-2xl mx-auto px-5'>
