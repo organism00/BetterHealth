@@ -8,12 +8,12 @@ import { PiGearFill } from "react-icons/pi";
 const Navbar = () => {
   return (
     <div>
-      <nav className="hidden bg-[whitesmoke] w-[81vw] h-20 fixed top-20 md:top-0  lg:top-0 z-50 px-5 lg:px-10 lg:flex lg:justify-end lg:items-center">
-        {/* <div className="flex justify-between w-72">
-          <button className="w-11 h-11 bg-violet-50 rounded-lg">
-            <IoMenu className="text-2xl mx-auto text-violet-600" />
+      <nav className="hidden bg-[whitesmoke] w-[81vw] h-20 fixed top-20 md:top-0  lg:top-0 z-50 px-5 lg:px-5 lg:flex lg:justify-between lg:items-center">
+        <div className="flex justify-between w-72">
+          <button className="w-11 h-11 bg-primary2 rounded-lg">
+            <IoMenu className="text-2xl mx-auto text-primary" />
           </button>
-          <div className="relative hidden lg:block ">
+          {/* <div className="relative hidden lg:block ">
             <input
               type="text"
               placeholder="Search"
@@ -22,8 +22,8 @@ const Navbar = () => {
             <div className="absolute inset-y-0 right-0 flex items-center pr-2">
               <BsSearch className="text-gray-400" />
             </div>
-          </div>
-        </div> */}
+          </div> */}
+        </div>
 
         <div className="flex w-72 items-center gap-3">
           <div className="flex justify-center flex-col">
