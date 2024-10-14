@@ -24,7 +24,7 @@ const MultiStepForm = () => {
                   </div>
 
                     <div className="my-7 w-full border-[1px] border-stone-100 h-[90%] lg:h-[109vh]  shadow-md rounded-2xl ">
-                      <div className="mb-4 rounded-t-2xl border-b-[1px] h-20 flex flex-col justify-center p-6">
+                      <div className="mb-4 rounded-t-2xl border-b-[1px] h-20 flex flex-col justify-center p-6 space-y-2">
                         <h1 className="text-xl ">Client Registration</h1>
                         <a href="#" className="font-thin text-sm">You can find the official website</a>
                       </div>  
@@ -35,7 +35,7 @@ const MultiStepForm = () => {
                         <div className="w-full mx-auto mt-5 p-4">
                           <form>
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                              <input className="border p-2 w-full" type="text" placeholder="First Name" required />
+                              <input className="border p-2 w-full " type="text" placeholder="First Name" required />
                               <input className="border p-2 w-full" type="text" placeholder="Last Name" required />
                               <input className="border p-2 w-full" type="email" placeholder="Email Address" required />
                               <input className="border p-2 w-full" type="text" placeholder="Phone number" required />
