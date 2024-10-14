@@ -352,11 +352,11 @@ const SideBar = () => {
                     <ul className="space-y-4">
                       <li className="list-disc hover:text-blue-400">
                         {" "}
-                        <a href="#">New Doctor</a>
+                        <a href="#" >New Doctor</a>
                       </li>
                       <li className="list-disc hover:text-blue-400">
                         {" "}
-                        <a href="#">Doctor List</a>
+                        <Link to={'/doctorlist'}>Doctor List</Link>
                       </li>
                     </ul>
                   </div>

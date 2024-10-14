@@ -6,7 +6,8 @@ import AdminStaff from './Pages/AdminStaff'
 import Doctor from './Pages/Doctor'
 import Nurse from './Pages/Nurse'
 import Staff from './Pages/Staff'
-import PatientsList from './Pages/PatientsList'
+import PatientsList from './Pages/PatientsList';
+import DoctorList from './Pages/DoctorList'
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
         <Route path="/adminstaff" element={<AdminStaff />} />
         <Route path="/nurse" element={<Nurse />} />
         <Route path="/patientlist" element={<PatientsList />} />
+        <Route path="/doctorlist" element={<DoctorList />} />
         <Route path="/" element={<Staff />} />
 
         <Route path="/admindashboard" element={<AdminDashboard />} />
