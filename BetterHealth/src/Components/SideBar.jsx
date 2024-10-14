@@ -324,6 +324,10 @@ const SideBar = () => {
                         {" "}
                         <Link to={'/patientlist'}>Patient List</Link>
                       </li>
+                      <li className="list-disc hover:text-blue-400">
+                        {" "}
+                        <Link to={'/patientlist'}>Insurance</Link>
+                      </li>
                     </ul>
                   </div>
                 )}
