@@ -317,8 +317,7 @@ const SideBar = () => {
                   <div className="flex flex-col items-center justify-center my-4 text-start">
                     <ul className="space-y-4">
                       <li className="list-disc hover:text-blue-400">
-                        {" "}
-                        <a href="#">New Patient</a>
+                        <Link to={"/newpatient"}>New Patient </Link>
                       </li>
                       <li className="list-disc hover:text-blue-400">
                         {" "}
