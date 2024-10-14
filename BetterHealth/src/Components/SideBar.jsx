@@ -386,7 +386,7 @@ const SideBar = () => {
                       </li>
                       <li className="list-disc hover:text-blue-400">
                         {" "}
-                        <Link to={'/patientlist'}>Nurse List</Link>
+                        <Link to={'/nurselist'}>Nurse List</Link>
                       </li>
                     </ul>
                   </div>
