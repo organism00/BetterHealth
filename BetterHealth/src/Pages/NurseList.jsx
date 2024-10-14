@@ -1,10 +1,10 @@
 import React from 'react';
 import SideBar from '../Components/SideBar';
 import Navbar from '../Components/Navbar';
-import { doctorsList } from '../Components/DoctorsData'
+import { nurseList } from '../Components/NurseData';
 import { GoHome } from "react-icons/go";
 
-const DoctorList = () => {
+const NurseList = () => {
   return (
    <div className="flex flex-col gap-0 lg:flex-row py-4 md:px-0 ">
         <SideBar/>
@@ -14,10 +14,10 @@ const DoctorList = () => {
             <section className='mt-28 lg:mx-10 my-10 grid justify-center '>
                 <div className='flex justify-between'>
                     <div className='flex gap-x-5 px-5 lg:px-0 md:px-8 md:ml-64 lg:ml-0'>
-                        <h1 className="text-2xl">Doctors</h1>
+                        <h1 className="text-2xl">Nurse</h1>
                         <div className="flex gap-2 items-center">
                             <GoHome/>
-                            <p className="font-thin"> - Doctors</p>
+                            <p className="font-thin"> - Nurse</p>
                         </div>
                     </div>
                     <div className='flex gap-2'>
@@ -28,7 +28,7 @@ const DoctorList = () => {
 
                 <div className='py-5 md:ml-72 lg:ml-0 gap-x-10 grid grid-cols-1 lg:grid-cols-3 gap-y-10 '>
 
-                    {doctorsList.map(doctor => {
+                    {nurseList.map(doctor => {
                         return(
                             <div key={doctor.id} className='w-[250px] overflow-hidden shadow-2xl border border-stone-100 rounded-lg bg-white'>
                                 <div className='flex justify-center flex-col items-center h-[200px] w-[100%] '>
@@ -49,4 +49,4 @@ const DoctorList = () => {
   )
 }
  
-export default DoctorList
+export default NurseList
