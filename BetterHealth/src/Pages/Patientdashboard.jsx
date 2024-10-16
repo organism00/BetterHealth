@@ -11,11 +11,11 @@ const Patientdashboard = () => {
       </button> */}
 
     
-        <div className='lg:hidden bg-[whitesmoke] w-[100vw] h-[100vh] flex flex-col items-center justify-evenly space-y-4  '>
+        <div className='lg:hidden bg-[whitesmoke] w-auto overflow-auto h-auto flex flex-col items-center justify-evenly space-y-4  '>
             <div className='bg-white w-[90vw] h-[22vh] shadow-md rounded-xl flex flex-col px-3 py-2 justify-evenly'>
                 <div className='flex justify-between '>
                     <h1>Blood Pre..</h1>
-                    <img src="src/assets/Images/heartbeat.png" alt="" className='w-[5vw] h-[4vh]' />
+                    <img src="src/assets/Images/heartbeat.png" alt="" className='w-[5vw] h-[3vh]' />
                 </div>
                 <div className='flex justify-between'>
                     <h1>75</h1>
@@ -68,19 +68,59 @@ const Patientdashboard = () => {
 
             <div className='bg-white w-[90vw] h-[22vh] shadow-md rounded-xl px-3 py-2 flex flex-col  '>
                 <div className='flex flex-row justify-between'>
-                <h1><img src="src/assets/Images/doctor.png" alt="" className='w-8 h-6 mt-6 '/></h1>
-                <div>
-                    <h1>Johen Mark</h1>
-                </div>
-
+                        <h1><img src="src/assets/Images/doctor.png" alt="" className='w-8 h-6 mt-6 '/></h1>
+                    <div className='py-6 px-1'>
+                        <h1 className='text-[20px] text-blue-600 font-semibold'>Johen Mark</h1> 
+                        <h1 className='float-end px-2 '>My Doctor</h1>    
+                    </div>
                 </div>
 
             </div>
+           
+            <div className='bg-white w-[90vw] h-[22vh] shadow-md rounded-xl flex flex-col py-5 space-y-4 '>
+                <div className='px-4'>
+                    <h1>Heart ECG</h1>
+                </div>
 
-            <div className='bg-white w-[90vw] h-[22vh] shadow-md rounded-xl flex flex-col '>
-                <h1>bhbib</h1>
+
+             
+                <div className='flex flex-row justify-between px-3 '>
+                    <div>
+                     <select className='text-black text-[18px] w-36  h-6' name="">
+                      <option value="">1 to 10 Jan'21</option>
+                      <option value="">11 to 31 Jan '21</option>
+                      <option value="">1 to 15 Feb '21</option>
+                      <option value="">16 t0 18 Feb '21</option>
+
+                     </select>
+                        
+                    </div>  
+
+
+                    <div className='w-[40vw] h-[12vw] bg-blue-50 mt-[-15px] px-3 rounded-md flex justify-between leading-10'>
+                        <h1 className='text-blue-600 font-thin'>72 bmp  </h1> 
+                        <h1 className=''>Average</h1>
+
+                    </div>
+
+                </div>
+
+          
 
             </div>
+
+            <div className='bg-white w-[90vw] h-[45vh] shadow-md rounded-xl flex flex-col py-5 space-y-4 '>
+                <div className='mt-36 w-auto h-[1px] bg-slate-300'></div>
+                <h1></h1>
+
+            </div>
+             <div className='bg-white w-[90vw] h-[22vh] shadow-md rounded-xl flex flex-col py-5 space-y-4 '>
+
+            </div>
+             <div className='bg-white w-[90vw] h-[22vh] shadow-md rounded-xl flex flex-col py-5 space-y-4 '>
+
+            </div>
+          
 
 
 
