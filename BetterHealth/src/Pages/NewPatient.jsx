@@ -63,7 +63,7 @@ const NewPatients = () => {
             <form className='flex flex-col my-24 '>
                 <div className='w-[100%] mb-10 mt-5 h-auto lg:w-full pt-6  pb-14 md:overflow-x-auto overflow-x-auto  shadow-lg border border-stone-200 rounded-2xl mx-auto px-5'>
                     {/* <div className='bg-violet-500 my-6 lg:w-1/4 p-2 rounded-xl place-self-end col-span-2 w-44 text-2xl'> */}
-                        <h1 className='text-2xl my-6'>Personal Information</h1>
+                        <h1 className='text-2xl my-6'>Patient's Information</h1>
                     {/* </div> */}
                     <form className='lg:grid lg:grid-cols-2  lg:gap-x-12 lg:gap-y-6 flex flex-col gap-y-7 md:grid grid-cols-2 gap-x-2' > 
                         <input type="text" placeholder='First Name' className='border border-stone-500 p-2 rounded-md outline-violet-500' required/>

@@ -17,6 +17,7 @@ import { FaBed } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import menuImage from "../assets/Images/menu (2).png"
 import "../Style/customScrollbar.css";
+import NewNurse from "../Pages/NewNurse";
 
 
 
@@ -351,7 +352,8 @@ const SideBar = () => {
                     <ul className="space-y-4">
                       <li className="list-disc hover:text-blue-400">
                         {" "}
-                        <a href="#" >New Doctor</a>
+                        <Link to={"/newdoctor"}>New Doctor</Link>
+                        {/* <a href="#" >New Doctor</a> */}
                       </li>
                       <li className="list-disc hover:text-blue-400">
                         {" "}
@@ -380,8 +382,7 @@ const SideBar = () => {
                   <div className="flex flex-col items-center justify-center my-4 text-start">
                     <ul className="space-y-4">
                       <li className="list-disc hover:text-blue-400">
-                        {" "}
-                        <a href="#">New Nurse</a>
+                         <Link to={'/newnurse'}>New Nurse</Link>
                       </li>
                       <li className="list-disc hover:text-blue-400">
                         {" "}

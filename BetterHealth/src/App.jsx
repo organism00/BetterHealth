@@ -10,6 +10,8 @@ import PatientsList from './Pages/PatientsList';
 import DoctorList from './Pages/DoctorList'
 import NurseList from './Pages/NurseList'
 import NewPatients from './Pages/NewPatient'
+import NewDoctor from './Pages/NewDoctor'
+import NewNurse from './Pages/NewNurse'
 
 const App = () => {
   return (
@@ -24,7 +26,8 @@ const App = () => {
         <Route path="/nurselist" element={<NurseList />} />
         <Route path="/" element={<Staff />} />
         <Route path={"/newpatient"} element={<NewPatients/>}></Route>
-
+        <Route path={"newdoctor"} element={<NewDoctor/>}></Route>
+        <Route path={"newnurse"} element={<NewNurse/>}></Route>
         <Route path="/admindashboard" element={<AdminDashboard />} />
       </Routes>
     </>
