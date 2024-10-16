@@ -1,59 +1,9 @@
-import React, {useState} from 'react'
+import React from 'react'
 import Navbar from '../Components/Navbar'
 import SideBar from '../Components/SideBar'
 
 const NewPatients = () => {
-    // const [step, setStep] = useState(1); // Tracks the current step
-    // const [isSubmitted, setIsSubmitted] = useState(false); // Tracks if the form is submitted
-
-    // // Function to handle moving to the next step
-    // const nextStep = () => {
-    //     setStep((prevStep) => (prevStep < 3 ? prevStep + 1 : prevStep));
-    // };
-
-    // // Function to handle moving to the previous step
-    // const prevStep = () => {
-    //     setStep((prevStep) => (prevStep > 1 ? prevStep - 1 : prevStep));
-    // };
-    // const renderStepInputs = () => {
-    //     switch (step) {
-    //       case 1:
-    //         return <div>
-                
-    //         </div>;
-    //       case 2:
-    //         return <div>
-    //             <form action="" className='lg:grid lg:grid-cols-2 lg:gap-x-12 lg:gap-y-6 flex flex-col gap-y-7 md:grid grid-cols-2 gap-x-2'>
-    //                 <input type="text" placeholder='Name' className='border border-stone-500 p-2 rounded-lg outline-violet-500' />
-    //                 <input type="text" placeholder='Relationship to patient' className='border border-stone-500 p-2 rounded-lg  outline-violet-500 ' />
-    //                 <input type="text" placeholder='Phone number' className='border border-stone-500 p-2 rounded-lg  outline-violet-500 ' />
-    //                 <input type="text" placeholder='Email Address' className='border border-stone-500 p-2 rounded-lg  outline-violet-500 ' />
-    //                 <input type="email" placeholder='Address' className='border border-stone-500 p-2 rounded-lg  outline-violet-500 ' />
-                    
-    //             </form>
-    //         </div>;
-    //       case 3:
-    //         return <input className="border p-2 w-full" type="password" placeholder="Create a password" />;
-    //       case 4:
-    //         return <input className="border p-2 w-full" type="text" placeholder="Enter your phone number" />;
-    //       default:
-    //         return null;
-    //     }
-    //   };
-    //   const renderProgress = () => {
-    //     const progressSteps = ["Personal Information", "Contact", "Insurance"]; // Simple array of strings
-      
-    //     return (
-    //       <div className="flex justify-between mb-4">
-    //         {progressSteps.map((stepName, index) => (
-    //           <div key={index} className={`h-10 w-1/4 rounded transition duration-300 text-white flex items-center justify-center ${step > index ? "bg-green-900" : "bg-gray-300"}`}>
-    //             <p>{stepName}</p>
-    //           </div>
-    //         ))}
-    //       </div>
-    //     );
-    //   };
-
+   
   return (
     <>
         <main className="lg:grid lg:grid-cols-[16rem_1fr] z-0">
