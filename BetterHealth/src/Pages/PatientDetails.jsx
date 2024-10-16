@@ -52,7 +52,7 @@ function PatientDetails() {
               <div>
                 <p>Name</p>
                 <p>Physician</p>
-                <div className='flex'>
+                <div className='flex gap-1'>
                   <FaStar/>
                   <FaStar/>
                   <FaStar/>
