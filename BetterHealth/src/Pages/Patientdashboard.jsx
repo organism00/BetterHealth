@@ -41,12 +41,28 @@ const Patientdashboard = () => {
                 <h1>
                     Fever History
                 </h1>
-                <select className='text-red-500' name="1 to 10 Jan'21">
-                    <option className='text-red-400' value="11 to 31 '21"></option>
-                    <option value="1 to 15 Feb '21"></option>
-                    <option value="16 t0 18 Feb '21"></option>
+                <select className='text-black w-32  h-5' name="">
+                    <option value="">1 to 10 Jan'21</option>
+                    <option value="">11 to 31 Jan '21</option>
+                    <option value="">1 to 15 Feb '21</option>
+                    <option value="">16 t0 18 Feb '21</option>
 
                 </select>
+                <div className='flex flex-row justify-between'>
+                    
+                    <div className='flex  text-red-600 '>
+                        <h1 className='text-[24px] font-semibold'>
+                             99
+                        </h1>
+                        <h1 className='text-[12px]  leading-6 font-bold '>+12%</h1>
+
+                    </div>
+
+                    <div>
+
+                    <h1>Yesterday</h1>
+                    </div>
+                </div>
 
             </div>
 
