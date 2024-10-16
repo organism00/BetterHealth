@@ -11,8 +11,8 @@ const Patientdashboard = () => {
       </button> */}
 
     
-        <div className='lg:hidden bg-[whitesmoke] w-[100vw] h-[100vh] flex flex-col items-center justify-evenly gap-3  '>
-            <div className='bg-white w-[80vw] h-[22vh] shadow-md rounded-xl flex flex-col px-3 py-2 justify-evenly'>
+        <div className='lg:hidden bg-[whitesmoke] w-[100vw] h-[100vh] flex flex-col items-center justify-evenly space-y-4  '>
+            <div className='bg-white w-[90vw] h-[22vh] shadow-md rounded-xl flex flex-col px-3 py-2 justify-evenly'>
                 <div className='flex justify-between '>
                     <h1>Blood Pre..</h1>
                     <img src="src/assets/Images/heartbeat.png" alt="" className='w-[5vw] h-[4vh]' />
@@ -27,7 +27,7 @@ const Patientdashboard = () => {
                 </div>
             </div>
 
-            <div className='bg-white w-[80vw] h-[22vh] shadow-md rounded-xl flex flex-col px-3 py-2 justify-evenly'>
+            <div className='bg-white w-[90vw] h-[22vh] shadow-md rounded-xl flex flex-col px-3 py-2 justify-evenly'>
                 <div>
                     <h1>Bill Due</h1>
                     <img src="" alt="" />
@@ -37,7 +37,7 @@ const Patientdashboard = () => {
                 </div>
             </div>
 
-            <div className='bg-white w-[80vw] h-[22vh] shadow-md rounded-xl flex flex-col  px-3 py-2 justify-evenly'>
+            <div className='bg-white w-[90vw] h-[22vh] shadow-md rounded-xl flex flex-col  px-3 py-2 justify-evenly'>
                 <h1>
                     Fever History
                 </h1>
@@ -66,12 +66,18 @@ const Patientdashboard = () => {
 
             </div>
 
-            <div className='bg-white w-[80vw] h-[22vh] shadow-md rounded-xl flex flex-col '>
-                <h1>bhbib</h1>
+            <div className='bg-white w-[90vw] h-[22vh] shadow-md rounded-xl px-3 py-2 flex flex-col  '>
+                <div className='flex flex-row justify-between'>
+                <h1><img src="src/assets/Images/doctor.png" alt="" className='w-8 h-6 mt-6 '/></h1>
+                <div>
+                    <h1>Johen Mark</h1>
+                </div>
+
+                </div>
 
             </div>
 
-            <div className='bg-white w-[80vw] h-[22vh] shadow-md rounded-xl flex flex-col '>
+            <div className='bg-white w-[90vw] h-[22vh] shadow-md rounded-xl flex flex-col '>
                 <h1>bhbib</h1>
 
             </div>
