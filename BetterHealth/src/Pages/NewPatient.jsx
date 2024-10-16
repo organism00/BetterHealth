@@ -12,9 +12,7 @@ const NewPatients = () => {
             <main className="col-start-2 h-full w-full md:w-screen lg:w-full px-7 lg:mt-0 md:mt-0">
             <form className='flex flex-col my-24 '>
                 <div className='w-[100%] mb-10 mt-5 h-auto lg:w-full pt-6  pb-14 md:overflow-x-auto overflow-x-auto  shadow-lg border border-stone-200 rounded-2xl mx-auto px-5'>
-                    {/* <div className='bg-violet-500 my-6 lg:w-1/4 p-2 rounded-xl place-self-end col-span-2 w-44 text-2xl'> */}
-                        <h1 className='text-2xl my-6'>Patient's Information</h1>
-                    {/* </div> */}
+                    <h1 className='text-2xl my-6'>Patient's Information</h1>
                     <form className='lg:grid lg:grid-cols-2  lg:gap-x-12 lg:gap-y-6 flex flex-col gap-y-7 md:grid grid-cols-2 gap-x-2' > 
                         <input type="text" placeholder='First Name' className='border border-stone-500 p-2 rounded-md outline-violet-500' required/>
                         <input type="text" placeholder='Last Name' className='border border-stone-500 p-2 rounded-md  outline-violet-500 ' />
@@ -48,13 +46,10 @@ const NewPatients = () => {
                             <option value="Female">No</option>
                         </select>
                         <input type='file' accept="image/*" title="Image" className='flex flex-col border border-stone-500 p-2 rounded-md  outline-violet-500 ' />
-                        {/* <button className='bg-violet-500 lg:w-1/4 p-2 rounded-xl place-self-end col-span-2 w-44'> Add patient</button> */}
                     </form>
                 </div>
                 <div className='w-[100%] mb-10 mt-5 h-auto pt-6  pb-14 md:overflow-x-auto overflow-x-auto md:w-full shadow-lg border border-stone-200 rounded-2xl mx-auto px-5'>
-                    {/* <div className='bg-violet-500 my-6 lg:w-1/4 p-2 rounded-xl place-self-end col-span-2 w-44 text-2xl'> */}
-                        <h1  className='text-2xl my-6'> Contact</h1>
-                    {/* </div> */}
+                    <h1  className='text-2xl my-6'> Contact</h1>
                     <form className='lg:grid lg:grid-cols-2 lg:gap-x-12 lg:gap-y-6 flex flex-col gap-y-7 md:grid grid-cols-2 gap-x-2'>
                         <input type="text" placeholder='First Name' className='border border-stone-500 p-2 rounded-md outline-violet-500' />
                         <input type="text" placeholder='Last Name' className='border border-stone-500 p-2 rounded-md  outline-violet-500 ' />
@@ -65,9 +60,7 @@ const NewPatients = () => {
                     </form>
                 </div>
                 <div className='w-[100%] mb-10 mt-5 h-auto  pt-6  pb-14 md:overflow-x-auto overflow-x-auto md:w-full shadow-lg border border-stone-200 rounded-2xl mx-auto px-5'>
-                    {/* <div className='bg-violet-500 my-6 lg:w-1/4 p-2 rounded-xl place-self-end col-span-2 w-44 text-2xl'> */}
-                        <h1  className='text-2xl my-6'> Insurance</h1>
-                    {/* </div> */}
+                    <h1  className='text-2xl my-6'> Insurance</h1>
                     <form className='lg:grid lg:grid-cols-2 lg:gap-x-12 lg:gap-y-6 flex flex-col gap-y-7 md:grid grid-cols-2 gap-x-2'>
                         <input type="text" placeholder='Insurance Provider Name' className='border border-stone-500 p-2 rounded-md outline-violet-500' />
                         <input type="text" placeholder='Insurance Policy Number' className='border border-stone-500 p-2 rounded-md  outline-violet-500 ' />
@@ -75,13 +68,10 @@ const NewPatients = () => {
                         <input type="text" placeholder='Provide Contact Information' className='border border-stone-500 p-2 rounded-md  outline-violet-500 ' required/>
                     </form>
                 </div>
-                <button className='bg-violet-500 lg:w-1/4 p-4 text-white rounded-md self-end text-xl'> Add patient</button>
+                <button className='bg-violet-500 w-60 lg:w-1/4 p-4 text-white rounded-md self-end text-xl'> Add patient</button>
             </form>
             </main>
-            
-            
         </main>
-       
     </>
   )
 }

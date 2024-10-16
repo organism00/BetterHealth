@@ -30,7 +30,7 @@ const NewDoctor = () => {
                             <input type="date" title='Joining Date'  className='border border-stone-500 p-2 rounded-md  outline-violet-500 ' />
                             <input type="date" title="Enter your age" placeholder='Age' className='border border-stone-500 p-2 rounded-md  outline-violet-500 ' />
                             <input type='file' accept="image/*" title="Image" className='flex flex-col border border-stone-500 p-2 rounded-md  outline-violet-500 ' />
-                            <button className='bg-violet-500 lg:w-1/4 p-3 hover:bg-violet-600 text-white rounded-md place-self-end text-xl col-span-2 '> Submit</button> 
+                            <button className='bg-violet-500 w-60 lg:w-1/4 p-3 hover:bg-violet-600 text-white rounded-md place-self-end text-xl col-span-2 '> Submit</button> 
                         </form>
                     </div> 
                 </form>
