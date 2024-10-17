@@ -11,7 +11,7 @@ const Patientdashboard = () => {
       </button> */}
 
     
-        <div className='lg:hidden bg-[whitesmoke] w-auto overflow-auto h-auto flex flex-col items-center justify-evenly space-y-4  '>
+        <div className='lg:hidden bg-[whitesmoke] w-auto h-auto flex flex-col items-center justify-evenly space-y-4  '>
             <div className='bg-white w-[90vw] h-[22vh] shadow-md rounded-xl flex flex-col px-3 py-2 justify-evenly'>
                 <div className='flex justify-between '>
                     <h1>Blood Pre..</h1>
@@ -109,17 +109,63 @@ const Patientdashboard = () => {
 
             </div>
 
-            <div className='bg-white w-[90vw] h-[45vh] shadow-md rounded-xl flex flex-col py-5 space-y-4 '>
-                <div className='mt-36 w-auto h-[1px] bg-slate-300'></div>
-                <h1></h1>
+            <div className=' bg-white w-[90vw] h-[57vh] shadow-md rounded-xl '>
+                <div className='flex flex-col py-8 space-y-4 place-items-center '>
+                    <img src="src/assets/Images/user (1).png" alt="" className='w-[14vw] h-[8vh] place-items-center'/>
+                    <h1 className='text-[24px]'>Dr. Poul doe</h1>
+                    <h1 className='text-[17px] font-thin '>Heart Specialist</h1>
+                </div>
+               
+                <div className=' w-[90vw] h-[1px]  bg-slate-300'></div>
+                
+                <div className=' flex flex-row px-5 py-8 gap-8'>
+                    <div className=' flex gap-3'>
+                        <img src="src/assets/Images/surgery-room.png" alt="" className='w-[13vw] h-[7vh]'/>
+                        <div className='flex flex-col  '>
+                            <h1 className='text-3xl'>10</h1>
+                            <h1>Operation</h1>
+                        </div>
+                    </div>
+                    <div className='w-[1px] h-[10vh] bg-slate-300'></div>
+                    <div  className='flex gap-3'>
+                        <img src="src/assets/Images/patient.png" alt=""  className='w-[11vw] h-[7vh]'/>
+                        <div className=' flex flex-col'>
+                            <h1 className='text-3xl'>47</h1>
+                            <h1>Patients</h1>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div className=' flex flew-row justify-center  '>
+                    <button className='w-[80vw] h-[7vh] rounded-lg shadow-md bg-indigo-200  justify-between'>
+                        <div className='flex justify-center'>
+                            <img src="src/assets/Images/message (1).png" alt="" className='w-[4vw] h-[2vh] my-2 '/>
+                        <div className='px-2 text-indigo-400 text-2xl'>
+                             <h1>Messages</h1>
+                        </div>
+                        </div>
+                    </button>
+
+                </div>
+
+                
+               {/* <div className='w-[80vw] h-[7vh] rounded-lg bg-indigo-200 mx-5 '>
+                <div className='flex justify-center py-3 '>
+                <img src="src/assets/Images/message (1).png" alt="" className='w-[8vw] h-[4vh] '/>
+                Messages
+
+                </div>
+
+               </div> */}
+
+            </div>
+             {/* <div className='bg-white w-[90vw] h-[22vh] shadow-md rounded-xl flex flex-col py-5 space-y-4 '>
 
             </div>
              <div className='bg-white w-[90vw] h-[22vh] shadow-md rounded-xl flex flex-col py-5 space-y-4 '>
 
-            </div>
-             <div className='bg-white w-[90vw] h-[22vh] shadow-md rounded-xl flex flex-col py-5 space-y-4 '>
-
-            </div>
+            </div> */}
           
 
 
