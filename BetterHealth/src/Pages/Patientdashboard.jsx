@@ -211,26 +211,217 @@ const Patientdashboard = () => {
             </div> 
             <div className='bg-white w-[90vw] h-[22vh] shadow-md rounded-xl  px-4 py-4 '>
                 <div className=''>
-                    <img src="src/assets/Images/blood.png" alt="" className='w-[2vw] h-[2vh] ml-3' />
+                    <img src="src/assets/Images/blood.png" alt="" className='w-[2vw] h-[2vh] ml-2' />
                 </div>
-                <div className='w-[20vw] h-[10vh] bg-red-400 rounded-full flex  '>
+                <div className='w-[14vw] h-[7vh] bg-indigo-500 rounded-full  '>
                     <div className='pt-2'>
-                    <img src="src/assets/Images/record-button.png" alt="" className='w-[2vw] h-[1vh] ml-3   '/>
-                    <img src="src/assets/Images/hand.png" alt="" className='w-[14vw] h-[7vh]'/>
+                    <img src="src/assets/Images/record-button.png" alt="" className='w-[2vw] h-[1vh] ml-2   '/>
+                    <img src="src/assets/Images/hand.png" alt="" className='w-[8vw] h-[4vh]'/>
                     </div>
 
-                    <div className='ml-1'> 
-                        <img src="src/assets/Images/blood-sugar-monitor.png" alt="" className='w-[12vw] h-[9vh]' />
-                  
-
+                    <div className='mt-[-39px] ml-6  z-10'> 
+                        <img src="src/assets/Images/blood-sugar-monitor.png" alt="" className='w-[13vw] h-[5vh]' />
                     </div>
+                </div>
+                <div className='py-2 text-blue-600'>
+                <h1 className=' text-[19px] font-sans'>Glucose Level </h1>
+                <h1 className='text-2xl'> 85-89</h1>
+                </div>
+            </div>
 
+            <div className='bg-white w-[90vw] h-[22vh] shadow-md rounded-xl flex flex-col py-6 px-5 '>
+                <div>
+                    <img src="src/assets/Images/blood-test.png" alt="" className='w-[12vw] h-[6vh]' />
+                </div>
+                <div className='py-2 text-blue-600'>
+                <h1 className='text-[19px] font-sans'> Blood Count  </h1>
+                <h1 className='text-2xl'>9.456/ml</h1>
+                </div>
+            </div>
+
+            <div className='bg-white w-[90vw] h-[19vh] shadow-md rounded-xl  flex py-9 px-5 gap-3'>
+                <div className='py-1'>
+                    <img src="src/assets/Images/doctor f.jpeg" alt="" className='w-[16vw] h-[8vh] rounded-full' />
+                </div>
+                <div className='flex flex-col text-blue-600'>
+                    <h1 className='text-3xl'>Dr. Kevin Black</h1>
+                    <h1 className='text-[20px]'>Cardiologists</h1>
+                </div>
+            </div>  
+            <div className='py-2 float-left mr-32 text-xl'>
+                <h1>Scheduled Appointments</h1>
+            </div>
+
+            <div className='bg-white w-[90vw] h-[45vh] shadow-md rounded-xl flex flex-col  '>
+                <div className='py-5 px-5 gap-3'>
+                <div className='w-[30vw] h-[3vh] bg-green-100 rounded-lg'>
+                    <h1 className='text-[13px] px-1 text-green-700'>Routine Checkup</h1>
+                </div>
+                <div className='py-3'>
+                    <h1 className='text-xl'>Meculam Deo - Standard Consult</h1>
+                </div>
+                <div className='flex gap-6'>
+                    <h1 className='text-gray-400 text-[16px]'>09:15am - 10:45am</h1>
+                    <div className='flex py-1 gap-3'>
+                        <img src="src/assets/Images/clock (1).png" alt="" className='w-[4vw] h-[2vh]' />
+                        <h1 className='mt-[-2px] text-[14px] text-blue-400'>Starts in 15m</h1>
+                    </div>
 
                 </div>
+                </div>
+
+                <div>
+                     <div className='w-[90vw] h-[1px] bg-gray-300'></div>
+                </div>
+
+                <div className=' flex gap-9'>
+                    <div className='flex py-6 px-4 gap-2'>
+                         <div className=''>
+                             <img src="src/assets/Images/doctor M.jpeg" alt="" className='w-[16vw] h-[8vh] rounded-full' />
+                        </div>
+                        <div className=''>
+                           <h1 className='text-[20px] text-blue-500'>Dr. Meculam</h1>
+                           <h1 className='text-[13px]'>+1 142 536 7890</h1>
+                       </div>
+                       
+                    </div>
+                    <div className='flex py-8'>
+                        <div className=' mt-[-3px]'>
+                          <img src="src/assets/Images/dot.png" alt="" className='w-[14vw] h-[7vh]' />
+                        </div>
+                        <h1 className='py-3 ml-[-8px] text-blue-500 text-[14px] '>Billed</h1>
+                    </div>
+                </div> 
+
+                <div>
+                    <div className='w-[90vw] h-[1px] bg-gray-300'></div>
+                </div> 
+
+                <div className='flex justify-end px-3 py-6 '>
+                     <button className='w-[40vw] h-[5vh] bg-gray-200 rounded-lg px-2 py-2 '>          
+                       <img src="src/assets/Images/pen.png" alt="" className='w-[4vw]'/>                   
+                       <h1 className='mt-[-20px] text-[13px] '>Edit Consult</h1>              
+                     </button>
+
+                </div>
+               
+                
+            </div>
+
+            <div className='bg-white w-[90vw] h-[45vh] shadow-md rounded-xl flex flex-col  '>
+                <div className='py-5 px-5 gap-3'>
+                <div className='w-[22vw] h-[3vh] bg-red-100 rounded-lg px-1'>
+                    <h1 className='text-[13px] px-1 text-red-700'>Emergency</h1>
+                </div>
+                <div className='py-3'>
+                    <h1 className='text-xl'>Maical Deo - Premium Consult</h1>
+                </div>
+                <div className='flex gap-6'>
+                    <h1 className='text-gray-400 text-[16px]'>09:15am - 10:45am</h1>
+                    <div className='flex py-1 gap-3'>
+                        <img src="src/assets/Images/clock (1).png" alt="" className='w-[4vw] h-[2vh]' />
+                        <h1 className='mt-[-2px] text-[14px] text-blue-400'>Starts in 15m</h1>
+                    </div>
+
+                </div>
+                </div>
+
+                <div>
+                     <div className='w-[90vw] h-[1px] bg-gray-300'></div>
+                </div>
+
+                <div className=' flex '>
+                    <div className='flex py-6 px-4 gap-2'>
+                         <div className=''>
+                             <img src="src/assets/Images/doctor M.jpeg" alt="" className='w-[16vw] h-[8vh] rounded-full' />
+                        </div>
+                        <div className=''>
+                           <h1 className='text-[20px] text-blue-500'>Dr. Maical Deo</h1>
+                           <h1 className='text-[13px]'>+1 421 563 7458</h1>
+                       </div>
+                       
+                    </div>
+                    <div className='flex py-8'>
+                        <div className=' mt-[-3px]'>
+                          <img src="src/assets/Images/dot.png" alt="" className='w-[14vw] h-[7vh]' />
+                        </div>
+                        <h1 className='py-3 ml-[-8px] text-blue-500 text-[14px] whitespace-nowrap'>Bulk Billed</h1>
+                    </div>
+                </div> 
+
+                <div>
+                    <div className='w-[90vw] h-[1px] bg-gray-300'></div>
+                </div> 
+
+                <div className='flex justify-end px-3 py-6 '>
+                     <button className='w-[40vw] h-[5vh] bg-gray-200 rounded-lg px-2 py-2 '>          
+                       <img src="src/assets/Images/pen.png" alt="" className='w-[4vw]'/>                   
+                       <h1 className='mt-[-20px] text-[13px] '>Edit Consult</h1>              
+                     </button>
+
+                </div>
+               
+                
+            </div>
 
 
+            <div className='bg-white w-[90vw] h-[45vh] shadow-md rounded-xl flex flex-col  '>
+                <div className='py-5 px-5 gap-3'>
+                <div className='w-[22vw] h-[3vh] bg-red-100 rounded-lg px-1'>
+                    <h1 className='text-[13px] px-1 text-red-700'>Emergency</h1>
+                </div>
+                <div className='py-3'>
+                    <h1 className='text-xl'>Jilmil Deo - Neuro Consult</h1>
+                </div>
+                <div className='flex gap-6'>
+                    <h1 className='text-gray-400 text-[16px]'>09:15am - 10:45am</h1>
+                    <div className='flex py-1 gap-3'>
+                        <img src="src/assets/Images/clock (1).png" alt="" className='w-[4vw] h-[2vh]' />
+                        <h1 className='mt-[-2px] text-[14px] text-blue-400'>Starts in 15m</h1>
+                    </div>
 
-            </div>  
+                </div>
+                </div>
+
+                <div>
+                     <div className='w-[90vw] h-[1px] bg-gray-300'></div>
+                </div>
+
+                <div className=' flex '>
+                    <div className='flex py-6 px-4 gap-2'>
+                         <div className=''>
+                             <img src="src/assets/Images/doctor M.jpeg" alt="" className='w-[16vw] h-[8vh] rounded-full' />
+                        </div>
+                        <div className=''>
+                           <h1 className='text-[20px] text-blue-500'>Dr. Maical Deo</h1>
+                           <h1 className='text-[13px]'>+1 125 412 0215</h1>
+                       </div>
+                       
+                    </div>
+                    <div className='flex py-8'>
+                        <div className=' mt-[-3px]'>
+                          <img src="src/assets/Images/dot.png" alt="" className='w-[14vw] h-[7vh]' />
+                        </div>
+                        <h1 className='py-3 ml-[-8px] text-blue-500 text-[14px] whitespace-nowrap'>Bulk Billed</h1>
+                    </div>
+                </div> 
+
+                <div>
+                    <div className='w-[90vw] h-[1px] bg-gray-300'></div>
+                </div> 
+
+                <div className='flex justify-end px-3 py-6 '>
+                     <button className='w-[40vw] h-[5vh] bg-gray-200 rounded-lg px-2 py-2 '>          
+                       <img src="src/assets/Images/pen.png" alt="" className='w-[4vw]'/>                   
+                       <h1 className='mt-[-20px] text-[13px] '>Edit Consult</h1>              
+                     </button>
+
+                </div>
+               
+                
+            </div>
+            
+            
             
                
         </div>
