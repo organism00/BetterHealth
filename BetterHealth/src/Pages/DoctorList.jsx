@@ -3,6 +3,7 @@ import SideBar from '../Components/SideBar';
 import Navbar from '../Components/Navbar';
 import { doctorsList } from '../Components/DoctorsData'
 import { GoHome } from "react-icons/go";
+import { NavLink } from 'react-router-dom';
 
 const DoctorList = () => {
   return (
@@ -29,17 +30,27 @@ const DoctorList = () => {
                 <div className='py-5 md:ml-72 lg:ml-0 gap-x-10 grid grid-cols-1 lg:grid-cols-3 gap-y-10 '>
 
                     {doctorsList.map(doctor => {
-                        return(
-                            <div key={doctor.id} className='w-[250px] overflow-hidden shadow-2xl border border-stone-100 rounded-lg bg-white'>
-                                <div className='flex justify-center flex-col items-center h-[200px] w-[100%] '>
-                                    <img src={doctor.thumb} alt="image" className='w-100% h-[100%] object-cover ' />
-                                </div>
-                                <div className='text-2xl text-white font-medium bg-primary2 flex flex-col items-center p-2 '>
-                                    <p className=''>{doctor.name}</p>
-                                    <p className='font-medium text-sm text-gray-300'>{doctor.title}</p>
-                                </div>
+                        return (
+                          <NavLink
+                            to={"/doctordetails"}
+                            key={doctor.id}
+                            className="w-[250px] overflow-hidden shadow-2xl border border-stone-100 rounded-lg bg-white"
+                          >
+                            <div className="flex justify-center flex-col items-center h-[200px] w-[100%] ">
+                              <img
+                                src={doctor.thumb}
+                                alt="image"
+                                className="w-100% h-[100%] object-cover "
+                              />
                             </div>
-                        )
+                            <div className="text-2xl text-white font-medium bg-primary2 flex flex-col items-center p-2 ">
+                              <p className="">{doctor.name}</p>
+                              <p className="font-medium text-sm text-gray-300">
+                                {doctor.title}
+                              </p>
+                            </div>
+                          </NavLink>
+                        );
                     })}
                 </div>
                     

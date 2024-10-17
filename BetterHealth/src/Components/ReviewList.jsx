@@ -2,16 +2,6 @@ import React from "react";
 import coverImage from "../assets/Images/istockphoto-1 (17).jpg";
 import "../Style/customScrollbar.css";
 
-// Tailwind styles for the review card
-const reviewStyles = "flex items-start justify-between border-b py-4";
-const profileImgStyles = "w-12 h-12 rounded-full object-cover mr-4";
-const userInfoStyles = "flex-grow";
-const userNameStyles = "font-semibold text-lg";
-const timeAgoStyles = "text-gray-500 text-sm";
-const reviewTextStyles = "text-gray-700 mt-1";
-const ratingContainerStyles = "flex items-center space-x-1";
-
-
 // Review data (for demonstration)
 const reviews = [
   {
@@ -73,7 +63,7 @@ const reviews = [
 // Star rating component
 const StarRating = ({ rating }) => {
   return (
-    <div className={ratingContainerStyles}>
+    <div className="flex items-center space-x-1">
       {Array(5)
         .fill(0)
         .map((_, index) => (
@@ -99,17 +89,17 @@ const StarRating = ({ rating }) => {
 
 const ReviewCard = ({ review }) => {
   return (
-    <div className={reviewStyles}>
-      <div className="flex items-start">
+    <div className="flex items-start justify-between border-b py-4">
+      <div className="flex">
         <img
           src={review.image}
           alt={review.name}
-          className={profileImgStyles}
+          className="w-12 h-12 rounded-full object-cover mr-4"
         />
-        <div className={userInfoStyles}>
-          <h4 className={userNameStyles}>{review.name}</h4>
-          <p className={timeAgoStyles}>{review.timeAgo}</p>
-          <p className={reviewTextStyles}>{review.reviewText}</p>
+        <div className="flex flex-col">
+          <h4 className="font-semibold text-lg">{review.name}</h4>
+          <p className="text-gray-500 text-md">{review.timeAgo}</p>
+          <p className="text-gray-700 text-md mt-1">{review.reviewText}</p>
         </div>
       </div>
       <StarRating rating={review.rating} />
@@ -120,11 +110,11 @@ const ReviewCard = ({ review }) => {
 const ReviewList = () => {
   return (
     <div className=" rounded-lg py-6">
-      <div className="px-4 md:px-6 pb-4 ">
+      <div className="px-8 md:px-6 pb-4 ">
         <p className="text-xl font-[inter]">Recent Review</p>
       </div>
       <hr />
-      <div className="px-6 scrollable-div h-[440px] overflow-auto">
+      <div className="px-10 scrollable-div h-[440px] overflow-auto">
         <div className="space-y-4">
           {reviews.map((review) => (
             <ReviewCard key={review.id} review={review} />

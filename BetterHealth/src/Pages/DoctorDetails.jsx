@@ -18,11 +18,9 @@ import { FaStethoscope } from "react-icons/fa";
 import AssignedPatient from "../Components/AssignedPatinet";
 import RecentQuestions from "../Components/adminDashboard/RecentQuestions";
 import ReviewList from "../Components/ReviewList";
-
-
-
-// import { FaPhone } from "react-icons/fa6";
-// <FaPhone />;
+import { FaPhone } from "react-icons/fa6";
+import "../Style/customScrollbar.css";
+import { HiOutlineDotsHorizontal } from "react-icons/hi";
 
 
 
@@ -52,7 +50,7 @@ const DoctorDetails = () => {
           {/*Doctor Details left Section Start */}
           <div className="flex flex-col space-y-6">
             {/*Today's Patient */}
-            <div className="w-[90vw] mx-auto lg:w-[30vw] h-[100%] py-4 border shadow-sm shadow-gray-300 font-[inter]">
+            <div className="w-[90vw] mx-auto lg:w-[30vw] pt-4 pb-10 border shadow-md shadow-gray-300 font-[inter] rounded-lg">
               <div className="flex pb-4 items-center px-6 justify-between">
                 <p className="text-xl font-[inter]">Your Patients Today</p>
 
@@ -65,7 +63,7 @@ const DoctorDetails = () => {
 
               <div className="scrollable-div h-[320px] md:h-[260px] mt-4 overflow-auto font-[inter]">
                 <div className="space-y-4">
-                  {patientData.map((patient,index) => {
+                  {patientData.map((patient, index) => {
                     return (
                       <div
                         key={index}
@@ -75,7 +73,7 @@ const DoctorDetails = () => {
                           {patient.time}
                         </p>
 
-                        <div className="w-[70%] px-2 bg-gray-100 flex items-center justify-between">
+                        <div className="w-[70%] px-2 bg-gray-100 flex items-center justify-between rounded-lg">
                           <div className="w-[90%] flex items-center space-x-4">
                             <img
                               className="w-8 h-8 rounded-full cursor-pointer"
@@ -86,7 +84,9 @@ const DoctorDetails = () => {
                               <span className="text-lg font-[500]">
                                 {patient.name}
                               </span>
-                              <p>Diagnosis: {patient.disease}</p>
+                              <p className="text-[#808080]">
+                                Diagnosis: {patient.disease}
+                              </p>
                             </div>
                           </div>
 
@@ -101,7 +101,7 @@ const DoctorDetails = () => {
 
             {/* Appointments */}
 
-            <div className="w-[90vw] mx-auto lg:w-[30vw] h-[100%] py-6 border shadow-sm shadow-gray-300 font-[inter]">
+            <div className="w-[90vw] mx-auto lg:w-[30vw] py-6 border shadow-md shadow-gray-300 font-[inter] rounded-lg">
               <div className="px-4 pb-4 ">
                 <p className="text-xl font-[inter]">Appointments</p>
               </div>
@@ -151,7 +151,7 @@ const DoctorDetails = () => {
                         <div className="w-[100%] px-2 flex items-center justify-between">
                           <div className="w-[90%] flex items-center">
                             <img
-                              className="w-30 h-20 rounded-full cursor-pointer"
+                              className="w-20 h-20 rounded-full cursor-pointer hover:border"
                               src={doctor.thumb}
                               alt={`{doctor.name}'s thumbnail`}
                             />
@@ -164,39 +164,48 @@ const DoctorDetails = () => {
                             </div>
                           </div>
 
-                          <div className="flex items-center">
-                            <HiOutlineDotsVertical className="w-[20px] h-[20px] cursor-pointer" />
-                          </div>
+                          <NavLink className="flex items-center w-[45px] h-[45px] cursor-pointer  bg-[#C8C9EE] text-[#5156BE] hover:bg-[#5156BE] hover:text-white transition-all ease-in-out hover:duration-[1000ms] text-[15px] rounded-full">
+                            <FaPhone className="mx-auto" />
+                          </NavLink>
                         </div>
 
-                        <div className="flex mt-2 ml-10 items-center space-x-6">
-                          <p className="text-[18px] font-[500] font-[inter]">
-                            {doctor.time}
-                          </p>
+                        <div className="flex items-center justify-between mx-4">
+                          <div className="flex mt-2 items-center space-x-6 ml-8">
+                            <p className="text-[18px] font-[500] font-[inter]">
+                              {doctor.time}
+                            </p>
 
-                          <p>$30</p>
+                            <p>$30</p>
+                          </div>
+
+                          <HiOutlineDotsHorizontal className="w-6 h-6" />
                         </div>
                       </div>
                     );
                   })}
                 </div>
               </div>
+              <NavLink to={'/doctorappointment'} className="px-6 py-2">
+                <button className="w-[88%] mt-4 bg-indigo-600 text-white py-2 px-6 rounded hover:bg-indigo-700 transition">
+                  View Doctors Appointment
+                </button>
+              </NavLink>
             </div>
 
             {/* Doctor Ability */}
-            <div className="w-[90vw] mx-auto lg:w-[30vw] h-[100%] py-6 border shadow-sm shadow-gray-300 font-[inter]">
+            <div className="w-[90vw] mx-auto lg:w-[30vw] pt-6 pb-10 border shadow-md shadow-gray-300 font-[inter] rounded-lg">
               <div className="px-4 pb-4 ">
                 <p className="text-xl font-[inter]">Doctor Ability</p>
               </div>
               <hr />
 
-              <div>
+              <div className="py-4">
                 <DoctorAbility />
               </div>
             </div>
 
             {/* Recovery Rate */}
-            <div className="w-[90vw] mx-auto lg:w-[30vw] h-[100%] py-6 border shadow-sm shadow-gray-300 font-[inter]">
+            <div className="w-[90vw] mx-auto lg:w-[30vw]  pt-6 pb-10 border shadow-md shadow-gray-300 font-[inter] rounded-lg">
               <div className="px-4 pb-4 ">
                 <p className="text-xl font-[inter]">Recovery rate</p>
               </div>
@@ -260,17 +269,18 @@ const DoctorDetails = () => {
               </div>
             </div>
           </div>
-          
 
           {/* Doctor Details Right section starts Here */}
           <div className="flex flex-col space-y-6">
             {/* Profile Card start*/}
-            <div className="w-[90vw] mx-auto lg:w-[50vw] pb-8  border shadow-sm shadow-gray-300 font-[inter]">
-              <div className="w-[100%] h-[20vh] rounded-b-[20px] bg-gray-200 z-0 bg-cover bg-center"></div>
+            <div className="w-[90vw] mx-auto lg:w-[50vw] pb-8  border shadow-md shadow-gray-300 font-[inter] rounded-lg">
+              <div
+                className={`profileCard w-[100%] h-[20vh] rounded-lg rounded-b-[20px] bg-gray-300 bg-center z-0`}
+              ></div>
               <div className="flex justify-between px-4 md:px-8">
                 <div className=" -mt-16 z-30">
                   <img
-                    className="w-32 h-32 md:w-44 md:h-48"
+                    className="w-32 h-32 md:w-44 md:h-48 rounded-lg"
                     src={coverImage}
                     alt="coverImage"
                   />
@@ -283,15 +293,15 @@ const DoctorDetails = () => {
                     </div>
                   </div>
                 </div>
-                <div className="w-[90%] md:w-40 h-12 px-2 -mt-[145px] flex items-center space-x-2 justify-center text-lg rounded-[10px] text-white bg-green-600">
+                <div className="w-[90%] md:w-40 h-12 px-2 -mt-[145px] flex items-center space-x-2 justify-center text-lg rounded-[10px] text-white bg-[#0f5032f1]">
                   <FaStethoscope />
                   <p>ENT Specialist</p>
                 </div>
               </div>
 
               <div className="mt-10 md:mt-16 px-8 space-y-5">
-                <p className="text-2xl text-gray-800 ">Biography</p>
-                <div className="space-y-2 text-[16px] leading-6 text-gray-500">
+                <p className="text-2xl text-[#172B4C]">Biography</p>
+                <div className="space-y-2 text-[16px] leading-6 text-[#172B4C]">
                   <p>
                     Lorem ipsum dolor, sit amet consectetur adipisicing elit.
                     Fugit repellat cum vel ipsum quis mollitia eaque ullam
@@ -316,8 +326,8 @@ const DoctorDetails = () => {
 
             {/* Assigned Patient */}
 
-            <div className="w-[90vw] mx-auto lg:w-[50vw] py-4 border shadow-sm shadow-gray-300 font-[inter]">
-              <div className="px-4 pb-4 ">
+            <div className="w-[90vw] mx-auto lg:w-[50vw] py-4 border shadow-md shadow-gray-300 font-[inter] rounded-lg">
+              <div className="px-8 pb-4 ">
                 <p className="text-xl font-[inter]">Assigned Patient</p>
               </div>
               <hr />
@@ -328,12 +338,12 @@ const DoctorDetails = () => {
             </div>
 
             {/* Recent Review */}
-            <div className="w-[90vw] mx-auto lg:w-[50vw] py-4 border shadow-sm shadow-gray-300 font-[inter]">
+            <div className="w-[90vw] mx-auto lg:w-[50vw] py-4 border shadow-sm shadow-gray-300 font-[inter] rounded-lg">
               <ReviewList />
             </div>
 
             {/* Recent Questions and Laboratory Tests */}
-            <div className="w-[90vw] flex flex-col space-y-4 md:space-y-0 md:flex-row md:space-x-4 mx-auto lg:w-[50vw] py-4 border shadow-sm shadow-gray-300 font-[inter]">
+            <div className="w-[90vw] flex flex-col space-y-4 md:space-y-0 md:flex-row md:space-x-10 mx-auto lg:w-[50vw] rounded-lg border shadow-sm shadow-gray-300 font-[inter]">
               <RecentQuestions />
               <RecentQuestions />
             </div>

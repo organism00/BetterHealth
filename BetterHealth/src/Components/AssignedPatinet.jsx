@@ -31,7 +31,7 @@ const chartData = {
 
 const AssignedPatient = () => {
   return (
-    <div className="flex md:flex-row flex-col items-center md:space-x-4 justify-center py-8">
+    <div className="flex md:flex-row flex-col items-center md:space-x-10 px-8 py-8">
       {/* Patient Info */}
       <div className="flex flex-col md:flex-row items-center space-x-4">
         <img
