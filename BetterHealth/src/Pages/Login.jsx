@@ -12,6 +12,7 @@ import "aos/dist/aos.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
+import { height, width } from "@mui/system";
 
 const Login = () => {
   useEffect(() => {
@@ -31,15 +32,17 @@ const Login = () => {
     autoplay: true,
     autoplaySpeed: 3000,
     TransitionEvent: "ease-in-out",
+    innerHeight: '100%',
+    innerWidth: '100%'
   };
 
   return (
-    <div className="min-h-screen w-[100%] flex items-center justify-center bg-[#fefbfb]">
+    <div className="min-h-screen w-[100%] h-[100vh] flex items-center justify-center lg:justify-between bg-[#fefbfb]">
       {/* Left Information */}
-      <div className="w-[100%] md:w-[80%] lg:w-[500px] 2xl:w-[1000px] lg:h-[90vh] flex items-center ">
-        <div className="w-[100%] m-4 2xl:mx-[2%] flex flex-col items-start ">
-          <div className="flex flex-col items-center">
-            <div className="w-20 2xl:w-40 h-20 2xl:h-40 rounded-full bg-[#483d8b]">
+      <div className="flex items-center ">
+        <div className=" flex flex-col lg:px-16 items-start ">
+          <div className="flex flex-col items-center ">
+            <div className="w-20 h-20 2xl:w-40 2xl:h-40 rounded-full bg-[#483d8b]">
               <img
                 src={doctorImage2}
                 data-aos="fade-up"
@@ -50,9 +53,9 @@ const Login = () => {
 
             <h1 className="font-[inter]  text-md 2xl:text-2xl font-semibold pt-2">Better Health</h1>
           </div>
-          <div className="mt-10 md:mt-4 w-full mx-auto  ">
+          <div className="mt-10 md:mt-4 md:w-[70vw] lg:w-[35vw] md:ml-20 ">
             <div className="text-center mb-8">
-              <h2 className="text-3xl 2xl:text-6xl leading-4 font-[inter] font-semibold">Hello Again!</h2>
+              <h2 className="text-3xl 2xl:text-6xl leading-8 font-[inter] font-semibold">Hello Again!</h2>
               <p className="text-gray-600 font-[inter] text-md 2xl:text-2xl mt-1">
                 Welcome back! Please Login according to 👇.
               </p>
@@ -111,16 +114,17 @@ const Login = () => {
       </div>
 
       {/* Right Information */}
-      <div className="hidden lg:block lg:h-[80vh] lg:overflow-hidden lg:w-[500px] xl:w-[500px]  2xl:w-[1100px] bg-black ">
+      <div className="hidden lg:block lg:h-[100vh] lg:w-[500px] xl:w-[600px]  2xl:w-[1100px] lg:overflow-hidden bg-[blue] ">
+        {/* <div className="w-[100%] h-[100%] bg-[red]"></div> */}
         <Slider {...sliderSettings}>
-          <div className="h-[100%] lg:h-[80vh] ">
+          <div className="w-[100%] h-[100vh] ">
             <img
               src={sideRightImage1}
               alt="hospital1"
-              className="w-[100%] lg:h-[100%] object-cover"
+              className="w-[100%] h-[100%] object-cover"
             />
           </div>
-          <div className="w-[100%] lg:h-[80vh] xl:h-[90vh] ">
+          <div className="w-[100%] h-[100vh] ">
             <img
               src={sideRightImage2}
               alt="hospital2"
