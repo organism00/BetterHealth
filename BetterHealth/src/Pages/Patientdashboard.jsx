@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
+
 const Patientdashboard = () => {
   return (
     <>
@@ -9,6 +10,11 @@ const Patientdashboard = () => {
       >
         {children}
       </button> */}
+
+      {/* navbar */}
+      <div>
+        
+      </div>
 
     
         <div className='lg:hidden bg-[whitesmoke] w-auto h-auto flex flex-col items-center justify-evenly space-y-4  '>
@@ -367,8 +373,8 @@ const Patientdashboard = () => {
 
             <div className='bg-white w-[90vw] h-[45vh] shadow-md rounded-xl flex flex-col  '>
                 <div className='py-5 px-5 gap-3'>
-                <div className='w-[22vw] h-[3vh] bg-red-100 rounded-lg px-1'>
-                    <h1 className='text-[13px] px-1 text-red-700'>Emergency</h1>
+                <div className='w-[22vw] h-[3vh] bg-blue-100 rounded-lg px-1'>
+                    <h1 className='text-[13px] px-1 text-blue-700'>Emergency</h1>
                 </div>
                 <div className='py-3'>
                     <h1 className='text-xl'>Jilmil Deo - Neuro Consult</h1>
