@@ -5,7 +5,6 @@ import React from 'react'
 // import SignIn from './Components/SignIn'
 // import Form from './Components/Form'
 // import Tickbox from './Pages/Tickbox'
-//import Patientdashboard from './Pages/Patientdashboard'
 import AdminDashboard from "./Pages/AdminDashboard";
 import Login from "./Pages/Login";
 import AdminStaff from "./Pages/AdminStaff";

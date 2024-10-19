@@ -1,6 +1,6 @@
 import React from 'react'
 //import { Link } from 'react-router-dom'
-import SideBar from '../Components/Sidebar'
+import SideBar from '../Components/SideBar'
 import Navbar from '../Components/Navbar'
 
 
@@ -10,19 +10,19 @@ const Patientdashboard = () => {
         <>
           <div className="lg:grid lg:grid-cols-[16rem_1fr] z-0">
             <SideBar />
-            <main className="col-start-2 h-full w-full md:w-[70%] lg:w-full mt-40 lg:mt-0 md:mt-0">
+            <main className="col-start-2 lg:flex h-full w-full md:w-[70%] lg:w-full mt-12 lg:mt-0 md:mt-0">
               <Navbar />
     
-                <div className="mt-24 w-full h-full lg:w-full lg:ml-0 md:ml-72 lg:pl-12 lg:pr-5 px-5">
-                  <div className="flex gap-5">
-                    <h1 className="text-2xl">Patients</h1>
+            <div className="mt-24 w-full h-full lg:w-full lg:ml-0 md:ml-72 lg:pl-12 lg:pr-5 px-5 space-y-4">
+                  <div className="flex gap-5 ">
+                    <h1 className="text-3xl">Johen Doe</h1>
                     <div className="flex gap-2 items-center">
                       {/* <GoHome /> */}
                       <p className="font-thin"> - Patients form</p>
                     </div>
                   </div>
                   <div className='lg:hidden bg-[whitesmoke] w-auto h-auto flex flex-col items-center justify-evenly space-y-4  '>
-            <div className='bg-white w-[90vw] h-[22vh] shadow-md rounded-xl flex flex-col px-3 py-2 justify-evenly'>
+             <div className='bg-white w-[90vw] h-[22vh] shadow-md rounded-xl flex flex-col px-3 py-2 justify-evenly '>
                 <div className='flex justify-between '>
                     <h1>Blood Pre..</h1>
                     <img src="src/assets/Images/heartbeat.png" alt="" className='w-[5vw] h-[3vh]' />
@@ -436,6 +436,10 @@ const Patientdashboard = () => {
                
         </div>
                 </div>
+{/* 
+                <div className='lg:w-[30%] lg:h-auto  lg:bg-red-600'>
+                    <div className='lg:w-[20vw] '></div>
+                </div> */}
             </main>
           </div>
         </>
