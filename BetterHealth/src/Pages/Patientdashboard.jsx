@@ -2,6 +2,7 @@ import React from 'react'
 //import { Link } from 'react-router-dom'
 import SideBar from '../Components/SideBar'
 import Navbar from '../Components/Navbar'
+import Chart from '../Components/Chart'
 
 
 
@@ -21,8 +22,25 @@ const Patientdashboard = () => {
                       <p className="font-thin"> - Patients form</p>
                     </div>
                   </div>
-                  <div className='lg:hidden bg-[whitesmoke] w-auto h-auto flex flex-col items-center justify-evenly space-y-4  '>
-             <div className='bg-white w-[90vw] h-[22vh] shadow-md rounded-xl flex flex-col px-3 py-2 justify-evenly '>
+
+
+               
+        <div className='lg:flex-row bg-red-700 w-auto h-auto lg:w-[60vw] lg:h-[100vh] lg:flex-wrap lg:space-x-4 lg:items-start flex flex-col items-center justify-evenly space-y-4 lg:py-2 lg:px-2 lg:justify-evenly '>
+            
+        <div className='bg-white w-[90vw] h-[22vh] lg:w-[10vw] lg:h-[40vh] shadow-md rounded-xl flex flex-col px-3 py-2 justify-evenly ' >
+            {/* <Chart/> */}
+
+        </div> 
+             
+        <div className='bg-white w-[90vw] h-[22vh] lg:w-[10vw] lg:h-[30vh] shadow-md rounded-xl flex flex-col px-3 py-2 justify-evenly' >
+            {/* <Chart/> */}
+
+        </div>     
+            
+            
+            
+            
+             <div className='bg-white w-[90vw] h-[22vh] lg:h-[25vh] lg:w-[10vw] shadow-md rounded-xl flex flex-col px-3 py-2 justify-evenly '>
                 <div className='flex justify-between '>
                     <h1>Blood Pre..</h1>
                     <img src="src/assets/Images/heartbeat.png" alt="" className='w-[5vw] h-[3vh]' />
@@ -436,10 +454,10 @@ const Patientdashboard = () => {
                
         </div>
                 </div>
-{/* 
+
                 <div className='lg:w-[30%] lg:h-auto  lg:bg-red-600'>
                     <div className='lg:w-[20vw] '></div>
-                </div> */}
+                </div>
             </main>
           </div>
         </>
