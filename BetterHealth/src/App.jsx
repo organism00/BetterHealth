@@ -1,13 +1,11 @@
 import React from 'react'
-import { BrowserRouter,Routes,Route } from 'react-router-dom'
-import Home from "./Pages/Home"
-import SignUp from './Components/SignUp'
-import SignIn from './Components/SignIn'
-import Form from './Components/Form'
-import Tickbox from './Pages/Tickbox'
-import Patientdashboard from './Pages/Patientdashboard'
-import React from "react";
-import { Routes, Route } from "react-router-dom";
+ import { BrowserRouter,Routes,Route } from 'react-router-dom'
+// import Home from "./Pages/Home"
+// import SignUp from './Components/SignUp'
+// import SignIn from './Components/SignIn'
+// import Form from './Components/Form'
+// import Tickbox from './Pages/Tickbox'
+//import Patientdashboard from './Pages/Patientdashboard'
 import AdminDashboard from "./Pages/AdminDashboard";
 import Login from "./Pages/Login";
 import AdminStaff from "./Pages/AdminStaff";
@@ -23,6 +21,7 @@ import NewDoctor from './Pages/NewDoctor'
 import NewNurse from './Pages/NewNurse'
 import PatientDetails from './Pages/PatientDetails';
 import DoctorDetails from "./Pages/DoctorDetails";
+import Patientdashboard from './Pages/Patientdashboard';
 
 
 
@@ -47,6 +46,7 @@ const App = () => {
         <Route path={"newnurse"} element={<NewNurse/>}></Route>
         <Route path="/admindashboard" element={<AdminDashboard />} />
         <Route path="/doctordetails" element={<DoctorDetails />} />
+        <Route path='/patientdashboard' element ={< Patientdashboard/>}></Route>
       </Routes>
     </>
   );

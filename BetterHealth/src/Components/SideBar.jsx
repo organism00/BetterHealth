@@ -17,7 +17,7 @@ import { FaBed } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import menuImage from "../assets/Images/menu (2).png"
 import "../Style/customScrollbar.css";
-import NewNurse from "../Pages/NewNurse";
+//import NewNurse from "../Pages/NewNurse";
 
 
 
