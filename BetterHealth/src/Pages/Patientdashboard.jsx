@@ -11,7 +11,7 @@ const Patientdashboard = () => {
         <>
           <div className="lg:grid lg:grid-cols-[16rem_1fr] z-0">
             <SideBar />
-            <main className="col-start-2 lg:flex h-full w-full md:w-[70%] lg:w-full mt-12 lg:mt-0 md:mt-0">
+            <main className="col-start-2  h-full w-full md:w-[70%] lg:w-full mt-12 lg:mt-0 md:mt-0">
               <Navbar />
     
             <div className="mt-24 w-full h-full lg:w-full lg:ml-0 md:ml-72 lg:pl-12 lg:pr-5 px-5 space-y-4">
@@ -23,22 +23,32 @@ const Patientdashboard = () => {
                     </div>
                   </div>
 
+<div className='lg: flex lg:flex-row lg:bg-black lg:w-[100vw] lg:h-[100vh]'>
+    <div className='lg:w-[50vw] lg:h-screen lg:bg-red-400'>
 
+        
+
+    </div>
+    <div className='lg:w-[30vw] lg:h-[100vh] lg:bg-green-500'>
+
+    </div>
+
+</div>
                
-        <div className='lg:flex-row bg-red-700 w-auto h-auto lg:w-[60vw] lg:h-[100vh] lg:flex-wrap lg:space-x-4 lg:items-start flex flex-col items-center justify-evenly space-y-4 lg:py-2 lg:px-2 lg:justify-evenly '>
+        <div className='lg:hidden bg-white w-auto h-auto lg:w-[60vw] lg:h-[100vh] lg:space-x-4 lg:items-start flex flex-col items-center justify-evenly space-y-4 lg:py-2 lg:px-2 lg:gap-5 '>
             
         <div className='bg-white w-[90vw] h-[22vh] lg:w-[10vw] lg:h-[40vh] shadow-md rounded-xl flex flex-col px-3 py-2 justify-evenly ' >
             {/* <Chart/> */}
 
         </div> 
              
-        <div className='bg-white w-[90vw] h-[22vh] lg:w-[10vw] lg:h-[30vh] shadow-md rounded-xl flex flex-col px-3 py-2 justify-evenly' >
+        <div className='bg-white w-[90vw] h-[22vh]  shadow-md rounded-xl flex flex-col px-3 py-2 justify-evenly' >
             {/* <Chart/> */}
 
         </div>     
             
             
-            
+        <div className='lg:flex lg:flex-col'>   
             
              <div className='bg-white w-[90vw] h-[22vh] lg:h-[25vh] lg:w-[10vw] shadow-md rounded-xl flex flex-col px-3 py-2 justify-evenly '>
                 <div className='flex justify-between '>
@@ -64,7 +74,7 @@ const Patientdashboard = () => {
                     $214.86
                 </div>
             </div>
-
+        </div> 
             <div className='bg-white w-[90vw] h-[22vh] shadow-md rounded-xl flex flex-col  px-3 py-2 justify-evenly'>
                 <h1>
                     Fever History
