@@ -23,14 +23,149 @@ const Patientdashboard = () => {
                     </div>
                   </div>
 
-<div className='lg: flex lg:flex-row lg:bg-black lg:w-[100vw] lg:h-[100vh]'>
-    <div className='lg:w-[50vw] lg:h-screen lg:bg-red-400'>
-
+<div className='hidden lg:flex lg:flex-row lg:w-[100vw] lg:h-auto'>
+    <div className='lg:flex lg:flex-col'>
+    
+    
+      <div className='lg:w-[50vw] lg:h-screen lg:bg-white lg:flex lg:py-4 lg:px-5 lg:space-x-5 '>
         
+        <div className='lg:w-[11vw] lg:h-[38vh] bg-white lg:rounded-xl shadow-md'>
+            heart
+        </div>
+
+        <div className='lg:w-[11vw] lg:h-[36vh] lg:bg-white lg:rounded-xl shadow-md'>
+            Fever
+        </div>
+
+        <div className='lg:flex lg:flex-col space-y-5 '>
+            <div className='lg:w-[11vw] lg:h-[23vh] bg-white rounded-md shadow-md lg:px-4 lg:py-5 lg:space-y-3'>
+            <div className='flex justify-between lg:space-y-3 '>
+                    <h1>Blood <br /> Pre..</h1>
+                    <div className='lg:py-2'>
+                    <img src="src/assets/Images/heartbeat.png" alt="" className='lg:w-[1vw] lg:h-[2vh]' />
+
+                    </div>
+                </div>
+                <div className='flex justify-between'>
+                    <h1 className='lg:text-lg'>75</h1>
+                    <h1 className='lg:font-light text-[15px]'>Upper</h1>
+                </div>
+                <div className='flex justify-between'>
+                    <h1 className='lg:text-lg'>124</h1>
+                    <h1 className='lg:font-light text-[15px]'>Lower</h1>
+                </div>
+
+            </div>
+
+            <div className='lg:w-[11vw] lg:h-[13vh] bg-white rounded-md shadow-md lg:space-y-3 lg:py-4 lg:px-4'>
+                <div>
+                    <h1 className='lg:text-xl'>Bill Due</h1>
+                    <img src="" alt="" />
+                </div>
+                <div className='lg:font-light'>
+                    $214.86
+                </div>
+
+            </div>
+        </div>
+
+        <div className='lg:flex lg:flex-col space-y-5 '>
+            <div className='lg:w-[11vw] lg:h-[24vh] rounded-md bg-white shadow-md lg:px-2 lg:py-4 lg:space-y-3'>
+                <div>
+                 <h1 className='lg:text-lg'>
+                    Fever <br /> History
+                 </h1>
+                </div>
+                <div>
+                <select className='text-black w-32  h-5 lg:font-light' name="">
+                    <option value="">1 to 10 Jan'21</option>
+                    <option value="">11 to 31 Jan '21</option>
+                    <option value="">1 to 15 Feb '21</option>
+                    <option value="">16 t0 18 Feb '21</option>
+
+                </select>
+                </div>
+                <div className='flex flex-row justify-between'>
+                    
+                    <div className='flex  text-red-600 '>
+                        <h1 className='text-[24px] font-semibold'>
+                             99
+                        </h1>
+                        <h1 className='text-[12px]  leading-6 font-bold '>+12%</h1>
+
+                    </div>
+
+                    <div>
+                    <h1 className='lg:text-[14px]'>Yesterday</h1>
+                    </div>
+                </div>
+
+            </div>
+
+            <div className='lg:w-[11vw] lg:h-[15vh] bg-white rounded-md shadow-md lg:flex lg:px-1'>
+             <div className='lg:flex lg:flex-row lg:space-x-1'>
+                <div>
+                    <img src="src/assets/Images/doctor.png" alt="" className='lg:w-[2vw] lg:h-[3vh] mt-10 '/>
+
+                </div>
+                <div className='py-4 px-1'>
+                        <h1 className='lg:text-lg text-blue-600 font-semibold'>Johen Mark</h1> 
+                        <h1 className='float-end  whitespace-nowrap '>My Doctor</h1>    
+                </div>
+                <div>
+                    
+                </div>
+             </div>
+
+            </div>
+        </div>
+
+       </div>
+
+      <div className='lg:w-[50vw] lg:h-[70vh] bg-white lg:mt-[-380px] lg:px-5 lg:flex lg:space-x-4 '>
+        <div className='lg:w-[26vw] lg:h-[50vh] bg-white rounded-md shadow-md'>
+            jddjjk
+
+        </div>
+        <div className='lg:w-[20vw] lg:h-[50vh] bg-white rounded-md shadow-md'>
+            lkadkdksak;
+
+        </div>
+      </div>
+
+      <div className='lg:w-[50vw] lg:h-[50vh] bg-white lg:mt-[-120px] lg:px-5 lg:space-x-5 lg:flex'>
+        <div className='lg:w-[31vw] lg:h-[50vh] bg-white rounded-md shadow-md '>
+        </div> 
+        <div className='lg:flex lg:flex-col lg:space-y-5'>
+            <div className='lg:w-[15vw] lg:h-[25vh] bg-white rounded-md shadow-md'>
+
+            </div>
+            <div className='lg:w-[15vw] lg:h-[25vh] bg-white rounded-md  shadow-md'>
+
+            </div>
+
+        </div>
+
+      </div>
 
     </div>
-    <div className='lg:w-[30vw] lg:h-[100vh] lg:bg-green-500'>
 
+    <div className='lg:w-[30vw] lg:h-auto lg:bg-white lg:flex lg:flex-col lg:mt-[-40px] lg:space-y-7'>
+        <div className='lg:w-[25vw] lg:h-[15vh] bg-white rounded-md shadow-md'>
+            djkadhlhflkhfkl
+        </div>
+        <div>
+         <h1>Schedule</h1>
+        </div>
+        <div className='lg:w-[25vw] lg:h-[43vh] bg-white rounded-md shadow-md '> 
+            qkoqf;jqfw
+        </div>
+        <div className='lg:w-[25vw] lg:h-[44vh] bg-white rounded-md shadow-md'>
+            lkkjqj
+        </div>
+        <div className='lg:w-[25vw] lg:h-[44vh] bg-white rounded-md shadow-md'>
+
+        </div>
     </div>
 
 </div>
