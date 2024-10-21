@@ -26,6 +26,9 @@ const SideBar = () => {
   const [showReportDropdown, setShowReportDropdown] = useState(false);
   const [showDoctorsDropdown, setShowDoctorsDropdown] = useState(false);
   const [showNurseDropdown, setShowNurseDropdown] = useState(false);
+  const [showBillingDropdown, setShowBillingDropdown] = useState(false);
+  const [showFacilitiesDropdown, setShowFacilitiesDropdown] = useState(false);
+  const [showPharmarcyDropdown, setShowPharmarcyDropdown] = useState(false);
   const [featuresdropdown, setfeaturesdropdown] = useState(false);
   const [appsdropdown, setappsdropdown] = useState(false);
   const [formsdropdown, setformsdropdown] = useState(false);
@@ -70,6 +73,16 @@ const SideBar = () => {
 
   const toggleNurseDropdown = () => {
     setShowNurseDropdown((prev) => !prev);
+  };
+  
+  const toggleBillingDropdown = () => {
+    setShowBillingDropdown((prev) => !prev);
+  };
+  const toggleFacilitiesDropdown = () => {
+    setShowFacilitiesDropdown((prev) => !prev);
+  };
+  const togglePharmarcyDropdown = () => {
+    setShowPharmarcyDropdown((prev) => !prev);
   };
 
   return (
@@ -117,7 +130,8 @@ const SideBar = () => {
                     </Link>
                   </div>
                   <div className="flex justify-between w-32 items-center">
-                    <TbScan className="text-xl" />
+                  <BsCalendarDate className="text-xl" />
+                    
                     <a href="#" className="hover:text-blue-400">
                       Appointments
                     </a>
@@ -207,13 +221,36 @@ const SideBar = () => {
                       </div>
                     )}
                   </div>
-
-                  <div className="flex justify-between w-20 items-center">
-                    <IoIosSwitch className="text-xl" />
-                    <a href="#" className="hover:text-blue-400">
-                      Nurse
-                    </a>
+                  {/* Nurse */}
+                  <div>
+                    <div
+                      className="flex justify-between w-[40vw] items-center flex-row"
+                      onClick={toggleNurseDropdown}
+                    >
+                      <div className="flex justify-between w-20 items-center">
+                      <IoIosSwitch className="text-xl" />
+                        <a href="#" className="hover:text-blue-400">
+                          Nurse
+                        </a>
+                      </div>
+                      <RiArrowDropDownLine className="text-xl" />
+                    </div>
+                    {showNurseDropdown && (
+                      <div className="flex flex-col items-center justify-center my-4 text-start">
+                        <ul className="space-y-4">
+                          <li className="list-disc hover:text-blue-400">
+                            <a href="#">New New Nurse</a>
+                          </li>
+                          <li className="list-disc hover:text-blue-400">
+                            <a href="#">Nurse List</a>
+                          </li>
+                        </ul>
+                      </div>
+                    )}
                   </div>
+
+
+                 
 
                   <div className="flex justify-between w-28 items-center">
                     <FaUsers className="text-xl" />
@@ -222,14 +259,72 @@ const SideBar = () => {
                     </a>
                   </div>
                 </div>
+                {/* Billing */}
+                
                 <div className="flex flex-col gap-y-7 mt-8 ">
                   <div className="flex flex-col gap-y-7 mt-2">
-                    <div className="flex w-20 justify-between">
+                  <div>
+                    <div
+                      className="flex justify-between w-[40vw] items-center flex-row"
+                      onClick={toggleBillingDropdown}
+                    >
+                      <div className="flex justify-between w-20 items-center">
                       <CgMenuLeft className="text-xl" />
-                      <a href="#">Billing</a>
+                        <a href="#" className="hover:text-blue-400">
+                          Billing
+                        </a>
+                      </div>
+                      <RiArrowDropDownLine className="text-xl" />
                     </div>
+                    {showBillingDropdown && (
+                      <div className="flex flex-col items-center justify-center my-4 text-start">
+                        <ul className="space-y-4">
+                          <li className="list-disc hover:text-blue-400">
+                            <a href="#">Payment</a>
+                          </li>
+                         
+                        </ul>
+                      </div>
+                    )}
+                  </div>
+                       {/* Facilities */}
+                       
+                       <div>
+                    <div
+                      className="flex justify-between w-[40vw] items-center flex-row"
+                      onClick={toggleFacilitiesDropdown}
+                    >
+                      <div className="flex justify-between w-20 items-center">
+                      <FaHospital className="text-xl" />
+                        <a href="#" className="hover:text-blue-400">
+                          Facilities
+                        </a>
+                      </div>
+                      <RiArrowDropDownLine className="text-xl" />
+                    </div>
+                    {showFacilitiesDropdown && (
+                      <div className="flex flex-col items-center justify-center my-4 text-start">
+                        <ul className="space-y-4">
+                          <li className="list-disc hover:text-blue-400">
+                            <a href="#">Ward/Room</a>
+                          </li>
+                          <li className="list-disc hover:text-blue-400">
+                            <a href="#">Laboratory</a>
+                          </li>
+                          <li className="list-disc hover:text-blue-400">
+                            <a href="#">Operation Room</a>
+                          </li>
+                          <li className="list-disc hover:text-blue-400">
+                            <a href="#">Emergency Room</a>
+                          </li>
+                         
+                        </ul>
+                      </div>
+                    )}
+                  </div>  
+                  
 
-                    <div className="flex w-24 justify-between ">
+                    {/* <div className="flex w-24 justify-between ">
                       <FaHospital className="text-xl" />
                       <a
                         href="#"
@@ -238,20 +333,45 @@ const SideBar = () => {
                       >
                         Facilities
                       </a>
-                    </div>
+                    </div> */}
 
+                    {/* Pharmarcy */}
                     <div>
+                    <div
+                      className="flex justify-between w-[40vw] items-center flex-row"
+                      onClick={togglePharmarcyDropdown}
+                    >
+                      <div className="flex justify-between w-20 items-center">
+                      <TbScan className="text-xl" />
+                        <a href="#" className="hover:text-blue-400">
+                          Pharmarcy
+                        </a>
+                      </div>
+                      <RiArrowDropDownLine className="text-xl" />
+                    </div>
+                    {showPharmarcyDropdown && (
+                      <div className="flex flex-col items-center justify-center my-4 text-start">
+                        <ul className="space-y-4">
+                          <li className="list-disc hover:text-blue-400">
+                            <a href="#">Orders</a>
+                          </li>
+                          </ul>
+                      </div>
+                    )}
+                  </div>
+
+                    {/* <div>
                       <div className="flex w-32 justify-between ">
-                        <BsCalendarDate className="text-xl" />
+                      <TbScan className="text-xl" />
                         <a
                           href="#"
                           onClick={apps}
                           className="hover:text-blue-400"
                         >
-                          Appointments
+                          Pharmarcy
                         </a>
                       </div>
-                    </div>
+                    </div> */}
 
                     <div>
                       <div className="flex w-28 justify-between ">
@@ -327,7 +447,7 @@ const SideBar = () => {
                 </Link>
               </div>
               <div className="flex gap-4 items-center">
-                <TbScan className="text-xl" />
+              <BsCalendarDate className="text-xl" />
                 <a href="#" className="hover:text-blue-400">
                   Appointments
                 </a>
@@ -464,26 +584,95 @@ const SideBar = () => {
 
             <div className="flex flex-col gap-y-7 mt-8 ">
               <div className="flex flex-col gap-y-7 mt-2">
-                <div className="flex gap-4">
+                {/* Billing */}
+               <div>
+                <div
+                  className="flex justify-between gap-4 w-[13vw] items-center"
+                  onClick={toggleBillingDropdown}
+                >
+                  <div className="flex justify-between gap-4 items-center">
                   <CgMenuLeft className="text-xl" />
-                  <a href="#">Billing</a>
-                </div>
-
-                <div className="flex gap-4 ">
-                  <FaHospital className="text-xl" />
-                  <a href="#" onClick={forms} className="hover:text-blue-400">
-                    Facilities
-                  </a>
-                </div>
-
-                <div>
-                  <div className="flex gap-4 ">
-                    <BsCalendarDate className="text-xl" />
-                    <a href="#" onClick={apps} className="hover:text-blue-400">
-                      Appointments
+                    <a href="#" className="hover:text-blue-400">
+                      Billing
                     </a>
                   </div>
+                  <RiArrowDropDownLine className="text-xl" />
                 </div>
+
+                {showBillingDropdown && (
+                  <div className="flex flex-col items-center justify-center my-4 text-start">
+                    <ul className="space-y-4">
+                      <li className="list-disc hover:text-blue-400">
+                         <Link to=''>Payment</Link>
+                      </li>
+                      
+                    </ul>
+                  </div>
+                )}
+              </div>
+              {/* Facilities */}
+              <div>
+                <div
+                  className="flex justify-between gap-4 w-[13vw] items-center"
+                  onClick={toggleFacilitiesDropdown}
+                >
+                  <div className="flex justify-between gap-4 items-center">
+                  <FaHospital className="text-xl" />
+                    <a href="#" className="hover:text-blue-400">
+                      Facilities
+                    </a>
+                  </div>
+                  <RiArrowDropDownLine className="text-xl" />
+                </div>
+
+                {showFacilitiesDropdown && (
+                  <div className="flex flex-col items-center justify-center my-4 text-start">
+                    <ul className="space-y-4">
+                      <li className="list-disc hover:text-blue-400">
+                         <Link to=''>Ward/Room</Link>
+                      </li>
+                      <li className="list-disc hover:text-blue-400">
+                         <Link to=''>Laboratory</Link>
+                      </li>
+                      <li className="list-disc hover:text-blue-400">
+                         <Link to=''>Operation Room</Link>
+                      </li>
+                      <li className="list-disc hover:text-blue-400">
+                         <Link to=''>Emergency Room</Link>
+                      </li>
+                      
+                    </ul>
+                  </div>
+                )}
+              </div>
+
+             {/* Pharmarcy */}
+             <div>
+                <div
+                  className="flex justify-between gap-4 w-[13vw] items-center"
+                  onClick={togglePharmarcyDropdown}
+                >
+                  <div className="flex justify-between gap-4 items-center">
+                  <TbScan className="text-xl" />
+                    <a href="#" className="hover:text-blue-400">
+                      Pharmarcy
+                    </a>
+                  </div>
+                  <RiArrowDropDownLine className="text-xl" />
+                </div>
+
+                {showPharmarcyDropdown && (
+                  <div className="flex flex-col items-center justify-center my-4 text-start">
+                    <ul className="space-y-4">
+                      <li className="list-disc hover:text-blue-400">
+                         <Link to=''>Orders</Link>
+                      </li>
+                    </ul>
+                  </div>
+                )}
+              </div>
+
+               
 
                 <div>
                   <div className="flex gap-4 ">
@@ -504,6 +693,7 @@ const SideBar = () => {
                 </div>
               </div>
             </div>
+           
             <div className="pb-10 flex flex-col items-center ">
               <img src={custom} className="relative top-12 w-[120px] " />
               <div className="p-2 h-36 bg-indigo-300 rounded-2xl pt-16">
