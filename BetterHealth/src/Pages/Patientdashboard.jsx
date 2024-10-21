@@ -29,16 +29,16 @@ const Patientdashboard = () => {
     
       <div className='lg:w-[50vw] lg:h-screen lg:bg-white lg:flex lg:py-4 lg:px-5 lg:space-x-5 '>
         
-        <div className='lg:w-[11vw] lg:h-[38vh] bg-white lg:rounded-xl shadow-md'>
+        <div className='lg:w-[11vw] lg:h-[38vh] bg-white lg:rounded-xl shadow-md lg:border-t-2'>
             heart
         </div>
 
-        <div className='lg:w-[11vw] lg:h-[36vh] lg:bg-white lg:rounded-xl shadow-md'>
+        <div className='lg:w-[11vw] lg:h-[36vh] lg:bg-white lg:rounded-xl shadow-md lg:border-t-2'>
             Fever
         </div>
 
         <div className='lg:flex lg:flex-col space-y-5 '>
-            <div className='lg:w-[11vw] lg:h-[23vh] bg-white rounded-md shadow-md lg:px-4 lg:py-5 lg:space-y-3'>
+            <div className='lg:w-[11vw] lg:h-[23vh] bg-white rounded-md shadow-md lg:px-4 lg:py-5 lg:space-y-3 lg:border-t-2'>
             <div className='flex justify-between lg:space-y-3 '>
                     <h1>Blood <br /> Pre..</h1>
                     <div className='lg:py-2'>
@@ -57,7 +57,7 @@ const Patientdashboard = () => {
 
             </div>
 
-            <div className='lg:w-[11vw] lg:h-[13vh] bg-white rounded-md shadow-md lg:space-y-3 lg:py-4 lg:px-4'>
+            <div className='lg:w-[11vw] lg:h-[13vh] bg-white rounded-md shadow-md lg:space-y-3 lg:py-4 lg:px-4 lg:border-t-2'>
                 <div>
                     <h1 className='lg:text-xl'>Bill Due</h1>
                     <img src="" alt="" />
@@ -70,7 +70,7 @@ const Patientdashboard = () => {
         </div>
 
         <div className='lg:flex lg:flex-col space-y-5 '>
-            <div className='lg:w-[11vw] lg:h-[24vh] rounded-md bg-white shadow-md lg:px-2 lg:py-4 lg:space-y-3'>
+            <div className='lg:w-[11vw] lg:h-[24vh] rounded-md bg-white shadow-md lg:px-2 lg:py-4 lg:space-y-3 lg:border-t-2' >
                 <div>
                  <h1 className='lg:text-lg'>
                     Fever <br /> History
@@ -102,7 +102,7 @@ const Patientdashboard = () => {
 
             </div>
 
-            <div className='lg:w-[11vw] lg:h-[15vh] bg-white rounded-md shadow-md lg:flex lg:px-2'>
+            <div className='lg:w-[11vw] lg:h-[15vh] bg-white rounded-md shadow-md lg:flex lg:px-2 lg:border-t-2'>
              <div className='lg:flex lg:flex-row lg:space-x-1'>
                 <div>
                     <img src="src/assets/Images/doctor.png" alt="" className='lg:w-[2vw] lg:h-[3vh] mt-10 '/>
@@ -123,11 +123,11 @@ const Patientdashboard = () => {
        </div>
 
       <div className='lg:w-[50vw] lg:h-[70vh] bg-white lg:mt-[-380px] lg:px-5 lg:flex lg:space-x-4 '>
-        <div className='lg:w-[26vw] lg:h-[50vh] bg-white rounded-md shadow-md'>
+        <div className='lg:w-[26vw] lg:h-[50vh] bg-white rounded-md shadow-md lg:border-t-2'>
             jddjjk
 
         </div>
-        <div className='lg:w-[20vw] lg:h-[50vh] bg-white rounded-md shadow-md'>
+        <div className='lg:w-[20vw] lg:h-[50vh] bg-white rounded-md shadow-md lg:border-t-2'>
         <div className='flex flex-col py-8 space-y-2 place-items-center '>
                     <img src="src/assets/Images/user (1).png" alt="" className='lg:w-[4vw] lg:h-[7vh] place-items-center'/>
                     <h1 className='text-[18px]'>Dr. Poul doe</h1>
@@ -156,7 +156,7 @@ const Patientdashboard = () => {
                 </div>
 
                 <div className=' flex flew-row justify-center  '>
-                    <button className='lg:w-[18vw] lg:h-[5vh] rounded-lg shadow-md bg-indigo-200  justify-between'>
+                    <button className='lg:w-[18vw] lg:h-[5vh] rounded-lg shadow-md bg-indigo-200 justify-between'>
                         <div className='flex justify-center gap-3 '>
                             <img src="src/assets/Images/message (1).png" alt="" className='lg:w-[1vw] lg:h-[2vh] my-2 '/>
                         <div className='px-2 text-indigo-700 text-2xl'>
@@ -236,7 +236,7 @@ const Patientdashboard = () => {
                 </div>
         </div> 
         <div className='lg:flex lg:flex-col lg:space-y-5 '>
-            <div className='lg:w-[15vw] lg:h-[25vh] bg-white rounded-md shadow-md lg:px-5 lg:py-7'>
+            <div className='lg:w-[15vw] lg:h-[25vh] bg-white rounded-md shadow-md lg:px-5 lg:py-7 lg:border-t-2'>
               <div className=''>
                     <img src="src/assets/Images/blood.png" alt="" className='lg:w-[1vw] lg:h-[2vh] ml-2' />
                 </div>
@@ -256,7 +256,7 @@ const Patientdashboard = () => {
                 </div>
 
             </div>
-            <div className='lg:w-[15vw] lg:h-[25vh] bg-white rounded-md  shadow-md lg:px-5 lg:py-3'>
+            <div className='lg:w-[15vw] lg:h-[25vh] bg-white rounded-md  shadow-md lg:px-5 lg:py-3 lg:border-t-2'>
             <div>
                     <img src="src/assets/Images/blood-test.png" alt="" className='lg:w-[4vw] lg:h-[6vh]' />
                 </div>
@@ -314,7 +314,7 @@ const Patientdashboard = () => {
                              <img src="src/assets/Images/doctor M.jpeg" alt="" className='lg:w-[5vw] lg:h-[7vh] rounded-full' />
                         </div>
                         <div className=''>
-                           <h1 className='lg:text-[15px] lg:text-blue-500 wlg:hitespace-nowrap'>Dr. Meculam</h1>
+                           <h1 className='lg:text-xl lg:text-blue-500 wlg:hitespace-nowrap'>Dr. Meculam</h1>
                            <h1 className='lg:text-[13px] lg:whitespace-nowrap'>+1 142 536 7890</h1>
                        </div>
                        
@@ -368,7 +368,7 @@ const Patientdashboard = () => {
                              <img src="src/assets/Images/doctor M.jpeg" alt="" className='lg:w-[5vw] lg:h-[7vh] rounded-full' />
                         </div>
                         <div className=''>
-                           <h1 className='lg:text-xl lg:text-blue-500 wlg:hitespace-nowrap lg:mt-[-10px]'>Dr. Maical <br/> Deo</h1>
+                           <h1 className='lg:text-xl lg:text-blue-500 lg:whitespace-nowrap lg:mt-[-10px]'>Dr. Maical <br/> Deo</h1>
                            <h1 className='lg:text-[13px] lg:whitespace-nowrap'>+1 421 563 7458</h1>
                        </div>
                        
@@ -397,13 +397,13 @@ const Patientdashboard = () => {
                
             
         </div>
-        <div className='lg:w-[25vw] lg:h-[44vh] bg-white rounded-md shadow-md'>
+        <div className='lg:w-[25vw] lg:h-[43vh] bg-white rounded-md shadow-md lg:border-t-2'>
         <div className='py-5 px-5 gap-3'>
-                <div className='lg:w-[9vw] lg:h-[22px] bg-green-100 rounded-lg lg:flex lg:justify-center'>
-                    <h1 className='text-[13px] px-1 text-green-700'>Routine Checkup</h1>
+                <div className='lg:w-[7vw] lg:h-[22px] bg-blue-100 rounded-lg lg:flex lg:justify-center'>
+                    <h1 className='text-[13px] px-1 text-blue-700'>Emergency</h1>
                 </div>
                 <div className='py-2'>
-                    <h1 className='lg:text-xl'>Meculam Deo - Standard Consult</h1>
+                    <h1 className='lg:text-xl'>Jilmil Deo - Neuro Consult</h1>
                 </div>
                 <div className='flex gap-4'>
                     <h1 className='text-gray-400 text-[16px]'>09:15am - 10:45am</h1>
@@ -420,13 +420,13 @@ const Patientdashboard = () => {
                 </div>
 
                 <div className=' flex gap-3'>
-                    <div className='flex py-6 px-2 '>
+                    <div className='flex py-6 px-2 lg:gap-3'>
                          <div className=''>
                              <img src="src/assets/Images/doctor M.jpeg" alt="" className='lg:w-[5vw] lg:h-[7vh] rounded-full' />
                         </div>
                         <div className=''>
-                           <h1 className='lg:text-[15px] lg:text-blue-500 wlg:hitespace-nowrap'>Dr. Meculam</h1>
-                           <h1 className='lg:text-[13px] lg:whitespace-nowrap'>+1 142 536 7890</h1>
+                           <h1 className='lg:text-xl lg:text-blue-500 lg:whitespace-nowrap'>Dr. Meculam</h1>
+                           <h1 className='lg:text-[13px] lg:whitespace-nowrap'>+1 125 412 0215</h1>
                        </div>
                        
                     </div>
@@ -468,9 +468,9 @@ const Patientdashboard = () => {
         </div>     
             
             
-        <div className='lg:flex lg:flex-col'>   
+        <div className=''>   
             
-             <div className='bg-white w-[90vw] h-[22vh] lg:h-[25vh] lg:w-[10vw] shadow-md rounded-xl flex flex-col px-3 py-2 justify-evenly '>
+             <div className='bg-white w-[90vw] gap-4 h-[22vh] lg:h-[25vh] lg:w-[10vw] shadow-md rounded-xl flex flex-col px-3 py-2 justify-evenly '>
                 <div className='flex justify-between '>
                     <h1>Blood Pre..</h1>
                     <img src="src/assets/Images/heartbeat.png" alt="" className='w-[5vw] h-[3vh]' />
@@ -485,7 +485,7 @@ const Patientdashboard = () => {
                 </div>
             </div>
 
-            <div className='bg-white w-[90vw] h-[22vh] shadow-md rounded-xl flex flex-col px-3 py-2 justify-evenly'>
+            <div className='bg-white w-[90vw] h-[22vh] shadow-md rounded-xl flex flex-col px-3 py-2 justify-evenly mt-4' >
                 <div>
                     <h1>Bill Due</h1>
                     <img src="" alt="" />
