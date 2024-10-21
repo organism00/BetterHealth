@@ -23,6 +23,7 @@ import NewNurse from "../Pages/NewNurse";
 
 const SideBar = () => {
   const [showPatientsDropdown, setShowPatientsDropdown] = useState(false);
+  const [showReportDropdown, setShowReportDropdown] = useState(false);
   const [showDoctorsDropdown, setShowDoctorsDropdown] = useState(false);
   const [showNurseDropdown, setShowNurseDropdown] = useState(false);
   const [featuresdropdown, setfeaturesdropdown] = useState(false);
@@ -58,7 +59,10 @@ const SideBar = () => {
   const togglePatientsDropdown = () => {
     setShowPatientsDropdown((prev) => !prev);
   };
-
+ // Function to toggle the REPORT dropdown
+ const toggleReportDropdown = () => {
+  setShowReportDropdown((prev) => !prev);
+};
   // Function to toggle the Doctors dropdown
   const toggleDoctorsDropdown = () => {
     setShowDoctorsDropdown((prev) => !prev);
@@ -141,6 +145,35 @@ const SideBar = () => {
                           </li>
                           <li className="list-disc hover:text-blue-400">
                             <Link to={'/patientlist'}>Patient List</Link>
+                          </li>
+                        </ul>
+                      </div>
+                    )}
+                  </div>
+
+                  
+                  {/* Report */}
+                  <div>
+                    <div
+                      className="flex justify-between w-[40vw] items-center flex-row"
+                      onClick={toggleReportDropdown}
+                    >
+                      <div className="flex justify-between w-20 items-center">
+                      <IoIosSwitch className="text-xl" />
+                        <a href="#" className="hover:text-blue-400">
+                          Lab Test
+                        </a>
+                      </div>
+                      <RiArrowDropDownLine className="text-xl" />
+                    </div>
+                    {showReportDropdown && (
+                      <div className="flex flex-col items-center justify-center my-4 text-start">
+                        <ul className="space-y-4">
+                          <li className="list-disc hover:text-blue-400">
+                            <a href="#">Request</a>
+                          </li>
+                          <li className="list-disc hover:text-blue-400">
+                           <a href="#"> Report</a>
                           </li>
                         </ul>
                       </div>
@@ -332,7 +365,35 @@ const SideBar = () => {
                   </div>
                 )}
               </div>
+              <div>
+                <div
+                  className="flex justify-between w-[13vw] items-center flex-row"
+                  onClick={toggleReportDropdown}
+                >
+                  <div className="flex justify-between gap-4 items-center">
+                  <IoIosSwitch className="text-xl" />
+                    <a href="#" className="hover:text-blue-400">
+                      Lab Test
+                    </a>
+                  </div>
+                  <RiArrowDropDownLine className="text-xl" />
+                </div>
 
+                {showReportDropdown && (
+                  <div className="flex flex-col items-center justify-center my-4 text-start">
+                    <ul className="space-y-4">
+                      <li className="list-disc hover:text-blue-400">
+                        <Link to="">Request </Link>
+                      </li>
+                      <li className="list-disc hover:text-blue-400">
+                        {" "}
+                        <Link to=''>Report</Link>
+                      </li>
+                      
+                    </ul>
+                  </div>
+                )}
+              </div>
               <div>
                 <div
                   className="flex justify-between w-[13vw] items-center flex-row"
