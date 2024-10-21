@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import {
   Table,
   TableBody,
@@ -27,6 +28,10 @@ const patientData = [
 ];
 
 function AdmittedPatients() {
+  const navigate = useNavigate();
+  const handleView = () => {
+    navigate('/patientlist')
+  }
   return (
     <div className='mt-4'>
       <TableContainer component={Paper}>
@@ -75,7 +80,7 @@ function AdmittedPatients() {
       {patientData.length > 5 ? (
         <div className='bg-[#e4e6ef] text-text px-4 py-4 flex justify-between items-center rounded-b-lg '>
           <p>Total: {patientData.length} Patient</p>
-          <button className='bg-primary text-white py-2 px-4 rounded-lg hover:shadow-lg transition-all '>View All</button>
+          <button onClick={handleView} className='bg-primary text-white py-2 px-4 rounded-lg hover:shadow-lg transition-all '>View All</button>
         </div>
       ) : null}
     </div>

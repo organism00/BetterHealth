@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import NavBar from '../Components/Navbar'
 import SideBar from '../Components/SideBar'
 
@@ -13,6 +13,8 @@ import { FaFileMedical } from "react-icons/fa6";
 
 
 function PatientDetails() {
+  const location = useLocation();
+  console.log(location.state)
   return (
     <div className="flex flex-col gap-0 lg:flex-row py-4 md:px-0 ">
       <SideBar/>

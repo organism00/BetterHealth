@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper } from "@mui/material";
 import { patientData as initialPatientData } from '../Components/PatientData';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Sidebar from '../Components/SideBar'
 import Navbar from '../Components/Navbar';
 
@@ -11,6 +11,7 @@ import { TbArrowsSort } from "react-icons/tb";
 import { HiOutlineDotsHorizontal } from "react-icons/hi";
 
 function PatientsList() {
+  const navigate = useNavigate()
   const [patientPerPage] = useState(5)
   const [currentPage, setCurrentPage] = useState(1);
   const [patients, setPatients] = useState(initialPatientData);
@@ -27,6 +28,14 @@ function PatientsList() {
   const handleDelete = (id) => {
     const newPatients = patients.filter(patient => patient.id !== id)
     setPatients(newPatients)
+  }
+
+  const handleEdit = (id) => {
+    navigate('/editpatient', {state: id})
+  }
+
+  const handleView = (id) => {
+    navigate('/patientdetails', {state: id})
   }
 
   // Edit menu
@@ -95,8 +104,8 @@ function PatientsList() {
 
                         {id === row.id && openEditMenu ? (
                           <div className="shadow-lg px-6 py-4 rounded-lg border absolute right-8 top-4 bg-white text-[14px] text-left grid gap-4 w-[150px] z-50 ">
-                            <p>View</p>
-                            <p>Edit</p>
+                            <p onClick={() => handleView(row.id) }>View</p>
+                            <p onClick={() => handleEdit(row.id)}>Edit</p>
                             <p onClick={() => handleDelete(row.id)}>Delete</p>
                           </div>
                         ) : null}
