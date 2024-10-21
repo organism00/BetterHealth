@@ -1,7 +1,11 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import NavBar from '../Components/Navbar'
-import SideBar from '../Components/SideBar'
+import NavBar from '../Components/Navbar';
+import SideBar from '../Components/SideBar';
+import YourStart from '../Components/Patients/YourStart'
+
+// Images
+import proimage from '../assets/Images/first.png'
 
 import { GoHome } from "react-icons/go";
 import { FaStar, FaRegStar } from "react-icons/fa";
@@ -33,8 +37,8 @@ function PatientDetails() {
           {/* side 1 */}
           <div className='w-[33.33%] flex flex-col gap-4 '>
             {/* Address */}
-            <div className='rounded-lg shadow-lg border p-4 '>
-              <div>
+            <div className='rounded-lg shadow-lg border p-4 space-y-4 '>
+              <div className='space-y-2'>
                 <p>Email: email@email.com</p>
                 <p>Phone: +234 810 000 0000</p>
                 <p>Address: 123, Otigba Street, Ikeja Lagos, Nigeria</p>
@@ -60,8 +64,8 @@ function PatientDetails() {
                 <p className='text-[20px] '>Assigned Doctors</p>
               </div>
               <div className='flex gap-4 p-4'>
-                <div>
-                  <img src="" alt="" className='w-24 h-24 bg-black rounded-xl ' />
+                <div className='rounded-xl border bg-[#c8c9ee] shadow-lg'>
+                  <img src={proimage} alt="" className='w-24 h-24 object-cover ' />
                 </div>
                 <div>
                   <p>Name</p>
@@ -94,8 +98,20 @@ function PatientDetails() {
             </div>
 
             {/* details and story */}
-            <div className='h-[60vh] rounded-lg shadow-lg border flex items-center justify-center'>
-              Details and Disease Story here
+            <div className='rounded-lg shadow-lg border items-center justify-center'>
+              <div className='bg-black h-40 w-[100%]'>
+
+              </div>
+              <div>
+
+              </div>
+              <div className='p-4 mt-20 '>
+                <h2 className='font-medium mb-4 '>Story About Disease</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic libero quae, officia asperiores, consequatur laboriosam delectus consequuntur sapiente, aperiam distinctio quasi in quod unde! Accusantium voluptatem excepturi tempora fugit in iure, sapiente sit quo impedit optio totam sint accusamus inventore perferendis qui minima voluptatum ab distinctio laboriosam perspiciatis blanditiis delectus.
+                <br /> <br />
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deserunt exercitationem illo distinctio, quod iste deleniti? Quam atque maxime at id ab saepe sed quisquam porro accusamus provident itaque in tempore cupiditate, ducimus iusto hic incidunt nobis eius deleniti minima recusandae.
+                </p>
+              </div>
             </div>
 
             {/* vitals and statistics */}
@@ -106,8 +122,8 @@ function PatientDetails() {
               </div>
 
               {/* Statistics */}
-              <div className='w-[50%] h-[60vh] rounded-lg border shadow-lg '>
-                Statistics here
+              <div className='w-[50%] h-[60vh] rounded-lg border shadow-lg flex items-center justify-center '>
+                <YourStart/>
               </div>
             </div>
           </div>
