@@ -1,4 +1,4 @@
-import image from "../assets/Images/a.jpg";
+import image from "../../assets/Images/a.jpg";
 
 export const patientData = [
   {

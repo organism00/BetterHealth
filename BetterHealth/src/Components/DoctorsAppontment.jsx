@@ -8,7 +8,7 @@ import {
   TableRow,
   Paper,
 } from "@mui/material";
-import { patientData as initialPatientData } from "../Components/PatientData";
+import { patientData as initialPatientData } from "../Components/Patients/PatientData";
 import Sidebar from "../Components/SideBar";
 import Navbar from "../Components/Navbar";
 

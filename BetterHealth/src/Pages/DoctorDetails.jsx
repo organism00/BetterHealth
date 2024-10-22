@@ -3,7 +3,7 @@ import SideBar from "../Components/SideBar";
 import Navbar from "../Components/Navbar";
 import { GoHome } from "react-icons/go";
 import { NavLink } from "react-router-dom";
-import { patientData } from "../Components/PatientData";
+import { patientData } from "../Components/Patients/PatientData";
 import "../Style/customScrollbar.css";
 import { HiOutlineDotsVertical } from "react-icons/hi";
 import { FaGreaterThan } from "react-icons/fa6";
