@@ -7,7 +7,9 @@ import Map, { Marker } from 'react-map-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 
 // Images
-import proimage from '../assets/Images/first.png'
+import proimage from '../assets/Images/first.png';
+import bgImage from '../assets/Images/bgImage.avif';
+import patient from '../assets/Images/patient.jpeg'
 
 // Icons
 import { GoHome } from "react-icons/go";
@@ -16,32 +18,40 @@ import { FaRegEdit } from "react-icons/fa";
 import { MdOutlineWeekend } from "react-icons/md";
 import { FaFileMedical } from "react-icons/fa6";
 import { FaHeart } from "react-icons/fa";
+import { IoMdTime } from "react-icons/io";
+import { GiWeight } from "react-icons/gi";
+import { IoIosMan } from "react-icons/io";
+import { TbWaveSawTool } from "react-icons/tb";
+import { GoSidebarExpand } from "react-icons/go";
+
 
 const diseaseHistory = [
   { 
     name: 'Diabetes', 
     date: 'Mon, 18 Mar 2021, 11:15 AM', 
-    story: 'Diabetes is a chronic condition where the body either does not produce enough insulin, or it cannot effectively use the insulin it produces. lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+    story: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reprehenderit explicabo aliquam dolorum quam impedit minus optio voluptates facilis quis consequuntur autem doloremque sint, aspernatur, sequi saepe. Cum eligendi iure explicabo repellat! Quisquam dicta odio aliquam est quia ad tempora exercitationem numquam vitae vero, fugit perspiciatis, aperiam iure veritatis officiis! Ratione ad ab iste sapiente harum officia voluptatum id assumenda neque, nobis totam? Numquam aliquam at earum maiores repudiandae iste dicta mollitia, nobis quia eveniet vel eaque quod dolores? Quos rem explicabo ipsam laborum vel necessitatibus quis repudiandae possimus id, consectetur dignissimos beatae iste provident libero cumque, expedita ducimus. Dolorum expedita ratione earum ut molestias dicta ex dignissimos odit culpa asperiores suscipit libero blanditiis saepe neque veritatis adipisci, beatae nam debitis? Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus autem repellat dolore ullam voluptatibus eum itaque omnis ipsam, laudantium suscipit quae a, aliquid non et expedita nulla deleniti.'
   },
   { 
     name: 'Sleep Problem', 
     date: 'Tue, 21 Jun 2020, 03:22 PM', 
-    story: 'Sleep problems are disturbances in sleep patterns which affect health, leading to issues like insomnia, sleep apnea, or restless legs syndrome.' 
+    story: 'Sleep problems are disturbances in sleep patterns which affect health, leading to issues like insomnia, sleep apnea, or restless legs syndrome. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reprehenderit explicabo aliquam dolorum quam impedit minus optio voluptates facilis quis consequuntur autem doloremque sint, aspernatur, sequi saepe. Cum eligendi iure explicabo repellat! Quisquam dicta odio aliquam est quia ad tempora exercitationem numquam vitae vero, fugit perspiciatis, aperiam iure veritatis officiis! Ratione ad ab iste sapiente harum officia voluptatum id assumenda neque, nobis totam? Numquam aliquam at earum maiores repudiandae iste dicta mollitia, nobis quia eveniet vel eaque quod dolores? Quos rem explicabo ipsam laborum vel necessitatibus quis repudiandae possimus id, consectetur dignissimos beatae iste provident libero cumque, expedita ducimus. Dolorum expedita ratione earum ut molestias dicta ex dignissimos odit culpa asperiores suscipit libero blanditiis saepe neque veritatis adipisci, beatae nam debitis? Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus autem repellat dolore ullam voluptatibus eum itaque omnis ipsam, laudantium suscipit quae a, aliquid non et expedita nulla deleniti. Dolore repellendus possimus beatae.' 
   },
   { 
     name: 'Dental Care', 
     date: 'Wed, 15 Mar 2020, 02:11 PM', 
-    story: 'Dental care involves the prevention and treatment of oral health problems such as cavities, gum disease, and tooth loss.'
+    story: 'Dental care involves the prevention and treatment of oral health problems such as cavities, gum disease, and tooth loss. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reprehenderit explicabo aliquam dolorum quam impedit minus optio voluptates facilis quis consequuntur autem doloremque sint, aspernatur, sequi saepe. Cum eligendi iure explicabo repellat! Quisquam dicta odio aliquam est quia ad tempora exercitationem numquam vitae vero, fugit perspiciatis, aperiam iure veritatis officiis! Ratione ad ab iste sapiente harum officia voluptatum id assumenda neque, nobis totam? Numquam aliquam at earum maiores repudiandae iste dicta mollitia, nobis quia eveniet vel eaque quod dolores? Quos rem explicabo ipsam laborum vel necessitatibus quis repudiandae possimus id, consectetur dignissimos beatae iste provident libero cumque, expedita ducimus. Dolorum expedita ratione earum ut molestias dicta ex dignissimos odit culpa asperiores suscipit libero blanditiis saepe neque veritatis adipisci, beatae nam debitis? Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus autem repellat dolore ullam voluptatibus eum itaque omnis ipsam, laudantium suscipit quae a, aliquid non et expedita nulla deleniti. Dolore repellendus possimus beatae.'
   },
   { 
     name: 'Diabetes', 
     date: 'Sun, 11 Jan 2020, 12:24 PM', 
-    story: 'Managing diabetes requires monitoring blood sugar levels, maintaining a healthy diet, and possibly insulin therapy.'
+    story: 'Managing diabetes requires monitoring blood sugar levels, maintaining a healthy diet, and possibly insulin therapy. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reprehenderit explicabo aliquam dolorum quam impedit minus optio voluptates facilis quis consequuntur autem doloremque sint, aspernatur, sequi saepe. Cum eligendi iure explicabo repellat! Quisquam dicta odio aliquam est quia ad tempora exercitationem numquam vitae vero, fugit perspiciatis, aperiam iure veritatis officiis! Ratione ad ab iste sapiente harum officia voluptatum id assumenda neque, nobis totam? Numquam aliquam at earum maiores repudiandae iste dicta mollitia, nobis quia eveniet vel eaque quod dolores? Quos rem explicabo ipsam laborum vel necessitatibus quis repudiandae possimus id, consectetur dignissimos beatae iste provident libero cumque, expedita ducimus. Dolorum expedita ratione earum ut molestias dicta ex dignissimos odit culpa asperiores suscipit libero blanditiis saepe neque veritatis adipisci, beatae nam debitis? Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus autem repellat dolore ullam voluptatibus eum itaque omnis ipsam, laudantium suscipit quae a, aliquid non et expedita nulla deleniti. Dolore repellendus possimus beatae.'
   }
 ];
 
 function PatientDetails() {
   const [selectedStory, setSelectedStory] = useState(diseaseHistory[0].story);
+  const [disease, setDisease] = useState(diseaseHistory[0].name);
+  const [isMore, setIsMore] = useState(false);
 
   const [viewport, setViewport] = useState({
     latitude: 6.601838,
@@ -56,11 +66,27 @@ function PatientDetails() {
   // Function to handle clicking on a disease history item
   const handleDiseaseClick = (story) => {
     setSelectedStory(story);
+    setDisease(story)
   };
   return (
     <div className="flex flex-col gap-0 lg:flex-row py-4 md:px-0 ">
       <SideBar/>
       <NavBar/>
+
+      <div className='fixed right-0 top-[50%] p-2 rounded-lg text-[24px] z-20 bg-primary'
+        onClick={() => setIsMore(!isMore)}
+      >
+        <GoSidebarExpand className='text-white'/>
+      </div>
+        {isMore && (
+          <div className='fixed right-4 top-[57%] z-20 bg-white rounded-lg p-2 shadow-lg flex flex-col gap-2 text-[12px]'>
+            <Link to={'#'}>Previous surgery</Link>
+            <Link to={'#'}>Allergies</Link>
+            <Link to={'#'}>Current medication</Link>
+            <Link to={'#'}>Payment history</Link>
+            <Link to={'#'}>Insurance (HMO)</Link>
+          </div>
+        )}
 
       <div className='mt-20 lg:mx-4 w-full'>
         <div className='flex gap-x-5 py-4 lg:px-0 md:px-8 md:ml-64 lg:ml-0 '>
@@ -166,17 +192,33 @@ function PatientDetails() {
             </div>
 
             {/* details and story */}
-            <div className='rounded-lg shadow-lg border items-center justify-center'>
-              <div className='bg-black h-40 w-[100%]'>
-
-              </div>
-              <div>
-
+            <div className='rounded-lg shadow-lg border items-center justify-center relative'>
+              <div className='h-40 w-[100%]'>
+                <img src={bgImage} alt="" className='object-cover w-[100%] h-[100%] ' />
               </div>
 
-              <div className='p-4 mt-20 '>
+              {/* Patient name and image */}
+              <div className='flex gap-4 items-center absolute left-6 top-[130px]'>
+                <div>
+                  <div className='w-[100px] h-[100px] rounded-xl overflow-hidden border shadow-lg '>
+                    <img src={patient} alt=""  className='h-[100%] w-[100%] object-cover '/>
+                  </div>
+                  <div className='text-center'>
+                    <p>Disease</p>
+                    <p className='font-medium text-14px '>{disease}</p>
+                  </div>
+                </div>
+                <div>
+                  <h1 className='font-medium text-[2vmax] '>Patient Name</h1>
+                  <p className='font-medium text-[1.5vmax] '>#p-patientID</p>
+                  <p className='flex items-center gap-1 '><IoMdTime/> Admin on 15 October 2024, 10:00 AM</p>
+                </div>
+              </div>
+
+              {/* Disease story */}
+              <div className='p-4 mt-32 '>
                 <h2 className='font-medium mb-4 '>Story About Disease</h2>
-                <p>{selectedStory}</p>
+                <p className='text-[12px]'>{selectedStory}</p>
               </div>
             </div>
 
@@ -184,35 +226,53 @@ function PatientDetails() {
             <div className='flex justify-between gap-4 '>
               {/* Vitals */}
               <div className='w-[50%] rounded-lg border shadow-lg '>
-                <div className='rounded-lg border shadow-lg p-4 space-y-4'>
-                  <h3 className="text-xl font-semibold mb-4">Patient Vitals</h3>
-                  <div className="grid grid-cols-2 gap-4 ">
+                <div className='border p-4 space-y-4'>
+                  <div className='py-4 border-b'>
+                    <h3 className="text-xl font-semibold mb-4">Patient Vitals</h3>
+                  </div>
+                  <div className="flex justify-between ">
                     {/* Vital 1 */}
-                    <div className="flex flex-col items-center justify-center p-4 rounded-lg shadow-md">
-                      <FaHeart className="text-red-500 text-2xl mb-2"/>
-                      <p className="text-sm font-semibold">Heart Rate</p>
-                      <p className="text-lg font-bold">72 bpm</p>
+                    <div className="flex flex-col items-center justify-center border p-2">
+                      <GiWeight className="text-red-500 text-4xl mb-2"/>
+                      <p className="text-[10px]">Weight</p>
+                      <p className="text-lg font-bold">230 ibs</p>
                     </div>
                     
                     {/* Vital 2 */}
-                    <div className="flex flex-col items-center justify-center p-4 bg-gray-100 rounded-lg shadow-md">
-                      <FaHeart className="text-blue-500 text-2xl mb-2"/>
-                      <p className="text-sm font-semibold">Blood Pressure</p>
-                      <p className="text-lg font-bold">120/80 mmHg</p>
+                    <div className="flex flex-col items-center justify-center border">
+                      <IoIosMan className="text-[#e1ca58] text-[100px] mb-2"/>
+                      <p className="text-[10px]">Height</p>
+                      <p className="text-lg font-bold">{`6'1`}</p>
                     </div>
                     
                     {/* Vital 3 */}
-                    <div className="flex flex-col items-center justify-center p-4 bg-gray-100 rounded-lg shadow-md">
-                      <FaHeart className="text-green-500 text-2xl mb-2"/>
-                      <p className="text-sm font-semibold">Temperature</p>
-                      <p className="text-lg font-bold">36.8°C</p>
+                    <div className="flex flex-col items-center justify-center border p-2">
+                      <TbWaveSawTool className="text-green-500 text-6xl mb-2"/>
+                      <p className="text-[10px]">BMI</p>
+                      <p className="text-lg font-bold">30.34</p>
                     </div>
-                    
+                  </div>
+                  <div>
                     {/* Vital 4 */}
-                    <div className="flex flex-col items-center justify-center p-4 bg-gray-100 rounded-lg shadow-md">
-                      <FaHeart className="text-yellow-500 text-2xl mb-2"/>
-                      <p className="text-sm font-semibold">Respiratory Rate</p>
-                      <p className="text-lg font-bold">16 breaths/min</p>
+                    <div className="flex flex-col justify-center border p-2">
+                      <p className="text-[14px] text-red-600 ">Blood Pressure</p>
+                      <div className='flex gap-4'>
+                        <div className='flex items-center gap-1'>
+                          <p className="text-[3vmax] font-bold">150</p>
+                          <div>
+                            <p className="text-[12px]">Systolic</p>
+                            <p className="text-[12px]">mmHg</p>
+                          </div>
+                        </div>
+                        <div className='flex items-center gap-1'>
+                          <p className="text-[3vmax] font-bold">90</p>
+                          <div>
+                            <p className="text-[12px]">Diastolic</p>
+                            <p className="text-[12px]">mmHg</p>
+                          </div>
+                        </div>
+                      </div>
+                      <p>Recorded on 25/10/2024</p>
                     </div>
                   </div>
                 </div>
