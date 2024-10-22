@@ -17,7 +17,7 @@ import { FaBed } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import menuImage from "../assets/Images/menu (2).png"
 import "../Style/customScrollbar.css";
-import NewNurse from "../Pages/NewNurse";
+// import NewNurse from "../Pages/NewNurse";
 
 
 
@@ -99,12 +99,12 @@ const SideBar = () => {
 
           {/* Sidebar content for mobile start Here */}
           <div
-            className={`fixed top-16 left-0 w-[70vw] md:w-[36vw] h-screen bg-violet-50 transition-transform duration-300 ease-in-out ${
+            className={`fixed top-16 left-0 w-[60vw] md:w-[36vw] h-screen bg-violet-50 transition-transform duration-300 ease-in-out ${
               isSidebarOpen ? "translate-x-0" : "-translate-x-full"
             }`}
           >
             <div className="mt-4 ">
-              <div className="max-h-[100%] scrollable-div flex flex-col w-[70vw] h-screen px-7">
+              <div className="max-h-[100%] scrollable-div flex flex-col w-[60vw] md:w-[36vw] h-screen px-7">
                 {/* Sidebar content */}
                 <div className="flex flex-col gap-y-7 mt-8 ">
                   <div className="flex justify-between w-28 items-center">

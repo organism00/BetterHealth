@@ -107,9 +107,9 @@ function PatientDetails() {
           </div>
         </div>
 
-        <div className='flex gap-4  '>
+        <div className='flex gap-4 flex-col lg:flex-row p-4 lg:p-0 '>
           {/* side 1 */}
-          <div className='w-[33.33%] flex flex-col gap-4 '>
+          <div className='lg:w-[33.33%] w-[100%] flex flex-col gap-4 '>
             {/* Address */}
             <div className='rounded-lg shadow-lg border p-4 space-y-4 '>
               <div className='space-y-2'>
@@ -132,11 +132,11 @@ function PatientDetails() {
             </div>
 
             {/* Disease History */}
-            <div className='shadow-lg border rounded-lg'>
+            <div className='shadow-lg border rounded-lg '>
               <div className='p-4 border-b'>
                 <p className='text-[20px] '>Medical History</p>
               </div>
-              <div className='flex items-center justify-center p-4 '>
+              <div className='flex items-center lg:justify-center p-4 '>
               <div className="space-y-0">
                   {diseaseHistory.map((item, index) => (
                     <div
@@ -191,9 +191,9 @@ function PatientDetails() {
           </div>
 
           {/* side 2 */}
-          <div className='w-[66.67%] flex flex-col gap-4 '>
+          <div className='w-[100%] lg:w-[66.67%] flex flex-col gap-4 '>
             {/* buttons */}
-            <div className='flex items-center justify-between'>
+            <div className='flex flex-wrap gap-2 items-center justify-between'>
               <button className='flex items-center px-4 py-2 bg-primary hover:bg-primaryhover transition-all text-white rounded-lg'><FaRegEdit/>Edit Profile</button>
               <div className='flex items-center gap-2'>
                 <button className='flex gap-2 items-center px-4 py-2 bg-primary hover:bg-primaryhover transition-all text-white rounded-lg'
@@ -237,30 +237,30 @@ function PatientDetails() {
             </div>
 
             {/* vitals and statistics */}
-            <div className='flex justify-between gap-4 '>
+            <div className='flex flex-col lg:flex-row justify-between gap-4 '>
               {/* Vitals */}
-              <div className='w-[50%] rounded-lg border shadow-lg '>
+              <div className='w-[100%] lg:w-[50%] rounded-lg border shadow-lg '>
                 <div className='border p-4 space-y-4'>
                   <div className='py-4 border-b'>
                     <h3 className="text-xl font-semibold mb-4">Patient Vitals</h3>
                   </div>
                   <div className="flex justify-between ">
                     {/* Vital 1 */}
-                    <div className="flex flex-col items-center justify-center border p-2">
+                    <div className="flex flex-col items-center justify-center border p-4 lg:p-2">
                       <GiWeight className="text-red-500 text-4xl mb-2"/>
                       <p className="text-[10px]">Weight</p>
                       <p className="text-lg font-bold">230 ibs</p>
                     </div>
                     
                     {/* Vital 2 */}
-                    <div className="flex flex-col items-center justify-center border">
+                    <div className="flex flex-col items-center justify-center border p-4 lg:p-2">
                       <IoIosMan className="text-[#e1ca58] text-[100px] mb-2"/>
                       <p className="text-[10px]">Height</p>
                       <p className="text-lg font-bold">{`6'1`}</p>
                     </div>
                     
                     {/* Vital 3 */}
-                    <div className="flex flex-col items-center justify-center border p-2">
+                    <div className="flex flex-col items-center justify-center border p-4 lg:p-2">
                       <TbWaveSawTool className="text-green-500 text-6xl mb-2"/>
                       <p className="text-[10px]">BMI</p>
                       <p className="text-lg font-bold">30.34</p>
@@ -268,7 +268,7 @@ function PatientDetails() {
                   </div>
                   <div>
                     {/* Vital 4 */}
-                    <div className="flex flex-col justify-center border p-2">
+                    <div className="flex gap-4 flex-col justify-center border p-2">
                       <p className="text-[14px] text-red-600 ">Blood Pressure</p>
                       <div className='flex gap-4'>
                         <div className='flex items-center gap-1'>
@@ -293,7 +293,7 @@ function PatientDetails() {
               </div>
 
               {/* Statistics */}
-              <div className='w-[50%] h-[60vh] rounded-lg border shadow-lg flex items-center justify-center '>
+              <div className='w-[100%] lg:w-[50%] h-[60vh] rounded-lg border shadow-lg flex items-center justify-center '>
                 <YourStart/>
               </div>
             </div>
