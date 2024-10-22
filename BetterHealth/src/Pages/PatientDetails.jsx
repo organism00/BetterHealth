@@ -23,6 +23,7 @@ import { GiWeight } from "react-icons/gi";
 import { IoIosMan } from "react-icons/io";
 import { TbWaveSawTool } from "react-icons/tb";
 import { GoSidebarExpand } from "react-icons/go";
+import { IoMdCloseCircleOutline } from "react-icons/io";
 
 
 const diseaseHistory = [
@@ -52,6 +53,15 @@ function PatientDetails() {
   const [selectedStory, setSelectedStory] = useState(diseaseHistory[0].story);
   const [disease, setDisease] = useState(diseaseHistory[0].name);
   const [isMore, setIsMore] = useState(false);
+  const [openBookVitalsModal, setOpenBookVitalsModal] = useState(false)
+  const [openEmrModal, setOpenEmrModal] = useState(false)
+
+  const handleBookVitalsModal = () => {
+    setOpenBookVitalsModal(true)
+  }
+  const handleEmrModal = () => {
+    setOpenEmrModal(true)
+  }
 
   const [viewport, setViewport] = useState({
     latitude: 6.601838,
@@ -76,15 +86,15 @@ function PatientDetails() {
       <div className='fixed right-0 top-[50%] p-2 rounded-lg text-[24px] z-20 bg-primary'
         onClick={() => setIsMore(!isMore)}
       >
-        <GoSidebarExpand className='text-white'/>
+        <GoSidebarExpand className='text-white cursor-pointer'/>
       </div>
         {isMore && (
-          <div className='fixed right-4 top-[57%] z-20 bg-white rounded-lg p-2 shadow-lg flex flex-col gap-2 text-[12px]'>
-            <Link to={'#'}>Previous surgery</Link>
-            <Link to={'#'}>Allergies</Link>
-            <Link to={'#'}>Current medication</Link>
-            <Link to={'#'}>Payment history</Link>
-            <Link to={'#'}>Insurance (HMO)</Link>
+          <div className='fixed right-4 top-[57.5%] z-20 bg-white rounded-lg border p-4 shadow-xl flex flex-col gap-2 text-[14px]'>
+            <Link to={'#'} className='hover:text-primary'>Previous surgery</Link>
+            <Link to={'#'} className='hover:text-primary'>Allergies</Link>
+            <Link to={'#'} className='hover:text-primary'>Current medication</Link>
+            <Link to={'#'} className='hover:text-primary'>Payment history</Link>
+            <Link to={'#'} className='hover:text-primary'>Insurance (HMO)</Link>
           </div>
         )}
 
@@ -131,19 +141,19 @@ function PatientDetails() {
                   {diseaseHistory.map((item, index) => (
                     <div
                       key={index}
-                      className="flex items-start space-x-4 cursor-pointer"
+                      className="flex items-start space-x-4 cursor-pointer "
                       onClick={() => handleDiseaseClick(item.story, item.name)}
                     >
                       <div className="flex-shrink-0 flex flex-col items-center">
-                        <div className="w-14 h-14 bg-primary text-white rounded-full flex items-center justify-center">
+                        <div className="w-14 h-14 bg-primary hover:bg-primaryhover transition-all text-white rounded-full flex items-center justify-center">
                           <FaHeart className='text-[20px] ' />
                         </div>
                         {index < diseaseHistory.length - 1 && (
                           <div className="h-6 border-l-4 border-primary "></div>
                         )}
                       </div>
-                      <div>
-                        <p className="font-medium">{item.name}</p>
+                      <div className='hover:text-primaryhover transition-all'>
+                        <p className="font-medium ">{item.name}</p>
                         <p className="text-sm text-gray-500">{item.date}</p>
                       </div>
                     </div>
@@ -184,10 +194,14 @@ function PatientDetails() {
           <div className='w-[66.67%] flex flex-col gap-4 '>
             {/* buttons */}
             <div className='flex items-center justify-between'>
-              <button className='flex items-center px-4 py-2 bg-primary text-white rounded-lg'><FaRegEdit/>Edit Profile</button>
+              <button className='flex items-center px-4 py-2 bg-primary hover:bg-primaryhover transition-all text-white rounded-lg'><FaRegEdit/>Edit Profile</button>
               <div className='flex items-center gap-2'>
-                <button className='flex items-center px-4 py-2 bg-primary text-white rounded-lg'><FaFileMedical/>New Medical Condition</button>
-                <button className='flex items-center px-4 py-2 bg-primary text-white rounded-lg'><MdOutlineWeekend/>New Appointment</button>
+                <button className='flex gap-2 items-center px-4 py-2 bg-primary hover:bg-primaryhover transition-all text-white rounded-lg'
+                  onClick={handleBookVitalsModal}
+                ><FaFileMedical/>Book Vitals Check</button>
+                <button className='flex gap-2 items-center px-4 py-2 bg-primary hover:bg-primaryhover transition-all text-white rounded-lg'
+                  onClick={handleEmrModal}
+                ><MdOutlineWeekend/>Create EMR</button>
               </div>
             </div>
 
@@ -286,6 +300,51 @@ function PatientDetails() {
           </div>
         </div>
       </div>
+
+      {/* Modal for Vitals */}
+      {openBookVitalsModal && (
+        <div className='fixed w-[100%] h-[100%] flex items-center justify-center z-50 bg-[#00000066] '>
+          <div className=' flex items-center justify-center w-[50vw] h-[80vh] bg-white p-14 relative'>
+            <button className='bg-primary rounded-xl text-white p-2 text-[30px] shadow-lg absolute right-4 top-4 '
+              onClick={() => setOpenBookVitalsModal(false)}
+            ><IoMdCloseCircleOutline/></button>
+            <form action="submit">
+              <h1 className='text-2xl font-medium mb-4'>Book Vitals Check</h1>
+              <input type="text" placeholder='Enter patient identification number' className='border p-3 rounded-lg w-[100%] ' />
+              <select name="" id="" className='border mt-4 w-[100%] p-3 rounded-lg '>
+                <option value="">Select Nurse</option>
+                <option value="">Adenike Olawale</option>
+                <option value="">Omowunmi Paul</option>
+                <option value="">John Mark</option>
+                <option value="">Peter Stones</option>
+              </select>
+              <button className='w-[100%] bg-primary text-white font-medium p-3 rounded-lg mt-4 hover:bg-primaryhover transition-all '>Book</button>
+            </form>
+          </div>
+        </div>
+      )}
+      {/* Modal for EMR */}
+      {openEmrModal && (
+        <div className='fixed w-[100%] h-[100%] flex items-center justify-center z-50 bg-[#00000066] '>
+          <div className=' flex items-center justify-center w-[50vw] h-auto bg-white px-14 py-10 relative'>
+            <button className='bg-primary rounded-xl text-white p-2 text-[30px] shadow-lg absolute right-4 top-4 '
+              onClick={() => setOpenEmrModal(false)}
+            ><IoMdCloseCircleOutline/></button>
+            <form action="submit" className='space-y-2'>
+              <h1 className='text-2xl font-medium'>Create EMR</h1>
+              <input type="text" placeholder='Enter patient identification number' className='border p-3 rounded-lg w-[100%] ' />
+              {/* DATE */}
+              <input type="date" className='border p-3 rounded-lg w-[100%]' />
+              <input type="text" placeholder='Enter Diagnosis' className='border p-3 rounded-lg w-[100%] ' />
+              <input type="text" placeholder='Enter patient treatment' className='border p-3 rounded-lg w-[100%] ' />
+              <input type="text" placeholder='Enter patient prescribed medication' className='border p-3 rounded-lg w-[100%] ' />
+              <input type="text" placeholder='Enter doctors note' className='border p-3 rounded-lg w-[100%] ' />
+              <button className='w-[100%] bg-primary text-white font-medium p-3 rounded-lg mt-4 hover:bg-primaryhover transition-all'>Create EMR</button>
+            </form>
+
+          </div>
+        </div>
+      )}
     </div>
   )
 }
