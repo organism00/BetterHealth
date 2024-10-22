@@ -64,9 +64,9 @@ function PatientDetails() {
   console.log(location.state)
 
   // Function to handle clicking on a disease history item
-  const handleDiseaseClick = (story) => {
+  const handleDiseaseClick = (story, name) => {
     setSelectedStory(story);
-    setDisease(story)
+    setDisease(name)
   };
   return (
     <div className="flex flex-col gap-0 lg:flex-row py-4 md:px-0 ">
@@ -132,7 +132,7 @@ function PatientDetails() {
                     <div
                       key={index}
                       className="flex items-start space-x-4 cursor-pointer"
-                      onClick={() => handleDiseaseClick(item.story)}
+                      onClick={() => handleDiseaseClick(item.story, item.name)}
                     >
                       <div className="flex-shrink-0 flex flex-col items-center">
                         <div className="w-14 h-14 bg-primary text-white rounded-full flex items-center justify-center">
