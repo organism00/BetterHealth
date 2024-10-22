@@ -326,7 +326,7 @@ function PatientDetails() {
       {/* Modal for EMR */}
       {openEmrModal && (
         <div className='fixed w-[100%] h-[100%] flex items-center justify-center z-50 bg-[#00000066] '>
-          <div className=' flex items-center justify-center w-[50vw] h-auto bg-white px-14 py-10 relative'>
+          <div className=' flex items-center justify-center w-[50vw] h-auto bg-white px-14 py-6 relative'>
             <button className='bg-primary rounded-xl text-white p-2 text-[30px] shadow-lg absolute right-4 top-4 '
               onClick={() => setOpenEmrModal(false)}
             ><IoMdCloseCircleOutline/></button>
@@ -338,7 +338,7 @@ function PatientDetails() {
               <input type="text" placeholder='Enter Diagnosis' className='border p-3 rounded-lg w-[100%] ' />
               <input type="text" placeholder='Enter patient treatment' className='border p-3 rounded-lg w-[100%] ' />
               <input type="text" placeholder='Enter patient prescribed medication' className='border p-3 rounded-lg w-[100%] ' />
-              <input type="text" placeholder='Enter doctors note' className='border p-3 rounded-lg w-[100%] ' />
+              <textarea type="text" placeholder='Enter doctors note' className='border p-3 rounded-lg w-[100%] ' />
               <button className='w-[100%] bg-primary text-white font-medium p-3 rounded-lg mt-4 hover:bg-primaryhover transition-all'>Create EMR</button>
             </form>
 
