@@ -8,9 +8,9 @@ import {
   TableRow,
   Paper,
 } from "@mui/material";
-import { patientData as initialPatientData } from "../Components/Patients/PatientData";
-import Sidebar from "../Components/SideBar";
-import Navbar from "../Components/Navbar";
+import { patientData as initialPatientData } from "../Patients/PatientData";
+import Sidebar from "../SideBar";
+import Navbar from "../Navbar";
 
 // Icons
 import { GoHome } from "react-icons/go";

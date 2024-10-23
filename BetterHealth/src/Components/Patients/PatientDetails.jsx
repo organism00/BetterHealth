@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import NavBar from '../Components/Navbar';
-import SideBar from '../Components/SideBar';
-import YourStart from '../Components/Patients/YourStart';
+import NavBar from '../Navbar';
+import SideBar from '../SideBar';
+import YourStart from '../Patients/YourStart';
 import Map, { Marker } from 'react-map-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 
 // Images
-import proimage from '../assets/Images/first.png';
-import bgImage from '../assets/Images/bgImage.avif';
-import patient from '../assets/Images/patient.jpeg'
+import proimage from '../../assets/Images/first.png';
+import bgImage from '../../assets/Images/bgImage.avif';
+import patient from '../../assets/Images/patient.jpeg'
 
 // Icons
 import { GoHome } from "react-icons/go";

@@ -1,6 +1,6 @@
 import React from "react";
 import Chart from "react-apexcharts";
-import coverImage from "../assets/Images/istockphoto-1 (17).jpg";
+import coverImage from "../../assets/Images/istockphoto-1 (17).jpg";
 
 
 
@@ -37,7 +37,7 @@ const AssignedPatient = () => {
         <img
           src={coverImage} // Replace with real image
           alt="Patient"
-          className="w-32 h-32"
+          className="w-32 h-32 object-cover"
         />
       </div>
 

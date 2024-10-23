@@ -6,17 +6,17 @@ import AdminStaff from "./Pages/AdminStaff";
 import Doctor from "./Pages/DoctorLogin";
 import Nurse from "./Pages/Nurse";
 import Staff from "./Pages/Staff";
-import PatientsList from "./Pages/PatientsList";
-import DoctorList from "./Pages/DoctorList";
-import DoctorAppointment from "./Components/DoctorsAppontment";
-import NurseList from './Pages/NurseList'
+import PatientsList from "./Components/Patients/PatientsList";
+import DoctorList from "./Components/Doctor/DoctorList";
+import DoctorAppointment from "./Components/Doctor/DoctorsAppontment";
+import NurseList from './Components/Nurse/NurseList'
 import NewPatients from './Pages/NewPatient'
-import NewDoctor from './Pages/NewDoctor'
-import NewNurse from './Pages/NewNurse'
-import PatientDetails from './Pages/PatientDetails';
-import DoctorDetails from "./Pages/DoctorDetails";
-import CalendarComponent from "./Pages/Calendar";
-import NurseDetails from "./Pages/NurseDetails";
+import NewDoctor from './Components/Doctor/NewDoctor';
+import NewNurse from './Components/Nurse/NewNurse';
+import PatientDetails from "./Components/Patients/PatientDetails";
+import DoctorDetails from "./Components/Doctor/DoctorDetails";
+import CalendarComponent from "./Components/Appointment/Calendar";
+import NurseDetails from "./Components/Nurse/NurseDetails";
 
 
 

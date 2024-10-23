@@ -1,6 +1,6 @@
 import React from 'react'
-import Navbar from '../Components/Navbar'
-import SideBar from '../Components/SideBar'
+import Navbar from '../Navbar'
+import SideBar from '../SideBar'
 
 const NewNurse = () => {
   return (

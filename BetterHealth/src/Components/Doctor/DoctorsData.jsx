@@ -1,4 +1,4 @@
-import proimage from "../assets/images/first.png";
+import proimage from "../../assets/images/first.png";
 
 export const doctorsList = [
   {

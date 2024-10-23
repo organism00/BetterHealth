@@ -1,32 +1,25 @@
 import React from "react";
-import SideBar from "../Components/SideBar";
-import Navbar from "../Components/Navbar";
+import SideBar from "../SideBar";
+import Navbar from "../Navbar";
 import { GoHome } from "react-icons/go";
 import { NavLink } from "react-router-dom";
-import { patientData } from "../Components/Patients/PatientData";
-import "../Style/customScrollbar.css";
+import { patientData } from "../Patients/PatientData";
 import { HiOutlineDotsVertical } from "react-icons/hi";
 import { FaGreaterThan } from "react-icons/fa6";
 import { MdNavigateNext } from "react-icons/md";
 import { GrFormPrevious } from "react-icons/gr";
 import { FaCalendarAlt } from "react-icons/fa";
-import { doctorsList } from "../Components/DoctorsData";
-import coverImage from '../assets/Images/istockphoto-1 (17).jpg'
+import { doctorsList } from "../Doctor/DoctorsData";
+import coverImage from '../../assets/Images/istockphoto-1 (17).jpg'
 import { IoMdTime } from "react-icons/io";
-import DoctorAbility from "../Components/DoctorAbility";
+import DoctorAbility from "./DoctorAbility";
 import { FaStethoscope } from "react-icons/fa";
-import AssignedPatient from "../Components/AssignedPatinet";
-import RecentQuestions from "../Components/adminDashboard/RecentQuestions";
-import ReviewList from "../Components/ReviewList";
+import AssignedPatient from "./AssignedPatinet";
+import RecentQuestions from "../adminDashboard/RecentQuestions";
+import ReviewList from "../ReviewList";
 import { FaPhone } from "react-icons/fa6";
-import "../Style/customScrollbar.css";
+import "../../Style/customScrollbar.css";
 import { HiOutlineDotsHorizontal } from "react-icons/hi";
-
-
-
-
-
-
 
 const DoctorDetails = () => {
   return (
@@ -151,7 +144,7 @@ const DoctorDetails = () => {
                         <div className="w-[100%] px-2 flex items-center justify-between">
                           <div className="w-[90%] flex items-center">
                             <img
-                              className="w-20 h-20 rounded-full cursor-pointer hover:border"
+                              className="w-20 h-20 rounded-full cursor-pointer hover:border object-cover"
                               src={doctor.thumb}
                               alt={`{doctor.name}'s thumbnail`}
                             />
@@ -280,7 +273,7 @@ const DoctorDetails = () => {
               <div className="flex justify-between px-4 md:px-8">
                 <div className=" -mt-16 z-30">
                   <img
-                    className="w-32 h-32 md:w-44 md:h-48 rounded-lg"
+                    className="w-32 h-32 md:w-44 md:h-48 rounded-lg object-cover"
                     src={coverImage}
                     alt="coverImage"
                   />

@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper } from "@mui/material";
-import { patientData as initialPatientData } from '../Components/Patients/PatientData';
+import { patientData as initialPatientData } from './PatientData';
 import { Link, useNavigate } from 'react-router-dom';
-import Sidebar from '../Components/SideBar'
-import Navbar from '../Components/Navbar';
+import Sidebar from '../SideBar'
+import Navbar from '../Navbar';
 
 // Icons
 import { GoHome } from "react-icons/go";

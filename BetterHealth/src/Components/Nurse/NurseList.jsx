@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
-import SideBar from '../Components/SideBar';
-import Navbar from '../Components/Navbar';
-import { nurseList } from '../Components/NurseData';
+import SideBar from '../SideBar';
+import Navbar from '../Navbar';
+import { nurseList } from './NurseData';
 import { GoHome } from "react-icons/go";
 
 const NurseList = () => {
