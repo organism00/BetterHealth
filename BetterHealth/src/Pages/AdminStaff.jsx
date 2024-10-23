@@ -2,11 +2,14 @@ import React, { useState, useEffect } from "react";
 import Slider from "react-slick";
 import hospital1 from "../assets/images/a.jpg";
 import hospital3 from "../assets/images/b.jpg";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
+import axios from 'axios';
+
 import AOS from "aos";
 import "aos/dist/aos.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import '../Style/loader.css'
 
 const AdminStaff = () => {
   useEffect(() => {
@@ -28,8 +31,33 @@ const AdminStaff = () => {
     TransitionEvent: "ease-in-out",
   };
 
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [loader, setLoader] = useState(false);
+  const navigate = useNavigate()
+
+  const handleLogin = async (e) => {
+    setLoader(true);
+    e.preventDefault();
+    try {
+      const response = await axios.post('https://hms-w4kw.onrender.com/api/Admin/login', { username, password });
+      navigate('/admindashboard')
+      setLoader(false)
+      console.log(response.data);
+    } catch (error) {
+      console.error(error);
+      setLoader(false)
+    }
+  }
+
   return (
     <div className="lg:h-[100vh] bg-[whitesmoke] flex items-center overflow-hidden">
+      {/* Loader */}
+      {loader && (
+        <div className='loaderwrapper'>
+          <div className="loader"></div>
+        </div>
+      )}
       {/* Left - Image Slider */}
       <div className="hidden lg:block xl:h-[100%] w-[50vw]">
         <Slider {...sliderSettings}>
@@ -57,22 +85,24 @@ const AdminStaff = () => {
             </p>
           </div>
 
-          <form action="" className="space-y-6">
+          <form action="" className="space-y-6" onSubmit={handleLogin}>
             {/* Username Field */}
             <input
               className="w-full h-[55px] text-xl pl-4 font-[inter] rounded-[12px] font-medium border outline-[#483d8b]"
               type="text"
               placeholder="Username"
-              name=""
-              id=""
+              name={username}
+              id="password"
+              onChange={(e) => setUsername(e.target.value)}
             />
 
             <input
               className="w-full h-[55px] text-xl pl-4 font-[inter] rounded-[12px] font-medium border outline-[#483d8b]"
               placeholder="Password"
               type="password"
-              name=""
-              id=""
+              name={password}
+              id="password"
+              onChange={(e) => setPassword(e.target.value)}
             />
 
             <div className="flex flex-row justify-between">
