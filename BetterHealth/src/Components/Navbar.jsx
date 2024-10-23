@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { useLocation } from "react-router-dom";
 import { IoMenu } from "react-icons/io5";
 import { BsSearch } from "react-icons/bs";
 import user from "../assets/Images/user.svg";
@@ -7,8 +6,7 @@ import { IoMdQrScanner } from "react-icons/io";
 import { BiSolidNotification } from "react-icons/bi";
 import { PiGearFill } from "react-icons/pi";
 const Navbar = () => {
-  const location = useLocation()
-  const [userData] = useState(location.state)
+  const [userData] = useState(JSON.parse(localStorage.getItem('userData')))
   console.log(userData)
   return (
     <div>

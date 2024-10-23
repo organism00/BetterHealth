@@ -42,7 +42,8 @@ const AdminStaff = () => {
     e.preventDefault();
     try {
       const response = await axios.post('https://hms-w4kw.onrender.com/api/Staff/StaffLogin', { jobRole, email, password });
-      navigate('/admindashboard', {state: response.data.data})
+      navigate('/admindashboard')
+      localStorage.setItem("userData", JSON.stringify(response.data.data))
       setLoader(false)
       // console.log(response.data.data);
     } catch (error) {
