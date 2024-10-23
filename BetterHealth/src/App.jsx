@@ -22,6 +22,7 @@ import PatientDetails from './Pages/PatientDetails';
 import DoctorDetails from "./Pages/DoctorDetails";
 import Patientdashboard from './Pages/Patientdashboard';
 import HeartRateChart from './Components/HeartRateChart';
+import HeartECGChart from './Components/HeartECGChart';
 
 
 
@@ -49,6 +50,7 @@ const App = () => {
         <Route path="/doctordetails" element={<DoctorDetails />} />
         <Route path='/patientdashboard' element ={< Patientdashboard/>}></Route>
         <Route path='/test' element ={< HeartRateChart/>}></Route>
+        <Route path='/run' element ={< HeartECGChart/>}></Route>
         
 
       </Routes>

@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom'
 import SideBar from '../Components/SideBar'
 import Navbar from '../Components/Navbar'
 import HeartRateChart from '../Components/HeartRateChart'
+import Fever from '../Components/Fever'
+import  HeartECGChart from '../Components/HeartECGChart'
 
 
 
@@ -15,13 +17,20 @@ const Patientdashboard = () => {
               <Navbar />
     
             <div className="mt-24 w-full h-full lg:w-full lg:ml-0 md:ml-32 px-5 space-y-4">
-                  <div className="flex gap-[320px]">
-                    <h1 className="text-3xl">Johen Doe</h1>
-                    <div className="flex gap-2 items-center">
+                  <div className="flex lg:gap-[320px]  gap-[50px]">
+                    <h1 className="text-3xl whitespace-nowrap">Johen Doe</h1>
+                    <div className="lg:w-[12vw] lg:h-[6vh] w-[45vw] h-[7vh] bg-indigo-700 rounded-md flex gap-2 items-center justify-between px-5">
                       {/* <GoHome /> */}
-                      <Link className='w-[12vw] h-[6vh] bg-blue-900 rounded-md' to={`/Patientdashboard`}> Add Record</Link>
+                      <div>
+                        <img src="src/assets/Images/plus (2).png" alt="" className='w-[10px] h-[10px]'/>
+
+                      </div>
+                      <Link className=' flex justify-center ' to={`/Patientdashboard`}> 
+                      <h1 className=' text-white'>  <h1>Add Record</h1></h1>
+                      </Link>
                     </div>
                   </div>
+                 
 
 <div className='hidden md:hidden lg:flex lg:flex-row lg:w-[60vw] lg:h-auto'>
     <div className='lg:flex lg:flex-col'>
@@ -29,7 +38,7 @@ const Patientdashboard = () => {
     
       <div className='lg:w-[50vw] lg:h-screen lg:bg-white lg:flex lg:py-4 lg:px-5 lg:space-x-5 '>
         
-        <div className='lg:w-[11vw] lg:h-[38vh] bg-indigo-700 lg:rounded-xl shadow-md lg:border-t-2 px-2'>
+        <div className='lg:w-[11vw] lg:h-[38vh] bg-indigo-700 lg:rounded-xl shadow-md lg:border-t-2 px-2 '>
                <div className='flex justify-between px-3 py-5'>
                     <div>
                      <h1 className=' text-white text-[17px]'>Heart Rate</h1>
@@ -58,12 +67,12 @@ const Patientdashboard = () => {
                      </div>
                 </div>
 
-                <div className='px-3 font-semibold text-white mt-[-13px]'>
-                    <h1>75/118</h1>
+                <div className='px-3 font-semibold  mt-[-13px]'>
+                    <h1 className='sup text-sm'>100.8 <span>&#176;</span>F</h1>
                 </div>
            
                 <div className='ml-[-24px] py-8'>
-                     <HeartRateChart/>
+                     <Fever/>
                 </div>
           
         </div>
@@ -89,9 +98,9 @@ const Patientdashboard = () => {
             </div>
 
             <div className='lg:w-[11vw] lg:h-[13vh] bg-white rounded-md shadow-md lg:space-y-3 lg:py-4 lg:px-4 lg:border-t-2'>
-                <div>
+                <div className=' flex justify-between'>
                     <h1 className='lg:text-xl'>Bill Due</h1>
-                    <img src="" alt="" />
+                    <img src="src/assets/Images/wallet.png" alt="" className='w-[15px] h-[18px] mt-2' />
                 </div>
                 <div className='lg:font-light'>
                     $214.86
@@ -153,9 +162,29 @@ const Patientdashboard = () => {
 
        </div>
 
-      <div className='lg:w-[50vw] lg:h-[70vh] bg-white lg:mt-[-380px] lg:px-5 lg:flex lg:space-x-4 '>
-        <div className='lg:w-[26vw] lg:h-[50vh] bg-white rounded-md shadow-md lg:border-t-2'>
-            jddjjk
+      <div className='lg:w-[50vw] lg:h-[70vh] bg-white lg:mt-[-380px] lg:px-5 lg:flex lg:space-x-4 px-4  '>
+        <div className='lg:w-[26vw] lg:h-[50vh] bg-white rounded-md shadow-md lg:border-t-2 py-4'>
+        <div className='px-4  text-xl'>
+                    <h1>Heart ECG</h1>
+                </div>            
+                <div className='flex flex-row justify-between px-3 '>
+                    <div className='py-6'>
+                        <select className='text-black text-[18px] w-36  h-6' name="">
+                            <option value="">1 to 10 Jan'21</option>
+                            <option value="">11 to 31 Jan '21</option>
+                            <option value="">1 to 15 Feb '21</option>
+                            <option value="">16 t0 18 Feb '21</option>
+                        </select>                       
+                    </div>  
+                    <div className='lg:w-[8vw] lg:h-[6vh] bg-blue-50 mt-5 px-1 rounded-md flex justify-between leading-10 whitespace-nowrap'>
+                        <h1 className='text-blue-600 font-thin text-[12px]'>72 bmp  </h1> 
+                        <h1 className='text-[12px]'>Average</h1>
+                    </div>
+                </div>
+                <div className='w-[350px] h-[6px] px-5 py-10 '>
+                    <HeartECGChart/>
+                </div>
+          
 
         </div>
         <div className='lg:w-[20vw] lg:h-[50vh] bg-white rounded-md shadow-md lg:border-t-2'>
@@ -494,7 +523,7 @@ const Patientdashboard = () => {
                      <h1 className='font-semibold text-white'>Heart Rate</h1>
                     </div>
                      <div>
-                        <img src="src/assets/Images/like.png" alt="" className='w-[4vw] h-[2vh]'/>
+                        <img src="src/assets/Images/like.png" alt="" className='w-[4vw] h-[2vh] mt-4'/>
                      </div>
                 </div>
 
@@ -513,16 +542,16 @@ const Patientdashboard = () => {
                      <h1 className='font-semibold'>Fever</h1>
                     </div>
                      <div>
-                        <img src="src/assets/Images/like (1).png" alt="" className='w-[4vw] h-[2vh]'/>
+                        <img src="src/assets/Images/like (1).png" alt="" className='w-[4vw] h-[2vh] mt-4'/>
                      </div>
                 </div>
 
                 <div className='px-3 font-semibold mt-[-13px]'>
-                    <h1>100.8</h1>
+                <h1 className='sup text-sm'>100.8 <span>&#176;</span>F</h1>
                 </div>
            
                 <div className='ml-[-24px] py-8'>
-                     <HeartRateChart/>
+                     <Fever/>
                 </div>
                
             
@@ -548,9 +577,9 @@ const Patientdashboard = () => {
             </div>
 
             <div className='bg-white w-[90vw] h-[22vh] shadow-md rounded-xl flex flex-col px-3 py-2 justify-evenly border-t-2' >
-                <div>
+                <div className='flex justify-between'>
                     <h1>Bill Due</h1>
-                    <img src="" alt="" />
+                    <img src="src/assets/Images/wallet.png" alt="" className='w-[4vw] h-[18px]' />
                 </div>
                 <div>
                     $214.86
@@ -592,7 +621,7 @@ const Patientdashboard = () => {
                 </div>
             </div>
            
-            <div className='bg-white w-[90vw] h-[22vh] shadow-md rounded-xl flex flex-col py-5 space-y-4 border-t-2 '>
+            <div className='bg-white w-[90vw] h-[39vh] shadow-md rounded-xl flex flex-col py-5 space-y-4 border-t-2 '>
                 <div className='px-4'>
                     <h1>Heart ECG</h1>
                 </div>            
@@ -609,6 +638,9 @@ const Patientdashboard = () => {
                         <h1 className='text-blue-600 font-thin'>72 bmp  </h1> 
                         <h1 className=''>Average</h1>
                     </div>
+                </div>
+                <div className='w-[350px] h-[6px] px-5'>
+                    <HeartECGChart/>
                 </div>
             </div>
 
