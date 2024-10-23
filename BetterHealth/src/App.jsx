@@ -28,6 +28,7 @@ import HeartECGChart from './Components/HeartECGChart';
 
 
 
+
 const App = () => {
   return (
     <>
@@ -51,6 +52,8 @@ const App = () => {
         <Route path='/patientdashboard' element ={< Patientdashboard/>}></Route>
         <Route path='/test' element ={< HeartRateChart/>}></Route>
         <Route path='/run' element ={< HeartECGChart/>}></Route>
+       
+
         
 
       </Routes>

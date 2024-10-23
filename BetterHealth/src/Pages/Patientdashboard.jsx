@@ -627,7 +627,7 @@ const Patientdashboard = () => {
                 </div>            
                 <div className='flex flex-row justify-between px-3 '>
                     <div>
-                        <select className='text-black text-[18px] w-36  h-6' name="">
+                        <select className='text-black text-[18px] w-36 h-6' name="">
                             <option value="">1 to 10 Jan'21</option>
                             <option value="">11 to 31 Jan '21</option>
                             <option value="">1 to 15 Feb '21</option>
@@ -692,7 +692,8 @@ const Patientdashboard = () => {
                         <img src="src/assets/Images/loupe.png" alt="" className='w-[2vh] h-[2vh]'/>
                     </div>
                 </div>
-                <div className='w[70vw] h-[1px] bg-gray-300'></div>
+                <div className='sm:w[70vw] sm:h-[1px] bg-red-300'></div>
+                <div></div>
                 <div className=' flex gap-16 px-4'>
                     <div className='flex flex-col justify-between'>
                         <h1 className='text-gray-500 text-[15px]'>Patieny Name:</h1>
