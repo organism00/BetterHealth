@@ -19,14 +19,14 @@ const Patientdashboard = () => {
             <div className="mt-24 w-full h-full lg:w-full lg:ml-0 md:ml-32 px-5 space-y-4">
                   <div className="flex lg:gap-[320px]  gap-[50px]">
                     <h1 className="text-3xl whitespace-nowrap">Johen Doe</h1>
-                    <div className="lg:w-[12vw] lg:h-[6vh] w-[45vw] h-[7vh] bg-indigo-700 rounded-md flex gap-2 items-center justify-between px-5">
+                    <div className="lg:w-[12vw] lg:h-[6vh] w-[45vw] h-[7vh] bg-indigo-700 rounded-md flex gap-2 justify-center py-3 px-2">
                       {/* <GoHome /> */}
                       <div>
-                        <img src="src/assets/Images/plus (2).png" alt="" className='w-[10px] h-[10px]'/>
+                        <img src="src/assets/Images/plus (2).png" alt="" className='w-[10px] h-[10px] mt-2'/>
 
                       </div>
                       <Link className=' flex justify-center ' to={`/Patientdashboard`}> 
-                      <h1 className=' text-white'>  <h1>Add Record</h1></h1>
+                      <h1 className=' text-white  whitespace-nowrap'>  <h1>Add Record</h1></h1>
                       </Link>
                     </div>
                   </div>
@@ -232,9 +232,9 @@ const Patientdashboard = () => {
 
       <div className='lg:w-[50vw] lg:h-[50vh] bg-white lg:mt-[-115px] lg:px-5 lg:space-x-5 lg:flex '>
         <div className='lg:w-[31vw] lg:h-[50vh] bg-white rounded-md shadow-md lg:py-4 lg:border-t-2'>
-        <div className='flex justify-between px-4'>
+        <div className='lg:flex lg:justify-between lg:px-4'>
                     <h1 className='lg:text-lg'>Current Vitals</h1>
-                    <div className='lg:w-[8vw] lg:h-[4vh] bg-gray-200 rounded-2xl flex justify-end px-3 py-2'>
+                    <div className='lg:w-[8vw] lg:h-[4vh] lg:bg-gray-200 lg:rounded-2xl lg:flex lg:justify-end lg:px-3 lg:py-2'>
                         <img src="src/assets/Images/loupe.png" alt="" className='w-[2vh] h-[2vh]'/>
                     </div>
                 </div>
@@ -343,8 +343,8 @@ const Patientdashboard = () => {
                     <h1 className='lg:text-lg'>Cardiologists</h1>
                 </div>            
         </div>
-        <div>
-         <h1>Schedule</h1>
+        <div className='py-1 text-lg'>
+         <h1>Schedule Appointments</h1>
         </div>
         <div className='lg:w-[25vw] lg:h-[44vh] bg-white rounded-md shadow-md lg:border-t-2 '> 
         <div className='py-5 px-5 gap-3'>
@@ -692,8 +692,9 @@ const Patientdashboard = () => {
                         <img src="src/assets/Images/loupe.png" alt="" className='w-[2vh] h-[2vh]'/>
                     </div>
                 </div>
-                <div className='sm:w[70vw] sm:h-[1px] bg-red-300'></div>
-                <div></div>
+                <div>
+                <div className='w[70vw] h-[1px] bg-gray-300'></div>
+                </div>
                 <div className=' flex gap-16 px-4'>
                     <div className='flex flex-col justify-between'>
                         <h1 className='text-gray-500 text-[15px]'>Patieny Name:</h1>
@@ -704,7 +705,9 @@ const Patientdashboard = () => {
                         <h1 className='font-bold'>1254896</h1>
                     </div>
                 </div>
+                <div>
                 <div className='w-[90vw] h-[1px] bg-gray-300'></div>
+                </div>
                 <div className='flex  flex-row'>
                     <div className=' flex px-4 gap-3'>
                         <div className='flex flex-col'>
@@ -784,7 +787,7 @@ const Patientdashboard = () => {
                     <h1 className='text-[20px]'>Cardiologists</h1>
                 </div>
             </div>  
-            <div className='py-2 float-left mr-32 text-xl'>
+            <div className='py-2 float-left mr-32 text-xl whitespace-nowrap'>
                 <h1>Scheduled Appointments</h1>
             </div>
 
@@ -827,10 +830,10 @@ const Patientdashboard = () => {
                 <div>
                     <div className='w-[90vw] h-[1px] bg-gray-300'></div>
                 </div> 
-                <div className='flex justify-end px-3 py-6 '>
+                <div className='flex justify-end px-3 py-5 '>
                     <button className='w-[40vw] h-[5vh] bg-gray-200 rounded-lg px-2 py-2 '>          
                        <img src="src/assets/Images/pen.png" alt="" className='w-[4vw]'/>                   
-                       <h1 className='mt-[-20px] text-[13px] '>Edit Consult</h1>              
+                       <h1 className='mt-[-18px] text-[13px] '>Edit Consult</h1>              
                     </button>
                 </div>     
             </div>
@@ -874,10 +877,10 @@ const Patientdashboard = () => {
                 <div>
                     <div className='w-[90vw] h-[1px] bg-gray-300'></div>
                 </div> 
-                <div className='flex justify-end px-3 py-6 '>
+                <div className='flex justify-end px-3 py-4 '>
                     <button className='w-[40vw] h-[5vh] bg-gray-200 rounded-lg px-2 py-2 '>          
-                        <img src="src/assets/Images/pen.png" alt="" className='w-[4vw]'/>                   
-                        <h1 className='mt-[-20px] text-[13px] '>Edit Consult</h1>              
+                        <img src="src/assets/Images/pen.png" alt="" className='w-[4vw] '/>                   
+                        <h1 className='mt-[-18px] text-[13px] '>Edit Consult</h1>              
                     </button>
                 </div>           
             </div>
@@ -921,10 +924,10 @@ const Patientdashboard = () => {
                 <div>
                     <div className='w-[90vw] h-[1px] bg-gray-300'></div>
                 </div> 
-                <div className='flex justify-end px-3 py-6 '>
+                <div className='flex justify-end px-3 py-4 '>
                     <button className='w-[40vw] h-[5vh] bg-gray-200 rounded-lg px-2 py-2 '>          
                         <img src="src/assets/Images/pen.png" alt="" className='w-[4vw]'/>                   
-                        <h1 className='mt-[-20px] text-[13px] '>Edit Consult</h1>              
+                        <h1 className='mt-[-18px] text-[13px] '>Edit Consult</h1>              
                     </button>
                 </div>          
             </div>
