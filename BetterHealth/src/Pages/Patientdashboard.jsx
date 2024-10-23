@@ -36,35 +36,35 @@ const Patientdashboard = () => {
     <div className='lg:flex lg:flex-col'>
     
     
-      <div className='lg:w-[50vw] lg:h-screen lg:bg-white lg:flex lg:py-4 lg:px-5 lg:space-x-5 '>
+    <div className='lg:w-[50vw] lg:h-screen lg:bg-white lg:flex lg:py-4 lg:px-5 lg:space-x-5 '>
         
         <div className='lg:w-[11vw] lg:h-[38vh] bg-indigo-700 lg:rounded-xl shadow-md lg:border-t-2 px-2 '>
-               <div className='flex justify-between px-3 py-5'>
-                    <div>
-                     <h1 className=' text-white text-[17px]'>Heart Rate</h1>
-                    </div>
-                     <div>
-                        <img src="src/assets/Images/like.png" alt="" className='w-[1vw] h-[2vh] mt-5'/>
-                     </div>
+            <div className='flex justify-between px-3 py-5'>
+                <div>
+                    <h1 className=' text-white text-[17px]'>Heart Rate</h1>
                 </div>
+                <div>
+                    <img src="src/assets/Images/like.png" alt="" className='w-[1vw] h-[2vh] mt-5'/>
+                </div>
+            </div>
 
-                <div className='px-3 text-white mt-[-16px] text-[15px]'>
-                    <h1>75/118</h1>
-                </div>
+            <div className='px-3 text-white mt-[-16px] text-[15px]'>
+                <h1>75/118</h1>
+            </div>
            
-                <div className='ml-[-24px] py-4'>
-                     <HeartRateChart />
-                </div>
+            <div className='ml-[-24px] py-4'>
+                <HeartRateChart />
+            </div>
         </div>
 
         <div className='lg:w-[11vw] lg:h-[36vh] lg:bg-white lg:rounded-xl shadow-md lg:border-t-2'>
-        <div className='flex justify-between px-3 py-5'>
+                <div className='flex justify-between px-3 py-5'>
                     <div>
                      <h1 className='font-semibold'>Fever</h1>
                     </div>
-                     <div className='py-2'>
+                    <div className='py-2'>
                         <img src="src/assets/Images/like (1).png" alt="" className='w-[1vw] h-[2vh]'/>
-                     </div>
+                    </div>
                 </div>
 
                 <div className='px-3 font-semibold  mt-[-13px]'>
@@ -79,7 +79,7 @@ const Patientdashboard = () => {
 
         <div className='lg:flex lg:flex-col space-y-5 '>
             <div className='lg:w-[11vw] lg:h-[23vh] bg-white rounded-md shadow-md lg:px-4 lg:py-5 lg:space-y-3 lg:border-t-2'>
-            <div className='flex justify-between lg:space-y-3 '>
+                <div className='flex justify-between lg:space-y-3 '>
                     <h1>Blood <br /> Pre..</h1>
                     <div className='lg:py-2'>
                     <img src="src/assets/Images/heartbeat.png" alt="" className='lg:w-[1vw] lg:h-[2vh]' />
@@ -112,18 +112,18 @@ const Patientdashboard = () => {
         <div className='lg:flex lg:flex-col space-y-5 '>
             <div className='lg:w-[11vw] lg:h-[24vh] rounded-md bg-white shadow-md lg:px-2 lg:py-4 lg:space-y-3 lg:border-t-2' >
                 <div>
-                 <h1 className='lg:text-lg'>
-                    Fever <br /> History
-                 </h1>
+                    <h1 className='lg:text-lg'>
+                        Fever <br /> History
+                    </h1>
                 </div>
                 <div>
-                <select className='text-black w-32  h-5 lg:font-light' name="">
-                    <option value="">1 to 10 Jan'21</option>
-                    <option value="">11 to 31 Jan '21</option>
-                    <option value="">1 to 15 Feb '21</option>
-                    <option value="">16 t0 18 Feb '21</option>
+                    <select className='text-black w-32  h-5 lg:font-light' name="">
+                        <option value="">1 to 10 Jan'21</option>
+                        <option value="">11 to 31 Jan '21</option>
+                        <option value="">1 to 15 Feb '21</option>
+                        <option value="">16 t0 18 Feb '21</option>
 
-                </select>
+                    </select>
                 </div>
                 <div className='flex flex-row justify-between'>
                     
@@ -151,9 +151,6 @@ const Patientdashboard = () => {
                 <div className='py-3 px-1 lg:flex lg:flex-col lg:pl-4'>
                         <h1 className='lg:text-lg text-blue-600 font-semibold'>Johen Mark</h1> 
                         <h1 className='float-end  whitespace-nowrap text-gray-400 font-light'>My Doctor</h1>    
-                </div>
-                <div>
-                    
                 </div>
              </div>
 
