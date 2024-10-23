@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import SideBar from '../Components/SideBar';
 import Navbar from '../Components/Navbar';
 import { nurseList } from '../Components/NurseData';
@@ -29,17 +29,19 @@ const NurseList = () => {
 
                 <div className='py-5 md:ml-72 lg:ml-0 gap-x-10 grid grid-cols-1 lg:grid-cols-3 gap-y-10 '>
 
-                    {nurseList.map(doctor => {
+                    {nurseList.map(nurse => {
                         return(
-                            <div key={doctor.id} className='w-[250px] overflow-hidden shadow-2xl border border-stone-100 rounded-lg bg-white'>
+                           <NavLink  to={"/nursedetails"} >
+                             <div key={nurse.id} className='w-[250px] overflow-hidden shadow-2xl border border-stone-100 rounded-lg bg-white'>
                                 <div className='flex justify-center flex-col items-center h-[200px] w-[100%] '>
-                                    <img src={doctor.thumb} alt="image" className='w-100% h-[100%] object-cover ' />
+                                    <img src={nurse.thumb} alt="image" className='w-100% h-[100%] object-cover ' />
                                 </div>
                                 <div className='text-2xl text-white font-medium bg-primary2 flex flex-col items-center p-2 '>
-                                    <p className=''>{doctor.name}</p>
-                                    <p className='font-medium text-sm text-gray-300'>{doctor.title}</p>
+                                    <p className=''>{nurse.name}</p>
+                                    <p className='font-medium text-sm text-gray-300'>{nurse.title}</p>
                                 </div>
                             </div>
+                           </NavLink>
                         )
                     })}
                 </div>
@@ -51,3 +53,5 @@ const NurseList = () => {
 }
  
 export default NurseList
+
+

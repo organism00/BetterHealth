@@ -16,6 +16,7 @@ import NewNurse from './Pages/NewNurse'
 import PatientDetails from './Pages/PatientDetails';
 import DoctorDetails from "./Pages/DoctorDetails";
 import CalendarComponent from "./Pages/Calendar";
+import NurseDetails from "./Pages/NurseDetails";
 
 
 
@@ -41,6 +42,7 @@ const App = () => {
         <Route path="/admindashboard" element={<AdminDashboard />} />
         <Route path="/doctordetails" element={<DoctorDetails />} />
         <Route path="/calendar" element={<CalendarComponent />} />
+        <Route path="/nursedetails" element={<NurseDetails />} />
       </Routes>
     </>
   );
