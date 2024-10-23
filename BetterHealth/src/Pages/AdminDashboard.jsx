@@ -1,4 +1,5 @@
 import React from "react";
+import { useLocation } from "react-router-dom";
 // Images
 import heart from "../adminDashboardAssets/heart.svg";
 import patient from "../adminDashboardAssets/patients.svg";
@@ -18,6 +19,7 @@ import Navbar from "../Components/Navbar";
 
 
 function AdminDashboard() {
+  const location = useLocation()
   return (
     <div className="flex flex-col gap-0 lg:flex-row py-4 md:px-0 ">
       <div className="">
