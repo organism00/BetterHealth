@@ -17,7 +17,7 @@ const DoctorList = () => {
                 <div className='flex justify-between'>
                     <div className='flex gap-x-5 px-5 lg:px-0 md:px-8 md:ml-64 lg:ml-0'>
                         <h1 className="text-2xl">Doctors</h1>
-                        <div className="flex gap-2 items-center">
+                      <div className="flex gap-2 items-center">
                             <Link to='/admindashboard'><GoHome/></Link>
                             <p className="font-thin"> - Doctors</p>
                         </div>
