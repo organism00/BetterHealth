@@ -7,7 +7,7 @@ import { BiSolidNotification } from "react-icons/bi";
 import { PiGearFill } from "react-icons/pi";
 const Navbar = () => {
   const [userData] = useState(JSON.parse(localStorage.getItem('userData')))
-  console.log(userData)
+  // console.log(userData)
   return (
     <div>
       <nav className="hidden bg-[whitesmoke] w-[81vw] h-20 fixed top-20 md:top-0  lg:top-0 z-50 px-5 lg:px-5 lg:flex lg:justify-between lg:items-center">
