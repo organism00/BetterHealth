@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import NavBar from '../Navbar';
 import SideBar from '../SideBar';
+import EditPatient from './EditPatient'
 import YourStart from '../Patients/YourStart';
 import Map, { Marker } from 'react-map-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
@@ -53,14 +54,18 @@ function PatientDetails() {
   const [selectedStory, setSelectedStory] = useState(diseaseHistory[0].story);
   const [disease, setDisease] = useState(diseaseHistory[0].name);
   const [isMore, setIsMore] = useState(false);
-  const [openBookVitalsModal, setOpenBookVitalsModal] = useState(false)
-  const [openEmrModal, setOpenEmrModal] = useState(false)
+  const [openBookVitalsModal, setOpenBookVitalsModal] = useState(false);
+  const [openEmrModal, setOpenEmrModal] = useState(false);
+  const [openEditModal, setOpenEditModal] = useState(false);
 
   const handleBookVitalsModal = () => {
     setOpenBookVitalsModal(true)
   }
   const handleEmrModal = () => {
     setOpenEmrModal(true)
+  }
+  const handleEditModal = () => {
+    setOpenEditModal(true)
   }
 
   const [viewport, setViewport] = useState({
@@ -194,7 +199,8 @@ function PatientDetails() {
           <div className='w-[100%] lg:w-[66.67%] flex flex-col gap-4 '>
             {/* buttons */}
             <div className='flex flex-wrap gap-2 items-center justify-between'>
-              <button className='flex items-center px-4 py-2 bg-primary hover:bg-primaryhover transition-all text-white rounded-lg'><FaRegEdit/>Edit Profile</button>
+              <button className='flex items-center px-4 py-2 bg-primary hover:bg-primaryhover transition-all text-white rounded-lg'
+                onClick={handleEditModal}><FaRegEdit/>Edit Profile</button>
               <div className='flex items-center gap-2'>
                 <button className='flex gap-2 items-center px-4 py-2 bg-primary hover:bg-primaryhover transition-all text-white rounded-lg'
                   onClick={handleBookVitalsModal}
@@ -301,7 +307,7 @@ function PatientDetails() {
         </div>
       </div>
 
-      {/* Modal for Vitals */}
+      {/* Modal for BookVitals */}
       {openBookVitalsModal && (
         <div className='fixed w-[100%] h-[100%] flex items-center justify-center z-50 bg-[#00000066] '>
           <div className=' flex items-center justify-center w-[50vw] h-[80vh] bg-white p-14 relative'>
@@ -343,6 +349,16 @@ function PatientDetails() {
             </form>
 
           </div>
+        </div>
+      )}
+
+      {/* Modal for edit */}
+      {openEditModal && (
+        <div className='absolute w-[100%] flex items-center justify-center z-50 bg-[#00000066] '>
+          <EditPatient/>
+          <button className='bg-primary rounded-xl text-white p-2 text-[30px] shadow-lg absolute right-4 top-4 '
+              onClick={() => setOpenEditModal(false)}
+            ><IoMdCloseCircleOutline/></button>
         </div>
       )}
     </div>
