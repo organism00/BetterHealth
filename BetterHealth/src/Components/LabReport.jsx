@@ -71,7 +71,7 @@ const LabReport = () => {
                                 <TableCell>{row.coll_by}</TableCell>
                                 <TableCell><p className='bg-[#4da089] flex items-center justify-center py-1 rounded text-white'>{row.status}</p></TableCell>
                                 <TableCell><p className='text-[#3596F7] cursor-pointer' onClick={handleResultModal}>{row.result}</p></TableCell>
-                                <TableCell><p className='bg-[#ab5f78] flex items-center justify-center py-1 rounded text-white'>{row.details}</p></TableCell>
+                                <TableCell><p className='bg-[#ab5f78] flex items-center justify-center py-1 rounded text-white cursor-pointer'>{row.details}</p></TableCell>
                               </TableRow>
                             ))}
                           </TableBody>
@@ -84,7 +84,7 @@ const LabReport = () => {
 
                   
                   {openResultModal && (
-                    <div className='fixed top-0 left-0 z-50 bg-[#00000066] w-[100%] h-[100vh] px-40 flex items-center justify-center '>
+                    <div className='fixed top-0 left-0 z-50 bg-[#08030366] w-[100%] h-[100vh] px-40 flex items-center justify-center '>
                       <div className='bg-white p-10 '>
                         <div className='font-semibold text-[25px] text-gray-500 py-7'>Radiology Investigations - Result</div>
                         <div className='font-semibold text-[22px] text-gray-500'>Test Name - Neck Scan</div>
