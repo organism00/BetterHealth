@@ -31,9 +31,9 @@ const AdminStaff = () => {
     TransitionEvent: "ease-in-out",
   };
 
-  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  // const [jobRole, setJobRole] = useState('')
+  const [jobRole, setJobRole] = useState('')
   const [loader, setLoader] = useState(false);
   const navigate = useNavigate()
 
@@ -42,8 +42,8 @@ const AdminStaff = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "https://hms-w4kw.onrender.com/api/Admin/Login",
-        { username, password }
+        "https://hms-w4kw.onrender.com/api/Staff/StaffLogin",
+        { email, password, jobRole }
       );
       navigate('/admindashboard')
       localStorage.setItem("userData", JSON.stringify(response.data.data))
@@ -92,22 +92,22 @@ const AdminStaff = () => {
 
           <form action="" className="space-y-6" onSubmit={handleLogin}>
             {/* Username Field */}
-            {/* <input
+            <input
               className="w-full h-[55px] text-xl pl-4 font-[inter] rounded-[12px] font-medium border outline-[#483d8b]"
               type="text"
               placeholder="Job role"
               name={jobRole}
               id="jobrole"
               onChange={(e) => setJobRole(e.target.value)}
-            /> */}
+            />
 
             <input
               className="w-full h-[55px] text-xl pl-4 font-[inter] rounded-[12px] font-medium border outline-[#483d8b]"
               type="text"
-              placeholder="Username"
-              name={username}
-              id="username"
-              onChange={(e) => setUsername(e.target.value)}
+              placeholder="Email"
+              name={email}
+              id="email"
+              onChange={(e) => setEmail(e.target.value)}
             />
 
             <input

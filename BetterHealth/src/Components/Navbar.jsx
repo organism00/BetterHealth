@@ -1,13 +1,22 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { IoMenu } from "react-icons/io5";
-import { BsSearch } from "react-icons/bs";
+// import { BsSearch } from "react-icons/bs";
 import user from "../assets/Images/user.svg";
-import { IoMdQrScanner } from "react-icons/io";
+// import { IoMdQrScanner } from "react-icons/io";
 import { BiSolidNotification } from "react-icons/bi";
 import { PiGearFill } from "react-icons/pi";
+import { RiLogoutCircleLine } from "react-icons/ri";
+
 const Navbar = () => {
   const [userData] = useState(JSON.parse(localStorage.getItem('userData')))
   // console.log(userData)
+  const navigate = useNavigate();
+
+  const handleLogOut = () => {
+    localStorage.removeItem('userData')
+    navigate('/')
+  }
   return (
     <div>
       <nav className="hidden bg-[whitesmoke] w-[81vw] h-20 fixed top-20 md:top-0  lg:top-0 z-50 px-5 lg:px-5 lg:flex lg:justify-between lg:items-center">
@@ -27,8 +36,9 @@ const Navbar = () => {
           <div className="w-8 h-8 lg:w-10 lg:h-10  bg-indigo-300 rounded-md">
             <img src={user} alt="" className="rounded-md" />
           </div>
-          <div className="w-8 h-8 lg:w-10 lg:h-10 bg-indigo-50 rounded-md flex items-center justify-center">
-            <IoMdQrScanner className="text-2xl text-orange-400" />
+          <div className="w-8 h-8 lg:w-10 lg:h-10 bg-indigo-50 rounded-md flex items-center justify-center cursor-pointer"
+            onClick={handleLogOut}>
+            <RiLogoutCircleLine className="text-2xl text-orange-400" />
           </div>
           <div className="w-8 h-8 lg:w-10 lg:h-10 bg-indigo-50 rounded-md flex items-center justify-center">
             <BiSolidNotification className="text-2xl text-blue-400" />
