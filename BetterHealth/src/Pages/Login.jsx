@@ -53,14 +53,14 @@ const Login = () => {
 
             <h1 className="font-[inter]  text-md 2xl:text-2xl font-semibold pt-2">Better Health</h1>
           </div>
-          <div className="mt-10 md:mt-4 md:w-[70vw] lg:w-[35vw] md:ml-20 ">
-            <div className="text-center mb-8">
+          <div className="mt-8 md:mt-0 md:w-[70vw] lg:w-[35vw] md:ml-20 ">
+            <div className="text-center mb-2">
               <h2 className="text-3xl 2xl:text-6xl leading-8 font-[inter] font-semibold">Hello Again!</h2>
               <p className="text-gray-600 font-[inter] text-md 2xl:text-2xl mt-1">
                 Welcome back! Please Login according to 👇.
               </p>
             </div>
-            <div className="w-full  h-auto space-y-2 2xl:space-y-10 ">
+            <div className="w-full  h-auto space-y-0 2xl:space-y-10 ">
               <div className="flex items-center">
                 <div className="w-18 2xl:w-40 h-auto p-3 2xl:p-10 bg-[#483d8b]">
                   <MdAdminPanelSettings className="w-10 2xl:w-20 h-10 2xl:h-20 text-white mx-auto" />
@@ -105,9 +105,34 @@ const Login = () => {
                   to={"/staff"}
                   className="hover:bg-[rgba(72,61,139,0.1)] flex items-center justify-center w-full h-14 2xl:h-24 border-[3px] -ml-2 cursor-pointer font-[inter] font-medium text-xl 2xl:text-3xl transition-all duration-300 border-[#483d8b]"
                 >
+                  Pharmacist
+                </NavLink>
+              </div>
+
+              <div className="flex items-center">
+                <div className="w-18 2xl:w-40 h-auto p-3 2xl:p-10 bg-[#483d8b]">
+                  <FaUsersLine className="w-10 2xl:w-20 h-10 2xl:h-20  text-white mx-auto" />
+                </div>
+                <NavLink
+                  to={"/staff"}
+                  className="hover:bg-[rgba(72,61,139,0.1)] flex items-center justify-center w-full h-14 2xl:h-24 border-[3px] -ml-2 cursor-pointer font-[inter] font-medium text-xl 2xl:text-3xl transition-all duration-300 border-[#483d8b]"
+                >
+                  Lab Technician
+                </NavLink>
+              </div>
+
+              <div className="flex items-center">
+                <div className="w-18 2xl:w-40 h-auto p-3 2xl:p-10 bg-[#483d8b]">
+                  <FaUsersLine className="w-10 2xl:w-20 h-10 2xl:h-20  text-white mx-auto" />
+                </div>
+                <NavLink
+                  to={"/staff"}
+                  className="hover:bg-[rgba(72,61,139,0.1)] flex items-center justify-center w-full h-14 2xl:h-24 border-[3px] -ml-2 cursor-pointer font-[inter] font-medium text-xl 2xl:text-3xl transition-all duration-300 border-[#483d8b]"
+                >
                   Other Staff
                 </NavLink>
               </div>
+              
             </div>
           </div>
         </div>
