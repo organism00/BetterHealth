@@ -19,7 +19,6 @@ const NewPatients = () => {
                         <input type="text" placeholder='Address' className='border border-stone-500 p-2 rounded-md  outline-violet-500 ' />
                         <input type="text" placeholder='Phone' className='border border-stone-500 p-2 rounded-md  outline-violet-500 ' />
                         <input type="email" placeholder='Email' className='border border-stone-500 p-2 rounded-md  outline-violet-500 ' />
-                        <input type="text" placeholder='Contact Address' className='border border-stone-500 p-2 rounded-md  outline-violet-500 ' />
                         
                         <input type="date" title="Enter your age" placeholder='Age' className='border border-stone-500 p-2 rounded-md  outline-violet-500 ' />
                         <select className='border border-stone-500 p-2 rounded-md  outline-violet-500 ' >
