@@ -17,6 +17,7 @@ import PatientDetails from "./Components/Patients/PatientDetails";
 import DoctorDetails from "./Components/Doctor/DoctorDetails";
 import CalendarComponent from "./Components/Appointment/Calendar";
 import NurseDetails from "./Components/Nurse/NurseDetails";
+import Docotordashboard from "./Pages/doctorPages/DoctorDashboard.";
 
 
 
@@ -34,7 +35,7 @@ const App = () => {
         <Route path="/nurselist" element={<NurseList />} />
         <Route path="/patientdetails" element={<PatientDetails />} />
         <Route path="/staff" element={<Staff />} />
-
+        <Route path="/doctordashboard" element={<Docotordashboard/>}></Route>
         <Route path="/doctorappointment" element={<DoctorAppointment />} />
         <Route path={"/newpatient"} element={<NewPatients/>}></Route>
         <Route path={"newdoctor"} element={<NewDoctor/>}></Route>

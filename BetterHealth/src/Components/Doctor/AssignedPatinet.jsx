@@ -72,5 +72,4 @@ const AssignedPatient = () => {
     </div>
   );
 };
-
 export default AssignedPatient;
