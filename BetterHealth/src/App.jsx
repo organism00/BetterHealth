@@ -19,6 +19,10 @@ import DoctorDetails from "./Components/Doctor/DoctorDetails";
 import CalendarComponent from "./Components/Appointment/Calendar";
 import NurseDetails from "./Components/Nurse/NurseDetails";
 import Docotordashboard from "./Pages/doctorPages/DoctorDashboard.";
+import LabReport from "./Components/LabReport";
+
+
+
 
 const App = () => {
   return (
@@ -43,6 +47,7 @@ const App = () => {
           <Route path="/doctordetails" element={<DoctorDetails />} />
           <Route path="/calendar" element={<CalendarComponent />} />
           <Route path="/nursedetails" element={<NurseDetails />} />
+          <Route path="/labreport" element={<LabReport />} />
         </Routes>
       </ToastProvider>
     </>
