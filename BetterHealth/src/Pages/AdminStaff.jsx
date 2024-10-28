@@ -4,6 +4,8 @@ import hospital1 from "../assets/images/a.jpg";
 import hospital3 from "../assets/images/b.jpg";
 import { NavLink, useNavigate } from "react-router-dom";
 import axios from 'axios';
+import { useToast } from "../Components/Loaders/ToastContext";
+import WaitingLoader from "../Components/Loaders/WaitingLoader";
 
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -12,6 +14,8 @@ import "slick-carousel/slick/slick-theme.css";
 import '../Style/loader.css'
 
 const AdminStaff = () => {
+  const { notifySuccess, notifyError, startWaitingLoader, stopWaitingLoader } = useToast();
+
   useEffect(() => {
     AOS.init({
       duration: 400,
@@ -34,35 +38,32 @@ const AdminStaff = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [jobRole, setJobRole] = useState('')
-  const [loader, setLoader] = useState(false);
   const navigate = useNavigate()
 
   const handleLogin = async (e) => {
-    setLoader(true);
+    startWaitingLoader()
     e.preventDefault();
     try {
       const response = await axios.post(
         "https://hms-w4kw.onrender.com/api/Staff/StaffLogin",
         { email, password, jobRole }
       );
+      notifySuccess(response.data.responseMessage)
+      stopWaitingLoader()
       navigate('/admindashboard')
       localStorage.setItem("userData", JSON.stringify(response.data.data))
-      setLoader(false)
-      // console.log(response.data.data);
+      // console.log(response.data.responseMessage);
     } catch (error) {
-      console.error(error);
-      setLoader(false)
+      notifyError(error.response.data.responseMessage)
+      stopWaitingLoader()
+      // console.error(error.response.data);
     }
   }
 
   return (
     <div className="lg:h-[100vh] bg-[whitesmoke] flex items-center overflow-hidden">
       {/* Loader */}
-      {loader && (
-        <div className='loaderwrapper'>
-          <div className="loader"></div>
-        </div>
-      )}
+      <WaitingLoader/>
       {/* Left - Image Slider */}
       <div className="hidden lg:block xl:h-[100%] w-[50vw]">
         <Slider {...sliderSettings}>
@@ -107,6 +108,7 @@ const AdminStaff = () => {
               placeholder="Email"
               name={email}
               id="email"
+              autoComplete="email"
               onChange={(e) => setEmail(e.target.value)}
             />
 
@@ -116,6 +118,7 @@ const AdminStaff = () => {
               type="password"
               name={password}
               id="password"
+              autoComplete='current-password'
               onChange={(e) => setPassword(e.target.value)}
             />
 

@@ -15,11 +15,17 @@ import AdmittedPatients from "../Components/adminDashboard/AdmittedPatients";
 import RecentQuestions from "../Components/adminDashboard/RecentQuestions";
 import SideBar from "../Components/SideBar";
 import Navbar from "../Components/Navbar";
+import { useToast } from "../Components/Loaders/ToastContext";
 
 
 
 function AdminDashboard() {
+  const { notifySuccess, notifyError } = useToast();
   const location = useLocation()
+
+  const popUp = () => {
+    notifySuccess('You just clicked me')
+  }
   return (
     <div className="flex flex-col gap-0 lg:flex-row py-4 md:px-0 ">
       <div className="">
@@ -42,7 +48,7 @@ function AdminDashboard() {
               </p>
             </div>
             <div className="w-[112px] h-[42px] ">
-              <button className="bg-[#5156be] text-white w-[112px] h-[42px] rounded-md ">
+              <button className="bg-[#5156be] text-white w-[112px] h-[42px] rounded-md " onClick={popUp}>
                 Know More
               </button>
             </div>
