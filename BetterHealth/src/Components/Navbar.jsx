@@ -19,7 +19,7 @@ const Navbar = () => {
   }
   return (
     <div>
-      <nav className="hidden bg-[whitesmoke] w-[81vw] h-20 fixed top-20 md:top-0  lg:top-0 z-50 px-5 lg:px-5 lg:flex lg:justify-between lg:items-center">
+      <nav className="hidden bg-[whitesmoke] w-[81vw] lg:w-[91vw] xl:w-[81vw] h-20 fixed top-20 md:top-0  lg:top-0 z-50 px-5 lg:px-5 lg:flex lg:justify-between lg:items-center">
         <div className="flex justify-between w-72">
           <button className="w-11 h-11 bg-primary2 rounded-lg">
             <IoMenu className="text-2xl mx-auto text-primary" />
