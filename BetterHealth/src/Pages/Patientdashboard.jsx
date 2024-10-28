@@ -11,25 +11,27 @@ import  HeartECGChart from '../Components/HeartECGChart'
 const Patientdashboard = () => {
     return (
         <>
-          <div className="lg:grid lg:grid-cols-[16rem_1fr] z-0">
+        <div className="lg:grid lg:grid-cols-[16rem_1fr] z-0">
             <SideBar />
             <main className="col-start-2  h-full w-full md:w-[70%] lg:w-full mt-12 lg:mt-0 md:mt-0">
               <Navbar />
-    
-            <div className="mt-24 w-full h-full lg:w-full lg:ml-0 md:ml-32 px-5 space-y-4">
-                  <div className="flex lg:gap-[320px]  gap-[50px]">
+            </main>
+        </div>
+
+
+            {/* <div className="mt-24 w-full h-full lg:w-full lg:ml-0 md:ml-32 px-5 space-y-4"> */}
+                <div className="flex lg:gap-[320px]  gap-[50px]">
                     <h1 className="text-3xl whitespace-nowrap">Johen Doe</h1>
                     <div className="lg:w-[12vw] lg:h-[6vh] w-[45vw] h-[7vh] bg-indigo-700 rounded-md flex gap-2 justify-center py-3 px-2">
                       {/* <GoHome /> */}
                       <div>
                         <img src="src/assets/Images/plus (2).png" alt="" className='w-[10px] h-[10px] mt-2'/>
-
                       </div>
                       <Link className=' flex justify-center ' to={`/Patientdashboard`}> 
-                      <h1 className=' text-white  whitespace-nowrap'>  <h1>Add Record</h1></h1>
+                        <h1 className=' text-white  whitespace-nowrap'>  <h1>Add Record</h1></h1>
                       </Link>
                     </div>
-                  </div>
+                </div>
                  
 
 <div className='hidden md:hidden lg:flex lg:flex-row lg:w-[60vw] lg:h-auto'>
@@ -930,9 +932,8 @@ const Patientdashboard = () => {
             </div>
                           
         </div>
-                </div>
-            </main>
-          </div>
+                {/* </div> */}
+            
         </>
       );    
 }
