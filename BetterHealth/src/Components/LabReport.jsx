@@ -2,6 +2,9 @@ import React, { useState } from 'react'
 import Navbar from './Navbar'
 import SideBar from './SideBar'
 import { Table, TableBody, TableCell,  TableContainer, TableHead, TableRow, Paper } from '@mui/material';
+import { IoIosCall } from "react-icons/io";
+import { AiTwotoneMail } from "react-icons/ai";
+import { BsQrCode } from "react-icons/bs";
 
 const labreport = [
   { no: 1, patient_name: 'Cole Palmer', pin: 'PN20240001', test: 'Blood Count', lab: 'Microbiology', handling: 'Johen Doe', coll_by: '5.45pm 11/05', status: 'Result Added', result: 'Result Comment', details: 'View Details' },
@@ -20,7 +23,13 @@ const report = [
 
 ]
 const LabReport = () => {
-  const [openResultModal, setOpenResultModal] = useState(true)
+  const [openResultModal, setOpenResultModal] = useState(false)
+  const [openDetailsModal, setOpenDetailsModal] = useState(false)
+
+
+  const handleDetailsModal = () => {
+    setOpenDetailsModal(true)
+ }
 
   const handleResultModal = () => {
     setOpenResultModal(true)
@@ -71,7 +80,8 @@ const LabReport = () => {
                                 <TableCell>{row.coll_by}</TableCell>
                                 <TableCell><p className='bg-[#4da089] flex items-center justify-center py-1 rounded text-white'>{row.status}</p></TableCell>
                                 <TableCell><p className='text-[#3596F7] cursor-pointer' onClick={handleResultModal}>{row.result}</p></TableCell>
-                                <TableCell><p className='bg-[#ab5f78] flex items-center justify-center py-1 rounded text-white cursor-pointer'>{row.details}</p></TableCell>
+                                <TableCell><p className='bg-[#ab5f78] flex items-center justify-center py-1 rounded text-white cursor-pointer'
+                                 onClick={handleDetailsModal}>{row.details}</p></TableCell>
                               </TableRow>
                             ))}
                           </TableBody>
@@ -109,13 +119,13 @@ const LabReport = () => {
                           </Table>
                         </TableContainer>
                         <div className='font-semibold text-gray-500'>
-                          <p>
+                          <p className='text-[10px] font-normal text-gray-700 mt-[10px]'>
                           Comment
                           </p>
-                          <p className='font-normal px-20 mt-[-24px] text-gray-500'>: Loprem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                          <p className='font-normal px-[48px] mt-[-19px] text-gray-500 '>: Loprem ipsum dolor sit amet, consectetur adipisicing elit.</p>
                         </div>
                         <div>
-                          <p className='font-bold py-6 px-8'>Test By</p>
+                          <p className='font-bld py-6 px-8'>Test By</p>
                           <p className='font-bold px-[400px] mt-[-47px]'>Signed By</p>
                         </div>
 
@@ -135,9 +145,144 @@ const LabReport = () => {
                       </div>
                     </div>
                   )}
-                  
+
+
+                 {openDetailsModal && (
+                  <div className='fixed top-0 left-0 z-50 bg-[#08030366] w-[100%] h-[100vh] px-40  flex items-center justify-center hover:overflow-y-auto '>
+                   <div className='bg-white p-10 '>
+                    <div className='font-bold '>
+                      BETTERHEALTH 
+                      <p className='font-bold text-[#2e7bc8] px-[125px] mt-[-24px]'>
+                      PATHOLOGY LAB
+                      </p>
+                    </div>
+
+                    <div className='font-bold text-[13px]'>
+                      <p>Accurate | Caring | Instant</p>
+                    </div>
+
+                    <div>
+                        <IoIosCall className='ml-[360px] mt-[-39px]'/>
+                        <p className='ml-[380px] mt-[-20px] font-semibold'>011-2232-232 | 112-5545-229</p>      
+                    </div>
+
+                    <div>
+                       <AiTwotoneMail  className='ml-[363px]' />
+                       <p className='ml-[380px] mt-[-19px] text-[13px] font-semibold px-1'>parblodrugs@gmail.com</p>
+                    </div>
+                    <div>
+                      <p className='text-[9px] py-4'>105-108, SMART VISION COMPLEX, HEALTHCARE ROAD, OPPOSITE  TO SINDH BANK, KARACHI-223358</p>
+                    </div>
+                    <div className='h-[3px] w-[590px] bg-gray-500'></div>
+                    <div className='mt-[27px]'>
+                      <p className='font-bold '>Yash M. Patel</p>
+                      <p className='text-[10px] font-normal text-gray-700'> Age: 25</p>
+                      <p className='text-[10px] font-normal text-gray-700'>Sex: Male</p>
+                      <p className='text-[10px] font-normal text-gray-700'>PID: 555</p>
+                      <BsQrCode className='ml-[100px] mt-[-20px]'/>
+                    </div>
+
+                    <div className='px-[190px] mt-[-63px]'>
+                      <p className='font-bold'>Sample Collected At:</p>
+                      <p className='text-[10px]'>125, Shiven  Complex, <br /> Near 5 Star Hotel, Karachi.</p>
+                      <p className='text-[10px]'>Ref. By Dr. Hiren Shah</p>
+                    </div>
+                    
+                    <div className='text-[10px] px-[410px] mt-[-55px]'>
+                      <p>Registered on: 02:31 PM 02 Dec.2x</p>
+                      <p>Collected on: 02:31 PM 02 Dec.2x</p>
+                      <p>Reported on: 02:31 PM 02 Dec.2x</p>
+                    </div>
+                    <div className='h-[3px] w-[590px] bg-gray-500 mt-[10px]'></div>
+                    <p className='font-bold px-[220px]'>Hematorcrit (HCT)</p>
+                    <div className='h-[3px] w-[590px] bg-gray-500 mt-[10px]'></div>
+                    <div className='h-[3px] w-[590px] bg-gray-500 mt-[30px]'></div>
+                      <div className='flex flex-cols space-x-20 mt-[-30px] font-bold'>
+                        <p>Investigation</p>
+                        <p>Result</p>
+                        <p>Reference Value</p>
+                        <p>Unit</p>
+                      </div>
+                      <div className='text-[10px] py-2'>
+                        <p className='py-1'>Primary Sample Type:</p>
+                        <p className='font-bold'>Hematocrit(HCT)/</p>
+                        <p className='font-bold py-1'>Packed Cell Volume(PCV)</p>
+                        <p>HCT / PCV</p>
+                      </div>
+                      <div className='px-[178px] mt-[-112px] text-[10px]'>
+                        <p className='py-7'>Blood</p>
+                        <p className='text-red-600 font-semibold'>57</p>
+                      </div>
+                      <div className='px-[265px] text-[11px] flex flex-cols gap-4 mt-[-14px] font-semibold'>
+                        <p className='text-red-600'>High</p>
+                        <p>40-50</p>
+                      </div>
+                      <div className='px-[510px] mt-[-24px]'>%</div>
+                      <div>
+                        <p className='font-bold text-[15px] py-6'>Comments:</p>
+                        <p className='text-[12px] mt-[-23px]'>* A Hematocrit(HCT) Blood Test or packed-cell volume(PCV) Blood lab determines the percentage of the <br /> blood that is composed of Red blood cells(RBCs).RBCs carry oxygen throughout your body. Having too few or <br /> too many red blod cells can be a sign of certain diseases.</p>
+                      </div>
+                      <div>
+                        <p className='font-bold text-[15px] mt-[15px]'>Low HCT / PCV Causes:</p>
+                        <p className='text-[12px]'>* Anemia - Fatique, weakness, shortness of breath, dizziness, pale skin</p>
+                        <p className='text-[12px]'>* Blood loss - weakness, dizziness, pale skin, rapid heartbeat</p>
+                        <p className='text-[12px]'>* Nutritional deficiences - fatique, weakness, shortness of breath, pale skin, britle nails</p>
+                        <p className='text-[12px]'>* Kidney disease - Fatique, weakness, shortness of breath, swelling in the legs</p>
+                        <p className='text-[12px]'>* Bone marrowd disorders - Fatique, weakness, shortness of breath, swelling in the legs</p>
+                        <p className='text-[12px]'>* Chronic inflamation - Fatique, weakness joint pain, fever</p>
+                        <p className='text-[12px]'>* Hormonal imbalances - Fatique, weakness, weight gain or loss, dry skin,hair loss</p>
+                        <p className='text-[12px]'>* Pregnanacy - Fatique, wekakness, shortness of breath, dizzness, lightheadedness</p>      
+                      </div>
+                      
+                      
+                      <div className='h-[3px] w-[590px] bg-gray-500 mt-[7px]'></div>
+                      <div className='py-3'>
+                        <p className='text-[10px] py-9 mt-[-33px]'>Thanks for Reference</p>
+                        <p className='text-[15px] font-bold'>Medical Lab Technician</p>
+                        <p className='text-[11px]'>(DMLT,BMLT)</p>
+                      </div>
+                      <div className='px-[240px] mt-[-135px]'>
+                        <p className='text-[10px] py-9'>****End of Report****</p>
+                        <p className='text-[15px] font-bold mt-[-3px]'>Dr. Payal Shah</p>
+                        <p className='text-[11px]'>(MD.Pathologist)</p>
+                      </div>
+                      <div className='px-[420px] mt-[-39px] '>
+                        <p className='text-[15px] font-bold'>Dr. Vimal Shah</p>
+                        <p className='text-[10px]'>(MD.Pathologist)</p>
+                      </div>
+                      <div className='h-[3px] w-[590px] bg-gray-500 mt-[7px]'></div>
+                      <div className='text-[9px] px-[300px]'>Generated on : 02 Oct. 2024 05:00PM</div>
+                      <div className='flex flex-cols justify-end gap-4 mt-[-60px]'>
+                        <p className='h-8 w-[60px] px-[13px] rounded py-[2px]  bg-[#05825F]  text-white cursor-pointer '>Save</p>
+                        <p className='h-8 w-[60px] px-[13px] py-[2px] rounded bg-[#3596F7] text-white cursor-pointer'>Print</p>
+                        <p className='h-8 w-[60px] px-[10px] py-[2px] rounded text-white bg-[#EE3158] cursor-pointer '
+                          onClick={() => setOpenDetailsModal(false)}>Close</p>
+                        
+
+                    </div>
+                    </div>
+                    
+                      
+
+                      
+
+                    
+
+
+
+
+
+
+
+
+                  </div>
+                 )}
             </main> 
+                   
+            
           </div>
+
+          
         </>
       );
 }
