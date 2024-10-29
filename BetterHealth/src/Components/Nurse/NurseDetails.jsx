@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import SideBar from "../SideBar";
 import Navbar from "../Navbar";
+import axios from "axios";
+
 import { GoHome } from "react-icons/go";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import { nurseList } from "./NurseData";
 import { HiOutlineDotsVertical } from "react-icons/hi";
 import { FaGreaterThan } from "react-icons/fa6";
@@ -18,16 +20,27 @@ import AssignedPatient from "../Doctor/AssignedPatinet";
 import RecentQuestions from "../adminDashboard/RecentQuestions";
 import ReviewList from "../ReviewList";
 import { FaPhone } from "react-icons/fa6";
-import "../../Style/customScrollbar.css"
 import { HiOutlineDotsHorizontal } from "react-icons/hi";
 
-
-
-
-
-
+import "../../Style/customScrollbar.css"
 
 const NurseDetails = () => {
+  const location = useLocation()
+  const [nurseId] = useState(location.state);
+  const [nurse, setNurse] = useState([]);
+
+  useEffect(() => {
+    const fetchNurseData = async () => {
+      try {
+        const response = await axios.get(`https://hms-w4kw.onrender.com/api/Nurse/GetNurseById/${nurseId}`)
+        // console.log(response.data.data)
+        setNurse(response.data.data)
+      } catch(error){
+        console.log(error.response.data)
+      }
+    }
+    fetchNurseData()
+  }, [nurseId])
   return (
     <div className="flex flex-col gap-2 lg:flex-row py-4  md:px-0">
       <SideBar />
@@ -285,16 +298,16 @@ const NurseDetails = () => {
                   />
 
                   <div>
-                    <p className="text-xl">Johen Doe</p>
+                    <p className="text-xl">{nurse.firstname} {nurse.lastname}</p>
                     <div className="flex items-center space-x-1 text-gray-700">
                       <IoMdTime className="w-8 h-8 md:w-4 md:h-4" />
-                      <p>Join on 15 May 2019, 10:00 AM</p>
+                      <p>Date joined: {nurse.joinDate}</p>
                     </div>
                   </div>
                 </div>
                 <div className="w-[90%] md:w-40 h-12 px-2 -mt-[145px] flex items-center space-x-2 justify-center text-lg rounded-[10px] text-white bg-[#0f5032f1]">
                   <FaStethoscope />
-                  <p>ENT Specialist</p>
+                  <p>{nurse.specialization}</p>
                 </div>
               </div>
 
