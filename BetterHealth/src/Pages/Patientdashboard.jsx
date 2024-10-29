@@ -20,12 +20,12 @@ const Patientdashboard = () => {
         </div>
 
 
-            <div className="lg:flex lg:flex-row flex flex-col md:flex md:flex-col lg:py-20 lg:pl-64 lg:space-x-5 py-8">
+            <div className="lg:flex lg:flex-row flex flex-col md:flex md:flex-col lg:py-20 lg:pl-64 lg:space-x-5 py-8 md:py-6 ">
                 <div className='lg:bg-red-700 lg:w-[80vw] lg:h-screen w-[100vw] h-auto bg-yellow-400'>
                     {/* heading */}
                     <div className='flex flex-row py-5 px-5 justify-between md:py-20 md:px-11'> 
                         <div >
-                            <h1 className='text-[32px] md:text-5xl md:py-4 '>Johen doe</h1>
+                            <h1 className='text-[32px] md:text-5xl md:py-2 '>Johen doe</h1>
                         </div>
                         <div>
                             <div className="lg:w-[12vw] lg:h-[6vh] w-[40vw] h-[7vh] md:w-[30vw] md:h-[6vh] bg-indigo-700 rounded-md flex gap-2 justify-center py-3 px-2 md:py-4">
@@ -53,10 +53,10 @@ const Patientdashboard = () => {
                                     <img src="src/assets/Images/like.png" alt="" className='w-[4vw] h-[2vh] mt-4 md:w-[4vw] md:h-[3vh]'/>
                                 </div>
                             </div>
-                            <div className='px-3 font-semibold text-white mt-[-13px] md:text-xl'>
+                            <div className='px-3 font-semibold text-white mt-[-13px] md:text-xl md:px-6'>
                                 <h1>75/118</h1>
                             </div>        
-                            <div className='ml-[-24px] py-8 '>
+                            <div className='ml-[-24px] py-8 md:px-6 md:w-[97vw] md:h-[9vh]'>
                             <HeartRateChart/>
                             </div>
                         </div>
@@ -66,15 +66,15 @@ const Patientdashboard = () => {
                        
                             <div className='flex justify-between px-3 py-5'>
                                 <div>
-                                    <h1 className='font-semibold'>Fever</h1>
+                                    <h1 className='font-semibold md:text-2xl'>Fever</h1>
                                 </div>
                                 <div>
-                                    <img src="src/assets/Images/like (1).png" alt="" className='w-[4vw] h-[2vh] mt-4'/>
+                                    <img src="src/assets/Images/like (1).png" alt="" className='w-[4vw] h-[2vh] mt-4 md:w-[4vw] md:h-[3vh]'/>
                                 </div>
                             </div>
 
                             <div className='px-3 font-semibold mt-[-13px]'>
-                                <h1 className='sup text-sm'>100.8 <span>&#176;</span>F</h1>
+                                <h1 className='sup text-sm md:text-xl'>100.8 <span>&#176;</span>F</h1>
                             </div>
            
                             <div className='ml-[-24px] py-8'>
