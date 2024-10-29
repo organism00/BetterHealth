@@ -20,7 +20,7 @@ const data = [
 
 const Fever = () => {
   return (
-    <Box sx={{ width: '90%', height: 150 }}>
+    <Box sx={{ width: '95%', height: "20vh" }}>
       <ResponsiveContainer>
         <LineChart data={data}>
           <CartesianGrid strokeDasharray="3 3" />

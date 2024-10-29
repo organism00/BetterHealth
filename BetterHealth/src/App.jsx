@@ -23,6 +23,7 @@ import DoctorDetails from "./Pages/DoctorDetails";
 import Patientdashboard from './Pages/Patientdashboard';
 import HeartRateChart from './Components/HeartRateChart';
 import HeartECGChart from './Components/HeartECGChart';
+import SearchBar from './Components/SearchBar';
 
 
 
@@ -52,6 +53,7 @@ const App = () => {
         <Route path='/patientdashboard' element ={< Patientdashboard/>}></Route>
         <Route path='/test' element ={< HeartRateChart/>}></Route>
         <Route path='/run' element ={< HeartECGChart/>}></Route>
+        <Route path='/search' element ={< SearchBar/>}></Route>
        
 
         

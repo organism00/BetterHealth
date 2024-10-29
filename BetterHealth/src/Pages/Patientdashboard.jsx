@@ -5,6 +5,7 @@ import Navbar from '../Components/Navbar'
 import HeartRateChart from '../Components/HeartRateChart'
 import Fever from '../Components/Fever'
 import  HeartECGChart from '../Components/HeartECGChart'
+import SearchBar from '../Components/SearchBar'
 
 
 
@@ -19,21 +20,345 @@ const Patientdashboard = () => {
         </div>
 
 
-            {/* <div className="mt-24 w-full h-full lg:w-full lg:ml-0 md:ml-32 px-5 space-y-4"> */}
-                <div className="flex lg:gap-[320px]  gap-[50px]">
-                    <h1 className="text-3xl whitespace-nowrap">Johen Doe</h1>
-                    <div className="lg:w-[12vw] lg:h-[6vh] w-[45vw] h-[7vh] bg-indigo-700 rounded-md flex gap-2 justify-center py-3 px-2">
-                      {/* <GoHome /> */}
-                      <div>
-                        <img src="src/assets/Images/plus (2).png" alt="" className='w-[10px] h-[10px] mt-2'/>
-                      </div>
-                      <Link className=' flex justify-center ' to={`/Patientdashboard`}> 
-                        <h1 className=' text-white  whitespace-nowrap'>  <h1>Add Record</h1></h1>
-                      </Link>
+            <div className="lg:flex lg:flex-row flex flex-col md:flex md:flex-col lg:py-20 lg:pl-64 lg:space-x-5 py-8">
+                <div className='lg:bg-red-700 lg:w-[80vw] lg:h-screen w-[100vw] h-auto bg-yellow-400'>
+                    {/* heading */}
+                    <div className='flex flex-row py-5 px-5 justify-between md:py-20 md:px-11'> 
+                        <div >
+                            <h1 className='text-[32px] md:text-5xl md:py-4 '>Johen doe</h1>
+                        </div>
+                        <div>
+                            <div className="lg:w-[12vw] lg:h-[6vh] w-[40vw] h-[7vh] md:w-[30vw] md:h-[6vh] bg-indigo-700 rounded-md flex gap-2 justify-center py-3 px-2 md:py-4">
+                                <div>
+                                     <img src="src/assets/Images/plus (2).png" alt="" className='w-[10px] h-[10px] mt-2 md:w-[20px] md:h-[20px]'/>
+                                </div>
+                                <div>
+                                    <Link className=' flex justify-center ' to={`/Patientdashboard`}> 
+                                    <h1 className=' text-white  whitespace-nowrap md:text-2xl'> <h1>Add Record</h1></h1>
+                                    </Link>
+                                </div>  
+                            </div>
+                        </div>
                     </div>
-                </div>
-                 
 
+                   
+                    <div className=' w-auto h-auto flex flex-col items-center justify-evenly space-y-4'>
+                         {/* content 1*/}
+                        <div className='bg-indigo-800 w-[90vw] h-[40vh] shadow-md rounded-xl flex flex-col px-4 border-t-2' >
+                            <div className='flex justify-between px-3 py-5 md:px-6 md:py-6'>
+                                <div>
+                                    <h1 className='font-semibold text-white md:text-2xl'>Heart Rate</h1>
+                                </div>
+                                <div>
+                                    <img src="src/assets/Images/like.png" alt="" className='w-[4vw] h-[2vh] mt-4 md:w-[4vw] md:h-[3vh]'/>
+                                </div>
+                            </div>
+                            <div className='px-3 font-semibold text-white mt-[-13px] md:text-xl'>
+                                <h1>75/118</h1>
+                            </div>        
+                            <div className='ml-[-24px] py-8 '>
+                            <HeartRateChart/>
+                            </div>
+                        </div>
+
+                       {/* content 2*/}
+                        <div className='bg-white w-[90vw] h-[39vh] shadow-md rounded-xl flex flex-col px-5 py-2 justify-evenly border-t-2'>
+                       
+                            <div className='flex justify-between px-3 py-5'>
+                                <div>
+                                    <h1 className='font-semibold'>Fever</h1>
+                                </div>
+                                <div>
+                                    <img src="src/assets/Images/like (1).png" alt="" className='w-[4vw] h-[2vh] mt-4'/>
+                                </div>
+                            </div>
+
+                            <div className='px-3 font-semibold mt-[-13px]'>
+                                <h1 className='sup text-sm'>100.8 <span>&#176;</span>F</h1>
+                            </div>
+           
+                            <div className='ml-[-24px] py-8'>
+                                <Fever/>
+                            </div>
+                        </div>
+
+                        {/* content 3 */}
+                        <div className='bg-white w-[90vw] h-[22vh] lg:h-[25vh] lg:w-[10vw] shadow-md rounded-xl flex flex-col px-6 py-6 justify-evenly border-t-2'>
+                            <div className='flex justify-between '>
+                                <h1 className='text-[20px]'>Blood Pre..</h1>
+                                <img src="src/assets/Images/heartbeat.png" alt="" className='w-[5vw] h-[3vh]' />
+                            </div>
+                            <div className='flex justify-between'>
+                                <h1 className='text-[18px] font-medium'>75</h1>
+                                <h1>Upper</h1>
+                            </div>
+                             <div className='flex justify-between'>
+                                <h1 className='text-[18px] font-medium'>124</h1>
+                                <h1>Lower</h1>
+                            </div>
+                        </div>
+
+                        {/* content 4 */}
+                        <div className='bg-white w-[90vw] h-[14vh] shadow-md rounded-xl flex flex-col px-6 py-4 justify-evenly border-t-2'>
+                            <div className='flex justify-between'>
+                                <h1 className='text-[20px]'>Bill Due</h1>
+                                <img src="src/assets/Images/wallet.png" alt="" className='w-[4vw] h-[18px]' />
+                            </div>
+                            <div className='text[18px] font-light'>
+                                $214.86
+                            </div>
+                        </div>
+
+                        {/* content 5 */}
+                        <div className='bg-white w-[90vw] h-[20vh] shadow-md rounded-xl flex flex-col border-t-2 px-6 py-3 justify-evenly'>
+                            <h1 className='text-[20px]'>
+                                Fever History
+                            </h1>
+                            <select className='text-black w-32 text-[14px] h-5' name="">
+                                <option value="">1 to 10 Jan'21</option>
+                                <option value="">11 to 31 Jan '21</option>
+                                <option value="">1 to 15 Feb '21</option>
+                                <option value="">16 t0 18 Feb '21</option>
+                            </select>
+                            <div className='flex flex-row justify-between'>         
+                                <div className='flex  text-red-600 '>
+                                    <h1 className='text-[24px] font-semibold'>
+                                        99
+                                    </h1>
+                                    <h1 className='text-[12px]  leading-6 font-bold '>
+                                        +12%
+                                    </h1>
+                                </div>
+                                <div>
+                                    <h1 className='text-[15px]'>Yesterday</h1>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* content 6 */}
+                        <div className='bg-white w-[90vw] h-[14vh] shadow-md rounded-xl px-6 py-2 flex flex-col border-t-2 '>
+                            <div className='flex flex-row justify-between'>
+                                <h1><img src="src/assets/Images/doctor.png" alt="" className='w-8 h-6 mt-6 '/></h1>
+                                <div className='py-3 px-1'>
+                                    <h1 className='text-[18px] text-blue-600 font-semibold'>Johen Mark</h1> 
+                                    <h1 className='float-end px-2 font-light text-gray-500'>My Doctor</h1>    
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* content 7 */}
+                        <div className='bg-white w-[90vw] h-[37vh] shadow-md rounded-xl flex flex-col py-5 space-y-2 border-t-2 px-2 '>
+                            <div className='px-4'>
+                                <h1 className='text-[20px]'>Heart ECG</h1>
+                            </div>            
+                            <div className='flex flex-row justify-between px-3 '>
+                                <div>
+                                    <select className='text-black text-[14px] w-36 h-6' name="">
+                                        <option value="">1 to 10 Jan'21</option>
+                                        <option value="">11 to 31 Jan '21</option>
+                                        <option value="">1 to 15 Feb '21</option>
+                                        <option value="">16 t0 18 Feb '21</option>
+                                    </select>                       
+                                </div>  
+                                <div className='w-[38vw] h-[5vh] bg-blue-50 mt-[-10px] px-3 rounded-md flex justify-between leading-10 whitespace-nowrap'>
+                                    <h1 className='text-blue-600 text-[14px] font-thin'>72 bmp </h1> 
+                                    <h1 className='text-[14px] font-light'>Average</h1>
+                                    </div>
+                                </div>
+                                <div className='w-[90vw] h-[4vh] px-6'>
+                                    <HeartECGChart/>
+                                </div>
+                            </div>
+
+                            {/* content 8 */}
+                            <div className=' bg-white w-[90vw] h-[49vh] shadow-md rounded-xl border-t-2'>
+                                <div className='flex flex-col py-6 space-y-2 place-items-center '>
+                                    <img src="src/assets/Images/doctor M.jpeg" alt="" className='w-[12vw] h-[6vh] place-items-center object-cover rounded-full'/>
+                                    <h1 className='text-[20px]'>Dr. Poul doe</h1>
+                                    <h1 className='text-[14px] font-normal '>Heart Specialist</h1>
+                                </div>
+               
+                                <div className=' w-[90vw] h-[1px] bg-slate-300'></div>
+                
+                                <div className=' flex flex-row px-5 py-8 gap-8'>
+                                    <div className=' flex gap-3'>
+                                        <img src="src/assets/Images/surgery-room.png" alt="" className='w-[13vw] h-[7vh]'/>
+                                        <div className='flex flex-col  '>
+                                            <h1 className='text-3xl'>10</h1>
+                                            <h1 className='text-[14px] font-thin'>Operation</h1>
+                                        </div>
+                                    </div>
+                                    <div className='w-[1px] h-[10vh] bg-slate-300'></div>
+                                    <div  className='flex gap-3'>
+                                        <img src="src/assets/Images/patient.png" alt=""  className='w-[11vw] h-[7vh]'/>
+                                        <div className=' flex flex-col'>
+                                            <h1 className='text-3xl'>47</h1>
+                                            <h1 className='text-[14px] font-thin'>Patients</h1>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div className=' flex flew-row justify-center'>
+                                    <button className='w-[80vw] h-[6vh] rounded-lg shadow-md bg-indigo-200  justify-between'>
+                                        <div className='flex justify-center gap-2'>
+                                            <div className='py-2'> 
+                                                <img src="src/assets/Images/message (1).png" alt="" className='w-[4vw] h-[2vh]'/>
+
+                                            </div>
+                                            <div className='px-2 text-indigo-700 text-2xl'>
+                                                <h1 className='text-[16px]'>Messages</h1>
+                                            </div>
+                                        </div>
+                                    </button>
+                                </div>
+                            </div>
+                            {/* content 9  */}
+                            <div className='bg-white w-[90vw] h-[53vh] shadow-md rounded-xl flex flex-col py-5 space-y-4 border-t-2'>
+                                <div className='flex justify-between px-4'>
+                                    <h1 className='text-[22px]'>Current Vitals</h1>
+                                    <div className='justify-between'>
+                                        <div>
+                                            <SearchBar/>
+                                        </div>
+                                        <div className='pl-[75px] -mt-5'>
+                                            <img src="src/assets/Images/loupe.png" alt="" className='w-[2vh] h-[2vh]'/>     
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div className='w[70vw] h-[1px] bg-gray-300'></div>
+                                </div>
+                                <div className=' flex gap-16 px-4'>
+                                    <div className='flex flex-col justify-between'>
+                                        <h1 className='text-gray-500 text-[15px]'>Patieny Name:</h1>
+                                        <h1 className='font-bold text-[14px]'>Jonsahn</h1>
+                                    </div>
+                                    <div className='flex flex-col justify-between'>
+                                        <h1 className='text-gray-500 text-[15px]'>Patieny Id:</h1>
+                                        <h1 className='font-bold text-[14px]'>1254896</h1>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div className='w-[90vw] h-[1px] bg-gray-300'></div>
+                                </div>
+                                <div className='flex  flex-row'>
+                                    <div className=' flex px-4 gap-3'>
+                                        <div className='flex flex-col'>
+                                            <img src="src/assets/Images/weighing-machine.png" alt="" className='w-[9vw] h-[5vh]'/>
+                                            <h1>ibs</h1>
+                                        </div>
+                                        <div className=' mt-[-8px]'>
+                                            <h1 className='text-[12px]'>Weight </h1>
+                                            <h1 className='text-[19px]'>230</h1>
+                                        </div>                  
+                                    </div>
+                                    <div className='w-[1px] h-[9vh] bg-gray-300'></div>
+                                        <div className='flex '>
+                                            <div className='pr-3'>
+                                                <img src="src/assets/Images/dude.png" alt="" className='w-[13vw] h-[9vh]'/>
+                                            </div>
+                                            <div className='mt-[-8px] pr-2'> 
+                                                <h1 className='text-[12px]'>Height</h1>
+                                                <h1 className='text-[19px]'>6'1</h1>
+                                            </div>
+                                        </div>
+                                        <div className='w-[1px] h-[9vh] bg-gray-300'></div>
+                                        <div className='flex'>
+                                            <div className='px-2 '>
+                                                <img src="src/assets/Images/statistic.png" alt="" className='w=[9vw] h-[5vh]'/>
+                                                <h1 className='leading-4 text-[19px]'>30.34</h1>
+                                            </div>
+                                        <div className='pr-[4px] text-[13px] mt-[-8px]'>BMI</div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div className='w-[90vw] h-[1px] bg-gray-300'></div>
+                                </div>
+                                <div className='px-5 text-[12px]'>
+                                    <h1>Recorded on 25/05/2020</h1>
+                                </div>
+                                <div className='py-2'>
+                                    <div className='w-[90vw] h-[12vh] bg-indigo-500 rounded-lg py-2 px-4 flex gap-2 text-white text-[14px]'>
+                                        <img src="src/assets/Images/cigarette.png"  alt="" className='w-[9vw] h-[4vh]'/>
+                                        <h1 className='text-white text-[14px] py-3 font-semibold'>Smoking Status: current every day smoker</h1>
+                                    </div>
+                                </div>
+                            </div> 
+
+                            {/* content 10 */}
+                            <div className='bg-white w-[90vw] h-[24vh] shadow-md rounded-xl border-t-2 px-4 py-5 '>
+                                <div className=''>
+                                    <img src="src/assets/Images/blood.png" alt="" className='w-[2vw] h-[2vh] ml-2' />
+                                </div>
+                                <div className='w-[14vw] h-[7vh] bg-indigo-500 rounded-full  '>
+                                    <div className='pt-2'>
+                                        <img src="src/assets/Images/record-button.png" alt="" className='w-[2vw] h-[1vh] ml-2   '/>
+                                        <img src="src/assets/Images/hand.png" alt="" className='w-[8vw] h-[4vh]'/>
+                                    </div>
+
+                                     <div className='mt-[-39px] ml-6  z-10'> 
+                                        <img src="src/assets/Images/blood-sugar-monitor.png" alt="" className='w-[13vw] h-[5vh]' />
+                                    </div>
+                                </div>
+                                <div className='py-2 text-blue-600'>
+                                    <h1 className=' text-[19px] font-sans'>Glucose Level </h1>
+                                    <h1 className='text-2xl'> 85-89</h1>
+                                </div>
+                            </div>
+
+                            {/* content 11 */}
+                            <div className='bg-white w-[90vw] h-[22vh] shadow-md rounded-xl flex flex-col py-6 px-5 border-t-2'>
+                                <div>
+                                    <img src="src/assets/Images/blood-test.png" alt="" className='w-[12vw] h-[6vh]' />
+                                </div>
+                                <div className='py-2 text-blue-600'>
+                                    <h1 className='text-[19px] font-sans'> Blood Count  </h1>
+                                    <h1 className='text-2xl'>9.456/ml</h1>
+                                </div>
+                            </div>
+
+                            {/* content 12 */}
+                            <div className='bg-white w-[90vw] h-[19vh] shadow-md rounded-xl border-t-2 flex py-9 px-5 gap-3'>
+                                <div className='py-1'>
+                                    <img src="src/assets/Images/doctor f.jpeg" alt="" className='w-[13vw] h-[7vh] rounded-full object-cover' />
+                                    </div>
+                                <div className='flex flex-col text-blue-600'>
+                                    <h1 className='text-[26px]'>Dr. Kevin Black</h1>
+                                    <h1 className='text-[17px] -mt-1'>Cardiologists</h1>
+                                </div>
+                            </div> 
+
+
+                        
+
+
+
+
+
+
+
+
+                    {/* ........ */}
+                    </div> 
+
+                   
+
+                </div>
+
+
+                {/* second div */}
+                <div className=' lg:bg-green-500 lg:h-screen lg:w-[44vw] w-auto h-screen bg-purple-300'>
+                   <div className=' text-[12px] lg:text-[24px]'>
+                        <h1>good</h1>
+
+                   </div>
+
+                </div>
+            </div>
+               
+
+                 
+{/* 
 <div className='hidden md:hidden lg:flex lg:flex-row lg:w-[60vw] lg:h-auto'>
     <div className='lg:flex lg:flex-col'>
     
@@ -931,7 +1256,7 @@ const Patientdashboard = () => {
                 </div>          
             </div>
                           
-        </div>
+        </div> */}
                 {/* </div> */}
             
         </>

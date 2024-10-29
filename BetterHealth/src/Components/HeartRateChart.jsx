@@ -20,7 +20,7 @@ const data = [
 
 const HeartRateChart = () => {
   return (
-    <Box sx={{ width: '90%', height: 150 }}>
+    <Box sx={{ width: '90%', height: "20vh" }}>
       <ResponsiveContainer>
         <LineChart data={data}>
           <CartesianGrid strokeDasharray="3 3" />
