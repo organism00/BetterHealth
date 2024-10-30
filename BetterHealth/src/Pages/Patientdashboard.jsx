@@ -18,12 +18,10 @@ const Patientdashboard = () => {
               <Navbar />
             </main>
         </div>
-
-
-            <div className="lg:flex lg:flex-row flex flex-col md:flex md:flex-col lg:py-20 lg:pl-64 lg:space-x-5 py-8 md:py-6 ">
-                <div className='lg:bg-red-700 lg:w-[80vw] lg:h-screen w-[100vw] h-auto bg-yellow-400'>
+            <div className="lg:flex lg:flex-row flex flex-col md:flex md:flex-col lg:py-20 lg:pl-64 lg:space-x-5 py-8 md:py-20 ">
+                <div className='lg:bg-red-700 lg:w-[80vw] lg:h-screen w-[100vw] h-auto bg-yellow-400 md:bg-red-600 md:w-[100vw] md:h-auto'>
                     {/* heading */}
-                    <div className='flex flex-row py-5 px-5 justify-between md:py-20 md:px-11'> 
+                    <div className='flex flex-row py-5 px-5 justify-between md:py-5 md:px-11'> 
                         <div >
                             <h1 className='text-[32px] md:text-5xl md:py-2 '>Johen doe</h1>
                         </div>
@@ -44,7 +42,7 @@ const Patientdashboard = () => {
                    
                     <div className=' w-auto h-auto flex flex-col items-center justify-evenly space-y-4'>
                          {/* content 1*/}
-                        <div className='bg-indigo-800 w-[90vw] h-[40vh] shadow-md rounded-xl flex flex-col px-4 border-t-2' >
+                        <div className='bg-indigo-800 w-[90vw] h-[40vh]  md:h-[37vh] md:bg-indigo-800 shadow-md rounded-xl flex flex-col px-4 border-t-2' >
                             <div className='flex justify-between px-3 py-5 md:px-6 md:py-6'>
                                 <div>
                                     <h1 className='font-semibold text-white md:text-2xl'>Heart Rate</h1>
@@ -62,7 +60,7 @@ const Patientdashboard = () => {
                         </div>
 
                        {/* content 2*/}
-                        <div className='bg-white w-[90vw] h-[39vh] shadow-md rounded-xl flex flex-col px-5 py-2 justify-evenly border-t-2'>
+                        <div className='bg-white w-[90vw] h-[39vh] md:h-[37vh] shadow-md rounded-xl flex flex-col px-5 py-2 justify-evenly border-t-2'>
                        
                             <div className='flex justify-between px-3 py-5'>
                                 <div>
@@ -77,7 +75,7 @@ const Patientdashboard = () => {
                                 <h1 className='sup text-sm md:text-xl'>100.8 <span>&#176;</span>F</h1>
                             </div>
            
-                            <div className='ml-[-24px] py-8'>
+                            <div className='ml-[-24px] py-8 md:w-[90vw] md:px-2'>
                                 <Fever/>
                             </div>
                         </div>
@@ -85,33 +83,33 @@ const Patientdashboard = () => {
                         {/* content 3 */}
                         <div className='bg-white w-[90vw] h-[22vh] lg:h-[25vh] lg:w-[10vw] shadow-md rounded-xl flex flex-col px-6 py-6 justify-evenly border-t-2'>
                             <div className='flex justify-between '>
-                                <h1 className='text-[20px]'>Blood Pre..</h1>
-                                <img src="src/assets/Images/heartbeat.png" alt="" className='w-[5vw] h-[3vh]' />
+                                <h1 className='text-[20px] md:text-xl md:font-semibold'>Blood Pre..</h1>
+                                <img src="src/assets/Images/heartbeat.png" alt="" className='w-[5vw] h-[3vh] md:w-[4vw] md:h-[3vh]' />
                             </div>
                             <div className='flex justify-between'>
-                                <h1 className='text-[18px] font-medium'>75</h1>
-                                <h1>Upper</h1>
+                                <h1 className='text-[18px] font-medium md:text-xl md:font-semibold'>75</h1>
+                                <h1 className='md:font-normal md:text-[18px]'>Upper</h1>
                             </div>
                              <div className='flex justify-between'>
-                                <h1 className='text-[18px] font-medium'>124</h1>
-                                <h1>Lower</h1>
+                                <h1 className='text-[18px] font-medium md:text-xl md:font-semibold'>124</h1>
+                                <h1 className='md:font-normal md:text-[18px]'>Lower</h1>
                             </div>
                         </div>
 
                         {/* content 4 */}
                         <div className='bg-white w-[90vw] h-[14vh] shadow-md rounded-xl flex flex-col px-6 py-4 justify-evenly border-t-2'>
                             <div className='flex justify-between'>
-                                <h1 className='text-[20px]'>Bill Due</h1>
-                                <img src="src/assets/Images/wallet.png" alt="" className='w-[4vw] h-[18px]' />
+                                <h1 className='text-[20px] md:text-xl md:font-semibold'>Bill Due</h1>
+                                <img src="src/assets/Images/wallet.png" alt="" className='w-[4vw] h-[18px] md:w-[20px] md:h-[24px]' />
                             </div>
-                            <div className='text[18px] font-light'>
+                            <div className='text[18px] font-light md:text-[18px]'>
                                 $214.86
                             </div>
                         </div>
 
                         {/* content 5 */}
                         <div className='bg-white w-[90vw] h-[20vh] shadow-md rounded-xl flex flex-col border-t-2 px-6 py-3 justify-evenly'>
-                            <h1 className='text-[20px]'>
+                            <h1 className='text-[20px] md:text-xl md:font-semibold'>
                                 Fever History
                             </h1>
                             <select className='text-black w-32 text-[14px] h-5' name="">
@@ -122,15 +120,15 @@ const Patientdashboard = () => {
                             </select>
                             <div className='flex flex-row justify-between'>         
                                 <div className='flex  text-red-600 '>
-                                    <h1 className='text-[24px] font-semibold'>
+                                    <h1 className='text-[24px] font-semibold md:text-[25px]'>
                                         99
                                     </h1>
-                                    <h1 className='text-[12px]  leading-6 font-bold '>
+                                    <h1 className='text-[12px] leading-6 font-bold md:text-[15px] '>
                                         +12%
                                     </h1>
                                 </div>
                                 <div>
-                                    <h1 className='text-[15px]'>Yesterday</h1>
+                                    <h1 className='text-[15px] md:text-[20px]'>Yesterday</h1>
                                 </div>
                             </div>
                         </div>
@@ -140,49 +138,51 @@ const Patientdashboard = () => {
                             <div className='flex flex-row justify-between'>
                                 <h1><img src="src/assets/Images/doctor.png" alt="" className='w-8 h-6 mt-6 '/></h1>
                                 <div className='py-3 px-1'>
-                                    <h1 className='text-[18px] text-blue-600 font-semibold'>Johen Mark</h1> 
-                                    <h1 className='float-end px-2 font-light text-gray-500'>My Doctor</h1>    
+                                    <h1 className='text-[18px] text-blue-600 font-semibold md:text-xl'>Johen Mark</h1> 
+                                    <h1 className='float-end px-2 font-light text-gray-500 md:text-[18px]'>My Doctor</h1>    
                                 </div>
                             </div>
                         </div>
 
                         {/* content 7 */}
-                        <div className='bg-white w-[90vw] h-[37vh] shadow-md rounded-xl flex flex-col py-5 space-y-2 border-t-2 px-2 '>
+                        <div className='bg-white w-[90vw] h-[37vh] md:h-[46vh] shadow-md rounded-xl flex flex-col py-5 md:px-6 md:py-6 space-y-2 border-t-2 px-2 '>
                             <div className='px-4'>
                                 <h1 className='text-[20px]'>Heart ECG</h1>
                             </div>            
                             <div className='flex flex-row justify-between px-3 '>
                                 <div>
-                                    <select className='text-black text-[14px] w-36 h-6' name="">
+                                    <select className='text-black text-[14px] w-36 h-6 md:text-[17px]' name="">
                                         <option value="">1 to 10 Jan'21</option>
                                         <option value="">11 to 31 Jan '21</option>
                                         <option value="">1 to 15 Feb '21</option>
                                         <option value="">16 t0 18 Feb '21</option>
                                     </select>                       
                                 </div>  
-                                <div className='w-[38vw] h-[5vh] bg-blue-50 mt-[-10px] px-3 rounded-md flex justify-between leading-10 whitespace-nowrap'>
-                                    <h1 className='text-blue-600 text-[14px] font-thin'>72 bmp </h1> 
-                                    <h1 className='text-[14px] font-light'>Average</h1>
+                                <div className='w-[38vw] h-[5vh] md:w-[22vw] md:h-[5vh] bg-blue-50 mt-[-10px] px-3 rounded-md flex justify-between leading-10 whitespace-nowrap'>
+                                    <h1 className='text-blue-600 text-[14px] font-thin md:text-[18px]'>72 bmp </h1> 
+                                    <h1 className='text-[14px] font-light md:text-[18px]'>Average</h1>
                                     </div>
                                 </div>
-                                <div className='w-[90vw] h-[4vh] px-6'>
+                                <div className='w-[90vw] h-[4vh] px-6 md:w-[82vw] md:h-[10vh] md:py-2'>
                                     <HeartECGChart/>
                                 </div>
                             </div>
 
                             {/* content 8 */}
-                            <div className=' bg-white w-[90vw] h-[49vh] shadow-md rounded-xl border-t-2'>
+                            <div className=' bg-white w-[90vw] h-[49vh] md:h-[47vh] shadow-md rounded-xl border-t-2 md:py-4'>
                                 <div className='flex flex-col py-6 space-y-2 place-items-center '>
-                                    <img src="src/assets/Images/doctor M.jpeg" alt="" className='w-[12vw] h-[6vh] place-items-center object-cover rounded-full'/>
-                                    <h1 className='text-[20px]'>Dr. Poul doe</h1>
-                                    <h1 className='text-[14px] font-normal '>Heart Specialist</h1>
+                                    <img src="src/assets/Images/doctor M.jpeg" alt="" className='w-[12vw] h-[6vh] md:w-[12vw] md:h-[10vh] md:rounded-full md:object-cover place-items-center object-cover rounded-full'/>
+                                    <h1 className='text-[20px] md:text-[23px] md:font-semibold'>Dr. Poul Doe</h1>
+                                    <h1 className='text-[14px] font-normal md:text-[18px] '>Heart Specialist</h1>
+                                </div>
+
+                                <div>
+                                <div className=' w-[90vw] h-[1px] bg-slate-300'></div>
                                 </div>
                
-                                <div className=' w-[90vw] h-[1px] bg-slate-300'></div>
-                
-                                <div className=' flex flex-row px-5 py-8 gap-8'>
-                                    <div className=' flex gap-3'>
-                                        <img src="src/assets/Images/surgery-room.png" alt="" className='w-[13vw] h-[7vh]'/>
+                                <div className=' flex flex-row px-5 py-8 gap-8 md:px-8 md:flex md:gap-28 md:justify-center'>
+                                    <div className=' flex gap-3 md:gap-8'>
+                                        <img src="src/assets/Images/surgery-room.png" alt="" className='w-[13vw] h-[7vh] md:w-[6vw] md:h-[6vh]'/>
                                         <div className='flex flex-col  '>
                                             <h1 className='text-3xl'>10</h1>
                                             <h1 className='text-[14px] font-thin'>Operation</h1>
@@ -190,7 +190,7 @@ const Patientdashboard = () => {
                                     </div>
                                     <div className='w-[1px] h-[10vh] bg-slate-300'></div>
                                     <div  className='flex gap-3'>
-                                        <img src="src/assets/Images/patient.png" alt=""  className='w-[11vw] h-[7vh]'/>
+                                        <img src="src/assets/Images/patient.png" alt=""  className='w-[11vw] h-[7vh] md:w-[6vw] md:h-[5vh]'/>
                                         <div className=' flex flex-col'>
                                             <h1 className='text-3xl'>47</h1>
                                             <h1 className='text-[14px] font-thin'>Patients</h1>
@@ -202,34 +202,34 @@ const Patientdashboard = () => {
                                     <button className='w-[80vw] h-[6vh] rounded-lg shadow-md bg-indigo-200  justify-between'>
                                         <div className='flex justify-center gap-2'>
                                             <div className='py-2'> 
-                                                <img src="src/assets/Images/message (1).png" alt="" className='w-[4vw] h-[2vh]'/>
+                                                <img src="src/assets/Images/message (1).png" alt="" className='w-[4vw] h-[2vh] md:w-[2vw] md:h-[2vh]'/>
 
                                             </div>
                                             <div className='px-2 text-indigo-700 text-2xl'>
-                                                <h1 className='text-[16px]'>Messages</h1>
+                                                <h1 className='text-[16px] md:text-[25px]'>Messages</h1>
                                             </div>
                                         </div>
                                     </button>
                                 </div>
                             </div>
                             {/* content 9  */}
-                            <div className='bg-white w-[90vw] h-[53vh] shadow-md rounded-xl flex flex-col py-5 space-y-4 border-t-2'>
-                                <div className='flex justify-between px-4'>
-                                    <h1 className='text-[22px]'>Current Vitals</h1>
+                            <div className='bg-white w-[90vw] h-[53vh] md:h-[46vh] shadow-md rounded-xl flex flex-col py-5 space-y-4 border-t-2 md:space-y-6'>
+                                <div className='flex justify-between px-4 md:px-10'>
+                                    <h1 className='text-[22px] md:text-2xl'>Current Vitals</h1>
                                     <div className='justify-between'>
-                                        <div>
+                                        {/* <div> 
                                             <SearchBar/>
                                         </div>
                                         <div className='pl-[75px] -mt-5'>
-                                            <img src="src/assets/Images/loupe.png" alt="" className='w-[2vh] h-[2vh]'/>     
-                                        </div>
+                                            <img src="src/assets/Images/loupe.png" alt="" className='w-[2vh] h-[2vh]  md:w-[1vw] md:h-[1vh]'/>     
+                                        </div> */}
                                     </div>
                                 </div>
                                 <div>
-                                    <div className='w[70vw] h-[1px] bg-gray-300'></div>
+                                    <div className='w[70vw] h-[1px] bg-gray-300 md:w-[90vw]'></div>
                                 </div>
-                                <div className=' flex gap-16 px-4'>
-                                    <div className='flex flex-col justify-between'>
+                                <div className=' flex gap-16 px-4 md:flex md:justify-between md:px-10'>
+                                    <div className='flex flex-col justify-between '>
                                         <h1 className='text-gray-500 text-[15px]'>Patieny Name:</h1>
                                         <h1 className='font-bold text-[14px]'>Jonsahn</h1>
                                     </div>
@@ -241,9 +241,9 @@ const Patientdashboard = () => {
                                 <div>
                                     <div className='w-[90vw] h-[1px] bg-gray-300'></div>
                                 </div>
-                                <div className='flex  flex-row'>
+                                <div className='flex flex-row md:flex md:justify-between md:px-10'>
                                     <div className=' flex px-4 gap-3'>
-                                        <div className='flex flex-col'>
+                                        <div className='flex flex-col md:flex md:flex-col'>
                                             <img src="src/assets/Images/weighing-machine.png" alt="" className='w-[9vw] h-[5vh]'/>
                                             <h1>ibs</h1>
                                         </div>
@@ -274,34 +274,34 @@ const Patientdashboard = () => {
                                 <div>
                                     <div className='w-[90vw] h-[1px] bg-gray-300'></div>
                                 </div>
-                                <div className='px-5 text-[12px]'>
+                                <div className='px-5 text-[12px] md:text-xl'>
                                     <h1>Recorded on 25/05/2020</h1>
                                 </div>
-                                <div className='py-2'>
-                                    <div className='w-[90vw] h-[12vh] bg-indigo-500 rounded-lg py-2 px-4 flex gap-2 text-white text-[14px]'>
-                                        <img src="src/assets/Images/cigarette.png"  alt="" className='w-[9vw] h-[4vh]'/>
-                                        <h1 className='text-white text-[14px] py-3 font-semibold'>Smoking Status: current every day smoker</h1>
+                                <div className='py-2 md:py-5'>
+                                    <div className='w-[90vw] h-[12vh] md:h-[8vh] bg-indigo-500 rounded-lg py-2 px-4 flex gap-2 text-white text-[14px] md:py-4'>
+                                        <img src="src/assets/Images/cigarette.png"  alt="" className='w-[9vw] h-[4vh] md:w-[4vw] md:h-[4vh]'/>
+                                        <h1 className='text-white text-[14px] py-3 md:py-4 font-semibold md:text-[18px] '>Smoking Status: current every day smoker</h1>
                                     </div>
                                 </div>
                             </div> 
 
                             {/* content 10 */}
-                            <div className='bg-white w-[90vw] h-[24vh] shadow-md rounded-xl border-t-2 px-4 py-5 '>
+                            <div className='bg-white w-[90vw] h-[24vh] md:h-[20vh] shadow-md rounded-xl border-t-2 px-4 py-5 md:py-7 md:px-8' >
                                 <div className=''>
-                                    <img src="src/assets/Images/blood.png" alt="" className='w-[2vw] h-[2vh] ml-2' />
+                                    <img src="src/assets/Images/blood.png" alt="" className='w-[2vw] h-[2vh] ml-2 md:w-[1vw] md:h-[1vh]' />
                                 </div>
-                                <div className='w-[14vw] h-[7vh] bg-indigo-500 rounded-full  '>
+                                <div className='w-[14vw] h-[7vh] bg-indigo-500 md:w-[8vw] md:h-[6vh] rounded-full  '>
                                     <div className='pt-2'>
-                                        <img src="src/assets/Images/record-button.png" alt="" className='w-[2vw] h-[1vh] ml-2   '/>
-                                        <img src="src/assets/Images/hand.png" alt="" className='w-[8vw] h-[4vh]'/>
+                                        <img src="src/assets/Images/record-button.png" alt="" className='w-[2vw] h-[1vh] ml-2 md:w-[1vw] md:h-[5px] md:ml-3'/>
+                                        <img src="src/assets/Images/hand.png" alt="" className='w-[8vw] h-[4vh] md:w-[6vw] md:h-[4vh]'/>
                                     </div>
 
-                                     <div className='mt-[-39px] ml-6  z-10'> 
-                                        <img src="src/assets/Images/blood-sugar-monitor.png" alt="" className='w-[13vw] h-[5vh]' />
+                                     <div className='mt-[-39px] ml-6  z-10 md:mt-[-50px]'> 
+                                        <img src="src/assets/Images/blood-sugar-monitor.png" alt="" className='w-[13vw] h-[5vh] md:w-[7vw] md:h-[5vh]' />
                                     </div>
                                 </div>
                                 <div className='py-2 text-blue-600'>
-                                    <h1 className=' text-[19px] font-sans'>Glucose Level </h1>
+                                    <h1 className=' text-[19px] font-sans md:text-[24px]'>Glucose Level </h1>
                                     <h1 className='text-2xl'> 85-89</h1>
                                 </div>
                             </div>
