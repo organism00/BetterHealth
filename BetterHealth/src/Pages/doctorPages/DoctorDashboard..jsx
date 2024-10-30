@@ -39,9 +39,9 @@ const Docotordashboard = () => {
                     </div>
                     <main className='flex flex-col my-8 justify-between'>
                         <section className='flex flex-col lg:flex-row gap-x-8 gap-y-8'>
-                            <section className='w-full lg:w-[69%] rounded-lg h-auto'>
-                                <div className='flex flex-col lg:flex-row gap-x-5 gap-y-8'>
-                                    <div className='flex lg:h-72 lg:flex-row md:flex-row flex-col lg:w-[50%] md:w-full gap-x-7 gap-y-8'>
+                            <section className='w-full lg:w-[66%] rounded-lg h-auto '>
+                                <div className='flex flex-col lg:flex-row gap-x-5 gap-y-8 '>
+                                    <div className='flex lg:h-72 lg:flex-row md:flex-row flex-col lg:w-[48%] md:w-full gap-x-3 gap-y-8'>
                                         <div className='lg:w-[90%] lg:h-72 h-80 md:h-96 w-full md:w-[50%] shadow-lg rounded-lg border border-stone-200'> 
                                             <DoughnutChart/>
                                         </div>
@@ -62,13 +62,13 @@ const Docotordashboard = () => {
                                             </div>
                                         </div>
                                     </div>
-                                    <div className='lg:w-[50%] h-96 lg:h-72 flex flex-col gap-y-5 lg:place-content-between'>
-                                        <div className='flex justify-between items-center'>
+                                    <div className='lg:w-[50%] h-96 lg:h-72 flex flex-col lg:place-content-between'>
+                                        <div className='flex justify-between items-center mb-5'>
                                             <h1 className='text-2xl font-light whitespace-nowrap'>Your Patients Today</h1>
-                                            <Link to='/patientlist'  className='text-base font-light'> All Patients</Link>
+                                            {/* <Link to='/doctorpatientslist'  className='text-base font-light hover:text-blue-400'> All Patients</Link> */}
                                             {/* <p className='text-base font-light'>All Patients</p> */}
                                         </div>
-                                        <div className="scrollable-div h-[240px] md:h-[240px] overflow-auto font-light border border-gray-200 rounded-lg shadow-lg">
+                                        <div className="scrollable-div h-[240px] md:h-[240px] overflow-auto font-light border border-b-0 border-gray-200 rounded-t-lg shadow-lg ">
                                             <div className="">
                                                 {patientData.map((patient, index) => {
                                                     return (
@@ -90,11 +90,14 @@ const Docotordashboard = () => {
                                                 ); })}
                                             </div>
                                         </div>
+                                        <div className='border border-gray-200 h-16 bg-white border-t-0 flex justify-end items-center pr-3 rounded-b-lg'>
+                                            <Link to={'/doctorpatientslist'} className='w-20 h-8 rounded-lg hover:scale-105 hover:bg-[#5156be] text-white bg-[#5156be] text-center'> See all</Link>
+                                        </div>
                                     </div>
                                 </div>
 
                                 {/* second row */}
-                                <div className='flex lg:flex-row gap-x-6 gap-y-8 mt-10 lg:h-72 flex-col'>
+                                <div className='flex lg:flex-row gap-x-8 gap-y-8 mt-10 lg:h-72 flex-col'>
                                     <div className='lg:w-[50%] border border-gray-200 rounded-lg shadow-lg h-72 w-full'>
                                         <RecentQuestions/>
                                     </div>
@@ -107,7 +110,7 @@ const Docotordashboard = () => {
 
 
                         {/*long second section */}
-                        <section className='lg:w-[30%] h-96 lg:h-[615px] w-full shadow-lg border border-gray-200 rounded-lg flex flex-col '>
+                        <section className='lg:w-[34%] h-96 lg:h-[615px] w-full shadow-lg border border-gray-200 rounded-lg flex flex-col '>
                             <div className=' w-full h-40 border-b border-b-gray-200 flex items-center pl-4 '>
                                 <h1 className='text-2xl font-light whitespace-nowrap'>Upcoming Appointments</h1>
                             </div>
@@ -281,123 +284,32 @@ const Docotordashboard = () => {
                                         <FaEllipsisH className='text-stone-600'/>
                                     </div>
                                 </div>  
-                                <div className='w-full h-[79%] rounded-b-md p-4 flex flex-col gap-y-4 '>
-                                    <div className='flex justify-between'>
-                                        <div className='flex gap-x-3'>
-                                            <div className='w-12 h-12 rounded-xl bg-slate-400 '></div>
-                                            <div className='flex flex-col'>
-                                                <h1 className='text-stone-700 hover:text-blue-400'>Shawn Hampton</h1>
-                                                <h1>Emergency Appointment</h1>
-                                            </div>
-                                        </div>
-                                        <div className='w-10 h-9 rounded-full bg-violet-200 flex items-center justify-center'>
-                                            <FaPhoneAlt className='text-violet-900'/>
-                                        </div>
-                                    </div>
-                                    <div className='flex justify-between items-center border-b pb-3 border-dotted border-stone-800'>
-                                        <div className='flex gap-x-9'>
-                                            <div className='flex items-center'>
-                                                <CiClock1 />
-                                                <h1 className='text-stone-600'> 10:00</h1>
-                                            </div>
-                                            <h1 className='text-stone-600 font-light'>$30</h1>
-                                        </div>
-                                        <FaEllipsisH className='text-stone-600'/>
-                                    </div>
-                                </div>  
-                                <div className='w-full h-[79%] rounded-b-md p-4 flex flex-col gap-y-4 '>
-                                    <div className='flex justify-between'>
-                                        <div className='flex gap-x-3'>
-                                            <div className='w-12 h-12 rounded-xl bg-slate-400 '></div>
-                                            <div className='flex flex-col'>
-                                                <h1 className='text-stone-700 hover:text-blue-400'>Shawn Hampton</h1>
-                                                <h1>Emergency Appointment</h1>
-                                            </div>
-                                        </div>
-                                        <div className='w-10 h-9 rounded-full bg-violet-200 flex items-center justify-center'>
-                                            <FaPhoneAlt className='text-violet-900'/>
-                                        </div>
-                                    </div>
-                                    <div className='flex justify-between items-center border-b pb-3 border-dotted border-stone-800'>
-                                        <div className='flex gap-x-9'>
-                                            <div className='flex items-center'>
-                                                <CiClock1 />
-                                                <h1 className='text-stone-600'> 10:00</h1>
-                                            </div>
-                                            <h1 className='text-stone-600 font-light'>$30</h1>
-                                        </div>
-                                        <FaEllipsisH className='text-stone-600'/>
-                                    </div>
-                                </div>  
-                                <div className='w-full h-[79%] rounded-b-md p-4 flex flex-col gap-y-4 '>
-                                    <div className='flex justify-between'>
-                                        <div className='flex gap-x-3'>
-                                            <div className='w-12 h-12 rounded-xl bg-slate-400 '></div>
-                                            <div className='flex flex-col'>
-                                                <h1 className='text-stone-700 hover:text-blue-400'>Shawn Hampton</h1>
-                                                <h1>Emergency Appointment</h1>
-                                            </div>
-                                        </div>
-                                        <div className='w-10 h-9 rounded-full bg-violet-200 flex items-center justify-center'>
-                                            <FaPhoneAlt className='text-violet-900'/>
-                                        </div>
-                                    </div>
-                                    <div className='flex justify-between items-center border-b pb-3 border-dotted border-stone-800'>
-                                        <div className='flex gap-x-9'>
-                                            <div className='flex items-center'>
-                                                <CiClock1 />
-                                                <h1 className='text-stone-600'> 10:00</h1>
-                                            </div>
-                                            <h1 className='text-stone-600 font-light'>$30</h1>
-                                        </div>
-                                        <FaEllipsisH className='text-stone-600'/>
-                                    </div>
-                                </div>  
-                                <div className='w-full h-[79%] rounded-b-md p-4 flex flex-col gap-y-4 '>
-                                    <div className='flex justify-between'>
-                                        <div className='flex gap-x-3'>
-                                            <div className='w-12 h-12 rounded-xl bg-slate-400 '></div>
-                                            <div className='flex flex-col'>
-                                                <h1 className='text-stone-700 hover:text-blue-400'>Shawn Hampton</h1>
-                                                <h1>Emergency Appointment</h1>
-                                            </div>
-                                        </div>
-                                        <div className='w-10 h-9 rounded-full bg-violet-200 flex items-center justify-center'>
-                                            <FaPhoneAlt className='text-violet-900'/>
-                                        </div>
-                                    </div>
-                                    <div className='flex justify-between items-center border-b pb-3 border-dotted border-stone-800'>
-                                        <div className='flex gap-x-9'>
-                                            <div className='flex items-center'>
-                                                <CiClock1 />
-                                                <h1 className='text-stone-600'> 10:00</h1>
-                                            </div>
-                                            <h1 className='text-stone-600 font-light'>$30</h1>
-                                        </div>
-                                        <FaEllipsisH className='text-stone-600'/>
-                                    </div>
-                                </div>  
                             </div>
+
+                            <div className='border border-gray-200 h-28 bg-white border-t-0 flex justify-end items-center pr-3 rounded-b-lg'>
+                                <Link to={'/doctorpatientslist'} className='w-20 h-8  rounded-lg hover:scale-105 hover:bg-[#5156be] text-white bg-[#5156be] text-center'> See all</Link>
+                            </div>
+
                         </section>
                         </section>
 
                 
-                        <section className='h-auto w-[100%] flex gap-x-8 gap-y-8 lg:flex-row flex-col mt-10'> 
-                        <div className='lg:w-[35%] w-full  h-96 rounded-lg border shadow-lg border-gray-200 flex flex-col gap-y-9 items-center'>
+                        <section className='h-auto  flex gap-x-8 gap-y-8 lg:flex-row flex-col mt-10'> 
+                        <div className='lg:w-[33.33%] w-full h-96 rounded-lg border shadow-lg border-gray-200 flex flex-col gap-y-9 items-center'>
                             <div className='w-full h-14 border-b border-b-gray-200 flex items-center pl-4'>
                                 <h1 className='text-3xl font-light whitespace-nowrap'>Analytics</h1>
                             </div>
-                            <div className='w-96 '>
+                            {/* <div className='w-96 '> */}
                                 <CardinalAreaChart/>
-                            </div>
+                            {/* </div> */}
                         </div>
-                        <div className='lg:w-[35%] w-full h-96 rounded-lg border shadow-lg border-gray-200 flex flex-col items-center gap-y-14'>
+                        <div className='lg:w-[33.33%] w-full h-96 rounded-lg border shadow-lg border-gray-200 flex flex-col items-center gap-y-14'>
                             <div className='w-full h-14 border-b border-b-gray-200 flex items-center pl-4'>
                                 <h1 className='text-3xl font-light whitespace-nowrap'>Appointments Overview</h1>
                             </div>
                             <NightingaleChart/>
                         </div>
-                        <div className='lg:w-[32%] w-full h-96 rounded-lg border shadow-lg border-gray-200 flex flex-col items-center gap-y-2'>
+                        <div className='lg:w-[33.33%] w-full h-96 rounded-lg border shadow-lg border-gray-200 flex flex-col items-center gap-y-2'>
                         <div className='w-full h-14 border-b border-b-gray-200 flex items-center pl-4'>
                                 <h1 className='text-3xl font-light whitespace-nowrap'>Overal appointment</h1>
                             </div>
