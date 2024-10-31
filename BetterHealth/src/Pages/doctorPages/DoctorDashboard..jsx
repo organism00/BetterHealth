@@ -63,10 +63,9 @@ const Docotordashboard = () => {
                                         </div>
                                     </div>
                                     <div className='lg:w-[50%] h-96 lg:h-72 flex flex-col lg:place-content-between'>
-                                        <div className='flex justify-between items-center mb-5'>
+                                        <div className='flex justify-between items-center mb-1'>
                                             <h1 className='text-2xl font-light whitespace-nowrap'>Your Patients Today</h1>
                                             {/* <Link to='/doctorpatientslist'  className='text-base font-light hover:text-blue-400'> All Patients</Link> */}
-                                            {/* <p className='text-base font-light'>All Patients</p> */}
                                         </div>
                                         <div className="scrollable-div h-[240px] md:h-[240px] overflow-auto font-light border border-b-0 border-gray-200 rounded-t-lg shadow-lg ">
                                             <div className="">
@@ -287,7 +286,7 @@ const Docotordashboard = () => {
                             </div>
 
                             <div className='border border-gray-200 h-28 bg-white border-t-0 flex justify-end items-center pr-3 rounded-b-lg'>
-                                <Link to={'/doctorpatientslist'} className='w-20 h-8  rounded-lg hover:scale-105 hover:bg-[#5156be] text-white bg-[#5156be] text-center'> See all</Link>
+                                <Link to={''} className='w-20 h-8  rounded-lg hover:scale-105 hover:bg-[#5156be] text-white bg-[#5156be] text-center'> See all</Link>
                             </div>
 
                         </section>
