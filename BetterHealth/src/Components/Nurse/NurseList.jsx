@@ -27,8 +27,8 @@ const NurseList = () => {
         <Navbar/>
 
         <div className='flex justify-center w-[100%] '>
-            <section className='mt-28 lg:mx-10 my-10 grid justify-center '>
-                <div className='flex justify-between'>
+            <section className='mt-28 lg:mx-10 my-10 grid justify-center w-full '>
+                <div className='flex justify-between gap-80'>
                     <div className='flex gap-x-5 px-5 lg:px-0 md:px-8 md:ml-64 lg:ml-0'>
                         <h1 className="text-2xl">Nurse</h1>
                         <div className="flex gap-2 items-center">
