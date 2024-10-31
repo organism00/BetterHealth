@@ -9,7 +9,7 @@ const questionsData = [
   {
     id: 1,
     question:
-      "What are the symptoms of COVID-19? Can i affect an entire generation?",
+      "What are the symptoms of COVID-19? Can it affect an entire generation?",
     status: "new",
     time: "14 Jan / 01:05PM",
   },

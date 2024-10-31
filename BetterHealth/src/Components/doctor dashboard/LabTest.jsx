@@ -45,37 +45,37 @@ const LabTest = () => {
   };
 
   return (
-    <div className="lg:w-full lg:max-w-md w-full relative bg-white rounded-lg shadow-lg h-72">
-        <div className="border-b border-stone-200 flex items-center justify-between pl-4 py-4">
-            <h2 className="text-2xl font-light">Laboratory Test</h2>  
+    <div className="lg:w- lg:max-w-md w-full relative bg-white rounded-lg shadow-lg h-72">
+      <div className="border-b border-stone-200 flex items-center justify-between pl-4 py-4">
+          <h2 className="text-2xl font-light">Laboratory Test</h2>  
 
-        
-            <div className="flex space-x-4 pr-4">
-            <PrevArrow onClick={() => sliderRef.current.slickPrev()} />
-            <NextArrow onClick={() => sliderRef.current.slickNext()} />
+      
+          <div className="flex space-x-4 pr-4">
+          <PrevArrow onClick={() => sliderRef.current.slickPrev()} />
+          <NextArrow onClick={() => sliderRef.current.slickNext()} />
+          </div>
+      </div>
+
+      <Slider ref={sliderRef} {...settings}>
+      
+        {slides.map((slide, index) => (
+          <div key={index}>
+            <div className="pt-10 px-4">
+              <div className="flex items-center justify-between">
+                <div className="text-gray-600 text-md  hover:text-violet-600 cursor-grab flex items-center"> <GrLink/>{slide.name}</div>
+                <FaEllipsisH  className="text-gray-400 cursor-pointer text-lg"/>
+              </div>
+              <h3 className="text-xl font-normal text-gray-900 mt-2">{slide.testName}</h3>
+              <p className="text-lg text-gray-900">{slide.description}</p>
+              <div className="flex justify-between mt-4">
+                {slide.buttons.map((buttonLabel, i) => (
+                <button key={i} className="px-4 py-1 bg-violet-100 text-violet-700 hover:bg-violet-700 hover:text-white rounded-md">{buttonLabel}</button>
+                ))}
+              </div>
             </div>
-        </div>
-
-        <Slider ref={sliderRef} {...settings}>
-        
-            {slides.map((slide, index) => (
-                <div key={index}>
-                    <div className="pt-10 px-4">
-                        <div className="flex items-center justify-between">
-                            <div className="text-gray-600 text-md  hover:text-violet-600 cursor-grab flex items-center"> <GrLink/>{slide.name}</div>
-                                <FaEllipsisH  className="text-gray-400 cursor-pointer text-lg"/>
-                        </div>
-                        <h3 className="text-xl font-normal text-gray-900 mt-2">{slide.testName}</h3>
-                        <p className="text-lg text-gray-900">{slide.description}</p>
-                        <div className="flex justify-between mt-4">
-                            {slide.buttons.map((buttonLabel, i) => (
-                            <button key={i} className="px-4 py-1 bg-violet-100 text-violet-700 hover:bg-violet-700 hover:text-white rounded-md">{buttonLabel}</button>
-                            ))}
-                        </div>
-                    </div>
-                </div>
-            ))}
-        </Slider>
+          </div>
+        ))}
+      </Slider>
     </div>
   );
 };
