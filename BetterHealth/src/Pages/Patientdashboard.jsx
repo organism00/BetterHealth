@@ -18,15 +18,15 @@ const Patientdashboard = () => {
               <Navbar />
             </main>
         </div>
-            <div className="lg:flex lg:flex-row flex flex-col md:flex md:flex-col lg:py-20 lg:pl-64 lg:space-x-5 py-8 md:py-20 ">
-                <div className='lg:bg-red-700 lg:w-[80vw] lg:h-screen w-[100vw] h-auto bg-yellow-400 md:bg-red-600 md:w-[100vw] md:h-auto'>
+            <div className="lg:hidden flex flex-col md:flex md:flex-col py-8 md:py-20 ">
+                <div className=' w-[100vw] h-auto bg-yellow-400 md:bg-red-600 md:w-[100vw] md:h-auto'>
                     {/* heading */}
                     <div className='flex flex-row py-5 px-5 justify-between md:py-5 md:px-11'> 
                         <div >
                             <h1 className='text-[32px] md:text-5xl md:py-2 '>Johen doe</h1>
                         </div>
                         <div>
-                            <div className="lg:w-[12vw] lg:h-[6vh] w-[40vw] h-[7vh] md:w-[30vw] md:h-[6vh] bg-indigo-700 rounded-md flex gap-2 justify-center py-3 px-2 md:py-4">
+                            <div className=" w-[40vw] h-[7vh] md:w-[30vw] md:h-[6vh] bg-indigo-700 rounded-md flex gap-2 justify-center py-3 px-2 md:py-4">
                                 <div>
                                      <img src="src/assets/Images/plus (2).png" alt="" className='w-[10px] h-[10px] mt-2 md:w-[20px] md:h-[20px]'/>
                                 </div>
@@ -40,7 +40,7 @@ const Patientdashboard = () => {
                     </div>
 
                    
-                    <div className=' w-auto h-auto flex flex-col items-center justify-evenly space-y-4'>
+                    <div className='w-auto h-auto flex flex-col items-center justify-evenly space-y-4'>
                          {/* content 1*/}
                         <div className='bg-indigo-800 w-[90vw] h-[40vh]  md:h-[37vh] md:bg-indigo-800 shadow-md rounded-xl flex flex-col px-4 border-t-2' >
                             <div className='flex justify-between px-3 py-5 md:px-6 md:py-6'>
@@ -167,11 +167,13 @@ const Patientdashboard = () => {
                                     <HeartECGChart/>
                                 </div>
                             </div>
+                        </div>
 
                             {/* content 8 */}
-                            <div className=' bg-white w-[90vw] h-[49vh] md:h-[47vh] shadow-md rounded-xl border-t-2 md:py-4'>
+                        <div className='space-y-4'>
+                        <div className=' bg-white w-[90vw] h-[49vh] md:h-[47vh] shadow-md rounded-xl border-t-2 md:py-4'>
                                 <div className='flex flex-col py-6 space-y-2 place-items-center '>
-                                    <img src="src/assets/Images/doctor M.jpeg" alt="" className='w-[12vw] h-[6vh] md:w-[12vw] md:h-[10vh] md:rounded-full md:object-cover place-items-center object-cover rounded-full'/>
+                                    <img src="src/assets/Images/doctor M.jpeg" alt="" className='w-[12vw] h-[6vh] md:w-[12vw] md:h-[9vh] md:rounded-full md:object-cover place-items-center object-cover rounded-full'/>
                                     <h1 className='text-[20px] md:text-[23px] md:font-semibold'>Dr. Poul Doe</h1>
                                     <h1 className='text-[14px] font-normal md:text-[18px] '>Heart Specialist</h1>
                                 </div>
@@ -181,28 +183,28 @@ const Patientdashboard = () => {
                                 </div>
                
                                 <div className=' flex flex-row px-5 py-8 gap-8 md:px-8 md:flex md:gap-28 md:justify-center'>
-                                    <div className=' flex gap-3 md:gap-8'>
-                                        <img src="src/assets/Images/surgery-room.png" alt="" className='w-[13vw] h-[7vh] md:w-[6vw] md:h-[6vh]'/>
+                                    <div className=' flex gap-3 md:gap-6'>
+                                        <img src="src/assets/Images/surgery-room.png" alt="" className='w-[13vw] h-[7vh] md:w-[6vw] md:h-[6vh] md:object-cover'/>
                                         <div className='flex flex-col  '>
                                             <h1 className='text-3xl'>10</h1>
-                                            <h1 className='text-[14px] font-thin'>Operation</h1>
+                                            <h1 className='text-[14px] font-thin md:text-xl'>Operation</h1>
                                         </div>
                                     </div>
                                     <div className='w-[1px] h-[10vh] bg-slate-300'></div>
                                     <div  className='flex gap-3'>
-                                        <img src="src/assets/Images/patient.png" alt=""  className='w-[11vw] h-[7vh] md:w-[6vw] md:h-[5vh]'/>
+                                        <img src="src/assets/Images/patient.png" alt=""  className='w-[11vw] h-[7vh] md:w-[6vw] md:h-[5vh] md:object-cover'/>
                                         <div className=' flex flex-col'>
                                             <h1 className='text-3xl'>47</h1>
-                                            <h1 className='text-[14px] font-thin'>Patients</h1>
+                                            <h1 className='text-[14px] font-thin md:text-xl'>Patients</h1>
                                         </div>
                                     </div>
                                 </div>
 
-                                <div className=' flex flew-row justify-center'>
+                                <div className='flex flew-row justify-center'>
                                     <button className='w-[80vw] h-[6vh] rounded-lg shadow-md bg-indigo-200  justify-between'>
                                         <div className='flex justify-center gap-2'>
                                             <div className='py-2'> 
-                                                <img src="src/assets/Images/message (1).png" alt="" className='w-[4vw] h-[2vh] md:w-[2vw] md:h-[2vh]'/>
+                                                <img src="src/assets/Images/message (1).png" alt="" className='w-[2vw] h-[2vh] md:w-[2vw] md:h-[2vh]'/>
 
                                             </div>
                                             <div className='px-2 text-indigo-700 text-2xl'>
@@ -212,6 +214,7 @@ const Patientdashboard = () => {
                                     </button>
                                 </div>
                             </div>
+
                             {/* content 9  */}
                             <div className='bg-white w-[90vw] h-[53vh] md:h-[46vh] shadow-md rounded-xl flex flex-col py-5 space-y-4 border-t-2 md:space-y-6'>
                                 <div className='flex justify-between px-4 md:px-10'>
@@ -230,12 +233,12 @@ const Patientdashboard = () => {
                                 </div>
                                 <div className=' flex gap-16 px-4 md:flex md:justify-between md:px-10'>
                                     <div className='flex flex-col justify-between '>
-                                        <h1 className='text-gray-500 text-[15px]'>Patieny Name:</h1>
-                                        <h1 className='font-bold text-[14px]'>Jonsahn</h1>
+                                        <h1 className='text-gray-500 text-[15px] md:text-xl'>Patieny Name:</h1>
+                                        <h1 className='font-bold text-[14px] md:text-xl'>Jonsahn</h1>
                                     </div>
                                     <div className='flex flex-col justify-between'>
-                                        <h1 className='text-gray-500 text-[15px]'>Patieny Id:</h1>
-                                        <h1 className='font-bold text-[14px]'>1254896</h1>
+                                        <h1 className='text-gray-500 text-[15px] md:text-xl'>Patieny Id:</h1>
+                                        <h1 className='font-bold text-[14px] md:text-xl'>1254896</h1>
                                     </div>
                                 </div>
                                 <div>
@@ -277,10 +280,10 @@ const Patientdashboard = () => {
                                 <div className='px-5 text-[12px] md:text-xl'>
                                     <h1>Recorded on 25/05/2020</h1>
                                 </div>
-                                <div className='py-2 md:py-5'>
+                                <div className='py-2 '>
                                     <div className='w-[90vw] h-[12vh] md:h-[8vh] bg-indigo-500 rounded-lg py-2 px-4 flex gap-2 text-white text-[14px] md:py-4'>
                                         <img src="src/assets/Images/cigarette.png"  alt="" className='w-[9vw] h-[4vh] md:w-[4vw] md:h-[4vh]'/>
-                                        <h1 className='text-white text-[14px] py-3 md:py-4 font-semibold md:text-[18px] '>Smoking Status: current every day smoker</h1>
+                                        <h1 className='text-white text-[14px] py-3 md:py-4 font-semibold md:text-[20px] '>Smoking Status: current every day smoker</h1>
                                     </div>
                                 </div>
                             </div> 
@@ -307,41 +310,32 @@ const Patientdashboard = () => {
                             </div>
 
                             {/* content 11 */}
-                            <div className='bg-white w-[90vw] h-[22vh] shadow-md rounded-xl flex flex-col py-6 px-5 border-t-2'>
+                            <div className='bg-white w-[90vw] h-[22vh] md:h-[20vh] shadow-md rounded-xl flex flex-col py-6 px-5 border-t-2 md:px-8 md:py-9'>
                                 <div>
-                                    <img src="src/assets/Images/blood-test.png" alt="" className='w-[12vw] h-[6vh]' />
+                                    <img src="src/assets/Images/blood-test.png" alt="" className='w-[12vw] h-[7vh] md:w-[7vw] md:h-[5vh] md:rounded-full object-cover' />
                                 </div>
                                 <div className='py-2 text-blue-600'>
-                                    <h1 className='text-[19px] font-sans'> Blood Count  </h1>
+                                    <h1 className='text-[19px] font-sans md:text-[24px]'> Blood Count  </h1>
                                     <h1 className='text-2xl'>9.456/ml</h1>
                                 </div>
                             </div>
 
                             {/* content 12 */}
-                            <div className='bg-white w-[90vw] h-[19vh] shadow-md rounded-xl border-t-2 flex py-9 px-5 gap-3'>
+                            <div className='bg-white w-[90vw] h-[19vh] md:h-[15vh] shadow-md rounded-xl border-t-2 flex py-9 px-5 gap-3 md:py-8'>
                                 <div className='py-1'>
-                                    <img src="src/assets/Images/doctor f.jpeg" alt="" className='w-[13vw] h-[7vh] rounded-full object-cover' />
+                                    <img src="src/assets/Images/doctor f.jpeg" alt="" className='w-[13vw] h-[7vh] rounded-full object-cover md:w-[9vw] md:h-[7vh] md:object-cover md:rounded-full' />
                                     </div>
                                 <div className='flex flex-col text-blue-600'>
-                                    <h1 className='text-[26px]'>Dr. Kevin Black</h1>
-                                    <h1 className='text-[17px] -mt-1'>Cardiologists</h1>
+                                    <h1 className='text-[26px] md:text-4xl'>Dr. Kevin Black</h1>
+                                    <h1 className='text-[17px] -mt-1 md:text-2xl'>Cardiologists</h1>
                                 </div>
+                            </div>
+                            
+                        </div>    
+                            
+
+                            <div className='hidden lg:bg-blue-900 lg:w-[100vw] lg:h-[100vh]'>
                             </div> 
-
-
-                        
-
-
-
-
-
-
-
-
-                    {/* ........ */}
-                    </div> 
-
-                   
 
                 </div>
 
