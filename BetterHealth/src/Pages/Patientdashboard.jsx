@@ -170,8 +170,8 @@ const Patientdashboard = () => {
                         </div>
 
                         {/* content8 */} 
-                    <div className='space-y-0 md:pr-7'>           
-                        <div className='bg-white w-[100%] h-[42vh] md:w-[108%] md:h-[34vh] shadow-md rounded-t-lg border-t-2 '>
+                    <div className='space-y-0 flex flex-col items-center px-7'>           
+                        <div className='bg-white w-[108%] h-[40vh] md:w-[113%] md:h-[34vh] shadow-md rounded-t-lg border-t-2 '>
                             <div className='flex flex-col py-6 space-y-2 place-items-center '>
                                 <img src="src/assets/Images/doctor M.jpeg" alt="" className='w-[12vw] h-[6vh] md:w-[12vw] md:h-[9vh] md:rounded-full md:object-cover place-items-center object-cover rounded-full'/>
                                 <h1 className='text-[20px] md:text-[23px] md:font-semibold'>Dr. Poul Doe</h1>
@@ -194,7 +194,7 @@ const Patientdashboard = () => {
                                     <div className='w-[1px] h-[100%] bg-slate-300'></div>
                                 </div>
                                 <div className='flex gap-4'>
-                                    <img src="src/assets/Images/patient.png" alt=""  className='w-[30%] h-[8vh] md:w-[6vw] md:h-[5vh] '/>
+                                    <img src="src/assets/Images/patient.png" alt=""  className='w-[40%] h-[6vh] md:w-[6vw] md:h-[5vh] '/>
                                     <div className=' flex flex-col'>
                                         <h1 className='text-3xl'>47</h1>
                                         <h1 className='text-[14px] font-thin md:text-xl'>Patients</h1>
@@ -202,9 +202,9 @@ const Patientdashboard = () => {
                                 </div>
                             </div>
                         </div> 
-                        {/* content9   */}
-                        <div className='flex flew-row justify-center md:w-[108%] h-[7vh] bg-white rounded-b-lg'>
-                                <button className='w-[90%] h-[6vh] rounded-lg shadow-md bg-indigo-200  justify-between'>
+                        {/* content8a   */}
+                        <div className='flex flew-row justify-center w-[108%] h-[7vh] md:w-[113%] md:h-[7vh] bg-white rounded-b-lg'>
+                                <button className='w-[80%] h-[6vh] rounded-lg shadow-md bg-indigo-200  justify-between'>
                                     <div className='flex justify-center gap-2'>
                                         <div className='py-2'> 
                                             <img src="src/assets/Images/message (1).png" alt="" className='w-[3vw] h-[2vh] md:w-[2vw] md:h-[2vh]'/>
@@ -218,83 +218,96 @@ const Patientdashboard = () => {
 
                     </div> 
 
-                    {/* section10  */}
-
-                    <div className='bg-white w-[90vw] h-[53vh] md:h-[46vh] shadow-md rounded-xl flex flex-col py-5 space-y-4 border-t-2 md:space-y-6'>
-                        <div className='flex justify-between px-4 md:px-10'>
-                            <h1 className='text-[22px] md:text-2xl'>Current Vitals</h1>
-                                 <div className='justify-between'>
-                                    {/* <div> 
-                                    <SearchBar/>
-                                     </div>
-                                    <div className='pl-[75px] -mt-5'>
-                                    <img src="src/assets/Images/loupe.png" alt="" className='w-[2vh] h-[2vh]  md:w-[1vw] md:h-[1vh]'/>     
-                                    </div> */}
+                    {/* section9  */}
+                    <div className='gap-0 flex flex-col items-center px-2'>
+                    <div className='bg-white w-[95%] h-[40vh] md:w-[106%] md:h-[35vh] shadow-md rounded-t-xl flex flex-col py-5 space-y-4 border-t-2'>
+                        <div className='flex justify-between px-6'>
+                            <h1 className='text-[22px]'>Current Vitals</h1>
+                            <div className='w-[23vw] h-[4vh] bg-gray-200 rounded-2xl flex justify-end px-3 py-2'>
+                                <img src="src/assets/Images/loupe.png" alt="" className='w-[2vh] h-[2vh]'/>
+                            </div>
+                        </div>
+                        <div>
+                            <div className='w-[100%] h-[1px] bg-gray-300'></div>
+                        </div>
+                        <div className=' flex gap-16 px-6'>
+                            <div className='flex flex-col justify-between'>
+                                <h1 className='text-gray-500 text-[15px]'>Patieny Name:</h1>
+                                <h1 className='font-bold'>Jonsahn</h1>
+                            </div>
+                            <div className='flex flex-col justify-between'>
+                                <h1 className='text-gray-500 text-[15px]'>Patieny Id:</h1>
+                                <h1 className='font-bold'>1254896</h1>
+                            </div>
+                        </div>
+                        <div>
+                            <div className='w-[100%] h-[1px] bg-gray-300'></div>
+                        </div>
+                        <div className='flex flex-row'>
+                            <div className=' flex px-7 gap-4'>
+                                <div className='flex flex-col'>
+                                    <img src="src/assets/Images/weighing-machine.png" alt="" className='w-[9vw] h-[5vh]'/>
+                                    <h1>ibs</h1>
                                 </div>
-    </div>
-  <div>
-      <div className='w[70vw] h-[1px] bg-gray-300 md:w-[90vw]'></div>
-  </div>
-  <div className=' flex gap-16 px-4 md:flex md:justify-between md:px-10'>
-      <div className='flex flex-col justify-between '>
-          <h1 className='text-gray-500 text-[15px] md:text-xl'>Patieny Name:</h1>
-          <h1 className='font-bold text-[14px] md:text-xl'>Jonsahn</h1>
-     </div>
-     <div className='flex flex-col justify-between'>
-          <h1 className='text-gray-500 text-[15px] md:text-xl'>Patieny Id:</h1>
-         <h1 className='font-bold text-[14px] md:text-xl'>1254896</h1>
-      </div>
-  </div>
-  <div>
-      <div className='w-[90vw] h-[1px] bg-gray-300'></div>
-  </div>
-  <div className='flex flex-row md:flex md:justify-between md:px-10'>
-      <div className=' flex px-4 gap-3'>
-          <div className='flex flex-col md:flex md:flex-col'>
-              <img src="src/assets/Images/weighing-machine.png" alt="" className='w-[9vw] h-[5vh]'/>
-              <h1>ibs</h1>
-          </div>
-          <div className=' mt-[-8px]'>
-             <h1 className='text-[12px]'>Weight </h1>
-              <h1 className='text-[19px]'>230</h1>
-          </div>                  
-      </div>
-      <div className='w-[1px] h-[9vh] bg-gray-300'></div>
-          <div className='flex '>
-              <div className='pr-3'>
-                  <img src="src/assets/Images/dude.png" alt="" className='w-[13vw] h-[9vh]'/>
-              </div>
-              <div className='mt-[-8px] pr-2'> 
-                  <h1 className='text-[12px]'>Height</h1>
-                  <h1 className='text-[19px]'>6'1</h1>
-              </div>
-          </div>
-          <div>
-               <div className='w-[1px] h-[9vh] bg-gray-300'></div>
-          </div>
-          <div className='flex'>
-              <div className='px-2 '>
-                  <img src="src/assets/Images/statistic.png" alt="" className='w=[9vw] h-[5vh]'/>
-                  <h1 className='leading-4 text-[19px]'>30.34</h1>
-              </div>
-          <div className='pr-[4px] text-[13px] mt-[-8px]'>BMI</div>
-      </div>
-    
-      <div>
-          <div className='w-[90vw] h-[1px] bg-gray-300'></div>
-      </div>
-      <div className='px-5 text-[12px] md:text-xl'>
-          <h1>Recorded on 25/05/2020</h1>
-      </div>
-      <div className='py-2 '>
-          <div className='w-[90vw] h-[12vh] md:h-[8vh] bg-indigo-500 rounded-lg py-2 px-4 flex gap-2 text-white text-[14px] md:py-4'>
-              <img src="src/assets/Images/cigarette.png"  alt="" className='w-[9vw] h-[4vh] md:w-[4vw] md:h-[4vh]'/>
-              <h1 className='text-white text-[14px] py-3 md:py-4 font-semibold md:text-[20px] '>Smoking Status: current every day smoker</h1>
-          </div>
-      </div>
-  </div>
- </div> 
+                                <div className=' mt-[-8px]'>
+                                    <h1 className='text-[12px]'>Weight </h1>
+                                    <h1 className='text-[19px]'>230</h1>
+                                </div>                  
+                            </div>
+                            <div className='w-[1px] h-[9vh] bg-gray-300'></div>
+                            <div className='flex '>
+                                <div className='pr-3'>
+                                    <img src="src/assets/Images/dude.png" alt="" className='w-[13vw] h-[9vh]'/>
+                                </div>
+                                <div className='mt-[-8px] pr-2'> 
+                                    <h1 className='text-[12px]'>Height</h1>
+                                    <h1 className='text-[19px]'>6'1</h1>
+                                </div>
+                            </div>
+                            <div className='w-[1px] h-[9vh] bg-gray-300'></div>
+                            <div className='flex'>
+                                <div className='px-2 '>
+                                    <img src="src/assets/Images/statistic.png" alt="" className='w=[9vw] h-[5vh]'/>
+                                    <h1 className='leading-4 text-[19px]'>30.34</h1>
+                                </div>
+                                <div className='pr-[4px] text-[13px] mt-[-8px]'>BMI</div>
+                            </div>
+                        </div>
+                        <div className='w-[100%] h-[1px] bg-gray-300'></div>
+                        <div className='px-5 text-[12px]'>
+                            <h1>Recorded on 25/05/2020</h1>
+                        </div>      
+                    </div>
+                    {/* secti0n9 a  */}
+                    <div className='flex justify-center w-[95%] rounded-b-lg h-[10vh] md:w-[106%] bg-white'>
+                    <div className='w-[100%] h-[10vh] bg-indigo-500 rounded-b-lg py-5 px-7 flex gap-2 place-items-center text-white text-[14px]'>
+                            <img src="src/assets/Images/cigarette.png"  alt="" className='w-[9vw] h-[4vh]'/>
+                            <h1 className='text-white text-[14px] py-3 font-semibold'>Smoking Status: current everyday smoker</h1>
+                        </div>
+                    </div>
+                    </div>
 
+                    {/* section10 */}
+                    <div className='bg-white w-[90vw] h-[22vh] shadow-md rounded-xl border-t-2 px-4 py-4 '>
+                        <div className=''>
+                            <img src="src/assets/Images/blood.png" alt="" className='w-[2vw] h-[2vh] ml-2' />
+                        </div>
+                        <div className='w-[14vw] h-[7vh] bg-indigo-500 rounded-full  '>
+                            <div className='pt-2'>
+                                <img src="src/assets/Images/record-button.png" alt="" className='w-[2vw] h-[1vh] ml-2   '/>
+                                <img src="src/assets/Images/hand.png" alt="" className='w-[8vw] h-[4vh]'/>
+                            </div>
+
+                            <div className='mt-[-39px] ml-6  z-10'> 
+                                <img src="src/assets/Images/blood-sugar-monitor.png" alt="" className='w-[13vw] h-[5vh]' />
+                            </div>
+                        </div>
+                        <div className='py-2 text-blue-600'>
+                            <h1 className=' text-[19px] font-sans'>Glucose Level </h1>
+                            <h1 className='text-2xl'> 85-89</h1>
+                        </div>
+                    </div>
+                    
                         
                     ......    
                     </div>
