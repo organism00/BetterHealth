@@ -342,10 +342,10 @@ const Patientdashboard = () => {
                     </div>
 
                     {/* section14 */}
-                    <div className='space-y-0'>
-                    <div className='bg-white w-[90%] h-[45vh] md:w-[100%] md:h-[31vh] md:pr-10 shadow-md rounded-xl flex flex-col border-t-2 '>
-                        <div className='py-5 px-5 gap-3'>
-                            <div className='w-[40%] h-[3vh] md:w-[35%] md:h-[4vh] bg-green-100 rounded-lg whitespace-nowrap flex items-center justify-center md:px-1 md:rounded-2xl'>
+                    <div className='space-y-0 px-1'>
+                    <div className='bg-white w-[102%] h-[36vh] md:w-[100%] md:h-[31vh] shadow-md rounded-t-xl flex flex-col border-t-2 '>
+                        <div className='py-5 px-4 gap-3'>
+                            <div className='w-[42%] h-[3vh] md:w-[35%] md:h-[4vh] bg-green-100 rounded-lg whitespace-nowrap flex items-center justify-center md:px-1 md:rounded-2xl'>
                                 <h1 className='text-[13px] md:text-[16px] px-1 text-green-700'>Routine Checkup</h1>
                             </div>
                             <div className='py-3'>
@@ -354,8 +354,8 @@ const Patientdashboard = () => {
                             <div className='flex gap-6'>
                                 <h1 className='text-gray-400 text-[16px] md:text-[19px]'>09:15am - 10:45am</h1>
                                 <div className='flex py-1 gap-3'>
-                                    <div className='md:w-[2vh] md:h-[1vh] md:aspect-auto-1/1'>
-                                    <img src="src/assets/Images/clock (1).png" alt="" className='w-[4vw] h-[2vh] rounded-full ' />
+                                    <div className=''>
+                                    <img src="src/assets/Images/clock (1).png" alt="" className='w-[4vw] h-[2vh] rounded-full md:w-[2vh] md:h-[2vh] md:aspect-auto-1/1' />
                                     </div>
                                     <h1 className='mt-[-2px] text-[14px] text-blue-400 md:text-[19px]'>Starts in 15m</h1>
                                 </div>
@@ -364,7 +364,7 @@ const Patientdashboard = () => {
                         <div>
                             <div className='w-[100%] h-[1px] bg-gray-300'></div>
                         </div>
-                        <div className=' flex justify-between px-2'>
+                        <div className=' flex justify-between items-center px-2'>
                             <div className='flex py-6 px-4 gap-2'>
                                 <div className=''>
                                     <img src="src/assets/Images/doctor M.jpeg" alt="" className='w-[7vh] h-[7vh]   rounded-full object-cover aspect-auto-1/1 ' />
@@ -386,12 +386,12 @@ const Patientdashboard = () => {
                         </div>    
                     </div>
                     {/* sectionco-join */}
-                    <div className='flex justify-end items-center px-3 py-5 md:w-[100%] md:h-[6vh] md:bg-red-500 '>
+                    {/* <div className='flex justify-end items-center px-3 w-[102%] h-[7vh] rounded-b-xl bg-white md:w-[115%] md:h-[6vh] md:bg-red-500 '>
                         <button className='w-[40%] h-[5vh] bg-gray-200 flex justify-center items-center rounded-lg px-2 py-2 '>          
                             <img src="src/assets/Images/pen.png" alt="" className='w-[4vw]'/>                   
                             <h1 className=' text-[13px] md:text-[17px]'>Edit Consult</h1>              
                         </button>
-                    </div>
+                    </div> */}
                     </div>  
                 ......
                 </div>
