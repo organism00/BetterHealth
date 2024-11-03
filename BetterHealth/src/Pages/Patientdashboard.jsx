@@ -19,21 +19,21 @@ const Patientdashboard = () => {
             </main>
         </div>
 
-            <div className="flex flex-col md:flex md:flex-col py-8 md:py-20 lg:flex lg:flex-row space-y-4 lg:space-x-5 lg:ml-64">
-                <div className='w-[100%] h-auto bg-yellow-900 md:bg-red-600 lg:w-[100vw] lg:h-[12vh]'>
+            <div className="flex flex-col md:flex md:flex-col py-8 md:py-20 lg:flex lg:flex-row space-y-4 lg:space-x-4 lg:ml-72 lg:w-[80vw] lg:h-[100vh]">
+                <div className='w-[100%] h-auto bg-yellow-900 md:bg-red-600 lg:w-[55vw] lg:h-[12vh]'>
                     {/* heading */}
-                    <div className='flex flex-row py-5 px-5 justify-between md:py-5 md:px-11'> 
+                    <div className='flex flex-row py-5 px-5 justify-between md:py-5 md:px-11 lg:flex lg:items-center'> 
                         <div >
-                            <h1 className='text-[28px] md:text-5xl md:py-2 '>Johen doe</h1>
+                            <h1 className='text-[28px] md:text-5xl md:py-2 lg:text-4xl'>Johen doe</h1>
                         </div>
                         <div>
-                            <div className=" w-[100%] h-[95%] md:w-[110%] md:h-[95%] bg-indigo-700 rounded-md flex gap-2 justify-center py-3 px-2 md:py-4">
-                                <div>
-                                     <img src="src/assets/Images/plus (2).png" alt="" className='w-[10px] h-[10px] mt-2 md:w-[20px] md:h-[20px]'/>
+                            <div className=" w-[100%] h-[95%] md:w-[110%] md:h-[95%] bg-indigo-700 rounded-md flex gap-2 justify-center py-3 px-2 md:py-4 lg:w-[108%] lg:h-[6vh] lg:flex lg:items-center">
+                                <div className='lg:flex lg:items-center'>
+                                     <img src="src/assets/Images/plus (2).png" alt="" className='w-[10px] h-[10px]  md:w-[20px] md:h-[20px] lg:w-[10px] lg:h-[10px]'/>
                                 </div>
                                 <div>
                                     <Link className=' flex justify-center ' to={`/Patientdashboard`}> 
-                                    <h1 className=' text-white  whitespace-nowrap md:text-2xl'> <h1>Add Record</h1></h1>
+                                    <h1 className=' text-white  whitespace-nowrap md:text-2xl lg:text-[17px]'> <h1>Add Record</h1></h1>
                                     </Link>
                                 </div>  
                             </div>
@@ -41,10 +41,11 @@ const Patientdashboard = () => {
                     </div>
 
                    
-                    <div className='w-[100%] h-auto md:w-[100%] md:h-auto bg-red-400 lg:w-[55vw] flex flex-col items-center justify-evenly space-y-4 md:flex md:flex-col md:pl-[40%] md:px-6'>
+                    <div className='w-[100%] h-auto md:w-[100%] md:h-auto bg-red-400 lg:w-[55vw] flex flex-col items-center justify-evenly space-y-4 md:flex md:flex-col md:pl-[40%] md:px-6 lg:flex lg:flex-row lg:flex-wrap'>     
                         {/* content1 */}
-{/* 
-                        <div className='bg-indigo-800 w-[87%] h-[45vh] md:w-[100%] md:h-[40vh] md:bg-indigo-800 shadow-md rounded-xl flex flex-col px-4 border-t-2 ' >
+ 
+                        <div className='bg-indigo-800 w-[87%] h-[45vh] md:w-[100%] md:h-[40vh] md:bg-indigo-800 shadow-md rounded-xl flex flex-col px-4 border-t-2  lg:w-' >
+                        
                             <div className='flex justify-between px-3 py-5 md:px-6 md:py-6'>
                                 <div>
                                     <h1 className='font-semibold text-white md:text-2xl'>Heart Rate</h1>
@@ -59,10 +60,10 @@ const Patientdashboard = () => {
                             <div className='mt-6 py-8 md:px-6 md:w-[100%] md:h-[9vh]'>
                                 <HeartRateChart/>
                             </div>
-                        </div> */}
+                        </div> 
 
                         {/* content2 */}
-                        {/* <div className='bg-[whitesmoke] w-[90%] h-[39vh] md:w-[100%] md:h-[37vh] shadow-md rounded-xl flex flex-col px-5 py-2 justify-evenly border-t-2'>
+                        <div className='bg-[whitesmoke] w-[90%] h-[39vh] md:w-[100%] md:h-[37vh] shadow-md rounded-xl flex flex-col px-5 py-2 justify-evenly border-t-2'>
                             <div className='flex justify-between px-3 py-5'>
                                 <div>
                                     <h1 className='font-semibold md:text-2xl'>Fever</h1>
@@ -79,10 +80,10 @@ const Patientdashboard = () => {
                             <div className=' py-8 md:w-[97%] md:px-2'>
                                 <Fever/>
                             </div>
-                        </div> */}
+                        </div>
 
                         {/* content3  */}
-                        {/* <div className='bg-[whitesmoke] w-[90%] h-[22vh] md:w-[100%] md:h-[22vh] shadow-md rounded-xl flex flex-col px-6 py-6 justify-evenly border-t-2'>
+                        <div className='bg-[whitesmoke] w-[90%] h-[22vh] md:w-[100%] md:h-[22vh] shadow-md rounded-xl flex flex-col px-6 py-6 justify-evenly border-t-2'>
                             <div className='flex justify-between '>
                                 <h1 className='text-[20px] md:text-xl md:font-semibold'>Blood Pre..</h1>
                                 <img src="src/assets/Images/heartbeat.png" alt="" className='w-[5vw] h-[3vh] md:w-[4vw] md:h-[3vh]' />
@@ -95,10 +96,10 @@ const Patientdashboard = () => {
                                 <h1 className='text-[18px] font-medium md:text-xl md:font-semibold'>124</h1>
                                 <h1 className='md:font-normal md:text-[18px]'>Lower</h1>
                             </div>
-                        </div> */}
+                        </div>
 
                         {/* content4 */}
-                        {/* <div className='bg-[whitesmoke] w-[90%] h-[14vh] md:w-[100%] md:h-[14vh] shadow-md rounded-xl flex flex-col px-6 py-4 justify-evenly border-t-2'>
+                        <div className='bg-[whitesmoke] w-[90%] h-[14vh] md:w-[100%] md:h-[14vh] shadow-md rounded-xl flex flex-col px-6 py-4 justify-evenly border-t-2'>
                             <div className='flex justify-between'>
                                 <h1 className='text-[20px] md:text-xl md:font-semibold'>Bill Due</h1>
                                 <img src="src/assets/Images/wallet.png" alt="" className='w-[4vw] h-[18px] md:w-[20px] md:h-[24px]' />
@@ -106,10 +107,10 @@ const Patientdashboard = () => {
                             <div className='text[18px] font-light md:text-[18px]'>
                                  $214.86
                             </div>
-                        </div> */}
+                        </div>
 
                         {/* content5 */}
-                        {/* <div className='bg-[whitesmoke] w-[90%] h-[20vh] md:w-[100%] md:h-[22vh] shadow-md rounded-xl flex flex-col border-t-2 px-6 py-3 justify-evenly'>
+                        <div className='bg-[whitesmoke] w-[90%] h-[20vh] md:w-[100%] md:h-[22vh] shadow-md rounded-xl flex flex-col border-t-2 px-6 py-3 justify-evenly'>
                             <h1 className='text-[20px] md:text-xl md:font-semibold'>
                                 Fever History
                             </h1>
@@ -132,10 +133,10 @@ const Patientdashboard = () => {
                                     <h1 className='text-[15px] md:text-[20px]'>Yesterday</h1>
                                 </div>
                             </div>
-                        </div> */}
+                        </div>
 
                         {/* content6 */}
-                        {/* <div className='bg-[whitesmoke] w-[90%] h-[14vh] md:w-[100%] md:h-[14vh] shadow-md rounded-xl px-6 py-2 flex flex-col border-t-2 '>
+                        <div className='bg-[whitesmoke] w-[90%] h-[14vh] md:w-[100%] md:h-[14vh] shadow-md rounded-xl px-6 py-2 flex flex-col border-t-2 '>
                             <div className='flex flex-row justify-between'>
                                 <h1><img src="src/assets/Images/doctor.png" alt="" className='w-8 h-6 mt-6 '/></h1>
                                 <div className='py-3 px-1'>
@@ -143,7 +144,8 @@ const Patientdashboard = () => {
                                     <h1 className='float-end px-2 font-light text-gray-500 md:text-[18px]'>My Doctor</h1>    
                                 </div>
                             </div>
-                        </div> */}
+                        </div>
+                        
 
                         {/* content7 */}
                         {/* <div className='bg-[whitesmoke] w-[90%] h-[37vh] md:w-[100%] md:h-[37vh] shadow-md rounded-xl flex flex-col py-5 md:px-6 md:py-6 space-y-2 border-t-2 px-2 '>
@@ -324,9 +326,11 @@ const Patientdashboard = () => {
                 </div>
 
                 {/* .... */}
-                <div className='lg:w-[auto] lg:h-[vh] lg:bg-green-700 w-[100%] h-[auto] bg-white md:w-[100%] md:h-[auto] md:bg-white flex flex-col items-center justify-evenly space-y-4 md:flex md:flex-col md:pl-[40%] md:px-6 '>
+                <div className='l'>
+                <div className='w-[100%] h-[auto] bg-white md:w-[100%] md:h-[auto] md:bg-white flex flex-col items-center justify-evenly space-y-4 md:flex md:flex-col md:pl-[40%] md:px-6 g:w-[31%] lg:h-[auto] lg:bg-red-900'>
+                    
                     {/* section12 */}
-                    {/* <div className='bg-[whitesmoke] w-[90%] h-[19vh] md:w-[100%] md:h-[14vh] shadow-md rounded-xl border-t-2 flex py-9 px-5 gap-3'>
+                    <div className='bg-[whitesmoke] w-[90%] h-[19vh] md:w-[100%] md:h-[14vh] shadow-md rounded-xl border-t-2 flex py-9 px-5 gap-3'>
                         <div className='py-1'>
                             <img src="src/assets/Images/doctor f.jpeg" alt="" className='w-[8vh] h-[8vh] rounded-full object-cover aspect-auto-1/1' />
                         </div>
@@ -334,7 +338,7 @@ const Patientdashboard = () => {
                             <h1 className='text-2xl md:font-semibold'>Dr. Kevin Black</h1>
                             <h1 className='text-[19px] md:text-[23px]'>Cardiologists</h1>
                         </div>
-                    </div>  */}
+                    </div> 
 
                     {/* section13 */}
                     {/* <div className='mr-28 whitespace-nowrap md:mr-48'>
@@ -490,6 +494,8 @@ const Patientdashboard = () => {
                         </div>
                     </div>           */}
                 {/* ...... */}
+                </div>
+            
                 </div>
                        
                         

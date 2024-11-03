@@ -175,7 +175,7 @@
     </div>   
 </div>
     
-{/* 
+<!-- {/*
 <div className='hidden md:hidden lg:flex lg:flex-row lg:w-[60vw] lg:h-auto'>
     <div className='lg:flex lg:flex-col'>
     
@@ -675,7 +675,7 @@
                 <div className='ml-[-24px] py-8'>
                      <HeartRateChart/>
                 </div>
-            </div> 
+            </div>  -->
              
             <div className='bg-white w-[90vw] h-[39vh] shadow-md rounded-xl flex flex-col px-3 py-2 justify-evenly border-t-2' >
             <div className='flex justify-between px-3 py-5'>
@@ -1202,6 +1202,116 @@ export default Patientdashboard;
 //      <h1 className='text-[26px] md:text-4xl'>Dr. Kevin Black</h1>
 //      <h1 className='text-[17px] -mt-1 md:text-2xl'>Cardiologists</h1>
 //  </div>
-// </div>     
+// </div>  
+
+
+<!-- justincase -->
+<div className='lg:flex lg:flex-row'>
+                        
+    {/* content1 */}
+
+    <div className='bg-indigo-800 w-[87%] h-[45vh] md:w-[100%] md:h-[40vh] md:bg-indigo-800 shadow-md rounded-xl flex flex-col px-4 border-t-2 ' >
+    
+        <div className='flex justify-between px-3 py-5 md:px-6 md:py-6'>
+            <div>
+                <h1 className='font-semibold text-white md:text-2xl'>Heart Rate</h1>
+            </div>
+            <div>
+                <img src="src/assets/Images/like.png" alt="" className='w-[4vw] h-[2vh] mt-4 md:w-[4vw] md:h-[3vh]'/>
+            </div>
+        </div>
+        <div className='px-3 relative font-semibold text-white margin md:text-xl md:px-6'>
+            <h1 className='absolute top-0'>75/118</h1>
+        </div>        
+        <div className='mt-6 py-8 md:px-6 md:w-[100%] md:h-[9vh]'>
+            <HeartRateChart/>
+        </div>
+    </div> 
+
+    {/* content2 */}
+    <div className='bg-[whitesmoke] w-[90%] h-[39vh] md:w-[100%] md:h-[37vh] shadow-md rounded-xl flex flex-col px-5 py-2 justify-evenly border-t-2'>
+        <div className='flex justify-between px-3 py-5'>
+            <div>
+                <h1 className='font-semibold md:text-2xl'>Fever</h1>
+            </div>
+            <div>
+                <img src="src/assets/Images/like (1).png" alt="" className='w-[4vw] h-[2vh] mt-4 md:w-[4vw] md:h-[3vh]'/>
+            </div>
+        </div>
+
+        <div className='px-3 font-semibold '>
+            <h1 className='sup text-sm md:text-xl'>100.8 <span>&#176;</span>F</h1>
+        </div>
+
+        <div className=' py-8 md:w-[97%] md:px-2'>
+            <Fever/>
+        </div>
+    </div>
+
+    {/* content3  */}
+    <div className='bg-[whitesmoke] w-[90%] h-[22vh] md:w-[100%] md:h-[22vh] shadow-md rounded-xl flex flex-col px-6 py-6 justify-evenly border-t-2'>
+        <div className='flex justify-between '>
+            <h1 className='text-[20px] md:text-xl md:font-semibold'>Blood Pre..</h1>
+            <img src="src/assets/Images/heartbeat.png" alt="" className='w-[5vw] h-[3vh] md:w-[4vw] md:h-[3vh]' />
+        </div>
+        <div className='flex justify-between'>
+            <h1 className='text-[18px] font-medium md:text-xl md:font-semibold'>75</h1>
+            <h1 className='md:font-normal md:text-[18px]'>Upper</h1>
+        </div>
+        <div className='flex justify-between'>
+            <h1 className='text-[18px] font-medium md:text-xl md:font-semibold'>124</h1>
+            <h1 className='md:font-normal md:text-[18px]'>Lower</h1>
+        </div>
+    </div>
+
+    {/* content4 */}
+    <div className='bg-[whitesmoke] w-[90%] h-[14vh] md:w-[100%] md:h-[14vh] shadow-md rounded-xl flex flex-col px-6 py-4 justify-evenly border-t-2'>
+        <div className='flex justify-between'>
+            <h1 className='text-[20px] md:text-xl md:font-semibold'>Bill Due</h1>
+            <img src="src/assets/Images/wallet.png" alt="" className='w-[4vw] h-[18px] md:w-[20px] md:h-[24px]' />
+        </div>
+        <div className='text[18px] font-light md:text-[18px]'>
+             $214.86
+        </div>
+    </div>
+
+    {/* content5 */}
+    <div className='bg-[whitesmoke] w-[90%] h-[20vh] md:w-[100%] md:h-[22vh] shadow-md rounded-xl flex flex-col border-t-2 px-6 py-3 justify-evenly'>
+        <h1 className='text-[20px] md:text-xl md:font-semibold'>
+            Fever History
+        </h1>
+        <select className='text-black w-32 text-[14px] h-5' name="">
+            <option value="">1 to 10 Jan'21</option>
+            <option value="">11 to 31 Jan '21</option>
+            <option value="">1 to 15 Feb '21</option>
+            <option value="">16 t0 18 Feb '21</option>
+        </select>
+        <div className='flex flex-row justify-between'>         
+            <div className='flex  text-red-600 '>
+                <h1 className='text-[24px] font-semibold md:text-[25px]'>
+                    99
+                </h1>
+                <h1 className='text-[12px] leading-6 font-bold md:text-[15px] '>
+                    +12%
+                </h1>
+            </div>
+            <div>
+                <h1 className='text-[15px] md:text-[20px]'>Yesterday</h1>
+            </div>
+        </div>
+    </div>
+
+    {/* content6 */}
+    <div className='bg-[whitesmoke] w-[90%] h-[14vh] md:w-[100%] md:h-[14vh] shadow-md rounded-xl px-6 py-2 flex flex-col border-t-2 '>
+        <div className='flex flex-row justify-between'>
+            <h1><img src="src/assets/Images/doctor.png" alt="" className='w-8 h-6 mt-6 '/></h1>
+            <div className='py-3 px-1'>
+                <h1 className='text-[18px] text-blue-600 font-semibold md:text-xl'>Johen Mark</h1> 
+                <h1 className='float-end px-2 font-light text-gray-500 md:text-[18px]'>My Doctor</h1>    
+            </div>
+        </div>
+    </div>
+    {/* ...lg1stdiv */}
+    </div>
 
 
