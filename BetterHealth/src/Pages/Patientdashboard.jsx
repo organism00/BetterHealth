@@ -19,8 +19,8 @@ const Patientdashboard = () => {
             </main>
         </div>
 
-            <div className="flex flex-col md:flex md:flex-col py-8 md:py-20 lg:flex lg:flex-row space-y-4 lg:space-x-4 lg:ml-72 lg:w-[80vw] lg:h-[100vh]">
-                <div className='w-[100%] h-auto bg-yellow-900 md:bg-red-600 lg:w-[55vw] lg:h-[12vh]'>
+            <div className="flex flex-col md:flex md:flex-col py-8 md:py-20 lg:flex lg:flex-row space-y-4 lg:space-x-4  lg:w-[80vw] lg:h-[100vh]">
+                <div className='w-[100%] h-auto bg-yellow-900 md:bg-red-600 lg:w-[55vw] lg:h-[12vh] lg:ml-64'>
                     {/* heading */}
                     <div className='flex flex-row py-5 px-5 justify-between md:py-5 md:px-11 lg:flex lg:items-center'> 
                         <div >
@@ -41,49 +41,55 @@ const Patientdashboard = () => {
                     </div>
 
                    
-                    <div className='w-[100%] h-auto md:w-[100%] md:h-auto bg-red-400 lg:w-[55vw] flex flex-col items-center justify-evenly space-y-4 md:flex md:flex-col md:pl-[40%] md:px-6 lg:flex lg:flex-row lg:flex-wrap'>     
+                    <div className='w-[100%] h-auto md:w-[100%] md:h-auto bg-red-400 lg:w-[55vw] lg:h-[70vh] lg:bg-red-700 flex flex-col items-center md:items-center justify-evenly md:justify-evenly space-y-4 md:space-y-4 md:flex md:flex-col md:pl-[40%] md:px-6 lg:flex lg:flex-row lg:place-items-stretch lg:-ml-62 '> 
+                      
                         {/* content1 */}
- 
-                        <div className='bg-indigo-800 w-[87%] h-[45vh] md:w-[100%] md:h-[40vh] md:bg-indigo-800 shadow-md rounded-xl flex flex-col px-4 border-t-2  lg:w-' >
                         
-                            <div className='flex justify-between px-3 py-5 md:px-6 md:py-6'>
+                        <div className='bg-indigo-800 w-[87%] h-[45vh] md:w-[100%] md:h-[40vh] md:bg-indigo-800 shadow-md rounded-xl flex flex-col px-4 border-t-2 lg:w-[11vw] lg:h-[38vh] lg:px-2 lg:mt-4 lg:float-start lg:ml-[-270px]'>
+                        
+                            <div className='flex justify-between px-3 py-5 md:px-6 md:py-6 lg:justify-between lg:px-3 lg:py-5'>
                                 <div>
-                                    <h1 className='font-semibold text-white md:text-2xl'>Heart Rate</h1>
+                                    <h1 className='font-semibold text-white md:text-2xl lg:text-[19px] lg:font-normal'>Heart Rate</h1>
                                 </div>
                                 <div>
-                                    <img src="src/assets/Images/like.png" alt="" className='w-[4vw] h-[2vh] mt-4 md:w-[4vw] md:h-[3vh]'/>
+                                    <img src="src/assets/Images/like.png" alt="" className='w-[4vw] h-[2vh] mt-4 md:w-[4vw] md:h-[3vh] lg:w-[16px] lg:h-[2vh]'/>
                                 </div>
                             </div>
-                            <div className='px-3 relative font-semibold text-white margin md:text-xl md:px-6'>
+                            <div className='px-3 relative font-semibold text-white margin md:text-xl md:px-6 lg:text-[17px] lg:font-normal lg:px-3 lg:flex lg:items-center'>
                                 <h1 className='absolute top-0'>75/118</h1>
                             </div>        
-                            <div className='mt-6 py-8 md:px-6 md:w-[100%] md:h-[9vh]'>
+                            <div className='mt-6 py-8 md:px-6 md:w-[100%] md:h-[9vh] lg:w-[120%] lg:h-[20vh] lg:py-3 lg:px-1 lg:ml-[-34px] lg:text-[13px]'>
                                 <HeartRateChart/>
                             </div>
-                        </div> 
+                        </div>
+                    
 
                         {/* content2 */}
-                        <div className='bg-[whitesmoke] w-[90%] h-[39vh] md:w-[100%] md:h-[37vh] shadow-md rounded-xl flex flex-col px-5 py-2 justify-evenly border-t-2'>
-                            <div className='flex justify-between px-3 py-5'>
+                       
+
+                        
+                         <div className='bg-[whitesmoke] w-[90%] h-[39vh] md:w-[100%] md:h-[37vh] shadow-md rounded-xl flex flex-col px-5 py-2 justify-evenly border-t-2 lg:w-[40%] lg:h-[36vh] items-center lg:px-3 lg:justify-center '>
+                            <div className='flex justify-between px-3 py-5 lg:gap-2 '>
                                 <div>
-                                    <h1 className='font-semibold md:text-2xl'>Fever</h1>
+                                    <h1 className='font-semibold md:text-2xl lg:text-[19px] lg:font-normal'>Fever</h1>
                                 </div>
                                 <div>
-                                    <img src="src/assets/Images/like (1).png" alt="" className='w-[4vw] h-[2vh] mt-4 md:w-[4vw] md:h-[3vh]'/>
+                                    <img src="src/assets/Images/like (1).png" alt="" className='w-[4vw] h-[2vh] mt-4 md:w-[4vw] md:h-[3vh] lg:w-[15px] lg:h-[2vh] '/>
                                 </div>
                             </div>
-
+                              
+ 
                             <div className='px-3 font-semibold '>
-                                <h1 className='sup text-sm md:text-xl'>100.8 <span>&#176;</span>F</h1>
+                                <h1 className='sup text-sm md:text-xl lg:text-[17px] lg:font-normal lg:whitespace-nowrap'>100.8 <span>&#176;</span>F</h1>
                             </div>
 
-                            <div className=' py-8 md:w-[97%] md:px-2'>
+                            <div className=' py-8 md:w-[97%] md:px-2 lg:w-[150%] lg:h-[auto] lg:px-0 lg:py-4 lg:-ml-8 lg:text-[14px]'>
                                 <Fever/>
-                            </div>
-                        </div>
+                            </div> 
+                        </div> 
 
                         {/* content3  */}
-                        <div className='bg-[whitesmoke] w-[90%] h-[22vh] md:w-[100%] md:h-[22vh] shadow-md rounded-xl flex flex-col px-6 py-6 justify-evenly border-t-2'>
+                         <div className='bg-[whitesmoke] w-[90%] h-[22vh] md:w-[100%] md:h-[22vh] shadow-md rounded-xl flex flex-col px-6 py-6 justify-evenly border-t-2 lg:w-[11vw] lg:h-[23vh]'>
                             <div className='flex justify-between '>
                                 <h1 className='text-[20px] md:text-xl md:font-semibold'>Blood Pre..</h1>
                                 <img src="src/assets/Images/heartbeat.png" alt="" className='w-[5vw] h-[3vh] md:w-[4vw] md:h-[3vh]' />
@@ -96,10 +102,10 @@ const Patientdashboard = () => {
                                 <h1 className='text-[18px] font-medium md:text-xl md:font-semibold'>124</h1>
                                 <h1 className='md:font-normal md:text-[18px]'>Lower</h1>
                             </div>
-                        </div>
+                        </div>  
 
                         {/* content4 */}
-                        <div className='bg-[whitesmoke] w-[90%] h-[14vh] md:w-[100%] md:h-[14vh] shadow-md rounded-xl flex flex-col px-6 py-4 justify-evenly border-t-2'>
+                        {/* <div className='bg-[whitesmoke] w-[90%] h-[14vh] md:w-[100%] md:h-[14vh] shadow-md rounded-xl flex flex-col px-6 py-4 justify-evenly border-t-2'>
                             <div className='flex justify-between'>
                                 <h1 className='text-[20px] md:text-xl md:font-semibold'>Bill Due</h1>
                                 <img src="src/assets/Images/wallet.png" alt="" className='w-[4vw] h-[18px] md:w-[20px] md:h-[24px]' />
@@ -107,10 +113,10 @@ const Patientdashboard = () => {
                             <div className='text[18px] font-light md:text-[18px]'>
                                  $214.86
                             </div>
-                        </div>
+                        </div> */}
 
                         {/* content5 */}
-                        <div className='bg-[whitesmoke] w-[90%] h-[20vh] md:w-[100%] md:h-[22vh] shadow-md rounded-xl flex flex-col border-t-2 px-6 py-3 justify-evenly'>
+                        {/* <div className='bg-[whitesmoke] w-[90%] h-[20vh] md:w-[100%] md:h-[22vh] shadow-md rounded-xl flex flex-col border-t-2 px-6 py-3 justify-evenly'>
                             <h1 className='text-[20px] md:text-xl md:font-semibold'>
                                 Fever History
                             </h1>
@@ -133,10 +139,10 @@ const Patientdashboard = () => {
                                     <h1 className='text-[15px] md:text-[20px]'>Yesterday</h1>
                                 </div>
                             </div>
-                        </div>
+                        </div> */}
 
                         {/* content6 */}
-                        <div className='bg-[whitesmoke] w-[90%] h-[14vh] md:w-[100%] md:h-[14vh] shadow-md rounded-xl px-6 py-2 flex flex-col border-t-2 '>
+                        {/* <div className='bg-[whitesmoke] w-[90%] h-[14vh] md:w-[100%] md:h-[14vh] shadow-md rounded-xl px-6 py-2 flex flex-col border-t-2 '>
                             <div className='flex flex-row justify-between'>
                                 <h1><img src="src/assets/Images/doctor.png" alt="" className='w-8 h-6 mt-6 '/></h1>
                                 <div className='py-3 px-1'>
@@ -144,7 +150,7 @@ const Patientdashboard = () => {
                                     <h1 className='float-end px-2 font-light text-gray-500 md:text-[18px]'>My Doctor</h1>    
                                 </div>
                             </div>
-                        </div>
+                        </div> */}
                         
 
                         {/* content7 */}

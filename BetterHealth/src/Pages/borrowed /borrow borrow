@@ -183,7 +183,7 @@
     <div className='lg:w-[50vw] lg:h-screen lg:bg-white lg:flex lg:py-4 lg:px-5 lg:space-x-5 '>
         
         <div className='lg:w-[11vw] lg:h-[38vh] bg-indigo-700 lg:rounded-xl shadow-md lg:border-t-2 px-2 '>
-            <div className='flex justify-between px-3 py-5'>
+            <div className='lg:flex lg:justify-between lg:px-3 lg:py-5'>
                 <div>
                     <h1 className=' text-white text-[17px]'>Heart Rate</h1>
                 </div>
@@ -196,7 +196,7 @@
                 <h1>75/118</h1>
             </div>
            
-            <div className='ml-[-24px] py-4'>
+            <div className='lg:ml-[-24px] lg:py-4'>
                 <HeartRateChart />
             </div>
         </div>
