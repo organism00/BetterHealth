@@ -175,12 +175,12 @@ const SideBar = () => {
                     )}
                   </div>
 
-                  <div className="flex justify-between w-20 items-center">
+                  {/* <div className="flex justify-between w-20 items-center">
                     <IoIosSwitch className="text-xl" />
                     <a href="#" className="hover:text-blue-400">
                       Nurse
                     </a>
-                  </div>
+                  </div> */}
 
                   <div className="flex justify-between w-28 items-center">
                     <FaUsers className="text-xl" />
@@ -193,7 +193,7 @@ const SideBar = () => {
                   <div className="flex flex-col gap-y-7 mt-2">
                     <div className="flex w-20 justify-between">
                       <CgMenuLeft className="text-xl" />
-                      <a href="#">Billing</a>
+                      <a href="#">Payment</a>
                     </div>
 
                     <div className="flex w-24 justify-between ">
@@ -228,7 +228,7 @@ const SideBar = () => {
                           onClick={auth}
                           className="hover:text-blue-400"
                         >
-                          Outpatients
+                          Diagnosis
                         </a>
                       </div>
                     </div>
@@ -241,7 +241,7 @@ const SideBar = () => {
                           onClick={misc}
                           className="hover:text-blue-400"
                         >
-                          Inpatients
+                          Treatment
                         </a>
                       </div>
                     </div>
