@@ -435,7 +435,9 @@
                     <img src="src/assets/Images/cigarette.png"  alt="" className='lg:w-[2vw] lg:h-[4vh]'/>
                     <h1 className='text-white lg:text-[13px] lg:font-light py-3 font-semibold'>Smoking Status: current everyday smoker</h1>
                 </div>
-        </div> 
+        </div>
+        
+        
         <div className='lg:flex lg:flex-col lg:space-y-5 '>
             <div className='lg:w-[15vw] lg:h-[25vh] bg-white rounded-md shadow-md lg:px-5 lg:py-7 lg:border-t-2'>
               <div className=''>
