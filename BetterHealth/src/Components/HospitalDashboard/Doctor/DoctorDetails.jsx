@@ -1,24 +1,24 @@
 import React from "react";
-import SideBar from "../SideBar";
-import Navbar from "../Navbar";
+import SideBar from "../../SideBar";
+import Navbar from "../../Navbar";
 import { GoHome } from "react-icons/go";
 import { NavLink } from "react-router-dom";
-import { patientData } from "../HospitalDashboard/Patients/PatientData";
+import { patientData } from "../Patients/PatientData";
 import { HiOutlineDotsVertical } from "react-icons/hi";
 import { FaGreaterThan } from "react-icons/fa6";
 import { MdNavigateNext } from "react-icons/md";
 import { GrFormPrevious } from "react-icons/gr";
 import { FaCalendarAlt } from "react-icons/fa";
-import { doctorsList } from "../Doctor/DoctorsData";
-import coverImage from '../../assets/Images/istockphoto-1 (17).jpg'
+import { doctorsList } from "./DoctorsData";
+import coverImage from '../../../assets/Images/istockphoto-1 (17).jpg'
 import { IoMdTime } from "react-icons/io";
 import DoctorAbility from "./DoctorAbility";
 import { FaStethoscope } from "react-icons/fa";
 import AssignedPatient from "./AssignedPatinet";
-import RecentQuestions from "../doctor dashboard/RecentQuestions";
-import ReviewList from "../ReviewList";
+import RecentQuestions from "../../doctor dashboard/RecentQuestions";
+import ReviewList from "../../ReviewList";
 import { FaPhone } from "react-icons/fa6";
-import "../../Style/customScrollbar.css";
+import "../../../Style/customScrollbar.css";
 import { HiOutlineDotsHorizontal } from "react-icons/hi";
 
 const DoctorDetails = () => {

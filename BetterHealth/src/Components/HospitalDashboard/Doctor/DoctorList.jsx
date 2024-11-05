@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import SideBar from '../SideBar';
-import Navbar from '../Navbar';
+import SideBar from '../../SideBar';
+import Navbar from '../../Navbar';
 import { doctorsList } from './DoctorsData'
 import { GoHome } from "react-icons/go";
 import { NavLink } from 'react-router-dom';

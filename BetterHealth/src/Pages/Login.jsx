@@ -72,7 +72,7 @@ const Login = () => {
                   to={"/adminstaff"}
                   className="hover:bg-[rgba(72,61,139,0.1)] flex items-center justify-center w-full h-14 2xl:h-24 border-[3px] -ml-2 cursor-pointer font-[inter] font-medium text-xl 2xl:text-3xl transition-all duration-300 border-[#483d8b]"
                 >
-                  Admin staff
+                  Front Desk Officer
                 </NavLink>
               </div>
 
