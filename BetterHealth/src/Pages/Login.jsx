@@ -15,7 +15,7 @@ import "aos/dist/aos.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
-import { height, width } from "@mui/system";
+// import { height, width } from "@mui/system";
 
 const Login = () => {
   useEffect(() => {
