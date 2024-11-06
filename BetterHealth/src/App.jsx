@@ -21,6 +21,8 @@ import NurseDetails from "./Components/HospitalDashboard/Nurse/NurseDetails";
 // import Docotordashboard from "./Pages/doctorPages/DoctorDashboard.";
 import LabReport from "./Components/LabReport";import DoctorPatientsList from "./Pages/doctorPages/DoctorPatientsList";
 import DoctorProfile from "./Pages/doctorPages/DoctorProfile";
+import AdminPatientDetail from "./Components/AdminDashboard/HomePage/Patient/AdminPatientDetail";
+import AdminPatientList from "./Components/AdminDashboard/HomePage/Patient/AdminPatientList";
 
 import Index from './Components/AdminDashboard/HomePage/Index';
 
@@ -51,6 +53,9 @@ const App = () => {
           <Route path="/doctorpatientslist" element={<DoctorPatientsList />} />
           <Route path="/doctorprofile" element={<DoctorProfile/>}/>
           <Route path="/superadmin" element={<Index/>}/>
+          <Route path="/adminpatientdetails" element={<AdminPatientDetail/>}/>
+          <Route path="/adminpatientdetails" element={<AdminPatientList/>}/>
+
         </Routes>
       </ToastProvider>
     </>
