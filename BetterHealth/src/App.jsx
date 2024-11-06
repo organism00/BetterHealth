@@ -54,7 +54,7 @@ const App = () => {
           <Route path="/doctorprofile" element={<DoctorProfile/>}/>
           <Route path="/superadmin" element={<Index/>}/>
           <Route path="/adminpatientdetails" element={<AdminPatientDetail/>}/>
-          <Route path="/adminpatientdetails" element={<AdminPatientList/>}/>
+          <Route path="/adminpatientlist" element={<AdminPatientList/>}/>
 
         </Routes>
       </ToastProvider>

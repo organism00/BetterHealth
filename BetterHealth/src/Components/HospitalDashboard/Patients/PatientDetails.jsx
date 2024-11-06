@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import NavBar from '../../Navbar';
 import SideBar from '../../SideBar';
-import EditPatient from './EditPatient'
+import NewPatients from './EditPatient'
 import YourStart from '../Patients/YourStart';
 import Map, { Marker } from 'react-map-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
