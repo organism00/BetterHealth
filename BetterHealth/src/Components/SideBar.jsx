@@ -123,7 +123,7 @@ const SideBar = () => {
                   <div className="flex justify-between w-28 items-center">
                     <TbLayoutDashboardFilled className="text-xl" />
                     <Link
-                      to={"/admindashboard"}
+                      to={"/superadmin"}
                       className="hover:text-blue-400"
                     >
                       Dashboard
@@ -158,7 +158,7 @@ const SideBar = () => {
                             <a href="#">New Patient</a>
                           </li>
                           <li className="list-disc hover:text-blue-400">
-                            <Link to={'/patientlist'}>Patient List</Link>
+                            <Link to={'/admin/patientlist'}>Patient List</Link>
                           </li>
                         </ul>
                       </div>

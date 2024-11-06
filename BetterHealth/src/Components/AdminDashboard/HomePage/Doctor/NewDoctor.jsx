@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
 import Navbar from '../../../Navbar'
 import SideBar from '../../../SideBar'
-import axios from 'axios'
+import axios from 'axios';
+import { useToast } from '../../../Loaders/ToastContext';
+import WaitingLoader from '../../../Loaders/WaitingLoader';
 
 const NewDoctor = () => {
     const [firstName, setFirstName] = useState('');
@@ -19,15 +21,38 @@ const NewDoctor = () => {
     const [joiningDate, setJoiningDate] = useState('');
     const [department, setDepartment] = useState('');
 
+    const { notifySuccess, notifyError, startWaitingLoader, stopWaitingLoader } = useToast();
+
     const handleAddDoctor = async (e) => {
+        startWaitingLoader()
         e.preventDefault();
         const doctor = {firstName, lastName, email, address, stateOfOrigin, lga, nationality, maritalStatus, phoneNo, specialty, licenseNumber, yearsOfExperience, joiningDate, department};
 
         try {
             const res = await axios.post('https://hms-w4kw.onrender.com/api/Doctor/AddDoctor', doctor);
             console.log(res.data);
+            stopWaitingLoader()
+            notifySuccess(res.data.responseMessage);
+
+            // Clear form input
+            setFirstName('');
+            setLastName('');
+            setEmail('');
+            setAddress('');
+            setStateOfOrigin('');
+            setLga('');
+            setNationality('');
+            setMaritalStatus('');
+            setPhoneNo('');
+            setSpecialty('');
+            setLicenseNumber('');
+            setYearsOfExperience('');
+            setJoiningDate('');
+            setDepartment('');
         } catch (error) {
             console.log(error.response);
+            stopWaitingLoader()
+            notifyError(error.response.data.responseMessage);
         }
     }
   return (
@@ -35,6 +60,7 @@ const NewDoctor = () => {
         <main className="lg:grid lg:grid-cols-[16rem_1fr] z-0">
             <SideBar/>
             <Navbar/>
+            <WaitingLoader/>
             <main className="col-start-2 h-full w-full md:w-screen lg:w-full px-7 lg:mt-0 md:mt-0">
                 <form className='flex flex-col my-24 ' action='submit' onSubmit={handleAddDoctor}>
                     <div className='w-[100%] mb-10 mt-5 h-auto lg:w-full pt-6  pb-14 md:overflow-x-auto overflow-x-auto  shadow-lg border border-stone-200 rounded-2xl mx-auto px-5'>

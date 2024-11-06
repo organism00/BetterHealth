@@ -5,19 +5,19 @@ import { NavLink, Link, useNavigate } from "react-router-dom";
 import { GoHome } from "react-icons/go";
 
 // Components
-import SideBar from "../SideBar";
-import Navbar from "../Navbar";
+import SideBar from "../../sidebar";
+import Navbar from "../../navbar";
 // import { RiArrowDropDownLine } from "react-icons/ri";
 
 // Css
-import "../../Style/customScrollbar.css";
+import "../../../../Style/customScrollbar.css";
 
 // images
-import doc1 from "../../Assets/Images/doc1.png";
-import doc2 from "../../Assets/Images/doc2.png";
-import doc3 from "../../Assets/Images/doc3.png";
-import doc4 from "../../Assets/Images/doc4.png";
-import doc5 from "../../Assets/Images/doc5.png";
+import doc1 from "../../../../assets/Images/doc.jpg";
+import doc2 from "../../../../Assets/Images/doc.jpg";
+import doc3 from "../../../../Assets/Images/doc.jpg";
+import doc4 from "../../../../Assets/Images/doc.jpg";
+import doc5 from "../../../../Assets/Images/doc.jpg";
 
 const doctorList = [
   { id: 1, name: "Dr. Jaylon Stanton", position: "Dentist", image: doc1 },
@@ -79,7 +79,7 @@ function DoctorList() {
             {doctor.map(doctor => {
               return (
                 <div
-                  onClick={() => navigate('/doctordetails', {state: doctor.doctorId})}
+                  onClick={() => navigate('/admin/doctordetails', {state: doctor.doctorId})}
                   key={doctor.$id}
                   className="w-[250px] overflow-hidden shadow-2xl border border-stone-100 rounded-lg bg-white"
                 >

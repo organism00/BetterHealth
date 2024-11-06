@@ -1,14 +1,38 @@
 import React, { useState, useEffect } from "react";
 import Slider from "react-slick";
-import hospital1 from "../../../assets/images/a.jpg";
-import hospital3 from "../../../assets/images/b.jpg";
+import hospital1 from "../../../assets/images/admin1.webp";
+import hospital3 from "../../../assets/images/admin2.webp";
 import { NavLink } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import axios from "axios";
+import { useToast } from '../../../Components/Loaders/ToastContext';
+import WaitingLoader from '../../../Components/Loaders/WaitingLoader';
 
 const Index = () => {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const { notifySuccess, notifyError, startWaitingLoader, stopWaitingLoader } = useToast();
+
+  const handleLogin = async (e) => {
+    startWaitingLoader()
+    e.preventDefault();
+
+    try{
+      const res = await axios.post('https://hms-w4kw.onrender.com/api/Admin/Login', { username, password });
+
+      console.log(res.data.data);
+      stopWaitingLoader();
+      notifySuccess(res.data.responseMessage);
+      localStorage.setItem("userData", JSON.stringify(res.data.data));
+    } catch(error){
+      console.log(error);
+      stopWaitingLoader();
+      notifyError(error.response.data.responseMessage);
+    }
+  }
   useEffect(() => {
     AOS.init({
       duration: 400,
@@ -30,6 +54,7 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-[whitesmoke] flex overflow-hidden">
+      <WaitingLoader/>
       {/* Left - Image Slider */}
       <div className="hidden lg:block h-screen w-[50vw]">
         <Slider {...sliderSettings}>
@@ -57,22 +82,26 @@ const Index = () => {
             </p>
           </div>
 
-          <form action="" className="space-y-6">
+          <form action="submit" className="space-y-6" onSubmit={handleLogin}>
             {/* Username Field */}
             <input
               className="w-full h-[55px] text-xl pl-4 font-[inter] rounded-[12px] font-medium border outline-[#483d8b]"
               type="text"
               placeholder="Username"
-              name=""
-              id=""
+              name="username"
+              id="username"
+              onChange={(e) => setUsername(e.target.value)}
+              value={username}
             />
 
             <input
               className="w-full h-[55px] text-xl pl-4 font-[inter] rounded-[12px] font-medium border outline-[#483d8b]"
               placeholder="Password"
               type="password"
-              name=""
-              id=""
+              name="password"
+              id="password"
+              onChange={(e) => setPassword(e.target.value)}
+              value={password}
             />
 
             <div className="flex flex-row justify-between">

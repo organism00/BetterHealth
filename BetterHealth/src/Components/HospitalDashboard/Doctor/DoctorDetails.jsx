@@ -1,6 +1,6 @@
 import React from "react";
-import SideBar from "../../SideBar";
-import Navbar from "../../Navbar";
+import SideBar from "../../../Components/SideBar";
+import Navbar from "../../../Components/Navbar";
 import { GoHome } from "react-icons/go";
 import { NavLink } from "react-router-dom";
 import { patientData } from "../Patients/PatientData";

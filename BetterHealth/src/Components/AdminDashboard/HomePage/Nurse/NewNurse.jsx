@@ -2,14 +2,13 @@ import React, { useState } from "react";
 import Navbar from "../../../Navbar";
 import SideBar from "../../../SideBar";
 import axios from "axios";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import { useToast } from '../../../Loaders/ToastContext';
+import WaitingLoader from '../../../Loaders/WaitingLoader';
 import "../../../../Style/loader.css";
 import { useNavigate } from "react-router-dom";
 
 const NewNurse = () => {
   // States
-  const [loader, setLoader] = useState(false);
   const [firstname, setFirstname] = useState("");
   const [lastname, setLastname] = useState("");
   const [licenseNo, setLicenseNo] = useState("");
@@ -25,10 +24,11 @@ const NewNurse = () => {
   const [certification, setCertification] = useState("");
   const [lga, setLga] = useState("");
   const [maritalStatus, setMaritalStatus] = useState("");
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
+  const { notifySuccess, notifyError, startWaitingLoader, stopWaitingLoader } = useToast();
 
   const handleSubmit = async (e) => {
-    setLoader(true);
+    startWaitingLoader()
     e.preventDefault();
 
     try {
@@ -52,48 +52,39 @@ const NewNurse = () => {
           maritalStatus,
         }
       );
-      if (response.status === 200) {
-        toast.success("Nurse successfully created!");
-        navigate("/newnurse");
-
-        setFirstname("");
-        setLastname("");
-        setLicenseNo("")
-        setSpecialization("");
-        setPhoneNo("");
-        setEmail("");
-        setAddress("");
-        setStateOfOrigin("");
-        setNationality("");
-        setJoinDate("");
-        setDepartmentId("");
-        setYearsOfExperience("");
-        setCertification("");
-        setLga("");
-        setMaritalStatus("");
-      }
 
       console.log(response.data);
-      setLoader(false);
+      notifySuccess(response.data.responseMessage);
+      stopWaitingLoader();
+
+      setFirstname("");
+      setLastname("");
+      setLicenseNo("")
+      setSpecialization("");
+      setPhoneNo("");
+      setEmail("");
+      setAddress("");
+      setStateOfOrigin("");
+      setNationality("");
+      setJoinDate("");
+      setDepartmentId("");
+      setYearsOfExperience("");
+      setCertification("");
+      setLga("");
+      setMaritalStatus("");
     } catch (error) {
       console.error(error);
-      toast.error("An error occurred. Please try again.");
-      setLoader(false);
+      notifyError(error.response.data.responseMessage);
+      stopWaitingLoader();
     }
   };
 
   return (
     <>
       <main className="lg:grid lg:grid-cols-[16rem_1fr] z-0">
-        {/* Loader */}
-        {loader && (
-          <div className="loaderwrapper">
-            <div className="loader"></div>
-          </div>
-        )}
         <SideBar />
         <Navbar />
-        <ToastContainer autoClose={2000} />
+        <WaitingLoader/>
 
         <main className="col-start-2 h-full w-full md:w-screen lg:w-full px-7 lg:mt-0 md:mt-0">
           <form className="flex flex-col my-24" onSubmit={handleSubmit}>
