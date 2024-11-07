@@ -19,10 +19,11 @@ import DoctorDetails from "./Components/HospitalDashboard/Doctor/DoctorDetails";
 import CalendarComponent from "./Components/Appointment/Calendar";
 import NurseDetails from "./Components/HospitalDashboard/Nurse/NurseDetails";
 // import Docotordashboard from "./Pages/doctorPages/DoctorDashboard.";
-import LabReport from "./Components/LabReport";import DoctorPatientsList from "./Pages/doctorPages/DoctorPatientsList";
+import LabReport from "./Components/LabReport";
+import DoctorPatientsList from "./Pages/doctorPages/DoctorPatientsList";
 import DoctorProfile from "./Pages/doctorPages/DoctorProfile";
 
-import Index from './Components/AdminDashboard/HomePage/Index';
+import Index from './Components/AdminDashboard/Index';
 
 const App = () => {
   return (

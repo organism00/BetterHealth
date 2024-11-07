@@ -10,7 +10,9 @@ import {
   TbScan,
   TbDeviceAnalytics,
 } from "react-icons/tb";
-import { MdAccessibilityNew } from "react-icons/md";
+import { GiTakeMyMoney } from "react-icons/gi";
+import { MdSick } from "react-icons/md";
+import { GrResources } from "react-icons/gr";
 import { Link } from "react-router-dom";
 import anime from "../../Assets/Images/Animation-2.gif";
 import custom from "../../adminDashboardAssets/custom-17.svg";
@@ -19,13 +21,13 @@ import "../../App.css";
 
 function Sidebar() {
   const [dropdowns, setDropdowns] = useState({
-    patients: false,
-    report: false,
-    doctors: false,
-    nurse: false,
-    billing: false,
+    managementStaff: false,
+    labTest: false,
+    financial: false,
     facilities: false,
+    resourceInventory: false,
     pharmacy: false,
+    patientManagement: false,
   });
 
   // Function to toggle dropdowns by section name
@@ -40,7 +42,7 @@ function Sidebar() {
     {
       label: "Dashboard",
       icon: <TbLayoutDashboardFilled className="text-xl" />,
-      link: "/admindashboard",
+      link: "/admin/superadmindashboard",
     },
     {
       label: "Appointments",
@@ -48,56 +50,25 @@ function Sidebar() {
       link: "#",
     },
     {
-      label: "Patients",
+      label: "Staff Management ",
       icon: <PiDiamondsFourFill className="text-xl" />,
-      dropdown: dropdowns.patients,
-      toggle: () => toggleDropdown("patients"),
-      items: [
-        { label: "New Patient", link: "/newpatient" },
-        { label: "Patient List", link: "/patientlist" },
-        { label: "Insurance", link: "#" },
-      ],
+      link: "/admin/staffManagement",
     },
     {
       label: "Lab Test",
       icon: <IoIosSwitch className="text-xl" />,
-      dropdown: dropdowns.report,
-      toggle: () => toggleDropdown("report"),
+      dropdown: dropdowns.labTest,
+      toggle: () => toggleDropdown("labTest"),
       items: [
         { label: "Request", link: "#" },
         { label: "Report", link: "#" },
       ],
     },
     {
-      label: "Doctors",
-      icon: <TbDeviceAnalytics className="text-xl" />,
-      dropdown: dropdowns.doctors,
-      toggle: () => toggleDropdown("doctors"),
-      items: [
-        { label: "New Doctor", link: "/newdoctor" },
-        { label: "Doctor List", link: "/doctorlist" },
-      ],
-    },
-    {
-      label: "Nurse",
-      icon: <IoIosSwitch className="text-xl" />,
-      dropdown: dropdowns.nurse,
-      toggle: () => toggleDropdown("nurse"),
-      items: [
-        { label: "New Nurse", link: "/newnurse" },
-        { label: "Nurse List", link: "/nurselist" },
-      ],
-    },
-    {
-      label: "Other Staffs",
-      icon: <FaUsers className="text-xl" />,
-      link: "#",
-    },
-    {
-      label: "Billing",
-      icon: <CgMenuLeft className="text-xl" />,
-      dropdown: dropdowns.billing,
-      toggle: () => toggleDropdown("billing"),
+      label: "Financial",
+      icon: <GiTakeMyMoney className="text-xl" />,
+      dropdown: dropdowns.financial,
+      toggle: () => toggleDropdown("financial"),
       items: [{ label: "Payment", link: "#" }],
     },
     {
@@ -113,21 +84,34 @@ function Sidebar() {
       ],
     },
     {
+      label: "Resource & Inventory",
+      icon: <GrResources className="text-xl" />,
+      dropdown: dropdowns.resourceInventory,
+      toggle: () => toggleDropdown("resourceInventory"),
+      items: [
+        { label: "Ward/Room", link: "#" },
+        { label: "Laboratory", link: "#" },
+        { label: "Operation Room", link: "#" },
+        { label: "Emergency Room", link: "#" },
+      ],
+    },
+    {
       label: "Pharmacy",
       icon: <TbScan className="text-xl" />,
       dropdown: dropdowns.pharmacy,
       toggle: () => toggleDropdown("pharmacy"),
       items: [{ label: "Orders", link: "#" }],
     },
+
     {
-      label: "Outpatients",
-      icon: <MdAccessibilityNew className="text-2xl" />,
-      link: "#",
-    },
-    {
-      label: "Inpatients",
-      icon: <FaBed className="text-2xl" />,
-      link: "#",
+      label: "Patient Management",
+      icon: <MdSick className="text-xl" />,
+      dropdown: dropdowns.patientManagement,
+      toggle: () => toggleDropdown("patientManagement"),
+      items: [
+        { label: "In-patient", link: "#" },
+        { label: "Out-Patient", link: "#" },
+      ],
     },
   ];
 
@@ -161,7 +145,7 @@ function Sidebar() {
                     }`}
                     onClick={section.toggle}
                   >
-                    <div className="flex gap-4 items-center">
+                    <div className="flex cursor-pointer gap-4 items-center">
                       {section.icon}
                       {section.link ? (
                         <Link to={section.link} className="hover:text-blue-400">
@@ -176,7 +160,7 @@ function Sidebar() {
                     )}
                   </div>
                   {section.dropdown && (
-                    <div className="flex flex-col items-center justify-center my-4 text-start">
+                    <div className="flex flex-col items-center justify-center ml-10 my-4 text-start">
                       <ul className="space-y-4">
                         {section.items.map((item, i) => (
                           <li key={i} className="list-disc hover:text-blue-400">
