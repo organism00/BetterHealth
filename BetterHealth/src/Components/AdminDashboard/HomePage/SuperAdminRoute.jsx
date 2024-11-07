@@ -9,12 +9,20 @@ import NewDoctor from './Doctor/NewDoctor';
 import NurseDetails from './Nurse/NurseDetails';
 import NurseList from './Nurse/NurseList';
 import NewNurse from './Nurse/NewNurse';
+import SuperAdminDashboard from './SuperAdminDashboard';
+import StaffManagement from './StaffManagement';
+import Index from '../Index';
 
 function SuperAdminRoute() {
   return (
     <div>
       <ToastProvider>
         <Routes>
+          <Route path="/admin/superadmin" element={<Index />} />
+          <Route
+            path="/admin/superadmindashboard"
+            element={<SuperAdminDashboard />}
+          />
           <Route path="/admin/doctorlist" element={<DoctorList />} />
           <Route path="/admin/doctordetails" element={<DoctorDetails />} />
           <Route path="/admin/newdoctor" element={<NewDoctor />} />
@@ -22,10 +30,11 @@ function SuperAdminRoute() {
           <Route path="/admin/nurselist" element={<NurseList />} />
           <Route path="/admin/nursedetails" element={<NurseDetails />} />
           <Route path="/admin/newnurse" element={<NewNurse />} />
+          <Route path="/admin/staffManagement" element={<StaffManagement />} />
         </Routes>
       </ToastProvider>
     </div>
-  )
+  );
 }
 
 export default SuperAdminRoute

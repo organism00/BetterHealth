@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
-import SideBar from "../../SideBar";
+import SideBar from "../../Sidebar";
 import Navbar from "../../Navbar";
 import axios from "axios";
 import { patientData } from "../../../HospitalDashboard/Patients/PatientData";
@@ -13,7 +13,7 @@ import { FaGreaterThan } from "react-icons/fa6";
 import { MdNavigateNext } from "react-icons/md";
 import { GrFormPrevious } from "react-icons/gr";
 import { FaCalendarAlt } from "react-icons/fa";
-import coverImage from '../../../../assets/Images/istockphoto-1 (17).jpg'
+import coverImage from "../../../../assets/Images/istockphoto-1 (17).jpg";
 import { IoMdTime } from "react-icons/io";
 import { FaStethoscope } from "react-icons/fa";
 // import { FaPhone } from "react-icons/fa6";
@@ -34,15 +34,17 @@ const DoctorDetails = () => {
   useEffect(() => {
     const fetchDoctorData = async () => {
       try {
-        const response = await axios.get(`https://hms-w4kw.onrender.com/api/Doctor/GetDoctorById/${doctorId}`)
-        console.log(response.data.data)
-        setDoctor(response.data.data)
-      } catch(error){
-        console.log(error.response)
+        const response = await axios.get(
+          `https://hms-w4kw.onrender.com/api/Doctor/GetDoctorById/${doctorId}`
+        );
+        console.log(response.data.data);
+        setDoctor(response.data.data);
+      } catch (error) {
+        console.log(error.response);
       }
-    }
-    fetchDoctorData()
-  }, [doctorId])
+    };
+    fetchDoctorData();
+  }, [doctorId]);
   console.log(doctor);
   return (
     <div className="flex flex-col gap-2 lg:flex-row py-4  md:px-0">
@@ -200,7 +202,7 @@ const DoctorDetails = () => {
                   })} */}
                 </div>
               </div>
-              <NavLink to={'/doctorappointment'} className="px-6 py-2">
+              <NavLink to={"/doctorappointment"} className="px-6 py-2">
                 <button className="w-[88%] mt-4 bg-indigo-600 text-white py-2 px-6 rounded hover:bg-indigo-700 transition">
                   View Doctors Appointment
                 </button>
@@ -301,7 +303,9 @@ const DoctorDetails = () => {
                   />
 
                   <div>
-                    <p className="text-xl">{doctor.firstname} {doctor.lastname}</p>
+                    <p className="text-xl">
+                      {doctor.firstname} {doctor.lastname}
+                    </p>
                     <div className="flex items-center space-x-1 text-gray-700">
                       <IoMdTime className="w-8 h-8 md:w-4 md:h-4" />
                       <p>Joined on {doctor.joiningDate}</p>

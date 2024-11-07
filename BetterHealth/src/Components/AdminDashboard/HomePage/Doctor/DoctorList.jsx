@@ -5,7 +5,7 @@ import { NavLink, Link, useNavigate } from "react-router-dom";
 import { GoHome } from "react-icons/go";
 
 // Components
-import SideBar from "../../sidebar";
+import SideBar from "../../Sidebar";
 import Navbar from "../../navbar";
 // import { RiArrowDropDownLine } from "react-icons/ri";
 
@@ -33,23 +33,25 @@ const doctorList = [
 ];
 
 function DoctorList() {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const [openDoctorsMenu, setOpenDoctorsMenu] = useState(false);
   const [id, setId] = useState(null);
   const [doctor, setDoctor] = useState([]);
-  
+
   useEffect(() => {
     const fetchDoctor = async () => {
-      try{
-        const res = await axios.get('https://hms-w4kw.onrender.com/api/Doctor/GetDoctors')
-        setDoctor(res.data.$values)
-        console.log(res.data.$values)
-      } catch(error){
-          console.log(error.response)
+      try {
+        const res = await axios.get(
+          "https://hms-w4kw.onrender.com/api/Doctor/GetDoctors"
+        );
+        setDoctor(res.data.$values);
+        console.log(res.data.$values);
+      } catch (error) {
+        console.log(error.response);
       }
-    }
-    fetchDoctor()
-  }, [])
+    };
+    fetchDoctor();
+  }, []);
 
   const toggleDoctorsMenu = (item) => {
     setOpenDoctorsMenu(!openDoctorsMenu);
@@ -59,27 +61,33 @@ function DoctorList() {
     <div className="flex flex-col gap-2 lg:flex-row py-4 md:px-0 ">
       <SideBar />
       <Navbar />
-      <div className='flex justify-center w-[100%] '>
-        <section className='mt-28 lg:mx-10 my-10 grid justify-center '>
-          <div className='flex justify-between'>
-            <div className='flex gap-x-5 px-5 lg:px-0 md:px-8 md:ml-64 lg:ml-0'>
+      <div className="flex justify-center w-[100%] ">
+        <section className="mt-28 lg:mx-10 my-10 grid justify-center ">
+          <div className="flex justify-between">
+            <div className="flex gap-x-5 px-5 lg:px-0 md:px-8 md:ml-64 lg:ml-0">
               <h1 className="text-2xl">Doctors</h1>
               <div className="flex gap-2 items-center">
-                <Link to='/admindashboard'><GoHome/></Link>
+                <Link to="/admindashboard">
+                  <GoHome />
+                </Link>
                 <p className="font-thin"> - Doctors</p>
               </div>
             </div>
-            <div className='flex gap-2'>
-              <input type="text" className='md:w-[350px] border px-4 rounded' />
-              <button className='bg-[#5156be] text-white px-4 rounded '>Search</button>
+            <div className="flex gap-2">
+              <input type="text" className="md:w-[350px] border px-4 rounded" />
+              <button className="bg-[#5156be] text-white px-4 rounded ">
+                Search
+              </button>
             </div>
           </div>
 
-          <div className='py-5 md:ml-72 lg:ml-0 gap-x-10 grid grid-cols-1 lg:grid-cols-3 gap-y-10 '>
-            {doctor.map(doctor => {
+          <div className="py-5 md:ml-72 lg:ml-0 gap-x-10 grid grid-cols-1 lg:grid-cols-3 gap-y-10 ">
+            {doctor.map((doctor) => {
               return (
                 <div
-                  onClick={() => navigate('/admin/doctordetails', {state: doctor.doctorId})}
+                  onClick={() =>
+                    navigate("/admin/doctordetails", { state: doctor.doctorId })
+                  }
                   key={doctor.$id}
                   className="w-[250px] overflow-hidden shadow-2xl border border-stone-100 rounded-lg bg-white"
                 >
@@ -91,7 +99,9 @@ function DoctorList() {
                     />
                   </div>
                   <div className="text-2xl text-white font-medium bg-primary2 flex flex-col items-center p-2 ">
-                    <p className="">{doctor.firstname} {doctor.lastname}</p>
+                    <p className="">
+                      {doctor.firstname} {doctor.lastname}
+                    </p>
                     <p className="font-medium text-sm text-gray-300">
                       {doctor.specialization}
                     </p>
@@ -99,7 +109,7 @@ function DoctorList() {
                 </div>
               );
             })}
-          </div>   
+          </div>
         </section>
       </div>
     </div>
