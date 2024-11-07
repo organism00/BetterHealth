@@ -19,31 +19,33 @@ const NewPatients = () => {
                         <input type="text" placeholder='Address' className='border border-stone-500 p-2 rounded-md  outline-violet-500 ' />
                         <input type="text" placeholder='Phone' className='border border-stone-500 p-2 rounded-md  outline-violet-500 ' />
                         <input type="email" placeholder='Email' className='border border-stone-500 p-2 rounded-md  outline-violet-500 ' />
-                        <input type="text" placeholder='Emergency Contact' className='border border-stone-500 p-2 rounded-md  outline-violet-500 '/>
-                        <input type="text" placeholder='Contact Number' className='border border-stone-500 p-2 rounded-md  outline-violet-500 '/>
-                        <input type="text" placeholder='Contact Address' className='border border-stone-500 p-2 rounded-md  outline-violet-500 ' />
-                        <input type="email" placeholder='Contact Email' className='border border-stone-500 p-2 rounded-md  outline-violet-500 ' />
-                        <input type="text" placeholder='Contact Relationship' className='border border-stone-500 p-2 rounded-md  outline-violet-500 ' />
+                        
                         <input type="date" title="Enter your age" placeholder='Age' className='border border-stone-500 p-2 rounded-md  outline-violet-500 ' />
                         <select className='border border-stone-500 p-2 rounded-md  outline-violet-500 ' >
-                            <option value="Select Gender" defaultValue disabled>Select Gender</option>
+                            <option value="Select Gender" selected disabled>Select Gender</option>
                             <option value="Male">Male</option>
                             <option value="Female">Female</option>
                         </select>
                         <select className='border border-stone-500 p-2 rounded-md  outline-violet-500 ' >
-                            <option value="Select Gender" defaultValue disabled>Genotype</option>
-                            <option value="Male">Male</option>
-                            <option value="Female">Female</option>
+                            <option value="Select Gender" selected disabled>Blood Group</option>
+                            <option value="AA">AA</option>
+                            <option value="AB">AB</option>
+                            <option value="AO">AO</option>
+                            <option value="BB">BB</option>
+                            <option value="BO">BO</option>
+                            <option value="OO">OO</option>
                         </select>
                         <select className='border border-stone-500 p-2 rounded-md  outline-violet-500 ' >
-                            <option value="Select Gender" defaultValue disabled>Blood Group</option>
-                            <option value="Male">Male</option>
-                            <option value="Female">Female</option>
+                            <option value="Select Gender" selected disabled>Genotype</option>
+                            <option value="AA">AA</option>
+                            <option value="AS">AS</option>
+                            <option value="SS">SS</option>
+                            <option value="AC">AC</option>
                         </select>
                         <select className='border border-stone-500 p-2 rounded-md  outline-violet-500 ' >
-                            <option value="Select Gender" defaultValue disabled>Has Ulcer</option>
-                            <option value="Male">Yes</option>
-                            <option value="Female">No</option>
+                            <option value="Select Gender" selected disabled>Has Ulcer</option>
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
                         </select>
                         <input type='file' accept="image/*" title="Image" className='flex flex-col border border-stone-500 p-2 rounded-md  outline-violet-500 ' />
                     </div>

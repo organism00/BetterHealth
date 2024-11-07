@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import SideBar from '../SideBar';
-import Navbar from '../Navbar';
+import SideBar from '../../SideBar';
+import Navbar from '../../Navbar';
 // import { nurseList } from './NurseData';
 import { GoHome } from "react-icons/go";
 import axios from 'axios';
@@ -27,8 +27,8 @@ const NurseList = () => {
         <Navbar/>
 
         <div className='flex justify-center w-[100%] '>
-            <section className='mt-28 lg:mx-10 my-10 grid justify-center w-full '>
-                <div className='flex justify-between gap-80'>
+            <section className='mt-28 lg:mx-10 my-10 grid justify-center '>
+                <div className='flex justify-between'>
                     <div className='flex gap-x-5 px-5 lg:px-0 md:px-8 md:ml-64 lg:ml-0'>
                         <h1 className="text-2xl">Nurse</h1>
                         <div className="flex gap-2 items-center">
@@ -47,7 +47,7 @@ const NurseList = () => {
                     {nurses.map(nurse => {
                         return(
                             <div key={nurse.nurseId} className='w-[250px] overflow-hidden shadow-2xl border border-stone-100 rounded-lg bg-white'
-                                onClick={() => navigate('/nursedetails', {state: nurse.nurseId})}>
+                                onClick={() => navigate('/admin/nursedetails', {state: nurse.nurseId})}>
                                 <div className='flex justify-center flex-col items-center h-[200px] w-[100%] '>
                                     <img src={nurse.thumb} alt="image" className='w-100% h-[100%] object-cover ' />
                                 </div>

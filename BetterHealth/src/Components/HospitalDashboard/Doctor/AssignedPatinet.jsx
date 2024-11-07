@@ -1,6 +1,6 @@
 import React from "react";
 import Chart from "react-apexcharts";
-import coverImage from "../../assets/Images/istockphoto-1 (17).jpg";
+import coverImage from "../../../assets/Images/istockphoto-1 (17).jpg";
 
 
 
@@ -72,5 +72,4 @@ const AssignedPatient = () => {
     </div>
   );
 };
-
 export default AssignedPatient;

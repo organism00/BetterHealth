@@ -1,27 +1,46 @@
-import React from "react";
-import SideBar from "../SideBar";
-import Navbar from "../Navbar";
+import React, { useEffect, useState } from "react";
+import SideBar from "../../SideBar";
+import Navbar from "../../Navbar";
+import axios from "axios";
+
 import { GoHome } from "react-icons/go";
-import { NavLink } from "react-router-dom";
-import { patientData } from "../Patients/PatientData";
+import { NavLink, useLocation } from "react-router-dom";
+import { nurseList } from "./NurseData";
 import { HiOutlineDotsVertical } from "react-icons/hi";
 import { FaGreaterThan } from "react-icons/fa6";
 import { MdNavigateNext } from "react-icons/md";
 import { GrFormPrevious } from "react-icons/gr";
 import { FaCalendarAlt } from "react-icons/fa";
 import { doctorsList } from "../Doctor/DoctorsData";
-import coverImage from '../../assets/Images/istockphoto-1 (17).jpg'
+import coverImage from '../../../assets/Images/istockphoto-1 (17).jpg';
 import { IoMdTime } from "react-icons/io";
-import DoctorAbility from "./DoctorAbility";
+import DoctorAbility from "../Doctor/DoctorAbility";
 import { FaStethoscope } from "react-icons/fa";
-import AssignedPatient from "./AssignedPatinet";
-import RecentQuestions from "../adminDashboard/RecentQuestions";
-import ReviewList from "../ReviewList";
+import AssignedPatient from "../Doctor/AssignedPatinet";
+import RecentQuestions from "../../doctor dashboard/RecentQuestions";
+import ReviewList from "../../ReviewList";
 import { FaPhone } from "react-icons/fa6";
-import "../../Style/customScrollbar.css";
 import { HiOutlineDotsHorizontal } from "react-icons/hi";
 
-const DoctorDetails = () => {
+import "../../../Style/customScrollbar.css"
+
+const NurseDetails = () => {
+  const location = useLocation()
+  const [nurseId] = useState(location.state);
+  const [nurse, setNurse] = useState([]);
+
+  useEffect(() => {
+    const fetchNurseData = async () => {
+      try {
+        const response = await axios.get(`https://hms-w4kw.onrender.com/api/Nurse/GetNurseById/${nurseId}`)
+        // console.log(response.data.data)
+        setNurse(response.data.data)
+      } catch(error){
+        console.log(error.response.data)
+      }
+    }
+    fetchNurseData()
+  }, [nurseId])
   return (
     <div className="flex flex-col gap-2 lg:flex-row py-4  md:px-0">
       <SideBar />
@@ -31,10 +50,10 @@ const DoctorDetails = () => {
       <div className="mt-16 md:px-6 lg:px-0 h-[200vh] md:w-[80vw]">
         <div className="flex my-10 md:my-8 justify-between">
           <div className="flex gap-x-5 px-4 lg:px-0 md:px-8 md:ml-64 lg:ml-0">
-            <h1 className="text-2xl">Doctor Details</h1>
+            <h1 className="text-2xl">Nurse Details</h1>
             <div className="flex gap-2 items-center">
               <GoHome />
-              <p className="font-thin"> - Doctor Details</p>
+              <p className="font-thin"> - Nurse Details</p>
             </div>
           </div>
         </div>
@@ -56,7 +75,7 @@ const DoctorDetails = () => {
 
               <div className="scrollable-div h-[320px] md:h-[260px] mt-4 overflow-auto font-[inter]">
                 <div className="space-y-4">
-                  {patientData.map((patient, index) => {
+                  {nurseList.map((patient, index) => {
                     return (
                       <div
                         key={index}
@@ -69,8 +88,8 @@ const DoctorDetails = () => {
                         <div className="w-[70%] px-2 bg-gray-100 flex items-center justify-between rounded-lg">
                           <div className="w-[90%] flex items-center space-x-4">
                             <img
-                              className="w-8 h-8 rounded-full cursor-pointer"
-                              src={patient.img}
+                              className="w-8 h-8 rounded-full cursor-pointer object-cover"
+                              src={patient.thumb}
                               alt={`{patient.name}'s thumbnail`}
                             />
                             <div className=" py-2  rounded-md flex flex-col justify-between ">
@@ -138,7 +157,7 @@ const DoctorDetails = () => {
                   {doctorsList.map((doctor) => {
                     return (
                       <div
-                        key={doctor.time}
+                        key={doctor.id}
                         className="w-[100%] h-[100%] py-2 px-6 border shadow-sm"
                       >
                         <div className="w-[100%] px-2 flex items-center justify-between">
@@ -211,9 +230,9 @@ const DoctorDetails = () => {
                     <p className="text-lg">Cold</p>
                   </div>
 
-                  <p className="w-[100%] h-2 bg-[#E9ECEF] rounded-r-full">
+                  <div className="w-[100%] h-2 bg-[#E9ECEF] rounded-r-full">
                     <p className="w-[80%] h-2 bg-[#5156BE] rounded-l-full"></p>
-                  </p>
+                  </div>
                 </div>
 
                 <div className="flex flex-col space-y-2">
@@ -222,9 +241,9 @@ const DoctorDetails = () => {
                     <p className="text-lg">Fracture</p>
                   </div>
 
-                  <p className="w-[100%] h-2 bg-[#E9ECEF] rounded-r-full">
+                  <div className="w-[100%] h-2 bg-[#E9ECEF] rounded-r-full">
                     <p className="w-[24%] h-2 bg-[#05825F] rounded-l-full"></p>
-                  </p>
+                  </div>
                 </div>
 
                 <div className="flex flex-col space-y-2">
@@ -233,9 +252,9 @@ const DoctorDetails = () => {
                     <p className="text-lg">Ache</p>
                   </div>
 
-                  <p className="w-[100%] h-2 bg-[#E9ECEF] rounded-r-full">
+                  <div className="w-[100%] h-2 bg-[#E9ECEF] rounded-r-full">
                     <p className="w-[91%] h-2 bg-[#3596F7] rounded-l-full"></p>
-                  </p>
+                  </div>
                 </div>
 
                 <div className="flex flex-col space-y-2">
@@ -244,9 +263,9 @@ const DoctorDetails = () => {
                     <p className="text-lg">Hematoma</p>
                   </div>
 
-                  <p className="w-[100%] h-2 bg-[#E9ECEF] rounded-r-full">
+                  <div className="w-[100%] h-2 bg-[#E9ECEF] rounded-r-full">
                     <p className="w-[50%] h-2 bg-[#EE3158] rounded-l-full"></p>
-                  </p>
+                  </div>
                 </div>
 
                 <div className="flex flex-col space-y-2">
@@ -255,9 +274,9 @@ const DoctorDetails = () => {
                     <p className="text-lg">Caries</p>
                   </div>
 
-                  <p className="w-[100%] h-2 bg-[#E9ECEF] rounded-r-full">
+                  <div className="w-[100%] h-2 bg-[#E9ECEF] rounded-r-full">
                     <p className="w-[72%] h-2 bg-[#FFA800] rounded-l-full"></p>
-                  </p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -279,16 +298,16 @@ const DoctorDetails = () => {
                   />
 
                   <div>
-                    <p className="text-xl">Dr. Johen Doe</p>
+                    <p className="text-xl">{nurse.firstname} {nurse.lastname}</p>
                     <div className="flex items-center space-x-1 text-gray-700">
                       <IoMdTime className="w-8 h-8 md:w-4 md:h-4" />
-                      <p>Join on 15 May 2019, 10:00 AM</p>
+                      <p>Date joined: {nurse.joinDate}</p>
                     </div>
                   </div>
                 </div>
                 <div className="w-[90%] md:w-40 h-12 px-2 -mt-[145px] flex items-center space-x-2 justify-center text-lg rounded-[10px] text-white bg-[#0f5032f1]">
                   <FaStethoscope />
-                  <p>ENT Specialist</p>
+                  <p>{nurse.specialization}</p>
                 </div>
               </div>
 
@@ -347,4 +366,4 @@ const DoctorDetails = () => {
   );
 };
 
-export default DoctorDetails;
+export default NurseDetails;

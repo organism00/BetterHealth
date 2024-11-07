@@ -1,46 +1,49 @@
-import React, { useEffect, useState } from "react";
-import SideBar from "../SideBar";
-import Navbar from "../Navbar";
+import React, { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
+import SideBar from "../../SideBar";
+import Navbar from "../../Navbar";
 import axios from "axios";
+import { patientData } from "../../../HospitalDashboard/Patients/PatientData";
+import "../../../../Style/customScrollbar.css";
 
 import { GoHome } from "react-icons/go";
-import { NavLink, useLocation } from "react-router-dom";
-import { nurseList } from "./NurseData";
+import { NavLink } from "react-router-dom";
 import { HiOutlineDotsVertical } from "react-icons/hi";
 import { FaGreaterThan } from "react-icons/fa6";
 import { MdNavigateNext } from "react-icons/md";
 import { GrFormPrevious } from "react-icons/gr";
 import { FaCalendarAlt } from "react-icons/fa";
-import { doctorsList } from "../Doctor/DoctorsData";
-import coverImage from '../../assets/Images/istockphoto-1 (17).jpg'
+import coverImage from '../../../../assets/Images/istockphoto-1 (17).jpg'
 import { IoMdTime } from "react-icons/io";
-import DoctorAbility from "../Doctor/DoctorAbility";
 import { FaStethoscope } from "react-icons/fa";
-import AssignedPatient from "../Doctor/AssignedPatinet";
-import RecentQuestions from "../adminDashboard/RecentQuestions";
-import ReviewList from "../ReviewList";
-import { FaPhone } from "react-icons/fa6";
-import { HiOutlineDotsHorizontal } from "react-icons/hi";
+// import { FaPhone } from "react-icons/fa6";
+// import { HiOutlineDotsHorizontal } from "react-icons/hi";
 
-import "../../Style/customScrollbar.css"
+// Components
+import AssignedPatient from "../../../HospitalDashboard/Doctor/AssignedPatinet";
+import RecentQuestions from "../../../HospitalDashboard/RecentQuestions";
+import ReviewList from "../../../../Components/ReviewList";
+import DoctorAbility from "../../../HospitalDashboard/Doctor/DoctorAbility";
 
-const NurseDetails = () => {
-  const location = useLocation()
-  const [nurseId] = useState(location.state);
-  const [nurse, setNurse] = useState([]);
+const DoctorDetails = () => {
+  const location = useLocation();
+  const doctorId = location.state;
+  console.log(doctorId);
+  const [doctor, setDoctor] = useState({});
 
   useEffect(() => {
-    const fetchNurseData = async () => {
+    const fetchDoctorData = async () => {
       try {
-        const response = await axios.get(`https://hms-w4kw.onrender.com/api/Nurse/GetNurseById/${nurseId}`)
-        // console.log(response.data.data)
-        setNurse(response.data.data)
+        const response = await axios.get(`https://hms-w4kw.onrender.com/api/Doctor/GetDoctorById/${doctorId}`)
+        console.log(response.data.data)
+        setDoctor(response.data.data)
       } catch(error){
-        console.log(error.response.data)
+        console.log(error.response)
       }
     }
-    fetchNurseData()
-  }, [nurseId])
+    fetchDoctorData()
+  }, [doctorId])
+  console.log(doctor);
   return (
     <div className="flex flex-col gap-2 lg:flex-row py-4  md:px-0">
       <SideBar />
@@ -50,10 +53,10 @@ const NurseDetails = () => {
       <div className="mt-16 md:px-6 lg:px-0 h-[200vh] md:w-[80vw]">
         <div className="flex my-10 md:my-8 justify-between">
           <div className="flex gap-x-5 px-4 lg:px-0 md:px-8 md:ml-64 lg:ml-0">
-            <h1 className="text-2xl">Nurse Details</h1>
+            <h1 className="text-2xl">Doctor Details</h1>
             <div className="flex gap-2 items-center">
               <GoHome />
-              <p className="font-thin"> - Nurse Details</p>
+              <p className="font-thin"> - Doctor Details</p>
             </div>
           </div>
         </div>
@@ -75,7 +78,7 @@ const NurseDetails = () => {
 
               <div className="scrollable-div h-[320px] md:h-[260px] mt-4 overflow-auto font-[inter]">
                 <div className="space-y-4">
-                  {nurseList.map((patient, index) => {
+                  {patientData.map((patient, index) => {
                     return (
                       <div
                         key={index}
@@ -88,8 +91,8 @@ const NurseDetails = () => {
                         <div className="w-[70%] px-2 bg-gray-100 flex items-center justify-between rounded-lg">
                           <div className="w-[90%] flex items-center space-x-4">
                             <img
-                              className="w-8 h-8 rounded-full cursor-pointer object-cover"
-                              src={patient.thumb}
+                              className="w-8 h-8 rounded-full cursor-pointer"
+                              src={patient.img}
                               alt={`{patient.name}'s thumbnail`}
                             />
                             <div className=" py-2  rounded-md flex flex-col justify-between ">
@@ -154,10 +157,10 @@ const NurseDetails = () => {
 
               <div className="scrollable-div h-[280px] mt-4 overflow-auto font-[inter]">
                 <div className="space-y-4">
-                  {doctorsList.map((doctor) => {
+                  {/* {doctorsList.map((doctor) => {
                     return (
                       <div
-                        key={doctor.id}
+                        key={doctor.time}
                         className="w-[100%] h-[100%] py-2 px-6 border shadow-sm"
                       >
                         <div className="w-[100%] px-2 flex items-center justify-between">
@@ -194,7 +197,7 @@ const NurseDetails = () => {
                         </div>
                       </div>
                     );
-                  })}
+                  })} */}
                 </div>
               </div>
               <NavLink to={'/doctorappointment'} className="px-6 py-2">
@@ -298,16 +301,16 @@ const NurseDetails = () => {
                   />
 
                   <div>
-                    <p className="text-xl">{nurse.firstname} {nurse.lastname}</p>
+                    <p className="text-xl">{doctor.firstname} {doctor.lastname}</p>
                     <div className="flex items-center space-x-1 text-gray-700">
                       <IoMdTime className="w-8 h-8 md:w-4 md:h-4" />
-                      <p>Date joined: {nurse.joinDate}</p>
+                      <p>Joined on {doctor.joiningDate}</p>
                     </div>
                   </div>
                 </div>
                 <div className="w-[90%] md:w-40 h-12 px-2 -mt-[145px] flex items-center space-x-2 justify-center text-lg rounded-[10px] text-white bg-[#0f5032f1]">
                   <FaStethoscope />
-                  <p>{nurse.specialization}</p>
+                  <p>{doctor.specialization}</p>
                 </div>
               </div>
 
@@ -366,4 +369,4 @@ const NurseDetails = () => {
   );
 };
 
-export default NurseDetails;
+export default DoctorDetails;

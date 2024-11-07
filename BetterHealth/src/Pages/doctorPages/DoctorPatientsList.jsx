@@ -8,16 +8,19 @@ import {
   TableRow,
   Paper,
 } from "@mui/material";
-import { patientData as initialPatientData } from "../Patients/PatientData";
-import Sidebar from "../SideBar";
-import Navbar from "../Navbar";
+import { patientData as initialPatientData } from "./PatientData";
+import { Link, useNavigate } from "react-router-dom";
+import Sidebar from "../../Components/SideBar";
+import Navbar from "../../Components/Navbar";
 
 // Icons
 import { GoHome } from "react-icons/go";
 import { TbArrowsSort } from "react-icons/tb";
 import { HiOutlineDotsHorizontal } from "react-icons/hi";
+import DocSideBar from "../../Components/doctor dashboard/DocSidebar";
 
-function DoctorAppointment() {
+function DoctorPatientsList() {
+  const navigate = useNavigate();
   const [patientPerPage] = useState(5);
   const [currentPage, setCurrentPage] = useState(1);
   const [patients, setPatients] = useState(initialPatientData);
@@ -39,6 +42,14 @@ function DoctorAppointment() {
     setPatients(newPatients);
   };
 
+  const handleEdit = (id) => {
+    navigate("/editpatient", { state: id });
+  };
+
+  const handleView = (id) => {
+    navigate("/patientdetails", { state: id });
+  };
+
   // Edit menu
   const [openEditMenu, setOpenEditMenu] = useState(false);
   const [id, setId] = useState(null);
@@ -50,20 +61,23 @@ function DoctorAppointment() {
 
   return (
     <div className="flex gap-0">
-      <Sidebar />
+      <DocSideBar/>
+      {/* <Sidebar /> */}
 
       <Navbar />
       <div className="mt-20 m-8 w-[100%] ">
         <div className="flex my-10 justify-between">
           <div className="flex gap-x-5 px-5 lg:px-0 md:px-8 md:ml-64 lg:ml-0">
-            <h1 className="text-2xl">Doctor</h1>
+            <h1 className="text-2xl">Patients</h1>
             <div className="flex gap-2 items-center">
-              <GoHome />
-              <p className=""> - All Doctor's Appointment</p>
+              <Link to="/admindashboard">
+                <GoHome />
+              </Link>
+              <p className="font-thin"> - Patients</p>
             </div>
           </div>
           <div className="flex gap-2">
-            <input type="text" placeholder="Search by Doctor's name" className="md:w-[350px] border px-4 rounded" />
+            <input type="text" className="md:w-[350px] border px-4 rounded" />
             <button className="bg-[#5156be] text-white px-4 rounded ">
               Search
             </button>
@@ -77,7 +91,7 @@ function DoctorAppointment() {
                 <TableRow>
                   <TableCell>
                     <div className="flex items-center gap-2 text-[12px] leading-5 font-bold text-primary ">
-                      Doctor <br /> ID <TbArrowsSort />
+                      Patient <br /> ID <TbArrowsSort />
                     </div>
                   </TableCell>
                   <TableCell>
@@ -90,12 +104,12 @@ function DoctorAppointment() {
                   </TableCell>
                   <TableCell>
                     <div className="flex items-center gap-2 text-[12px] leading-5 font-bold text-primary ">
-                      Doctor <br /> Name <TbArrowsSort />
+                      Patient <br /> Name <TbArrowsSort />
                     </div>
                   </TableCell>
                   <TableCell>
                     <div className="flex items-center gap-2 text-[12px] leading-5 font-bold text-primary ">
-                      Patient <br /> Assigned <TbArrowsSort />
+                      Doctor <br /> Assigned <TbArrowsSort />
                     </div>
                   </TableCell>
                   <TableCell>
@@ -160,8 +174,8 @@ function DoctorAppointment() {
 
                         {id === row.id && openEditMenu ? (
                           <div className="shadow-lg px-6 py-4 rounded-lg border absolute right-8 top-4 bg-white text-[14px] text-left grid gap-4 w-[150px] z-50 ">
-                            <p>View</p>
-                            <p>Edit</p>
+                            <p onClick={() => handleView(row.id)}>View</p>
+                            <p onClick={() => handleEdit(row.id)}>Edit</p>
                             <p onClick={() => handleDelete(row.id)}>Delete</p>
                           </div>
                         ) : null}
@@ -231,4 +245,4 @@ function DoctorAppointment() {
   );
 }
 
-export default DoctorAppointment;
+export default DoctorPatientsList;
