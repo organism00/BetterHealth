@@ -72,13 +72,13 @@ function AdminPatientList() {
             <Table>
               <TableHead>
                 <TableRow>
-                  <TableCell><div className='flex items-center gap-2 text-[12px] leading-5 font-bold text-primary '>Patient <br /> ID <TbArrowsSort/></div></TableCell>
+                  <TableCell><div className='flex items-center gap-2 text-[12px] leading-5 font-bold text-primary '>Pin <TbArrowsSort/></div></TableCell>
                   <TableCell><div className='flex items-center gap-2 text-[12px] leading-5 font-bold text-primary '> Date<br />Checked In <TbArrowsSort/></div></TableCell>
-                  <TableCell><div className='flex items-center gap-2 text-[12px] leading-5 font-bold text-primary '>Patient <br /> Name <TbArrowsSort/></div></TableCell>
-                  <TableCell><div className='flex items-center gap-2 text-[12px] leading-5 font-bold text-primary '>Doctor <br /> Assigned <TbArrowsSort/></div></TableCell>
-                  <TableCell><div className='flex items-center gap-2 text-[12px] leading-5 font-bold text-primary '>Disease <TbArrowsSort/></div></TableCell>
-                  <TableCell><div className='flex items-center gap-2 text-[12px] leading-5 font-bold text-primary '>Status <TbArrowsSort/></div></TableCell>
-                  <TableCell><div className='flex items-center gap-2 text-[12px] leading-5 font-bold text-primary '>Room  <br />No <TbArrowsSort/></div></TableCell>
+                  <TableCell><div className='flex items-center gap-2 text-[12px] leading-5 font-bold text-primary '>First <br /> Name <TbArrowsSort/></div></TableCell>
+                  <TableCell><div className='flex items-center gap-2 text-[12px] leading-5 font-bold text-primary '>Last <br /> Name <TbArrowsSort/></div></TableCell>
+                  <TableCell><div className='flex items-center gap-2 text-[12px] leading-5 font-bold text-primary '>Gender <TbArrowsSort/></div></TableCell>
+                  <TableCell><div className='flex items-center gap-2 text-[12px] leading-5 font-bold text-primary '>Address <TbArrowsSort/></div></TableCell>
+                  <TableCell><div className='flex items-center gap-2 text-[12px] leading-5 font-bold text-primary '>Phone  <br />No <TbArrowsSort/></div></TableCell>
                   <TableCell><div className='flex items-center gap-2 text-[12px] leading-5 font-bold text-primary '>Settings <TbArrowsSort/></div></TableCell>
                 </TableRow>
               </TableHead>
