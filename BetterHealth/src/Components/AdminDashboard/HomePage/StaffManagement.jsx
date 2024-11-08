@@ -1,17 +1,10 @@
 import React, { useEffect, useState } from "react";
 import Navbar from "../Navbar";
 import Sidebar from "../Sidebar";
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableContainer,
-  TableHead,
-  TableRow,
-  Paper,
-} from "@mui/material";
+import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper } from "@mui/material";
 import { patientData as initialPatientData } from "../../HospitalDashboard/Patients/PatientData";
 import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
 
 // Icons
 import { GoHome } from "react-icons/go";
@@ -25,9 +18,47 @@ import {AddDoctorModal} from "./AddStaffModal";
 
 const StaffManagement = () => {
   const navigate = useNavigate();
-  const [patientPerPage] = useState(5);
+
+  // Fetch all staff data
+  const [allStaffData, setAllStaffData] = useState([]);
+  
+  console.log(allStaffData);
+  useEffect(() => {
+    const fetchMultipleData = async () => {
+      try {
+        const [doctorRes, nurseRes, pharmacistRes, staffRes] = await Promise.all([
+          axios.get('https://hms-w4kw.onrender.com/api/Doctor/GetDoctors'),
+          axios.get('https://hms-w4kw.onrender.com/api/Nurse/GetAllNurses'),
+          axios.get('https://hms-w4kw.onrender.com/api/Pharmacist/GetPharmacists'),
+          axios.get('https://hms-w4kw.onrender.com/api/Staff/GetAllStaffs')
+        ]);
+
+        setAllStaffData([...doctorRes.data.$values, ...nurseRes.data.data.$values, ...pharmacistRes.data.$values, ...staffRes.data.$values]);
+      } catch (error) {
+          console.error("Error fetching data:", error);
+      }
+    };
+    
+    fetchMultipleData();  
+  }, []);
+
+  // Pagination
+  const [staffPerPage] = useState(5);
   const [currentPage, setCurrentPage] = useState(1);
-  const [patients, setPatients] = useState(initialPatientData);
+  const [allStaff, setAllStaff] = useState(initialPatientData);
+
+  const indexOfLastPatient = currentPage * staffPerPage;
+  const indexOfFirstPatient = indexOfLastPatient - staffPerPage;
+  const currentPatientList = allStaff.slice(
+    indexOfFirstPatient,
+    indexOfLastPatient
+  );
+
+  const pageNumber = [];
+  for (let i = 1; i <= Math.ceil(allStaff.length / staffPerPage); i++) {
+    pageNumber.push(i);
+  }
+
   const [openFrontDeskOfficerModal, setOpenFrontDeskOfficerModal] = useState(false);
   const [openDoctorModal, setOpenDoctorModal] = useState(false);
   const [openNurseModal, setOpenNurseModal] = useState(false);
@@ -54,22 +85,10 @@ const StaffManagement = () => {
     console.log(role)
   }
 
-  const indexOfLastPatient = currentPage * patientPerPage;
-  const indexOfFirstPatient = indexOfLastPatient - patientPerPage;
-  const currentPatientList = patients.slice(
-    indexOfFirstPatient,
-    indexOfLastPatient
-  );
-
-  const pageNumber = [];
-  for (let i = 1; i <= Math.ceil(patients.length / patientPerPage); i++) {
-    pageNumber.push(i);
-  }
-
 
   const handleDelete = (id) => {
-    const newPatients = patients.filter((patient) => patient.id !== id);
-    setPatients(newPatients);
+    const newPatients = allStaff.filter((patient) => patient.id !== id);
+    setAllStaff(newPatients);
   };
 
   const handleEdit = (id) => {
@@ -95,7 +114,7 @@ const StaffManagement = () => {
         <Sidebar />
 
         <Navbar />
-        <section className="w-full lg:w-[78vw] lg:ml-[18vw] z-0 md:pt-20 pb-12 lg:py-16 px-4 lg:px-4">
+        <section className="w-full lg:w-[78vw] lg:ml-[18vw] z-0 md:pt-20 pb-12 lg:py-8 px-4 lg:px-4">
           <div className="mt-20">
             <div className="flex my-10 justify-between">
               <div className="flex gap-x-5 lg:px-0 md:px-8 md:ml-64 lg:ml-0">
@@ -119,7 +138,7 @@ const StaffManagement = () => {
                     onChange={(role) => handleEditModal(role.target.value)}
                     className="border px-4 py-2"
                   >
-                    <option value="Select role" disabled selected>
+                    <option value="Select role" disabled defaultValue>
                       Select Staff Role
                     </option>
                     <option value="Doctor">Doctor</option>
@@ -166,17 +185,20 @@ const StaffManagement = () => {
                 </div>
               </div>
 
-              <div className="cursor-pointer my-6 md:my-10 flex justify-end">
+              <div className="cursor-pointer my-6 md:my-6 flex justify-end">
                 <div className="flex gap-x-4 items-center">
                   <form action="">
                     <select
                       name=""
                       id=""
-                      className="border py-1 px-2 text-[14px]"
+                      className="border py-1 px-2 text-[14px] rounded-md "
                     >
-                      <option value="filter">Filter</option>
-                      <option value="name">Name</option>
-                      <option value="role">Role</option>
+                      <option value="filter" disabled defaultValue>Filter by role</option>
+                      <option value="doctor">Doctor</option>
+                      <option value="nurse">Nurse</option>
+                      <option value="pharmacist">Pharmacist</option>
+                      <option value="labtechnician">Lab Technicians</option>
+                      <option value="frontdeskoficer">Front Desk Officer</option>
                     </select>
                   </form>
                   <div className="text-[20px]">
@@ -296,8 +318,8 @@ const StaffManagement = () => {
               {currentPatientList ? (
                 <div className="bg-[#e4e6ef] text-text px-4 py-4 flex justify-between items-center rounded-b-lg text-[12px] w-[100%] ">
                   <p>
-                    Showing {currentPage} to {patientPerPage} of{" "}
-                    {patients.length} enteries
+                    Showing {currentPage} to {staffPerPage} of{" "}
+                    {allStaff.length} enteries
                   </p>
 
                   <div className="flex gap-4">

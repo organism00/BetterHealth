@@ -30,7 +30,7 @@ function SuperAdminRoute() {
           <Route path="/admin/nurselist" element={<NurseList />} />
           <Route path="/admin/nursedetails" element={<NurseDetails />} />
           <Route path="/admin/newnurse" element={<NewNurse />} />
-          <Route path="/admin/staffManagement" element={<StaffManagement />} />
+          <Route path="/admin/staff-management" element={<StaffManagement />} />
         </Routes>
       </ToastProvider>
     </div>

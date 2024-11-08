@@ -57,7 +57,7 @@ const AddDoctorModal = () => {
   return (
     <>
       <WaitingLoader />
-      <form action="submit" className="bg-white space-y-2">
+      <form action="submit" className="bg-white space-y-2" onSubmit={handleAddDoctor}>
         <div className=" mt-5 h-auto w-[85vw] md:w-[40vw] px-4 md:px-10 md:overflow-x-auto overflow-x-auto rounded-2xl mx-auto">
           <div className="w-[100%] lg:gap-x-12 lg:gap-y-6 flex flex-col gap-y-7 gap-x-2">
             <input
@@ -222,7 +222,7 @@ const AddNurseModal = () => {
   // const navigate = useNavigate();
   const { notifySuccess, notifyError, startWaitingLoader, stopWaitingLoader } = useToast();
 
-  const handleSubmit = async (e) => {
+  const handleAddNurse = async (e) => {
     startWaitingLoader()
     e.preventDefault();
 
@@ -277,7 +277,7 @@ const AddNurseModal = () => {
     return (
       <>
         <WaitingLoader />
-        <form action="submit" className="space-y-2">
+        <form action="submit" className="space-y-2" onSubmit={handleAddNurse}>
           <div className="lg:grid lg:grid-cols-2  lg:gap-x-12 lg:gap-y-6 flex flex-col gap-y-7 md:grid grid-cols-2 gap-x-2">
             <input
               type="text"

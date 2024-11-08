@@ -135,7 +135,7 @@ function Sidebar() {
         </div>
 
         <div className="mt-20">
-          <div className="max-h-[100%] scrollable-div flex flex-col w-[238px] h-screen px-7">
+          <div className="max-h-[100%] scrollable-div flex flex-col w-[238px] lg:w-[190px] xl:w-[238px] h-screen px-7">
             <div className="flex flex-col gap-y-7 mt-8">
               {sections.map((section, index) => (
                 <div key={index}>
