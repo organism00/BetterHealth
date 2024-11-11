@@ -109,8 +109,8 @@ function Sidebar() {
       dropdown: dropdowns.patientManagement,
       toggle: () => toggleDropdown("patientManagement"),
       items: [
-        { label: "In-patient", link: "#" },
-        { label: "Out-Patient", link: "#" },
+        { label: "In-patient", link: "/admin/inPatientsList" },
+        { label: "Out-Patient", link: "hey" },
       ],
     },
   ];
@@ -118,7 +118,7 @@ function Sidebar() {
   return (
     <>
       {/* Sidebar for Large Screens */}
-      <aside className="hidden lg:block w-[18vw] shadow-md fixed top-0 z-50 left-0 pb-6">
+      <aside className="hidden lg:grid lg:grid-cols-[15rem_1fr] w-[18vw] shadow-md fixed top-0 z-50 left-0 pb-6">
         <div className="w-[200px] h-20 fixed gap-2 flex items-center justify-center">
           <div className="flex gap-1">
             <div className="w-14 h-14 rounded-full bg-[#483d8b]">

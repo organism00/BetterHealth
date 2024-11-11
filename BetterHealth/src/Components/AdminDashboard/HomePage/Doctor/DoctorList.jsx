@@ -6,7 +6,7 @@ import { GoHome } from "react-icons/go";
 
 // Components
 import SideBar from "../../Sidebar";
-import Navbar from "../../navbar";
+import Navbar from "../../Navbar";
 // import { RiArrowDropDownLine } from "react-icons/ri";
 
 // Css

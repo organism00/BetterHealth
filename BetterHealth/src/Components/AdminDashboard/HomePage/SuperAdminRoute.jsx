@@ -12,6 +12,7 @@ import NewNurse from './Nurse/NewNurse';
 import SuperAdminDashboard from './SuperAdminDashboard';
 import StaffManagement from './StaffManagement';
 import Index from '../Index';
+import PatientsList from './Patient/PatientsList';
 
 function SuperAdminRoute() {
   return (
@@ -30,7 +31,10 @@ function SuperAdminRoute() {
           <Route path="/admin/nurselist" element={<NurseList />} />
           <Route path="/admin/nursedetails" element={<NurseDetails />} />
           <Route path="/admin/newnurse" element={<NewNurse />} />
-          <Route path="/admin/staff-management" element={<StaffManagement />} />
+
+          <Route path="/admin/inPatientsList" element={<PatientsList />} />
+
+          <Route path="/admin/staffManagement" element={<StaffManagement />} />
         </Routes>
       </ToastProvider>
     </div>

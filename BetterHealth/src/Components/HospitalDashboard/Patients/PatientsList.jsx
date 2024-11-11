@@ -9,6 +9,7 @@ import Navbar from '../../Navbar';
 import { GoHome } from "react-icons/go";
 import { TbArrowsSort } from "react-icons/tb";
 import { HiOutlineDotsHorizontal } from "react-icons/hi";
+import axios from 'axios';
 
 function PatientsList() {
   const navigate = useNavigate()
@@ -24,6 +25,16 @@ function PatientsList() {
   for (let i = 1; i <= Math.ceil(patients.length / patientPerPage); i++) {
     pageNumber.push(i)
   }
+
+  useEffect(() => {
+    try{
+      const res = axios.get('https://hms-w4kw.onrender.com/api/Patient/GetPatients')
+      console.log(res.data)
+      setPatients(res.data)
+    } catch(error){
+      console.log(error.data)
+    }
+  })
 
   const handleDelete = (id) => {
     const newPatients = patients.filter(patient => patient.id !== id)
