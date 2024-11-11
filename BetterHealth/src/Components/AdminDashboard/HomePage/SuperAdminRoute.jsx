@@ -9,6 +9,7 @@ import NewDoctor from './Doctor/NewDoctor';
 import NurseDetails from './Nurse/NurseDetails';
 import NurseList from './Nurse/NurseList';
 import NewNurse from './Nurse/NewNurse';
+import LabRequest from './LabTest/LabRequest';
 
 function SuperAdminRoute() {
   return (
@@ -22,6 +23,8 @@ function SuperAdminRoute() {
           <Route path="/admin/nurselist" element={<NurseList />} />
           <Route path="/admin/nursedetails" element={<NurseDetails />} />
           <Route path="/admin/newnurse" element={<NewNurse />} />
+          <Route path='/admin/labrequest' element={<LabRequest />} />
+
         </Routes>
       </ToastProvider>
     </div>
