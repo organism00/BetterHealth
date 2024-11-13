@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import Slider from "react-slick";
 import hospital1 from "../../assets/images/admin1.webp";
 import hospital3 from "../../assets/images/admin2.webp";
@@ -15,6 +16,7 @@ const Index = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const { notifySuccess, notifyError, startWaitingLoader, stopWaitingLoader } = useToast();
+  const navigate = useNavigate()
 
   const handleLogin = async (e) => {
     startWaitingLoader()
@@ -27,6 +29,7 @@ const Index = () => {
       stopWaitingLoader();
       notifySuccess(res.data.responseMessage);
       localStorage.setItem("userData", JSON.stringify(res.data.data));
+      navigate('/admin/superadmindashboard')
     } catch(error){
       console.log(error);
       stopWaitingLoader();
@@ -54,7 +57,7 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-[whitesmoke] flex overflow-hidden">
-      <WaitingLoader/>
+      {/* <WaitingLoader/> */}
       {/* Left - Image Slider */}
       <div className="hidden lg:block h-screen w-[50vw]">
         <Slider {...sliderSettings}>

@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import NavBar from '../../Navbar';
 import SideBar from '../../SideBar';
-import EditPatient from './EditPatient'
+import NewPatients from './NewPatients'
 import YourStart from '../Patients/YourStart';
 import Map, { Marker } from 'react-map-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
@@ -25,6 +25,7 @@ import { IoIosMan } from "react-icons/io";
 import { TbWaveSawTool } from "react-icons/tb";
 import { GoSidebarExpand } from "react-icons/go";
 import { IoMdCloseCircleOutline } from "react-icons/io";
+import axios from 'axios';
 
 
 const diseaseHistory = [
@@ -51,12 +52,26 @@ const diseaseHistory = [
 ];
 
 function PatientDetails() {
+  const [patientData, setPatientData] = useState({})
   const [selectedStory, setSelectedStory] = useState(diseaseHistory[0].story);
   const [disease, setDisease] = useState(diseaseHistory[0].name);
   const [isMore, setIsMore] = useState(false);
   const [openBookVitalsModal, setOpenBookVitalsModal] = useState(false);
   const [openEmrModal, setOpenEmrModal] = useState(false);
   const [openEditModal, setOpenEditModal] = useState(false);
+
+  const location = useLocation();
+  const id = location.state
+  console.log(id)
+  useEffect(() => {
+    try{
+      const res = axios.get(`https://hms-w4kw.onrender.com/api/Patient/GetPatientById/${id}`)
+      console.log(res.data)
+      setPatientData(res.data)
+    } catch(error){
+      console.log(error)
+    }
+  })
 
   const handleBookVitalsModal = () => {
     setOpenBookVitalsModal(true)
@@ -75,8 +90,6 @@ function PatientDetails() {
     width: '100%',
     height: '100%'
   });
-  const location = useLocation();
-  console.log(location.state)
 
   // Function to handle clicking on a disease history item
   const handleDiseaseClick = (story, name) => {
@@ -355,7 +368,7 @@ function PatientDetails() {
       {/* Modal for edit */}
       {openEditModal && (
         <div className='absolute w-[100%] flex items-center justify-center z-50 bg-[#00000066] '>
-          <EditPatient/>
+          <NewPatients/>
           <button className='bg-primary rounded-xl text-white p-2 text-[30px] shadow-lg absolute right-4 top-4 '
               onClick={() => setOpenEditModal(false)}
             ><IoMdCloseCircleOutline/></button>

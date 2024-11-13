@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import SideBar from "../../Sidebar";
+import SideBar from "../../sidebar";
 import Navbar from "../../Navbar";
 // import { nurseList } from './NurseData';
 import { GoHome } from "react-icons/go";
@@ -34,7 +34,7 @@ const NurseList = () => {
             <div className="flex gap-x-5 px-5 lg:px-0 md:px-8 md:ml-64 lg:ml-0">
               <h1 className="text-2xl">Nurse</h1>
               <div className="flex gap-2 items-center">
-                <Link to="/admindashboard">
+                <Link to="/admin/superadmindashboard">
                   <GoHome />
                 </Link>
                 <p className="font-thin"> - Nurse</p>

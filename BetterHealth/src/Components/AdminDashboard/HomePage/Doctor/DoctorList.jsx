@@ -5,8 +5,8 @@ import { NavLink, Link, useNavigate } from "react-router-dom";
 import { GoHome } from "react-icons/go";
 
 // Components
-import SideBar from "../../Sidebar";
-import Navbar from "../../navbar";
+import SideBar from "../../sidebar";
+import Navbar from "../../Navbar";
 // import { RiArrowDropDownLine } from "react-icons/ri";
 
 // Css
@@ -58,11 +58,11 @@ function DoctorList() {
     setId(item);
   };
   return (
-    <div className="flex flex-col gap-2 lg:flex-row py-4 md:px-0 ">
+    <div className="flex ">
       <SideBar />
-      <Navbar />
-      <div className="flex justify-center w-[100%] ">
-        <section className="mt-28 lg:mx-10 my-10 grid justify-center ">
+      <div className="w-full">
+        <Navbar />
+        <section className="grid lg:mx-10 m-4 ">
           <div className="flex justify-between">
             <div className="flex gap-x-5 px-5 lg:px-0 md:px-8 md:ml-64 lg:ml-0">
               <h1 className="text-2xl">Doctors</h1>
