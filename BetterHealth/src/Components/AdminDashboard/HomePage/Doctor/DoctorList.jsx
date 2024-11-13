@@ -5,7 +5,7 @@ import { NavLink, Link, useNavigate } from "react-router-dom";
 import { GoHome } from "react-icons/go";
 
 // Components
-import SideBar from "../../Sidebar";
+import SideBar from "../../sidebar";
 import Navbar from "../../Navbar";
 // import { RiArrowDropDownLine } from "react-icons/ri";
 

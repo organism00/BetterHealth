@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
-import Navbar from './Navbar'
-import SideBar from './SideBar'
+// import Navbar from "../Navbar";
+// import Sidebar from "../Sidebar";
+import Sidebar from '../../sidebar';
+import Navbar from '../../Navbar';
 import { Table, TableBody, TableCell,  TableContainer, TableHead, TableRow, Paper } from '@mui/material';
 import { IoIosCall } from "react-icons/io";
 import { AiTwotoneMail } from "react-icons/ai";
@@ -22,7 +24,7 @@ const report = [
   
 
 ]
-const LabReport = () => {
+const LabTest = () => {
   const [openResultModal, setOpenResultModal] = useState(false)
   const [openDetailsModal, setOpenDetailsModal] = useState(false)
 
@@ -38,9 +40,11 @@ const LabReport = () => {
     return (
       <>
         <div className="lg:grid lg:grid-cols-[16rem_1fr] z-0">
-          <SideBar />
+          <Sidebar />
           <main className="col-start-2 h-full w-full md:w-[70%] lg:w-full mt-40 lg:mt-0 md:mt-0">
-            <Navbar />
+            <div className='lg:ml-[-16.5vw]'>
+                <Navbar/>
+            </div>
   
             <div className="mt-24 w-full h-full lg:w-full lg:ml-0 md:ml-72 lg:pl-12 lg:pr-5 px-5">
               <div className="flex gap-5">
@@ -263,4 +267,4 @@ const LabReport = () => {
       </>
       );
 }
-export default LabReport
+export default LabTest

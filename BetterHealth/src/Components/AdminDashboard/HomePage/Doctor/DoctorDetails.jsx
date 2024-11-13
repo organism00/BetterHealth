@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
-import SideBar from "../../Sidebar";
+import SideBar from "../../sidebar";
 import Navbar from "../../Navbar";
 import axios from "axios";
 import { patientData } from "../../../HospitalDashboard/Patients/PatientData";

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import SideBar from "../../Sidebar";
+import SideBar from "../../sidebar";
 import Navbar from "../../Navbar";
 // import { nurseList } from './NurseData';
 import { GoHome } from "react-icons/go";

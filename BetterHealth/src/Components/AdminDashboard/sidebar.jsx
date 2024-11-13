@@ -61,7 +61,7 @@ function Sidebar() {
       toggle: () => toggleDropdown("labTest"),
       items: [
         { label: "Request", link: "#" },
-        { label: "Report", link: "#" },
+        { label: "Report", link: "/admin/labreport" },
       ],
     },
     {

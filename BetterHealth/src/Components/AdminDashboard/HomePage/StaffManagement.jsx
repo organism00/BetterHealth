@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Navbar from "../Navbar";
-import Sidebar from "../Sidebar";
+import Sidebar from "../sidebar";
 import {
   Table,
   TableBody,
@@ -97,7 +97,8 @@ const StaffManagement = () => {
     setStaffDataToDisplay(filteredResult);
   };
 
-  const [openFrontDeskOfficerModal, setOpenFrontDeskOfficerModal] = useState(false);
+  const [openFrontDeskOfficerModal, setOpenFrontDeskOfficerModal] =
+    useState(false);
   const [openDoctorModal, setOpenDoctorModal] = useState(false);
   const [openNurseModal, setOpenNurseModal] = useState(false);
   const [openLabTechniciansModal, setOpenLabTechniciansModal] = useState(false);
@@ -180,12 +181,16 @@ const StaffManagement = () => {
                     onChange={(role) => handleEditModal(role.target.value)}
                     className="border px-4 py-2"
                   >
-                    <option value="Select role" disabled selected>Select Staff Role</option>
+                    <option value="Select role" disabled selected>
+                      Select Staff Role
+                    </option>
                     <option value="Doctor">Doctor</option>
                     <option value="Nurse">Nurse</option>
                     <option value="Pharmacist">Pharmacist</option>
                     <option value="Lab technician">Lab Technicians</option>
-                    <option value="Front desk officer">Front Desk Officer</option>
+                    <option value="Front desk officer">
+                      Front Desk Officer
+                    </option>
                   </select>
                 </div>
 
@@ -344,122 +349,162 @@ const StaffManagement = () => {
                     </TableRow>
                   </TableHead>
                   <TableBody>
-                    { staffDataToDisplay.length > 0 ?
-                      staffDataToDisplay.map((staff) => (
-                        <TableRow key={staff.username} className="">
-                          <TableCell>
-                            <div className="text-[12px]">{staff.username}</div>
-                          </TableCell>
-                          <TableCell>
-                            <div className="text-[12px]">
-                              {staff.firstname} {staff.lastname}
-                            </div>
-                          </TableCell>
-                          <TableCell>
-                            <div className="text-[12px]">
-                              {staff.specialization}
-                            </div>
-                          </TableCell>
-                          <TableCell>
-                            <div className="text-[12px]">{staff.department}</div>
-                          </TableCell>
-                          <TableCell>
-                            <div className="text-[12px]">
-                              {staff.maritalStatus}
-                            </div>
-                          </TableCell>
-                          <TableCell>
-                            <div className="text-[12px]">{staff.phoneNo}</div>
-                          </TableCell>
-                          <TableCell>
-                            <div className="text-[12px]">
-                              {staff.joinDate
-                                ? formatDate(staff.joinDate)
-                                : staff.joiningDate
-                                ? formatDate(staff.joiningDate)
-                                : ""}
-                            </div>
-                          </TableCell>
-                          <TableCell style={{ display: "flex", gap: 5 }}>
-                            <div
-                              variant="contained"
-                              style={{ minWidth: "unset" }}
-                              className="flex items-center justify-center cursor-pointer rounded-full w-[30px] h-[30px] relative "
-                            >
-                              <HiOutlineDotsHorizontal
-                                className="text-[25px] text-[#7e8299] cursor-pointer "
-                                onClick={() => toggleEditMenu(staff.username, staff.doctorId)}
-                              />
-  
-                              {username === staff.username && openEditMenu ? (
-                                <div className="shadow-lg px-6 py-4 rounded-lg border absolute right-8 top-4 bg-white text-[14px] text-left grid gap-4 w-[150px] z-50 ">
-                                  <p onClick={() => handleView(staff.id, staff.specialization)}>View</p>
-                                  <p onClick={() => handleEdit(staff.id, staff.specialization)}>Edit</p>
-                                  <p>Delete</p>
-                                </div>
-                              ) : null}
-                            </div>
-                          </TableCell>
-                        </TableRow>
-                      )): allStaffData.length > 0 ?
-                      allStaffData.map((staff) => (
-                        <TableRow key={staff.username} className="">
-                          <TableCell>
-                            <div className="text-[12px]">{staff.username}</div>
-                          </TableCell>
-                          <TableCell>
-                            <div className="text-[12px]">
-                              {staff.firstname} {staff.lastname}
-                            </div>
-                          </TableCell>
-                          <TableCell>
-                            <div className="text-[12px]">
-                              {staff.specialization}
-                            </div>
-                          </TableCell>
-                          <TableCell>
-                            <div className="text-[12px]">{staff.department}</div>
-                          </TableCell>
-                          <TableCell>
-                            <div className="text-[12px]">
-                              {staff.maritalStatus}
-                            </div>
-                          </TableCell>
-                          <TableCell>
-                            <div className="text-[12px]">{staff.phoneNo}</div>
-                          </TableCell>
-                          <TableCell>
-                            <div className="text-[12px]">
-                              {staff.joinDate
-                                ? formatDate(staff.joinDate)
-                                : staff.joiningDate
-                                ? formatDate(staff.joiningDate)
-                                : ""}
-                            </div>
-                          </TableCell>
-                          <TableCell style={{ display: "flex", gap: 5 }}>
-                            <div
-                              variant="contained"
-                              style={{ minWidth: "unset" }}
-                              className="flex items-center justify-center cursor-pointer rounded-full w-[30px] h-[30px] relative "
-                            >
-                              <HiOutlineDotsHorizontal
-                                className="text-[25px] text-[#7e8299] cursor-pointer "
-                                onClick={() => toggleEditMenu(staff.username)}
-                              />
-                              
-                              {username === staff.username && openEditMenu ? (
-                                <div className="shadow-lg px-6 py-4 rounded-lg border absolute right-8 top-4 bg-white text-[14px] text-left grid gap-4 w-[150px] z-50 ">
-                                  <p onClick={() => handleView(staff.username)}>View</p>
-                                  <p onClick={() => handleEdit(staff.username)}>Edit</p>
-                                  <p>Delete</p>
-                                </div>
-                              ) : null}
-                            </div>
-                          </TableCell>
-                        </TableRow>
-                      )) : null
-                    }
+                    {staffDataToDisplay.length > 0
+                      ? staffDataToDisplay.map((staff) => (
+                          <TableRow key={staff.username} className="">
+                            <TableCell>
+                              <div className="text-[12px]">
+                                {staff.username}
+                              </div>
+                            </TableCell>
+                            <TableCell>
+                              <div className="text-[12px]">
+                                {staff.firstname} {staff.lastname}
+                              </div>
+                            </TableCell>
+                            <TableCell>
+                              <div className="text-[12px]">
+                                {staff.specialization}
+                              </div>
+                            </TableCell>
+                            <TableCell>
+                              <div className="text-[12px]">
+                                {staff.department}
+                              </div>
+                            </TableCell>
+                            <TableCell>
+                              <div className="text-[12px]">
+                                {staff.maritalStatus}
+                              </div>
+                            </TableCell>
+                            <TableCell>
+                              <div className="text-[12px]">{staff.phoneNo}</div>
+                            </TableCell>
+                            <TableCell>
+                              <div className="text-[12px]">
+                                {staff.joinDate
+                                  ? formatDate(staff.joinDate)
+                                  : staff.joiningDate
+                                  ? formatDate(staff.joiningDate)
+                                  : ""}
+                              </div>
+                            </TableCell>
+                            <TableCell style={{ display: "flex", gap: 5 }}>
+                              <div
+                                variant="contained"
+                                style={{ minWidth: "unset" }}
+                                className="flex items-center justify-center cursor-pointer rounded-full w-[30px] h-[30px] relative "
+                              >
+                                <HiOutlineDotsHorizontal
+                                  className="text-[25px] text-[#7e8299] cursor-pointer "
+                                  onClick={() =>
+                                    toggleEditMenu(
+                                      staff.username,
+                                      staff.doctorId
+                                    )
+                                  }
+                                />
+
+                                {username === staff.username && openEditMenu ? (
+                                  <div className="shadow-lg px-6 py-4 rounded-lg border absolute right-8 top-4 bg-white text-[14px] text-left grid gap-4 w-[150px] z-50 ">
+                                    <p
+                                      onClick={() =>
+                                        handleView(
+                                          staff.id,
+                                          staff.specialization
+                                        )
+                                      }
+                                    >
+                                      View
+                                    </p>
+                                    <p
+                                      onClick={() =>
+                                        handleEdit(
+                                          staff.id,
+                                          staff.specialization
+                                        )
+                                      }
+                                    >
+                                      Edit
+                                    </p>
+                                    <p>Delete</p>
+                                  </div>
+                                ) : null}
+                              </div>
+                            </TableCell>
+                          </TableRow>
+                        ))
+                      : allStaffData.length > 0
+                      ? allStaffData.map((staff) => (
+                          <TableRow key={staff.username} className="">
+                            <TableCell>
+                              <div className="text-[12px]">
+                                {staff.username}
+                              </div>
+                            </TableCell>
+                            <TableCell>
+                              <div className="text-[12px]">
+                                {staff.firstname} {staff.lastname}
+                              </div>
+                            </TableCell>
+                            <TableCell>
+                              <div className="text-[12px]">
+                                {staff.specialization}
+                              </div>
+                            </TableCell>
+                            <TableCell>
+                              <div className="text-[12px]">
+                                {staff.department}
+                              </div>
+                            </TableCell>
+                            <TableCell>
+                              <div className="text-[12px]">
+                                {staff.maritalStatus}
+                              </div>
+                            </TableCell>
+                            <TableCell>
+                              <div className="text-[12px]">{staff.phoneNo}</div>
+                            </TableCell>
+                            <TableCell>
+                              <div className="text-[12px]">
+                                {staff.joinDate
+                                  ? formatDate(staff.joinDate)
+                                  : staff.joiningDate
+                                  ? formatDate(staff.joiningDate)
+                                  : ""}
+                              </div>
+                            </TableCell>
+                            <TableCell style={{ display: "flex", gap: 5 }}>
+                              <div
+                                variant="contained"
+                                style={{ minWidth: "unset" }}
+                                className="flex items-center justify-center cursor-pointer rounded-full w-[30px] h-[30px] relative "
+                              >
+                                <HiOutlineDotsHorizontal
+                                  className="text-[25px] text-[#7e8299] cursor-pointer "
+                                  onClick={() => toggleEditMenu(staff.username)}
+                                />
+
+                                {username === staff.username && openEditMenu ? (
+                                  <div className="shadow-lg px-6 py-4 rounded-lg border absolute right-8 top-4 bg-white text-[14px] text-left grid gap-4 w-[150px] z-50 ">
+                                    <p
+                                      onClick={() => handleView(staff.username)}
+                                    >
+                                      View
+                                    </p>
+                                    <p
+                                      onClick={() => handleEdit(staff.username)}
+                                    >
+                                      Edit
+                                    </p>
+                                    <p>Delete</p>
+                                  </div>
+                                ) : null}
+                              </div>
+                            </TableCell>
+                          </TableRow>
+                        ))
+                      : null}
                   </TableBody>
                 </Table>
               </TableContainer>

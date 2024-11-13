@@ -14,6 +14,7 @@ import StaffManagement from './StaffManagement';
 import Index from '../Index';
 import PatientsList from './Patient/PatientsList';
 import PatientDetails from './Patient/PatientDetails';
+import LabTest from './Lab/LabTest';
 
 function SuperAdminRoute() {
   return (
@@ -32,7 +33,7 @@ function SuperAdminRoute() {
           <Route path="/admin/nurselist" element={<NurseList />} />
           <Route path="/admin/nursedetails" element={<NurseDetails />} />
           <Route path="/admin/newnurse" element={<NewNurse />} />
-
+          <Route path='/admin/labreport' element={<LabTest/>}/>
           <Route path="/admin/inPatientsList" element={<PatientsList />} />
           <Route path="/admin/patientdetails" element={<PatientDetails />} />
 
