@@ -1,6 +1,5 @@
-import React, { useState } from 'react'
-// import Navbar from "../Navbar";
-// import Sidebar from "../Sidebar";
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import Sidebar from '../../sidebar';
 import Navbar from '../../Navbar';
 import { Table, TableBody, TableCell,  TableContainer, TableHead, TableRow, Paper } from '@mui/material';
@@ -27,6 +26,21 @@ const report = [
 const LabTest = () => {
   const [openResultModal, setOpenResultModal] = useState(false)
   const [openDetailsModal, setOpenDetailsModal] = useState(false)
+  const [labTest, setLabTest] = useState([])
+
+  useEffect(() => {
+    const fetchLabTest = async () => {
+      try {
+        const res = await axios.get('https://hms-w4kw.onrender.com/api/LabTest')
+        console.log(res.data.$values)
+        setLabTest(res.data.$values)
+      } catch (error) {
+        console.error('Error fetching lab test data:', error)
+      }
+    }
+
+    fetchLabTest()
+  }, [])
 
 
   const handleDetailsModal = () => {
@@ -64,13 +78,28 @@ const LabTest = () => {
                         <TableCell>Lab</TableCell>
                         <TableCell>Cost</TableCell>
                         <TableCell>Handling</TableCell>
-                        <TableCell>Coll. by</TableCell>
                         <TableCell>Status</TableCell>
+                        <TableCell>Result</TableCell>
                         <TableCell>Details</TableCell>
                       </TableRow>
                     </TableHead>
                     <TableBody>
-                      {labreport.map((row) => (
+                      {labTest.length > 0 ? labTest.map((row) => (
+                        <TableRow key={row.patientId}>
+                        <TableCell style={{ fontSize: '12px' }}>{row.labTestId}</TableCell>
+                        <TableCell style={{ fontSize: '12px' }}>{row.patient_name}</TableCell>
+                        <TableCell style={{ fontSize: '12px' }}>{row.pin}</TableCell>
+                        <TableCell style={{ fontSize: '12px' }}>{row.test}</TableCell>
+                        <TableCell style={{ fontSize: '12px' }}>{row.lab}</TableCell>
+                        <TableCell style={{ fontSize: '12px' }}>{row.handling}</TableCell>
+                        <TableCell style={{ fontSize: '12px' }}>{row.coll_by}</TableCell>
+                        <TableCell style={{ fontSize: '12px' }}><p className='bg-[#4da089] flex items-center justify-center py-1 rounded text-white'>{row.status}</p></TableCell>
+                        <TableCell style={{ fontSize: '12px' }}><p className='text-[#3596F7] cursor-pointer' onClick={handleResultModal}>{row.result}</p></TableCell>
+                        <TableCell style={{ fontSize: '12px' }}><p className='bg-[#ab5f78] flex items-center justify-center py-1 rounded text-white cursor-pointer'
+                          onClick={handleDetailsModal}>{row.details}</p></TableCell>
+                        </TableRow>
+                      )):
+                      labreport.map((row) => (
                         <TableRow key={row.no}>
                           <TableCell style={{ fontSize: '12px' }}>{row.no}</TableCell>
                           <TableCell style={{ fontSize: '12px' }}>{row.patient_name}</TableCell>
@@ -85,6 +114,7 @@ const LabTest = () => {
                             onClick={handleDetailsModal}>{row.details}</p></TableCell>
                         </TableRow>
                       ))}
+                      
                     </TableBody>
                   </Table>
                 </TableContainer>
