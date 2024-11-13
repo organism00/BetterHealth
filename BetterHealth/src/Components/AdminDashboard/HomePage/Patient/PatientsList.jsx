@@ -4,6 +4,8 @@ import { patientData as initialPatientData } from './PatientData';
 import { Link, useNavigate } from 'react-router-dom';
 import Sidebar from '../../Sidebar'
 import Navbar from '../../Navbar';
+import { useToast } from '../../../Loaders/ToastContext';
+import WaitingLoader from '../../../Loaders/WaitingLoader';
 
 // Icons
 import { GoHome } from "react-icons/go";
@@ -13,9 +15,11 @@ import axios from 'axios';
 
 function PatientsList() {
   const navigate = useNavigate()
+  const {startWaitingLoader, stopWaitingLoader} = useToast()
   const [patientPerPage] = useState(5)
   const [currentPage, setCurrentPage] = useState(1);
   const [patients, setPatients] = useState(initialPatientData);
+  const [patientsListFromApi, setPatientsListFromApi] = useState([])
   
   const indexOfLastPatient = currentPage * patientPerPage
   const indexOfFirstPatient = indexOfLastPatient - patientPerPage
@@ -28,12 +32,15 @@ function PatientsList() {
 
   useEffect(() => {
     const fetchPatient = async () => {
+      startWaitingLoader()
       try {
         const res = await axios.get('https://hms-w4kw.onrender.com/api/Patient/GetPatients')
-        console.log(res.data)
-        // setPatients(res.data)
+        console.log(res.data.$values)
+        setPatientsListFromApi(res.data.$values)
+        stopWaitingLoader()
       } catch (error) {
         console.log(error.data)
+        stopWaitingLoader()
       }
     }
     fetchPatient()
@@ -49,7 +56,7 @@ function PatientsList() {
   }
 
   const handleView = (id) => {
-    navigate('/patientdetails', {state: id})
+    navigate('/admin/patientdetails', {state: id})
   }
 
   // Edit menu
@@ -86,18 +93,46 @@ function PatientsList() {
               <Table>
                 <TableHead>
                   <TableRow>
-                    <TableCell><div className='flex items-center gap-2 text-[12px] leading-5 font-bold text-primary '>Patient <br /> ID <TbArrowsSort/></div></TableCell>
-                    <TableCell><div className='flex items-center gap-2 text-[12px] leading-5 font-bold text-primary '> Date<br />Checked In <TbArrowsSort/></div></TableCell>
-                    <TableCell><div className='flex items-center gap-2 text-[12px] leading-5 font-bold text-primary '>Patient <br /> Name <TbArrowsSort/></div></TableCell>
-                    <TableCell><div className='flex items-center gap-2 text-[12px] leading-5 font-bold text-primary '>Doctor <br /> Assigned <TbArrowsSort/></div></TableCell>
-                    <TableCell><div className='flex items-center gap-2 text-[12px] leading-5 font-bold text-primary '>Disease <TbArrowsSort/></div></TableCell>
-                    <TableCell><div className='flex items-center gap-2 text-[12px] leading-5 font-bold text-primary '>Status <TbArrowsSort/></div></TableCell>
-                    <TableCell><div className='flex items-center gap-2 text-[12px] leading-5 font-bold text-primary '>Room  <br />No <TbArrowsSort/></div></TableCell>
-                    <TableCell><div className='flex items-center gap-2 text-[12px] leading-5 font-bold text-primary '>Settings <TbArrowsSort/></div></TableCell>
+                    <TableCell><div className='flex items-center gap-2 text-[12px] leading-5 font-bold text-primary '>Patient <br /> ID </div></TableCell>
+                    <TableCell><div className='flex items-center gap-2 text-[12px] leading-5 font-bold text-primary '> Date<br />Checked In </div></TableCell>
+                    <TableCell><div className='flex items-center gap-2 text-[12px] leading-5 font-bold text-primary '>Patient <br /> Name </div></TableCell>
+                    <TableCell><div className='flex items-center gap-2 text-[12px] leading-5 font-bold text-primary '>Gender </div></TableCell>
+                    <TableCell><div className='flex items-center gap-2 text-[12px] leading-5 font-bold text-primary '>Medical <br />Condition </div></TableCell>
+                    <TableCell><div className='flex items-center gap-2 text-[12px] leading-5 font-bold text-primary '>Contact </div></TableCell>
+                    <TableCell><div className='flex items-center gap-2 text-[12px] leading-5 font-bold text-primary '>Address</div></TableCell>
+                    <TableCell><div className='flex items-center gap-2 text-[12px] leading-5 font-bold text-primary '>Settings </div></TableCell>
                   </TableRow>
                 </TableHead>
                 <TableBody>
-                  {currentPatientList.map((row) => (
+                  {patientsListFromApi.length > 0 ? patientsListFromApi.map((row) => (
+                    <TableRow key={row.$id} className=''>
+                      <TableCell><div className='text-[12px]'>{row.$id}</div></TableCell>
+                      <TableCell><div className='text-[12px]'>{row.registerDate}</div></TableCell>
+                      <TableCell><div className='text-[12px]'>{row.firstname} {row.lastname}</div></TableCell>
+                      <TableCell><div className='text-[12px]'>{row.gender}</div></TableCell>
+                      <TableCell><div className='text-[12px]'>{row.medicalCondition}</div></TableCell>
+                      <TableCell><div className='text-[12px]'>{row.contactNumber}</div></TableCell>
+                      <TableCell><div className='text-[12px]'>{row.address}</div></TableCell>
+                      <TableCell style={{display: 'flex', gap: 5}} >
+                        <div
+                          variant="contained"
+                          style={{ minWidth: 'unset' }}
+                          className='flex items-center justify-center cursor-pointer rounded-full w-[30px] h-[30px] relative '>
+                          <HiOutlineDotsHorizontal
+                            className="text-[25px] text-[#7e8299] cursor-pointer "
+                            onClick={() => toggleEditMenu(row.patientId)}
+                          />
+                          {id === row.patientId && openEditMenu ? (
+                            <div className="shadow-lg px-6 py-4 rounded-lg border absolute right-8 top-4 bg-white text-[14px] text-left grid gap-4 w-[150px] z-50 ">
+                              <p onClick={() => handleView(row.patientId) }>View</p>
+                              <p onClick={() => handleEdit(row.patientId)}>Edit</p>
+                              <p onClick={() => handleDelete(row.patientId)}>Delete</p>
+                            </div>
+                          ) : null}
+                        </div>
+                      </TableCell>
+                    </TableRow>
+                  )) : currentPatientList.map((row) => (
                     <TableRow key={row.id} className=''>
                       <TableCell><div className='text-[12px]'>{row.id}</div></TableCell>
                       <TableCell><div className='text-[12px]'>{row.dateCheckedIn} {row.time}</div></TableCell>

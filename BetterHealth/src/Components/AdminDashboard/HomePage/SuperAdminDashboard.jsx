@@ -1,4 +1,5 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
+import axios from "axios";
 import Navbar from "../Navbar";
 import Sidebar from "../Sidebar";
 // Images
@@ -20,6 +21,21 @@ import RecentQuestions from "../../HospitalDashboard/RecentQuestions";
 
 
 const SuperAdminDashboard = () => {
+  const [allPatientData, setAllPatientData] = useState([]);
+
+  useEffect(() => {
+    const fetchPatient = async () => {
+      try {
+        const res = await axios.get("https://hms-w4kw.onrender.com/api/Patient/GetPatients");
+        console.log(res.data.$values);
+        // setAllPatientData(res.data);
+      } catch (error) {
+        console.log(error);
+      }
+    }
+
+    fetchPatient();
+  })
   return (
     <>
       <div className="lg:flex">

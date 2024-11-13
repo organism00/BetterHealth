@@ -11,7 +11,7 @@ import PatientsList from "./Components/HospitalDashboard/Patients/PatientsList";
 import DoctorList from "./Components/HospitalDashboard/Doctor/DoctorList";
 import DoctorAppointment from "./Components/HospitalDashboard/Doctor/DoctorsAppontment";
 import NurseList from "./Components/HospitalDashboard/Nurse/NurseList";
-import NewPatients from "./Pages/NewPatient";
+import OnboardPatient from "./Components/HospitalDashboard/Patients/OnboardPatient";
 import NewDoctor from "./Components/AdminDashboard/HomePage/Doctor/NewDoctor";
 import NewNurse from "./Components/AdminDashboard/HomePage/Nurse/NewNurse";
 import PatientDetails from "./Components/HospitalDashboard/Patients/PatientDetails";
@@ -41,7 +41,7 @@ const App = () => {
           <Route path="/staff" element={<Staff />} />
 
           <Route path="/doctorappointment" element={<DoctorAppointment />} />
-          <Route path={"/newpatient"} element={<NewPatients/>}></Route>
+          <Route path={"/newpatient"} element={<OnboardPatient/>}></Route>
           <Route path={"newdoctor"} element={<NewDoctor/>}></Route>
           <Route path={"newnurse"} element={<NewNurse/>}></Route>
           <Route path="/admindashboard" element={<AdminDashboard />} />

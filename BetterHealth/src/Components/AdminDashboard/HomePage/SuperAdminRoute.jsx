@@ -13,6 +13,7 @@ import SuperAdminDashboard from './SuperAdminDashboard';
 import StaffManagement from './StaffManagement';
 import Index from '../Index';
 import PatientsList from './Patient/PatientsList';
+import PatientDetails from './Patient/PatientDetails';
 
 function SuperAdminRoute() {
   return (
@@ -33,6 +34,7 @@ function SuperAdminRoute() {
           <Route path="/admin/newnurse" element={<NewNurse />} />
 
           <Route path="/admin/inPatientsList" element={<PatientsList />} />
+          <Route path="/admin/patientdetails" element={<PatientDetails />} />
 
           <Route path="/admin/staffManagement" element={<StaffManagement />} />
         </Routes>

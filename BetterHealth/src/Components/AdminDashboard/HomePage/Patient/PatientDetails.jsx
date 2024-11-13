@@ -1,16 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import axios from 'axios';
 import NavBar from '../../Navbar';
 import SideBar from '../../SideBar';
 import NewPatients from './NewPatients'
-import YourStart from '../Patients/YourStart';
+import YourStart from './YourStart';
 import Map, { Marker } from 'react-map-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 
 // Images
-import proimage from '../../../assets/Images/first.png';
-import bgImage from '../../../assets/Images/bgImage.avif';
-import patient from '../../../assets/Images/patient.jpeg';
+import proimage from '../../../../assets/Images/first.png';
+import bgImage from '../../../../assets/Images/bgImage.avif';
+import patient from '../../../../assets/Images/patient.jpeg';
 
 // Icons
 import { GoHome } from "react-icons/go";
@@ -25,7 +26,8 @@ import { IoIosMan } from "react-icons/io";
 import { TbWaveSawTool } from "react-icons/tb";
 import { GoSidebarExpand } from "react-icons/go";
 import { IoMdCloseCircleOutline } from "react-icons/io";
-import axios from 'axios';
+import { IoShieldHalfSharp } from "react-icons/io5";
+import CheckInsurance from './CheckInsurance';
 
 
 const diseaseHistory = [
@@ -59,19 +61,24 @@ function PatientDetails() {
   const [openBookVitalsModal, setOpenBookVitalsModal] = useState(false);
   const [openEmrModal, setOpenEmrModal] = useState(false);
   const [openEditModal, setOpenEditModal] = useState(false);
+  const [openInsuranceModal, setOpenInsuranceModal] = useState(false);
 
   const location = useLocation();
   const id = location.state
   console.log(id)
+
   useEffect(() => {
-    try{
-      const res = axios.get(`https://hms-w4kw.onrender.com/api/Patient/GetPatientById/${id}`)
-      console.log(res.data)
-      setPatientData(res.data)
-    } catch(error){
-      console.log(error)
+    const fetchPatientData = async () => {
+      try{
+        const res = await axios.get(`https://hms-w4kw.onrender.com/api/Patient/GetPatientById/${id}`)
+        console.log(res.data.data)
+        setPatientData(res.data.data)
+      } catch(error){
+        console.log(error)
+      }
     }
-  })
+    fetchPatientData()
+  }, [id])
 
   const handleBookVitalsModal = () => {
     setOpenBookVitalsModal(true)
@@ -81,6 +88,9 @@ function PatientDetails() {
   }
   const handleEditModal = () => {
     setOpenEditModal(true)
+  }
+  const handleInsuranceModal = () => {
+    setOpenInsuranceModal(true)
   }
 
   const [viewport, setViewport] = useState({
@@ -96,6 +106,48 @@ function PatientDetails() {
     setSelectedStory(story);
     setDisease(name)
   };
+
+  // function formatDate(dateString) {
+  //   const date = new Date(dateString);
+  //   const months = [
+  //     "January", "February", "March", "April", "May", "June",
+  //     "July", "August", "September", "October", "November", "December"
+  //   ];
+  //   const day = date.getDate();
+  //   const month = months[date.getMonth()];
+  //   const year = date.getFullYear();
+  //   const getOrdinalSuffix = (day) => {
+  //     if (day > 3 && day < 21) return "th";
+  //     switch (day % 10) {
+  //       case 1: return "st";
+  //       case 2: return "nd";
+  //       case 3: return "rd";
+  //       default: return "th";
+  //     }
+  //   };
+  
+  //   return `${day}${getOrdinalSuffix(day)} ${month} ${year}`;
+  // }
+
+  function formatDate(dateString) {
+    const date = new Date(dateString);
+  
+    const day = date.getDate();
+    const month = date.toLocaleString('default', { month: 'long' });
+    const year = date.getFullYear();
+    const ordinalSuffix = (day) => {
+      const suffixes = ['th', 'st', 'nd', 'rd'];
+      const remainder = day % 100;
+      return suffixes[(remainder - 20) % 10] || suffixes[remainder] || suffixes[0];
+    };
+    let hours = date.getHours();
+    const minutes = date.getMinutes().toString().padStart(2, '0');
+    const period = hours >= 12 ? 'PM' : 'AM';
+    hours = hours % 12 || 12;
+  
+    return `${day}${ordinalSuffix(day)} ${month} ${year}, ${hours}:${minutes} ${period}`;
+  }
+
   return (
     <div className="flex flex-col gap-0 lg:flex-row py-4 md:px-0 ">
       <SideBar/>
@@ -212,8 +264,11 @@ function PatientDetails() {
           <div className='w-[100%] lg:w-[66.67%] flex flex-col gap-4 '>
             {/* buttons */}
             <div className='flex flex-wrap gap-2 items-center justify-between'>
-              <button className='flex items-center px-4 py-2 bg-primary hover:bg-primaryhover transition-all text-white rounded-lg'
-                onClick={handleEditModal}><FaRegEdit/>Edit Profile</button>
+              <div className='flex items-center gap-2'>
+                <button className='flex items-center px-4 py-2 bg-primary hover:bg-primaryhover transition-all text-white rounded-lg'
+                  onClick={handleEditModal}><FaRegEdit/>Edit Profile</button>
+                <button onClick={handleInsuranceModal} className='flex items-center px-4 py-2 bg-primary hover:bg-primaryhover transition-all text-white rounded-lg'><IoShieldHalfSharp/>Check Insurance</button>
+              </div>
               <div className='flex items-center gap-2'>
                 <button className='flex gap-2 items-center px-4 py-2 bg-primary hover:bg-primaryhover transition-all text-white rounded-lg'
                   onClick={handleBookVitalsModal}
@@ -244,7 +299,7 @@ function PatientDetails() {
                 <div>
                   <h1 className='font-medium text-[2vmax] '>Patient Name</h1>
                   <p className='font-medium text-[1.5vmax] '>#p-patientID</p>
-                  <p className='flex items-center gap-1 '><IoMdTime/> Admin on 15 October 2024, 10:00 AM</p>
+                  <p className='flex items-center gap-1 '><IoMdTime/> {patientData.length > 0 ? formatDate(patientData.registerDate) : "Admin on 15 October 2024, 10:00 AM"}</p>
                 </div>
               </div>
 
@@ -360,7 +415,6 @@ function PatientDetails() {
               <textarea type="text" placeholder='Enter doctors note' className='border p-3 rounded-lg w-[100%] ' />
               <button className='w-[100%] bg-primary text-white font-medium p-3 rounded-lg mt-4 hover:bg-primaryhover transition-all'>Create EMR</button>
             </form>
-
           </div>
         </div>
       )}
@@ -372,6 +426,18 @@ function PatientDetails() {
           <button className='bg-primary rounded-xl text-white p-2 text-[30px] shadow-lg absolute right-4 top-4 '
               onClick={() => setOpenEditModal(false)}
             ><IoMdCloseCircleOutline/></button>
+        </div>
+      )}
+
+      {/* Modal for Insurance */}
+      {openInsuranceModal && (
+        <div className='fixed w-[100%] h-[100%] flex items-center justify-center z-50 bg-[#00000066] '>
+          <div className=' flex items-center justify-center w-[50vw] h-auto bg-white px-14 py-6 relative'>
+            <button className='bg-primary rounded-xl text-white p-2 text-[30px] shadow-lg absolute right-4 top-4 '
+              onClick={() => setOpenInsuranceModal(false)}
+            ><IoMdCloseCircleOutline/></button>
+            <CheckInsurance/>
+          </div>
         </div>
       )}
     </div>

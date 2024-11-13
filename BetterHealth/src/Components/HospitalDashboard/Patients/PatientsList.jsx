@@ -27,14 +27,17 @@ function PatientsList() {
   }
 
   useEffect(() => {
-    try{
-      const res = axios.get('https://hms-w4kw.onrender.com/api/Patient/GetPatients')
-      console.log(res.data)
-      setPatients(res.data)
-    } catch(error){
-      console.log(error.data)
+    const fetchPatient = async () => {
+      try{
+        const res = await axios.get('https://hms-w4kw.onrender.com/api/Patient/GetPatients')
+        console.log(res.data)
+        // setPatients(res.data)
+      } catch(error){
+        console.log(error.data)
+      }
     }
-  })
+    fetchPatient()
+  }, [])
 
   const handleDelete = (id) => {
     const newPatients = patients.filter(patient => patient.id !== id)

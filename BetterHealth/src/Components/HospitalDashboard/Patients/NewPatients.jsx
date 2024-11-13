@@ -1,6 +1,31 @@
-import React from 'react';
+import axios from 'axios';
+import React, { useState } from 'react';
 
 const NewPatients = () => {
+  const [firstname, setFirstname] = useState('');
+  const [lastname, setLastname] = useState('');
+  const [address, setAddress] = useState('');
+  const [gender, setGender] = useState('');
+  const [phoneNo, setPhoneNo] = useState('');
+  const [bloodGroup, setBloodGroup] = useState('');
+  const [genotype, setGenotype] = useState('');
+  const [email, setEmail] = useState('');
+  const [age, setAge] = useState('');
+  const [contactNumber, setContactNumber] = useState('');
+  const [emergencyContact, setEmergencyContact] = useState('');
+  const [registerDate, setRegisterDate] = useState('');
+  const [password, setPassword] = useState('');
+
+  const registerPatient = async (e) => {
+    e.preventDefault()
+
+    try{
+      const res = await axios.post('https://hms-w4kw.onrender.com/api/Patient/AddPatient', {})
+      console.log(res.data)
+    } catch(error){
+      console.log(error)
+    }
+  }
    
   return (
     <div>
