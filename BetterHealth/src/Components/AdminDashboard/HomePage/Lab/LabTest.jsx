@@ -39,14 +39,11 @@ const LabTest = () => {
             
     return (
       <>
-        <div className="lg:grid lg:grid-cols-[16rem_1fr] z-0">
+        <div className="lg:grid">
           <Sidebar />
           <main className="col-start-2 h-full w-full md:w-[70%] lg:w-full mt-40 lg:mt-0 md:mt-0">
-            <div className='lg:ml-[-16.5vw]'>
-                <Navbar/>
-            </div>
-  
-            <div className="mt-24 w-full h-full lg:w-full lg:ml-0 md:ml-72 lg:pl-12 lg:pr-5 px-5">
+            <Navbar/>
+            <div className="px-5 pt-8">
               <div className="flex gap-5">
                 <h1 className="text-[20px] font-medium">Lab Reports</h1>
                 <div className="flex gap-2 items-center">
@@ -54,37 +51,37 @@ const LabTest = () => {
                   <p className="font-thin"> - Lab Reports</p>
                 </div>
               </div>
-              <div className='shadow-xl border border-stone-100 h-[500px] w-[1193px] rounded-lg mt-[20px]  '>
+              <div className='shadow-md border border-stone-100 rounded-lg my-10  '>
                 <h1 className='text-[18px] font-normal px-6 py-5 '>Radiology List</h1>
-                <TableContainer component={Paper} className="w-full h-full">
+                <TableContainer component={Paper} >
                   <Table className="w-full h-full" aria-label="simple table">
                     <TableHead className="bg-stone-100">
                       <TableRow>
-                        <TableCell className="text-[14px] font-normal px-2 py-2">No.</TableCell>
-                        <TableCell className="text-[14px] font-normal px-2 py-2">Patient Name</TableCell>
-                        <TableCell className="text-[14px] font-normal px-2 py-2">Pin</TableCell>
-                        <TableCell className="text-[14px] font-normal px-2 py-2">Test</TableCell>
-                        <TableCell className="text-[14px] font-normal px-2 py-2">Lab</TableCell>
-                        <TableCell className="text-[14px] font-normal px-2 py-2">Cost</TableCell>
-                        <TableCell className="text-[14px] font-normal px-2 py-2">Handling</TableCell>
-                        <TableCell className="text-[14px] font-normal px-2 py-2">Coll. by</TableCell>
-                        <TableCell className="text-[14px] font-normal px-2 py-2">Status</TableCell>
-                        <TableCell className="text-[14px] font-normal px-2 py-2">Details</TableCell>
+                        <TableCell>No.</TableCell>
+                        <TableCell>Patient Name</TableCell>
+                        <TableCell>Pin</TableCell>
+                        <TableCell>Test</TableCell>
+                        <TableCell>Lab</TableCell>
+                        <TableCell>Cost</TableCell>
+                        <TableCell>Handling</TableCell>
+                        <TableCell>Coll. by</TableCell>
+                        <TableCell>Status</TableCell>
+                        <TableCell>Details</TableCell>
                       </TableRow>
                     </TableHead>
                     <TableBody>
                       {labreport.map((row) => (
-                        <TableRow>
-                          <TableCell>{row.no}</TableCell>
-                          <TableCell>{row.patient_name}</TableCell>
-                          <TableCell>{row.pin}</TableCell>
-                          <TableCell>{row.test}</TableCell>
-                          <TableCell>{row.lab}</TableCell>
-                          <TableCell>{row.handling}</TableCell>
-                          <TableCell>{row.coll_by}</TableCell>
-                          <TableCell><p className='bg-[#4da089] flex items-center justify-center py-1 rounded text-white'>{row.status}</p></TableCell>
-                          <TableCell><p className='text-[#3596F7] cursor-pointer' onClick={handleResultModal}>{row.result}</p></TableCell>
-                          <TableCell><p className='bg-[#ab5f78] flex items-center justify-center py-1 rounded text-white cursor-pointer'
+                        <TableRow key={row.no}>
+                          <TableCell style={{ fontSize: '12px' }}>{row.no}</TableCell>
+                          <TableCell style={{ fontSize: '12px' }}>{row.patient_name}</TableCell>
+                          <TableCell style={{ fontSize: '12px' }}>{row.pin}</TableCell>
+                          <TableCell style={{ fontSize: '12px' }}>{row.test}</TableCell>
+                          <TableCell style={{ fontSize: '12px' }}>{row.lab}</TableCell>
+                          <TableCell style={{ fontSize: '12px' }}>{row.handling}</TableCell>
+                          <TableCell style={{ fontSize: '12px' }}>{row.coll_by}</TableCell>
+                          <TableCell style={{ fontSize: '12px' }}><p className='bg-[#4da089] flex items-center justify-center py-1 rounded text-white'>{row.status}</p></TableCell>
+                          <TableCell style={{ fontSize: '12px' }}><p className='text-[#3596F7] cursor-pointer' onClick={handleResultModal}>{row.result}</p></TableCell>
+                          <TableCell style={{ fontSize: '12px' }}><p className='bg-[#ab5f78] flex items-center justify-center py-1 rounded text-white cursor-pointer'
                             onClick={handleDetailsModal}>{row.details}</p></TableCell>
                         </TableRow>
                       ))}
