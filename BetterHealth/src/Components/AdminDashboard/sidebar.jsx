@@ -118,73 +118,75 @@ function Sidebar() {
   return (
     <>
       {/* Sidebar for Large Screens */}
-      <aside className="hidden lg:grid lg:grid-cols-[15rem_1fr] w-[18vw] shadow-md fixed top-0 z-50 left-0 pb-6">
-        <div className="w-[200px] h-20 fixed gap-2 flex items-center justify-center">
-          <div className="flex gap-1">
-            <div className="w-14 h-14 rounded-full bg-[#483d8b]">
-              <img
-                src={anime}
-                alt="Doctor Illustration"
-                className="rounded-full w-12 h-12 mx-auto"
-              />
+      <aside className="hidden lg:grid lg:grid-cols-[15rem_1fr] h-screen  z-50 pb-6">
+        <div className="hidden lg:block fixed shadow-sm bg-white ">
+          <div className="h-20 gap-2 flex items-center justify-center ">
+            <div className="flex gap-1">
+              <div className="w-14 h-14 rounded-full bg-[#483d8b]">
+                <img
+                  src={anime}
+                  alt="Doctor Illustration"
+                  className="rounded-full w-12 h-12 mx-auto"
+                />
+              </div>
+              <h1 className="self-center text-xl font-semibold pt-2">
+                Better Health
+              </h1>
             </div>
-            <h1 className="self-center text-xl font-semibold pt-2">
-              Better Health
-            </h1>
           </div>
-        </div>
 
-        <div className="mt-20">
-          <div className="max-h-[100%] scrollable-div flex flex-col w-[238px] lg:w-[190px] xl:w-[238px] h-screen px-7">
-            <div className="flex flex-col gap-y-7 mt-8">
-              {sections.map((section, index) => (
-                <div key={index}>
-                  <div
-                    className={`flex justify-between w-[13vw] items-center ${
-                      section.dropdown ? "flex-row" : ""
-                    }`}
-                    onClick={section.toggle}
-                  >
-                    <div className="flex cursor-pointer gap-4 items-center">
-                      {section.icon}
-                      {section.link ? (
-                        <Link to={section.link} className="hover:text-blue-400">
-                          {section.label}
-                        </Link>
-                      ) : (
-                        <span>{section.label}</span>
+          <div className="mt-0">
+            <div className="max-h-[100%] scrollable-div flex flex-col w-[238px] lg:w-[190px] xl:w-[238px] h-screen px-7">
+              <div className="flex flex-col gap-y-7 mt-8">
+                {sections.map((section, index) => (
+                  <div key={index}>
+                    <div
+                      className={`flex justify-between w-[13vw] items-center ${
+                        section.dropdown ? "flex-row" : ""
+                      }`}
+                      onClick={section.toggle}
+                    >
+                      <div className="flex cursor-pointer gap-4 items-center">
+                        {section.icon}
+                        {section.link ? (
+                          <Link to={section.link} className="hover:text-blue-400">
+                            {section.label}
+                          </Link>
+                        ) : (
+                          <span>{section.label}</span>
+                        )}
+                      </div>
+                      {section.items && (
+                        <RiArrowDropDownLine className="text-xl" />
                       )}
                     </div>
-                    {section.items && (
-                      <RiArrowDropDownLine className="text-xl" />
+                    {section.dropdown && (
+                      <div className="flex flex-col items-center justify-center ml-10 my-4 text-start">
+                        <ul className="space-y-4">
+                          {section.items.map((item, i) => (
+                            <li key={i} className="list-disc hover:text-blue-400">
+                              <Link to={item.link}>{item.label}</Link>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
                     )}
                   </div>
-                  {section.dropdown && (
-                    <div className="flex flex-col items-center justify-center ml-10 my-4 text-start">
-                      <ul className="space-y-4">
-                        {section.items.map((item, i) => (
-                          <li key={i} className="list-disc hover:text-blue-400">
-                            <Link to={item.link}>{item.label}</Link>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  )}
-                </div>
-              ))}
-            </div>
-
-            <div className="pb-10 flex flex-col items-center">
-              <img src={custom} className="relative top-12 w-[120px]" />
-              <div className="p-2 h-36 bg-indigo-300 rounded-2xl pt-16">
-                <h1 className="text-[2vmin] text-center">
-                  Make an Appointment
-                </h1>
-                <p className="text-center">Best Health Care here</p>
+                ))}
               </div>
-            </div>
-            <div className="pb-24 flex flex-col items-center">
-              <p>&copy; Better Health</p>
+
+              <div className="pb-10 flex flex-col items-center">
+                <img src={custom} className="relative top-12 w-[120px]" />
+                <div className="p-2 h-36 bg-indigo-300 rounded-2xl pt-16">
+                  <h1 className="text-[2vmin] text-center">
+                    Make an Appointment
+                  </h1>
+                  <p className="text-center">Best Health Care here</p>
+                </div>
+              </div>
+              <div className="pb-24 flex flex-col items-center">
+                <p>&copy; Better Health</p>
+              </div>
             </div>
           </div>
         </div>
