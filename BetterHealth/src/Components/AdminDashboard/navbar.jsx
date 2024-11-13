@@ -106,7 +106,7 @@ const MobileNavBar = () => {
    {
      label: "Dashboard",
      icon: <TbLayoutDashboardFilled className="text-xl" />,
-     link: "/admindashboard",
+     link: "/admin/superadmindashboard",
    },
    {
      label: "Appointments",
@@ -183,7 +183,11 @@ const MobileNavBar = () => {
      icon: <TbScan className="text-xl" />,
      dropdown: dropdowns.pharmacy,
      toggle: () => toggleDropdown("pharmacy"),
-     items: [{ label: "Orders", link: "#" }],
+     items: [
+       { label: "Orders", link: "#" },
+       { label: "Add Drug", link: "/admin/addDrug" },
+       { label: "Inventory", link: "/admin/inventory" },
+     ],
    },
    {
      label: "Outpatients",
@@ -229,13 +233,14 @@ const MobileNavBar = () => {
                         {section.label}
                       </Link>
                     ) : (
-                      <span>{section.label}</span>
+                      <span className="hover:text-blue-400">
+                        {section.label}
+                      </span>
                     )}
                     {section.items && (
                       <RiArrowDropDownLine className="text-3xl" />
                     )}
                   </div>
-                  
                 </div>
                 {section.dropdown && (
                   <div className="flex flex-col items-center justify-center my-4 text-start">

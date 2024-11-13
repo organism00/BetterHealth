@@ -18,6 +18,7 @@ import anime from "../../Assets/Images/Animation-2.gif";
 import custom from "../../adminDashboardAssets/custom-17.svg";
 import "../../Style/customScrollbar.css";
 import "../../App.css";
+import { BiLabel } from "react-icons/bi";
 
 function Sidebar() {
   const [dropdowns, setDropdowns] = useState({
@@ -100,7 +101,11 @@ function Sidebar() {
       icon: <TbScan className="text-xl" />,
       dropdown: dropdowns.pharmacy,
       toggle: () => toggleDropdown("pharmacy"),
-      items: [{ label: "Orders", link: "#" }],
+      items: [
+        { label: "Orders", link: "#" },
+        { label: "Add Drug", link: "/admin/addDrug"},
+        { label: "Inventory", link: "/admin/inventory" },
+      ],
     },
 
     {
@@ -152,7 +157,9 @@ function Sidebar() {
                           {section.label}
                         </Link>
                       ) : (
-                        <span>{section.label}</span>
+                        <span className="hover:text-blue-400">
+                          {section.label}
+                        </span>
                       )}
                     </div>
                     {section.items && (

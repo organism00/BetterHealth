@@ -4,7 +4,7 @@ import { useToast } from "../../../Components/Loaders/ToastContext";
 import WaitingLoader from '../../../Components/Loaders/WaitingLoader';
 
 const AddDoctorModal = () => {
-     const [firstName, setFirstName] = useState('');
+    const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
     const [email, setEmail] = useState('');
     const [address, setAddress] = useState('');
