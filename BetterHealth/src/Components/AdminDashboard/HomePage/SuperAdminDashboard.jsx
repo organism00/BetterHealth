@@ -20,22 +20,50 @@ import RecentQuestions from "../../HospitalDashboard/RecentQuestions";
 
 const SuperAdminDashboard = () => {
   const [allPatientData, setAllPatientData] = useState([]);
+  const [allStaffData, setAllStaffData] = useState([]);
+  // console.log(allPatientData.length);
 
   useEffect(() => {
     const fetchPatient = async () => {
       try {
-        const res = await axios.get(
-          "https://hms-w4kw.onrender.com/api/Patient/GetPatients"
-        );
-        console.log(res.data.$values);
-        // setAllPatientData(res.data);
+        const res = await axios.get("https://hms-w4kw.onrender.com/api/Patient/GetPatients");
+        // console.log(res.data.$values);
+        setAllPatientData(res.data.$values);
       } catch (error) {
         console.log(error);
       }
     };
 
     fetchPatient();
-  });
+  }, []);
+
+  useEffect(() => {
+    const fetchAllStaffData = async () => {
+      try {
+        const [doctorRes, nurseRes, pharmacistRes, staffRes] =
+          await Promise.all([
+            axios.get("https://hms-w4kw.onrender.com/api/Doctor/GetDoctors"),
+            axios.get("https://hms-w4kw.onrender.com/api/Nurse/GetAllNurses"),
+            axios.get(
+              "https://hms-w4kw.onrender.com/api/Pharmacist/GetPharmacists"
+            ),
+            axios.get("https://hms-w4kw.onrender.com/api/Staff/GetAllStaffs"),
+          ]);
+
+        setAllStaffData([
+          ...doctorRes.data.$values,
+          ...nurseRes.data.data.$values,
+          ...pharmacistRes.data.$values,
+          ...staffRes.data.$values,
+        ]);
+      } catch (error) {
+        console.error("Error fetching data:", error.data);
+      }
+    };
+
+    fetchAllStaffData();
+  }, []);
+
   return (
     <>
       <div className="lg:flex">
@@ -56,7 +84,7 @@ const SuperAdminDashboard = () => {
                     />
                     <div>
                       <p className="text-[14px] font-medium ">Total Patience</p>
-                      <h1 className="text-[24px] ">1245</h1>
+                      <h1 className="text-[24px] ">{allPatientData.length}</h1>
                     </div>
                   </div>
 
@@ -68,7 +96,7 @@ const SuperAdminDashboard = () => {
                     />
                     <div>
                       <p className="text-[14px] font-medium ">Total Staffs</p>
-                      <h1 className="text-[24px] ">145</h1>
+                      <h1 className="text-[24px] ">{allStaffData.length}</h1>
                     </div>
                   </div>
 
@@ -86,7 +114,7 @@ const SuperAdminDashboard = () => {
                 </div>
 
                 {/* Summry of numbers 2 */}
-                <div className="flex flex-col md:flex-row gap-2 my-4 z-0 justify-between">
+                <div className="flex flex-col md:flex-row gap-2 my-4">
                   <div className="flex justify-center p-6 rounded-lg bg-white shadow gap-4 border">
                     <img
                       src={lab}
