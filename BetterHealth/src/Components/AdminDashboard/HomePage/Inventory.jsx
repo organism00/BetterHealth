@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import Sidebar from "../Sidebar";
-import Navbar from "../Navbar";
+import Sidebar from "../sidebar";
+import Navbar from "../navbar";
 import { DrugList } from "./DrugList";
 import { Link } from "react-router-dom";
 import { GoHome } from "react-icons/go";
@@ -28,11 +28,11 @@ const Inventory = () => {
   };
 
   return (
-    <div className="lg:flex">
+    <div className="flex">
       <Sidebar />
-      <div>
+      <div className="w-full">
         <Navbar />
-        <section className="w-full lg:w-[78vw] h-auto lg:ml-[18vw] z-0 py-20 lg:pt-28 px-4">
+        <section className="m-4 space-y-8 ">
           {/* Page header */}
           <div className="flex gap-x-5 lg:px-0 md:px-8 md:ml-64 lg:ml-0">
             <h1 className="text-2xl">Inventory</h1>

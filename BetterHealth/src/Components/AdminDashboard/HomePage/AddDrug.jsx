@@ -7,11 +7,11 @@ import { GoHome } from "react-icons/go";
 const AddDrug = () => {
   return (
     <>
-      <div className="lg:flex">
+      <div className="flex">
         <Sidebar />
-        <div>
+        <div className="w-full">
           <Navbar />
-          <section className="w-full lg:w-[78vw] h-auto lg:ml-[18vw] z-0 py-20 lg:pt-28 px-4">
+          <section className="m-4 space-y-8">
             {/* Page header */}
             <div className="flex gap-x-5 lg:px-0 md:px-8 md:ml-64 lg:ml-0">
               <h1 className="text-2xl">Inventory</h1>
@@ -23,7 +23,7 @@ const AddDrug = () => {
               </div>
             </div>
             <form action="submit" className="mt-20 md:mt-28 space-y-2">
-                <h1 className="text-2xl font-medium my-10">Add New Drug</h1>
+              <h1 className="text-2xl font-medium my-10">Add New Drug</h1>
               <div className="lg:grid lg:grid-cols-2  lg:gap-x-12 lg:gap-y-6 flex flex-col gap-y-7 md:grid grid-cols-2 gap-x-2">
                 <input
                   type="text"
