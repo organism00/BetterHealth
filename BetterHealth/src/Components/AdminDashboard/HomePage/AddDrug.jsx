@@ -34,55 +34,150 @@ const AddDrug = () => {
                   value=""
                   id="drugname"
                 />
-
                 <input
                   type="text"
-                  placeholder="Quantity"
+                  placeholder="Generic Name"
                   className="border border-stone-500 p-2 rounded-md outline-violet-500"
                   required
                   name=""
                   value=""
-                  id="quantity"
+                  id="namegeneric"
+                />
+                <input
+                  type="text"
+                  placeholder="Drug Category"
+                  className="border border-stone-500 p-2 rounded-md outline-violet-500"
+                  required
+                  name=""
+                  value=""
+                  id="drugcategory"
+                />
+                <input
+                  type="text"
+                  placeholder="Dosage Form"
+                  className="border border-stone-500 p-2 rounded-md outline-violet-500"
+                  required
+                  name=""
+                  value=""
+                  id="dosageform"
+                />
+                <input
+                  type="text"
+                  placeholder="Syrup"
+                  className="border border-stone-500 p-2 rounded-md outline-violet-500"
+                  required
+                  name=""
+                  value=""
+                  id="syrup"
+                />
+                <input
+                  type="text"
+                  placeholder="Manufacturer Information"
+                  className="border border-stone-500 p-2 rounded-md outline-violet-500"
+                  required
+                  name=""
+                  value=""
+                  id="manufacurerinformation"
                 />
 
                 <input
                   type="text"
-                  placeholder="Category"
+                  placeholder="Supplier"
                   className="border border-stone-500 p-2 rounded-md outline-violet-500"
                   required
                   name=""
                   value=""
-                  id="category"
+                  id="Supplier"
                 />
 
                 <input
                   type="text"
-                  placeholder="Date Added"
+                  placeholder="Supplier Information"
                   className="border border-stone-500 p-2 rounded-md outline-violet-500"
                   required
                   name=""
                   value=""
-                  id="dateAdded"
+                  id="Supplier Information"
                 />
 
                 <input
                   type="text"
-                  placeholder="Date Withdrawn"
+                  placeholder="Batch Number"
                   className="border border-stone-500 p-2 rounded-md outline-violet-500"
                   required
                   name=""
                   value=""
-                  id="Date Withdrawn"
+                  id="Batch Number"
                 />
 
                 <input
                   type="text"
-                  placeholder="Expiry Date"
+                  placeholder="Manufacturing Date"
                   className="border border-stone-500 p-2 rounded-md outline-violet-500"
                   required
                   name=""
                   value=""
-                  id="Expiry Date"
+                  id="Manufacturing Date"
+                />
+
+                <input
+                  type="text"
+                  placeholder="Expiration Date"
+                  className="border border-stone-500 p-2 rounded-md outline-violet-500"
+                  required
+                  name=""
+                  value=""
+                  id="Expiration Date"
+                />
+
+                <input
+                  type="text"
+                  placeholder="Stock Status"
+                  className="border border-stone-500 p-2 rounded-md outline-violet-500"
+                  required
+                  name=""
+                  value=""
+                  id="Stock Status"
+                />
+
+                <input
+                  type="text"
+                  placeholder="Purchase Order Number"
+                  className="border border-stone-500 p-2 rounded-md outline-violet-500"
+                  required
+                  name=""
+                  value=""
+                  id="Purchase Order Number"
+                />
+
+                <input
+                  type="text"
+                  placeholder="Date of Order"
+                  className="border border-stone-500 p-2 rounded-md outline-violet-500"
+                  required
+                  name=""
+                  value=""
+                  id="Date of Order"
+                />
+
+                <input
+                  type="text"
+                  placeholder="Quantity Order"
+                  className="border border-stone-500 p-2 rounded-md outline-violet-500"
+                  required
+                  name=""
+                  value=""
+                  id="Quantity Order"
+                />
+
+                <input
+                  type="text"
+                  placeholder="Cost Per Unit"
+                  className="border border-stone-500 p-2 rounded-md outline-violet-500"
+                  required
+                  name=""
+                  value=""
+                  id="Cost Per Unit"
                 />
 
                 <button

@@ -104,7 +104,7 @@ function Sidebar() {
       items: [
         { label: "Orders", link: "#" },
         { label: "Add Drug", link: "/admin/addDrug"},
-        { label: "Inventory", link: "/admin/inventory" },
+        { label: "Stock Management", link: "/admin/inventory" },
       ],
     },
 
