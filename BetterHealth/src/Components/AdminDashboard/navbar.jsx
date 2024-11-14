@@ -197,60 +197,60 @@ export default Navbar;
 //    },
 //  ];
 
-//   return (
-//     <div className="fixed w-[75vw] inset-0 bg-white z-40 flex flex-col items-center shadow-md lg:hidden">
-//       <div className="flex gap-4 items-center justify-center py-2">
-//         <div className="w-14 h-14 rounded-full bg-[#483d8b]">
-//           <img
-//             src={anime}
-//             alt="Doctor Illustration"
-//             className="rounded-full w-12 h-12 mx-auto"
-//           />
-//         </div>
-//         <h1 className="self-center text-2xl font-semibold pt-2">
-//           Better Health
-//         </h1>
-//       </div>
-//       <div className="mt-4">
-//         <div className="max-h-[100%] scrollable-div flex flex-col  h-screen">
-//           <div className="flex flex-col gap-y-7 mt-8">
-//             {sections.map((section, index) => (
-//               <div key={index}>
-//                 <div
-//                   className={`flex justify-between  items-center ${
-//                     section.dropdown ? "flex-row" : ""
-//                   }`}
-//                   onClick={section.toggle}
-//                 >
-//                   <div className="flex gap-4 items-center">
-//                     {section.icon}
-//                     {section.link ? (
-//                       <Link to={section.link} className="hover:text-blue-400">
-//                         {section.label}
-//                       </Link>
-//                     ) : (
-//                       <span>{section.label}</span>
-//                     )}
-//                     {section.items && (
-//                       <RiArrowDropDownLine className="text-3xl" />
-//                     )}
-//                   </div>
+  return (
+    <div className="fixed w-[75vw] inset-0 bg-white z-40 flex flex-col items-center shadow-md lg:hidden">
+      <div className="flex gap-4 items-center justify-center py-2">
+        <div className="w-14 h-14 rounded-full bg-[#483d8b]">
+          <img
+            src={anime}
+            alt="Doctor Illustration"
+            className="rounded-full w-12 h-12 mx-auto"
+          />
+        </div>
+        <h1 className="self-center text-2xl font-semibold pt-2">
+          Better Health
+        </h1>
+      </div>
+      <div className="mt-4">
+        <div className="max-h-[100%] scrollable-div flex flex-col  h-screen">
+          <div className="flex flex-col gap-y-7 mt-8">
+            {sections.map((section, index) => (
+              <div key={index}>
+                <div
+                  className={`flex justify-between  items-center ${
+                    section.dropdown ? "flex-row" : ""
+                  }`}
+                  onClick={section.toggle}
+                >
+                  <div className="flex gap-4 items-center">
+                    {section.icon}
+                    {section.link ? (
+                      <Link to={section.link} className="hover:text-blue-400">
+                        {section.label}
+                      </Link>
+                    ) : (
+                      <span>{section.label}</span>
+                    )}
+                    {section.items && (
+                      <RiArrowDropDownLine className="text-3xl" />
+                    )}
+                  </div>
                   
-//                 </div>
-//                 {section.dropdown && (
-//                   <div className="flex flex-col items-center justify-center my-4 text-start">
-//                     <ul className="space-y-4">
-//                       {section.items.map((item, i) => (
-//                         <li key={i} className="list-disc hover:text-blue-400">
-//                           <Link to={item.link}>{item.label}</Link>
-//                         </li>
-//                       ))}
-//                     </ul>
-//                   </div>
-//                 )}
-//               </div>
-//             ))}
-//           </div>
+                </div>
+                {section.dropdown && (
+                  <div className="flex flex-col items-center justify-center my-4 text-start">
+                    <ul className="space-y-4">
+                      {section.items.map((item, i) => (
+                        <li key={i} className="list-disc hover:text-blue-400">
+                          <Link to={item.link}>{item.label}</Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
 
 //           <div className="pb-10 flex flex-col items-center">
 //             <img src={custom} className="relative top-12 w-[120px]" />
