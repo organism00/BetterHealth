@@ -23,7 +23,7 @@ const report = [
   { test: 'Swelling Diameter', result: '70 - 1200', Range: '' },
 
 ]
-const LabTest = () => {
+const LabTestRequest = () => {
   const [openResultModal, setOpenResultModal] = useState(false)
   const [openDetailsModal, setOpenDetailsModal] = useState(false)
 
@@ -55,7 +55,7 @@ const LabTest = () => {
                 <h1 className="text-[20px] font-medium">Lab Test</h1>
                 <div className="flex gap-2 items-center">
                   {/* <GoHome /> */}
-                  <p className="font-thin"> - Reports</p>
+                  <p className="font-thin"> - Request</p>
                 </div>
               </div>
               <div className='shadow-xl border border-stone-100 h-[500px] w-[1193px] rounded-lg mt-[20px]  '>
@@ -285,4 +285,4 @@ const LabTest = () => {
       </>
       );
 }
-export default LabTest
+export default LabTestRequest
