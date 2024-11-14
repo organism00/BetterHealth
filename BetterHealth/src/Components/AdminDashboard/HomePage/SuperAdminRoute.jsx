@@ -12,6 +12,8 @@ import NewNurse from './Nurse/NewNurse';
 import SuperAdminDashboard from './SuperAdminDashboard';
 import StaffManagement from './StaffManagement';
 import Index from '../Index';
+import Inventory from './Inventory';
+import AddDrug from './AddDrug';
 import PatientsList from './Patient/PatientsList';
 import PatientDetails from './Patient/PatientDetails';
 import LabTest from './Lab/LabTest';
@@ -40,6 +42,8 @@ function SuperAdminRoute() {
           <Route path="/admin/patientdetails" element={<PatientDetails />} />
 
           <Route path="/admin/staffManagement" element={<StaffManagement />} />
+          <Route path="/admin/inventory" element={<Inventory />} />
+          <Route path="/admin/addDrug" element={<AddDrug />} />
         </Routes>
       </ToastProvider>
     </div>
