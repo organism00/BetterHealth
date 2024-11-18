@@ -24,14 +24,14 @@ const NurseList = () => {
     fetchNurse();
   }, []);
   return (
-    <div className="flex flex-col gap-0 lg:flex-row py-4 md:px-0 ">
+    <div className="flex ">
       <SideBar />
-      <Navbar />
 
-      <div className="flex justify-center w-[100%] ">
-        <section className="mt-28 lg:mx-10 my-10 grid justify-center ">
-          <div className="flex justify-between">
-            <div className="flex gap-x-5 px-5 lg:px-0 md:px-8 md:ml-64 lg:ml-0">
+      <div className="w-full ">
+        <Navbar />
+        <section className="mt-10 lg:mx-10 ">
+          <div className="flex w-full justify-between">
+            <div className="flex gap-x-5 px-5 lg:px-0 md:px-8">
               <h1 className="text-2xl">Nurse</h1>
               <div className="flex gap-2 items-center">
                 <Link to="/admin/superadmindashboard">

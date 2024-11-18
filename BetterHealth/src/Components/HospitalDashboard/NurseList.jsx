@@ -38,7 +38,7 @@ function DoctorList() {
     <div>
       <div className="shadow-lg pt-4 mb-4 rounded-lg border h-[400px] ">
         <div className="mb-4 pb-4 px-8 border-b w-[100% text-[18px] text-[#172b4c] flex items-center justify-between ">
-          <p className="text-[18px] text-[#172b4c] font-medium ">Doctor List</p>
+          <p className="text-[18px] text-[#172b4c] font-medium ">Nurse List</p>
           <p className="text-[14px] text-[#172b4c]">Today</p>
         </div>
 
@@ -76,7 +76,7 @@ function DoctorList() {
         </div>
         <div>
           <button className="w-[100%] mt-4 bg-primary text-white px-6 rounded hover:bg-indigo-700 transition"
-            onClick={() => navigate('/admin/doctorlist')}>View All</button>
+            onClick={() => navigate("/admin/nurselist")}>View All</button>
         </div>
       </div>
     </div>

@@ -7,16 +7,21 @@ import lab from "../../../assets/Images/laboratory.png";
 import patient from "../../../adminDashboardAssets/patients.svg";
 import staff from "../../../adminDashboardAssets/Staffs.svg";
 import surgery from "../../../adminDashboardAssets/sugery.svg";
-import Revenue from "../../../assets/Images/profit-up.png";
 import Deathrate from "../../../assets/Images/death-rate.png";
+
 // Components
-import PatientStat from "../../HospitalDashboard/PatientStat";
+// import PatientStat from "../../HospitalDashboard/PatientStat";
 import RecoveryStat from "../../HospitalDashboard/RecoveryStat";
 import TotalPatientsStat from "../../HospitalDashboard/TotalPatientsStat";
 import Reports from "../../HospitalDashboard/Reports";
 import DoctorList from "../../HospitalDashboard/DoctorList";
 import AdmittedPatients from "../../HospitalDashboard/AdmittedPatients";
 import RecentQuestions from "../../HospitalDashboard/RecentQuestions";
+import NurseList from "../../HospitalDashboard/NurseList";
+
+// Icons
+import { FaChartBar } from "react-icons/fa";
+
 
 const SuperAdminDashboard = () => {
   const [allPatientData, setAllPatientData] = useState([]);
@@ -114,7 +119,7 @@ const SuperAdminDashboard = () => {
                 </div>
 
                 {/* Summry of numbers 2 */}
-                <div className="flex flex-col md:flex-row gap-2 my-4">
+                <div className="flex flex-col md:flex-row gap-2">
                   <div className="flex justify-center p-6 rounded-lg bg-white shadow gap-4 border">
                     <img
                       src={lab}
@@ -122,8 +127,16 @@ const SuperAdminDashboard = () => {
                       className="max-w-[100px] h-auto w-auto md:w-[70px] "
                     />
                     <div>
-                      <p className="text-[14px] font-medium ">Lab Tests</p>
+                      <p className="text-[14px] font-medium ">Lab Request</p>
                       <h1 className="text-[24px] ">1245</h1>
+                    </div>
+                  </div>
+
+                  <div className="flex justify-center p-6 rounded-lg bg-white shadow gap-4 border">
+                    <FaChartBar className=" text-primary max-w-[100px] h-auto w-auto md:w-[70px]" />
+                    <div>
+                      <p className="text-[14px] font-medium ">Lab Report</p>
+                      <h1 className="text-[24px] ">1,000</h1>
                     </div>
                   </div>
 
@@ -138,18 +151,6 @@ const SuperAdminDashboard = () => {
                       <h1 className="text-[24px] ">15</h1>
                     </div>
                   </div>
-
-                  <div className="flex justify-center p-6 rounded-lg bg-white shadow gap-4 border">
-                    <img
-                      src={Revenue}
-                      alt="surgery-image"
-                      className="max-w-[100px] h-auto w-auto md:w-[70px] "
-                    />
-                    <div>
-                      <p className="text-[14px] font-medium ">Revenue</p>
-                      <h1 className="text-[24px] ">₦100,000,000</h1>
-                    </div>
-                  </div>
                 </div>
 
                 <div className="flex flex-col md:flex-row md:gap-x-2 items-center">
@@ -159,16 +160,12 @@ const SuperAdminDashboard = () => {
                 <div>
                   <AdmittedPatients />
                 </div>
-                <div className="flex flex-col md:flex-row gap-y-6 md:gap-x-2 mt-4">
-                  <RecentQuestions />
-                  <RecentQuestions />
-                </div>
               </div>
               {/* Left Section On Main Page End */}
 
               {/* Right Section On Main Page Start */}
               <div className="flex flex-col gap-y-4">
-                <PatientStat />
+                <NurseList />
                 <DoctorList />
                 <Reports />
               </div>

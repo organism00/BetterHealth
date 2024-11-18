@@ -34,6 +34,9 @@ function AdmittedPatients() {
   }
   return (
     <div className='mt-4'>
+      <div className='py-2 px-4 font-medium bg-primary rounded-lg text-white '>
+        <p>Admitted Patients</p>
+      </div>
       <TableContainer component={Paper}>
         <Table>
           <TableHead>

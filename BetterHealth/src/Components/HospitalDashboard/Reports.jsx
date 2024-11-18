@@ -29,6 +29,9 @@ function Reports() {
           )
         })}
 
+        <div>
+          <button className="w-[100%] mt-4 bg-primary text-white px-6 rounded hover:bg-indigo-700 transition">View All</button>
+        </div>
       </div>
     </div>
   )
