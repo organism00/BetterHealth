@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import Navbar from './PatientDashboard/Navbar'
-import SideBar from './PatientDashboard/SideBar'
+import Navbar from './Navbar'
+import SideBar from './SideBar'
 import { Table, TableBody, TableCell,  TableContainer, TableHead, TableRow, Paper } from '@mui/material';
 import { IoIosCall } from "react-icons/io";
 import { AiTwotoneMail } from "react-icons/ai";

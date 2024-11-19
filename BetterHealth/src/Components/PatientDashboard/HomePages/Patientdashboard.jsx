@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import SideBar from "../SideBar";
-import Navbar from "../Navbar";
+import SideBar from "../../SideBar";
+import Navbar from "../../Navbar";
 import HeartRateChart from "./HeartRateChart";
 import Fever from "./Fever";
 import HeartECGChart from "./HeartECGChart";

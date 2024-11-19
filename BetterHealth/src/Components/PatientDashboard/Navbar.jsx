@@ -1,54 +1,69 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import { IoMenu } from "react-icons/io5";
-// import { BsSearch } from "react-icons/bs";
-import user from "../assets/Images/user.svg";
-// import { IoMdQrScanner } from "react-icons/io";
+import user from "../../assets/Images/user.svg";
 import { BiSolidNotification } from "react-icons/bi";
 import { PiGearFill } from "react-icons/pi";
-import { RiLogoutCircleLine } from "react-icons/ri";
+import { RiLogoutCircleLine, RiArrowDropDownLine } from "react-icons/ri";
+import "../../Style/customScrollbar.css";
+import "../../App.css";
 
 const Navbar = () => {
-  const [userData] = useState(JSON.parse(localStorage.getItem('userData')))
-  // console.log(userData)
-  const navigate = useNavigate();
+  // const [menuOpen, setMenuOpen] = useState(false);
 
-  const handleLogOut = () => {
-    localStorage.removeItem('userData')
-    navigate('/')
-  }
+  // const menuHandleClick = () => {
+  //   setMenuOpen(!menuOpen);
+  // };
+
   return (
-    <div>
-      <nav className="hidden bg-[whitesmoke] w-[81vw] h-20 fixed top-20 md:top-0  lg:top-0 z-50 px-5 lg:px-5 lg:flex lg:justify-between lg:items-center">
-        <div className="flex justify-between w-72">
-          <button className="w-11 h-11 bg-primary2 rounded-lg">
-            <IoMenu className="text-2xl mx-auto text-primary" />
+    <>
+      <nav className="z-50 bg-white shadow-sm h-[11vh] sticky top-0 px-5 lg:px-5 flex ">
+        <div className="z-30 lg:hidden"
+          // onClick={menuHandleClick}
+          // onKeyPress={(e) =>
+          //   (e.key === "Enter" || e.key === " ") && menuHandleClick()
+          // }
+          role="button"
+          tabIndex="0"
+          aria-label="Toggle Menu"
+        >
+          <button className="w-11 h-11 bg-[gray-100] cursor-pointer rounded-lg">
+            <IoMenu className="text-4xl mx-auto" />
           </button>
         </div>
-
-        <div className="flex items-center gap-3">
-          <div className="flex justify-center flex-col">
-            <h1 className="text-indigo-500 font-bold text-sm lg:text-base w-[70px] lg:w-auto">
-              {/* {userData.firstname} {userData.lastname} */}
-            </h1>
-            <p className="text-end font-thin text-[10px]">ADMIN</p>
+        {/* {menuOpen && <MobileNavBar />} */}
+        
+        <div className="hidden w-full lg:flex justify-between items-center ">
+          <div className="flex justify-between">
+            <button
+              // onClick={menuHandleClick}
+              className="w-11 h-11 bg-gray-100 cursor-pointer rounded-lg"
+            >
+              <IoMenu className="text-2xl mx-auto" />
+            </button>
           </div>
-          <div className="w-8 h-8 lg:w-10 lg:h-10  bg-indigo-300 rounded-md">
-            <img src={user} alt="" className="rounded-md" />
-          </div>
-          <div className="w-8 h-8 lg:w-10 lg:h-10 bg-indigo-50 rounded-md flex items-center justify-center cursor-pointer"
-            onClick={handleLogOut}>
-            <RiLogoutCircleLine className="text-2xl text-orange-400" />
-          </div>
-          <div className="w-8 h-8 lg:w-10 lg:h-10 bg-indigo-50 rounded-md flex items-center justify-center">
-            <BiSolidNotification className="text-2xl text-blue-400" />
-          </div>
-          <div className="w-8 h-8 lg:w-10 lg:h-10 bg-indigo-50 rounded-md flex items-center justify-center">
-            <PiGearFill className="text-2xl text-pink-300" />
+          <div className="flex items-center gap-3 ">
+            <div className="flex justify-center flex-col">
+              <h1 className="text-indigo-500 font-bold text-sm lg:text-base w-[70px] lg:w-auto">
+                Adegbenga Oluwatosin
+              </h1>
+              <p className="text-end font-thin text-[10px]">SUPER ADMIN</p>
+            </div>
+            <div className="w-8 h-8 lg:w-10 lg:h-10 bg-indigo-300 rounded-md">
+              <img src={user} alt="User profile" className="rounded-md" />
+            </div>
+            <div className="w-8 h-8 lg:w-10 lg:h-10 bg-indigo-50 rounded-md flex items-center justify-center cursor-pointer">
+              <RiLogoutCircleLine className="text-2xl text-orange-400" />
+            </div>
+            <div className="w-8 h-8 lg:w-10 lg:h-10 bg-indigo-50 rounded-md flex items-center justify-center">
+              <BiSolidNotification className="text-2xl text-blue-400" />
+            </div>
+            <div className="w-8 h-8 lg:w-10 lg:h-10 bg-indigo-50 rounded-md flex items-center justify-center">
+              <PiGearFill className="text-2xl text-pink-300" />
+            </div>
           </div>
         </div>
       </nav>
-    </div>
+    </>
   );
 };
 

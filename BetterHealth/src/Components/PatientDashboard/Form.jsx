@@ -1,8 +1,8 @@
 import React from 'react'
 import { useState } from 'react'
-import SignUp from './PatientDashboard/SignUp'
-import Tickbox from '../Pages/Tickbox'
-import SignIn from './PatientDashboard/SignIn'
+import SignUp from './SignUp'
+import Tickbox from '../../Pages/Tickbox'
+import SignIn from './SignIn'
 
 
 
