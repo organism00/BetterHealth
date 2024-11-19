@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import Navbar from "../../../Navbar";
-import SideBar from "../../../SideBar";
+import Navbar from "../../navbar";
+import SideBar from "../../sideBar";
 import axios from "axios";
 import { useToast } from '../../../Loaders/ToastContext';
 import WaitingLoader from '../../../Loaders/WaitingLoader';

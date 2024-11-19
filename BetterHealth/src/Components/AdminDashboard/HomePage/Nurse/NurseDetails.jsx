@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import SideBar from "../../../SideBar";
-import Navbar from "../../../Navbar";
+import SideBar from "../../sidebar";
+import Navbar from "../../navbar";
 import axios from "axios";
 
 import { GoHome } from "react-icons/go";

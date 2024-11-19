@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import anime from "../assets/Images/Animation-2.gif";
+import anime from "../../assets/Images/Animation-2.gif";
 import custom from "../adminDashboardAssets/custom-17.svg";
 import "../App.css";
 import { TbLayoutDashboardFilled } from "react-icons/tb";
