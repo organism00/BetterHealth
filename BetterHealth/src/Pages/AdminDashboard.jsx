@@ -1,23 +1,26 @@
 import React from "react";
+import { useLocation } from "react-router-dom";
 // Images
 import heart from "../adminDashboardAssets/heart.svg";
 import patient from "../adminDashboardAssets/patients.svg";
 import staff from "../adminDashboardAssets/Staffs.svg";
 import surgery from "../adminDashboardAssets/sugery.svg";
 // Components
-import PatientStat from "../components/adminDashboard/PatientStat";
-import RecoveryStat from "../Components/adminDashboard/RecoveryStat";
-import TotalPatientsStat from "../Components/adminDashboard/TotalPatientsStat";
-import Reports from "../Components/adminDashboard/Reports";
-import DoctorList from "../Components/adminDashboard/DoctorList";
-import AdmittedPatients from "../Components/adminDashboard/AdmittedPatients";
-import RecentQuestions from "../Components/adminDashboard/RecentQuestions";
+import PatientStat from "../components/HospitalDashboard/PatientStat";
+import RecoveryStat from "../Components/HospitalDashboard/RecoveryStat";
+import TotalPatientsStat from "../Components/HospitalDashboard/TotalPatientsStat"; 
+import Reports from "../Components/HospitalDashboard/Reports";
+import DoctorList from "../Components/HospitalDashboard/DoctorList";
+import AdmittedPatients from "../Components/HospitalDashboard/AdmittedPatients";
+import RecentQuestions from "../Components/HospitalDashboard/RecentQuestions";
 import SideBar from "../Components/SideBar";
 import Navbar from "../Components/Navbar";
 
 
 
 function AdminDashboard() {
+  const location = useLocation()
+
   return (
     <div className="flex flex-col gap-0 lg:flex-row py-4 md:px-0 ">
       <div className="">
@@ -26,7 +29,7 @@ function AdminDashboard() {
 
       <Navbar />
 
-      <div className="flex gap-2 ml-2">
+      <div className="flex flex-col lg:flex-row gap-2 px-2 ">
         <div className="mt-16 md:mt-20 md:px-6 lg:px-0">
           <div className="bg-white border-lg text-[#172b4c] shadow flex flex-col md:flex-row p-4 items-center justify-center gap-2 rounded-lg border ">
             <img src={heart} alt="img" className="max-w-[135px] w-auto" />
@@ -40,7 +43,7 @@ function AdminDashboard() {
               </p>
             </div>
             <div className="w-[112px] h-[42px] ">
-              <button className="bg-[#5156be] text-white w-[112px] h-[42px] rounded-md ">
+              <button className="bg-[#5156be] text-white w-[112px] h-[42px] rounded-md " >
                 Know More
               </button>
             </div>

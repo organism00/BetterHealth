@@ -1,21 +1,41 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import Slider from "react-slick";
-import hospital1 from "../assets/images/a.jpg";
-import hospital3 from "../assets/images/b.jpg";
-import { NavLink, useNavigate } from "react-router-dom";
-import axios from 'axios';
-import { useToast } from "../Components/Loaders/ToastContext";
-import WaitingLoader from "../Components/Loaders/WaitingLoader";
-
+import hospital1 from "../../assets/images/admin1.webp";
+import hospital3 from "../../assets/images/admin2.webp";
+import { NavLink } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import '../Style/loader.css'
+import axios from "axios";
+import { useToast } from '../../Components/Loaders/ToastContext';
+import WaitingLoader from '../../Components/Loaders/WaitingLoader';
 
-const AdminStaff = () => {
+const Index = () => {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
   const { notifySuccess, notifyError, startWaitingLoader, stopWaitingLoader } = useToast();
+  const navigate = useNavigate()
 
+  const handleLogin = async (e) => {
+    startWaitingLoader()
+    e.preventDefault();
+
+    try{
+      const res = await axios.post('https://hms-w4kw.onrender.com/api/Admin/Login', { username, password });
+
+      console.log(res.data.data);
+      stopWaitingLoader();
+      notifySuccess(res.data.responseMessage);
+      localStorage.setItem("userData", JSON.stringify(res.data.data));
+      navigate('/admin/superadmindashboard')
+    } catch(error){
+      console.log(error);
+      stopWaitingLoader();
+      notifyError(error.response.data.responseMessage);
+    }
+  }
   useEffect(() => {
     AOS.init({
       duration: 400,
@@ -35,37 +55,11 @@ const AdminStaff = () => {
     TransitionEvent: "ease-in-out",
   };
 
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [jobRole, setJobRole] = useState('')
-  const navigate = useNavigate()
-
-  const handleLogin = async (e) => {
-    startWaitingLoader()
-    e.preventDefault();
-    try {
-      const response = await axios.post(
-        "https://hms-w4kw.onrender.com/api/Staff/StaffLogin",
-        { email, password, jobRole }
-      );
-      notifySuccess(response.data.responseMessage)
-      stopWaitingLoader()
-      navigate('/admindashboard')
-      localStorage.setItem("userData", JSON.stringify(response.data.data))
-      // console.log(response.data.responseMessage);
-    } catch (error) {
-      notifyError(error.response.data.responseMessage)
-      stopWaitingLoader()
-      // console.error(error.response.data);
-    }
-  }
-
   return (
-    <div className="lg:h-[100vh] bg-[whitesmoke] flex items-center overflow-hidden">
-      {/* Loader */}
-      <WaitingLoader/>
+    <div className="min-h-screen bg-[whitesmoke] flex overflow-hidden">
+      {/* <WaitingLoader/> */}
       {/* Left - Image Slider */}
-      <div className="hidden lg:block xl:h-[100%] w-[50vw]">
+      <div className="hidden lg:block h-screen w-[50vw]">
         <Slider {...sliderSettings}>
           <div>
             <img src={hospital1} alt="hospital1" className="h-screen w-full object-cover " />
@@ -77,49 +71,40 @@ const AdminStaff = () => {
       </div>
 
       {/* Right - Form */}
-      <div className="w-full lg:w-[50vw] bg-[whitesmoke] md:py-2 md:h-[100vh] md:px-24 flex flex-col justify-center py-2 px-4 ">
+      <div className="w-full lg:w-[50vw] bg-[whitesmoke] md:py-2 md:px-24 flex flex-col justify-center py-2 px-4 ">
         <div className="max-w-md w-full mx-auto">
-          <div className=" space-y-6 mb-8 ">
+          <div className=" space-y-6 mb-8">
             <h2 className="text-3xl leading-4 font-[inter] font-semibold">
               Holla,
             </h2>
-            <p className=" text-3xl leading-10 font-[inter] font-semibold">
+            <p className=" text-3xl font-[inter] font-semibold">
               Welcome Back Admin!
             </p>
             <p className="text-gray-600 leading-4 font-[inter] mt-2">
-              Welcome back! Enter your credentials to login as Admin.
+              Enter your credentials to login as Super Admin.
             </p>
           </div>
 
-          <form action="" className="space-y-6" onSubmit={handleLogin}>
+          <form action="submit" className="space-y-6" onSubmit={handleLogin}>
             {/* Username Field */}
             <input
               className="w-full h-[55px] text-xl pl-4 font-[inter] rounded-[12px] font-medium border outline-[#483d8b]"
               type="text"
-              placeholder="Job role"
-              name={jobRole}
-              id="jobrole"
-              onChange={(e) => setJobRole(e.target.value)}
-            />
-
-            <input
-              className="w-full h-[55px] text-xl pl-4 font-[inter] rounded-[12px] font-medium border outline-[#483d8b]"
-              type="text"
-              placeholder="Email"
-              name={email}
-              id="email"
-              autoComplete="email"
-              onChange={(e) => setEmail(e.target.value)}
+              placeholder="Username"
+              name="username"
+              id="username"
+              onChange={(e) => setUsername(e.target.value)}
+              value={username}
             />
 
             <input
               className="w-full h-[55px] text-xl pl-4 font-[inter] rounded-[12px] font-medium border outline-[#483d8b]"
               placeholder="Password"
               type="password"
-              name={password}
+              name="password"
               id="password"
-              autoComplete='current-password'
               onChange={(e) => setPassword(e.target.value)}
+              value={password}
             />
 
             <div className="flex flex-row justify-between">
@@ -151,4 +136,4 @@ const AdminStaff = () => {
   );
 };
 
-export default AdminStaff;
+export default Index;
