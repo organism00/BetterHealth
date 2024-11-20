@@ -133,7 +133,7 @@ const SideBar = () => {
                   <BsCalendarDate className="text-xl" />
                     
                     <a href="#" className="hover:text-blue-400">
-                      Appointments
+                      Profile
                     </a>
                   </div>
 

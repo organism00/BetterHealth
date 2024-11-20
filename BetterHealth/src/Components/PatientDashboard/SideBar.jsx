@@ -1,15 +1,15 @@
 import React, { useState } from "react";
 import { IoIosSwitch } from "react-icons/io";
-import { PiDiamondsFourFill } from "react-icons/pi";
+import { GiNotebook } from "react-icons/gi";
 import { RiArrowDropDownLine } from "react-icons/ri";
-import { FaHospital} from "react-icons/fa";
-import { BsCalendarDate } from "react-icons/bs";
+import { FaRocketchat } from "react-icons/fa";
+import { FaWeightScale } from "react-icons/fa6";
 import {
   TbLayoutDashboardFilled,
   TbScan,
 } from "react-icons/tb";
-import { GiTakeMyMoney } from "react-icons/gi";
-import { MdSick } from "react-icons/md";
+import { RiSecurePaymentLine } from "react-icons/ri";
+import { FaUserCircle } from "react-icons/fa";
 import { GrResources } from "react-icons/gr";
 import { Link } from "react-router-dom";
 import anime from "../../Assets/Images/Animation-2.gif";
@@ -40,17 +40,17 @@ function Sidebar() {
     {
       label: "Dashboard",
       icon: <TbLayoutDashboardFilled className="text-xl" />,
-      link: "/admin/superadmindashboard",
+      link: "/patient/patientdashboard",
     },
     {
-      label: "Appointments",
-      icon: <BsCalendarDate className="text-xl" />,
-      link: "#",
+      label: "Profile",
+      icon: <FaUserCircle className="text-xl" />,
+      link: "/patient/profile",
     },
     {
-      label: "Staff Management ",
-      icon: <PiDiamondsFourFill className="text-xl" />,
-      link: "/admin/staffManagement",
+      label: "Vitals ",
+      icon: < FaWeightScale  className="text-xl" />,
+      link: "/patient/vitals",
     },
     {
       label: "Lab Test",
@@ -63,58 +63,23 @@ function Sidebar() {
       ],
     },
     {
-      label: "Financial",
-      icon: <GiTakeMyMoney className="text-xl" />,
-      dropdown: dropdowns.financial,
-      toggle: () => toggleDropdown("financial"),
-      items: [{ label: "Payment", link: "#" }],
+      label: "EMR",
+      icon: <GiNotebook  className="text-xl" />,
+       link: "/patient/emr" ,
     },
     {
-      label: "Facilities",
-      icon: <FaHospital className="text-xl" />,
-      dropdown: dropdowns.facilities,
-      toggle: () => toggleDropdown("facilities"),
-      items: [
-        { label: "Ward/Room", link: "#" },
-        { label: "Laboratory", link: "#" },
-        { label: "Operation Room", link: "#" },
-        { label: "Emergency Room", link: "#" },
-      ],
-    },
+      label: "Payment",
+      icon: <RiSecurePaymentLine  className="text-xl" />,
+         link: "/patient/payment",
+      },
     {
-      label: "Resource & Inventory",
-      icon: <GrResources className="text-xl" />,
-      dropdown: dropdowns.resourceInventory,
-      toggle: () => toggleDropdown("resourceInventory"),
-      items: [
-        { label: "Ward/Room", link: "#" },
-        { label: "Laboratory", link: "#" },
-        { label: "Operation Room", link: "#" },
-        { label: "Emergency Room", link: "#" },
-      ],
+      label: "Health Chat",
+      icon: <FaRocketchat  className="text-xl" />,
+      link:"/patient/healthchat",
     },
-    {
-      label: "Pharmacy",
-      icon: <TbScan className="text-xl" />,
-      dropdown: dropdowns.pharmacy,
-      toggle: () => toggleDropdown("pharmacy"),
-      items: [
-        { label: "Orders", link: "#" },
-        { label: "Add Drug", link: "/admin/addDrug"},
-        { label: "Stock Management", link: "/admin/inventory" },
-      ],
-    },
+   
+     
 
-    {
-      label: "Patient Management",
-      icon: <MdSick className="text-xl" />,
-      dropdown: dropdowns.patientManagement,
-      toggle: () => toggleDropdown("patientManagement"),
-      items: [
-        { label: "In-patient", link: "/admin/inPatientsList" },
-        { label: "Out-Patient", link: "hey" },
-      ],
-    },
   ];
 
   return (
