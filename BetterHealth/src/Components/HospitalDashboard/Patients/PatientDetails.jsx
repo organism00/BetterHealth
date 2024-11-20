@@ -52,11 +52,14 @@ const diseaseHistory = [
 ];
 
 function PatientDetails() {
+  const [user, setUser] = useState('');
+
   const [patientData, setPatientData] = useState({})
   const [selectedStory, setSelectedStory] = useState(diseaseHistory[0].story);
   const [disease, setDisease] = useState(diseaseHistory[0].name);
   const [isMore, setIsMore] = useState(false);
   const [openBookVitalsModal, setOpenBookVitalsModal] = useState(false);
+  const [openRecordVitalsModal, setOpenRecordVitalsModal] = useState(false);
   const [openEmrModal, setOpenEmrModal] = useState(false);
   const [openEditModal, setOpenEditModal] = useState(false);
 
@@ -75,6 +78,9 @@ function PatientDetails() {
 
   const handleBookVitalsModal = () => {
     setOpenBookVitalsModal(true)
+  }
+  const handleRecordVitalsModal = () => {
+    setOpenRecordVitalsModal(true)
   }
   const handleEmrModal = () => {
     setOpenEmrModal(true)
@@ -96,6 +102,28 @@ function PatientDetails() {
     setSelectedStory(story);
     setDisease(name)
   };
+
+  // Vitals Records
+  const [vitalsRecords, setVitalsRecords] = useState({
+    patientId: '',
+    temperature: '',
+    heartRate: '',
+    bloodPressureSystolic: '',
+    bloodPressureDiastolic: '',
+    recordedAt: ''
+  })
+  
+  const handleVitalsRecords = async (e) => {
+    e.preventDefault()
+
+    try{
+      const res = await axios.post('https://hms-w4kw.onrender.com/api/Patient/AddVitals', vitalsRecords)
+      console.log(res.data)
+    } catch(error){
+      console.log(error)
+    }
+  }
+
   return (
     <div className="flex flex-col gap-0 lg:flex-row py-4 md:px-0 ">
       <SideBar/>
@@ -216,6 +244,9 @@ function PatientDetails() {
                 onClick={handleEditModal}><FaRegEdit/>Edit Profile</button>
               <div className='flex items-center gap-2'>
                 <button className='flex gap-2 items-center px-4 py-2 bg-primary hover:bg-primaryhover transition-all text-white rounded-lg'
+                  onClick={handleRecordVitalsModal}
+                ><FaFileMedical/>Record Vitals</button>
+                <button className='flex gap-2 items-center px-4 py-2 bg-primary hover:bg-primaryhover transition-all text-white rounded-lg'
                   onClick={handleBookVitalsModal}
                 ><FaFileMedical/>Book Vitals Check</button>
                 <button className='flex gap-2 items-center px-4 py-2 bg-primary hover:bg-primaryhover transition-all text-white rounded-lg'
@@ -321,6 +352,29 @@ function PatientDetails() {
       </div>
 
       {/* Modal for BookVitals */}
+      {openRecordVitalsModal && (
+        <div className='fixed w-[100%] h-[100%] flex items-center justify-center z-50 bg-[#00000066] '>
+          <div className=' flex items-center justify-center w-[50vw] h-[90vh] bg-white p-14 relative'>
+            <button className='bg-primary rounded-xl text-white p-2 text-[30px] shadow-lg absolute right-4 top-4 '
+              onClick={() => setOpenRecordVitalsModal(false)}
+            ><IoMdCloseCircleOutline/></button>
+            <form action="submit" className='space-y-2' onSubmit={handleVitalsRecords}>
+              <h1 className='text-2xl font-medium mb-4'>Record Vitals</h1>
+              <input type="number" placeholder='Enter patient temperature' className='border p-3 rounded-lg w-[100%] '
+                onChange={(e) => setVitalsRecords({...vitalsRecords, temperature: e.target.value})}/>
+              <input type="number" placeholder='Enter patient heart rate' className='border p-3 rounded-lg w-[100%] '
+                onChange={(e) => setVitalsRecords({...vitalsRecords, heartRate: e.target.value})}/>
+              <input type="number" placeholder='Enter patient blood pressure systolic' className='border p-3 rounded-lg w-[100%] '
+                onChange={(e) => setVitalsRecords({...vitalsRecords, bloodPressureSystolic: e.target.value})}/>
+              <input type="number" placeholder='Enter patient blood pressure diastolic' className='border p-3 rounded-lg w-[100%] '
+                onChange={(e) => setVitalsRecords({...vitalsRecords, bloodPressureDiastolic: e.target.value})}/>
+              <input type="time" className='border p-3 rounded-lg w-[100%] '
+                onChange={(e) => setVitalsRecords({...vitalsRecords, recordedAt: e.target.value})}/>
+              <button className='w-[100%] bg-primary text-white font-medium p-3 rounded-lg mt-4 hover:bg-primaryhover transition-all '>Save Record</button>
+            </form>
+          </div>
+        </div>
+      )}
       {openBookVitalsModal && (
         <div className='fixed w-[100%] h-[100%] flex items-center justify-center z-50 bg-[#00000066] '>
           <div className=' flex items-center justify-center w-[50vw] h-[80vh] bg-white p-14 relative'>
