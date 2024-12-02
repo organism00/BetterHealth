@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import SideBar from '../Components/SideBar';
 import Navbar from '../Components/Navbar';
 import { nurseList } from '../Components/NurseData';
@@ -16,7 +17,7 @@ const NurseList = () => {
                     <div className='flex gap-x-5 px-5 lg:px-0 md:px-8 md:ml-64 lg:ml-0'>
                         <h1 className="text-2xl">Nurse</h1>
                         <div className="flex gap-2 items-center">
-                            <GoHome/>
+                            <Link to='/admindashboard'><GoHome/></Link>
                             <p className="font-thin"> - Nurse</p>
                         </div>
                     </div>

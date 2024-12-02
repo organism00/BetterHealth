@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper } from "@mui/material";
 import { patientData as initialPatientData } from '../Components/PatientData';
+import { Link } from 'react-router-dom';
 import Sidebar from '../Components/SideBar'
 import Navbar from '../Components/Navbar';
 
@@ -47,8 +48,8 @@ function PatientsList() {
           <div className='flex gap-x-5 px-5 lg:px-0 md:px-8 md:ml-64 lg:ml-0'>
               <h1 className="text-2xl">Patients</h1>
               <div className="flex gap-2 items-center">
-                  <GoHome/>
-                  <p className="font-thin"> - Patients</p>
+                <Link to='/admindashboard'><GoHome/></Link>
+                <p className="font-thin"> - Patients</p>
               </div>
           </div>
           <div className='flex gap-2'>
