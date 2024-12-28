@@ -375,6 +375,7 @@ function PatientDetails() {
           </div>
         </div>
       )}
+      
       {openBookVitalsModal && (
         <div className='fixed w-[100%] h-[100%] flex items-center justify-center z-50 bg-[#00000066] '>
           <div className=' flex items-center justify-center w-[50vw] h-[80vh] bg-white p-14 relative'>
