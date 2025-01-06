@@ -70,7 +70,7 @@ function Sidebar() {
       icon: <GiTakeMyMoney className="text-xl" />,
       dropdown: dropdowns.financial,
       toggle: () => toggleDropdown("financial"),
-      items: [{ label: "Payment", link: "#" }],
+      items: [{ label: "Payment", link: "/admin/payment" }],
     },
     {
       label: "Facilities",
@@ -103,7 +103,7 @@ function Sidebar() {
       toggle: () => toggleDropdown("pharmacy"),
       items: [
         { label: "Orders", link: "#" },
-        { label: "Add Drug", link: "/admin/addDrug"},
+        { label: "Add Drug", link: "/admin/addDrug" },
         { label: "Stock Management", link: "/admin/inventory" },
       ],
     },

@@ -194,8 +194,7 @@ function PatientsList() {
                               <div className="text-[12px]">{row.address}</div>
                             </TableCell>
                             <TableCell style={{ display: "flex", gap: 5 }}>
-                              <div
-                                variant="contained"
+                              <div variant="contained"
                                 style={{ minWidth: "unset" }}
                                 className="flex items-center justify-center cursor-pointer rounded-full w-[30px] h-[30px] relative "
                               >

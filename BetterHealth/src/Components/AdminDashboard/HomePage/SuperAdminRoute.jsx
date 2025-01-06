@@ -17,6 +17,7 @@ import AddDrug from './AddDrug';
 import PatientsList from './Patient/PatientsList';
 import PatientDetails from './Patient/PatientDetails';
 import LabTest from './Lab/LabTest';
+import Payment from './Payment';
 
 function SuperAdminRoute() {
   return (
@@ -42,6 +43,7 @@ function SuperAdminRoute() {
           <Route path="/admin/staffManagement" element={<StaffManagement />} />
           <Route path="/admin/inventory" element={<Inventory />} />
           <Route path="/admin/addDrug" element={<AddDrug />} />
+          <Route path="/admin/payment" element={<Payment />} />
         </Routes>
       </ToastProvider>
     </div>
